@@ -1,11 +1,13 @@
 // src/electron/electron.js
-//var server = require("./index");
-
-const { app, BrowserWindow } = require('electron')
-
+//IPC inter process communication works like a message broker and handles the messages send from render-processes.
+//var ipc = require('ipc');
+const { app, BrowserWindow, Menu } = require('electron')
+//const { ipcRenderer } = window.require('electron');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let server
+let spawn,ls;
 
 function createWindow() {
   // Create the browser window.
@@ -26,14 +28,44 @@ function createWindow() {
   })
 }
 
-function startKinect(){
+//creates electron menu
+function createMenu() {
+  //creates an electron menu
+  const menuTemplate =
+    [
+      {
+        label: "start",
+        submenu:
+        [
+          {
+            label: 'startkinect', click: () => { console.log("startkinect clicked"); startKinect() }
+          },
+          {
+            type: 'separator'
+          },
+          {
+            label: 'quit', click: () => { app.quit() }
+          }
+        ]
+      }
+    ]
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
 }
+
+function startKinect() {
+  spawn = require('child_process').spawn;
+   ls = spawn('node', ['index.js']);
+
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow();
- // startKinect();
+  createMenu();
+  // startKinect();
 }
 )
 
@@ -56,14 +88,10 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-let setMenu=()=>
-{
+//listen to messages from a render proces, does not matter which and we don't have to know
+let setMenu = () => {
   let fileMenu = menuTemplate
-  .find(item=>item.label=='StartKinect')
-  .click=() =>
-  {
-    console.log("geklikt");
-  };
-
+    .find(item => item.label === 'StartKinect')
+    .click = () => console.log('start the kinect proces');
 }
+

@@ -8,26 +8,34 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+
   <script>
     console.log("INDEXHTML SCRIPT");
-    const { remote } = require('electron');
+    /*const { remote } = require('electron');
     const { Menu, MenuItem } = remote;
+    var ipcRenderer = require('electron');
 
     const menu = new Menu();
-    menu.append(new MenuItem({ label: 'StartKinect', click() {console.log("startkinect clicked")} }));
+    menu.append(new MenuItem({ label: 'StartKinect', click() {
+      console.log("startkinect clicked");
+      console.log(ipcRenderer);
+      ipcRenderer.send('start-kinect','test');
+  } }));
     menu.append(new MenuItem({ type: 'separator' }));
     menu.append(new MenuItem({ label: 'MenuItem2', type: 'checkbox', checked: true }));
     window.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       menu.popup(remote.getCurrentWindow());
     }, false);
-  Menu.setApplicationMenu(menu);
+  Menu.setApplicationMenu(menu);*/
   </script>
 
 </head>
+
 <body>
   <app-root>Loading...</app-root>
 </body>
+<script src="./assets/kinect.js"></script>
 
 </html>
