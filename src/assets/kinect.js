@@ -1,5 +1,5 @@
 console.log("KINECT JS");
-		var socket = io.connect('http://localhost:8000');
+		//var socket = io.connect('http://localhost:8000');
 		var canvas = document.getElementById('bodyCanvas');
 		var ctx = canvas.getContext('2d');
 		var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
@@ -43,7 +43,8 @@ console.log("KINECT JS");
 			ctx.globalAlpha = 1;
 		}
 
-		setInterval(function(){ socket.on('bodyFrame', function(bodyFrame){
+		/*setInterval(function(){
+			 socket.on('bodyFrame', function(bodyFrame){
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			var index = 0;
 			bodyFrame.bodies.forEach(function(body){
@@ -59,4 +60,9 @@ console.log("KINECT JS");
 					index++;
 				}
 			});
-		}); }, 1000/2);
+		}); }, 1000/2);*/
+
+/*		 var ipc=require('ipc');
+   ipc.on('kinect-bodyframe',function(){
+     console.log("bodyframe");
+   })*/
