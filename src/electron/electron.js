@@ -57,19 +57,13 @@ function createMenu() {
 
 function startKinect() {
   //spawn a child process to receive the kinect data
-  const { spawn } = require('child_process')
-  var child = spawn('node', ['worker.js'],{detached:false});
-  child.stdout.on('data', function (bodyFrame) {
-    console.log('stdout: ' + bodyFrame);
-    //loopen over alle bodies
-    win.webContents.send('bodyframe',bodyFrame);
-  });
-  child.stderr.on('data', function (data) {
-    console.log('stderr: ' + data);
-  });
-  child.on('close', function (code) {
-    console.log('child process exited with code ' + code);
-  })
+  const { spawn,exec,fork } = require('child_process')
+  var child = spawn('node', ['worker.js'], {detached:true, stdio:['pipe','pipe','pipe','ipc']});
+  child.on('message',function(bodyFrame)
+  {
+    console.log(bodyFrame);  
+    win.webContents.send('bodyframe',bodyFrame);    
+  }) 
 }
 
 // This method will be called when Electron has finished
@@ -88,7 +82,7 @@ app.on('window-all-closed', () => {
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit()
-  }
+  } 
 })
 
 app.on('activate', () => {

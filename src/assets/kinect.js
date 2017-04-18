@@ -45,6 +45,8 @@ console.log("KINECT JS");
 
 		/*setInterval(function(){
 			 socket.on('bodyFrame', function(bodyFrame){
+				 console.log("via socket");
+				 console.log(bodyFrame);
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			var index = 0;
 			bodyFrame.bodies.forEach(function(body){
