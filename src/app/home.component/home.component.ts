@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
         console.log(this.canvasElement);
         this.ctx = this.canvasElement.nativeElement.getContext('2d');
         console.log("voor de ON methode:" + this.ctx);       
-        this.ipc.on('bodyframe', function (event, bodyFrame) {            
+        this.ipc.on('bodyframe', function (event, bodyFrame) {      
             //variables
             // handstate circle size
             var HANDSIZE = 20;
@@ -56,15 +56,17 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
                ctx.globalAlpha = 0.75;
                ctx.beginPath();
                ctx.fillStyle = handColor;
-               ctx.arc(jointPoint.depthX * 512, jointPoint.depthY * 424, HANDSIZE, 0, Math.PI * 2, true);
+               ctx.arc(jointPoint.depthX * 640, jointPoint.depthY * 360, HANDSIZE, 0, Math.PI * 2, true);
                 ctx.fill();
                 ctx.closePath();
                 ctx.globalAlpha = 1;
             }
 
             //main rendering process
-            console.log(JSON.parse(bodyFrame));
-            bodyFrame = JSON.parse(bodyFrame);
+            //console.log(JSON.parse(bodyFrame));
+            //om 0 weg te krijgen
+            console.log(bodyFrame.substr(1,bodyFrame.size));
+            bodyFrame = JSON.parse(bodyFrame.substr(1,bodyFrame.size));
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             var index = 0;
             bodyFrame.bodies.forEach(function (body) {
@@ -72,7 +74,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
                     for (var jointType in body.joints) {
                         var joint = body.joints[jointType];
                         ctx.fillStyle = colors[index];
-                        ctx.fillRect(joint.depthX * 512, joint.depthY * 424, 10, 10);
+                        ctx.fillRect(joint.depthX * 640, joint.depthY * 360, 10, 10);
                     }
                     //draw hand states
                     updateHandState(body.leftHandState, body.joints[7]);
@@ -82,6 +84,33 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
             });
             console.log("homecomponent - ipcrenderer method")
         });
+
+        var canvas = <HTMLCanvasElement>document.getElementById('bodyCanvas');
+		var ctx = canvas.getContext('2d');
+
+		var colorProcessing = false;
+		var colorWorkerThread = new Worker("./assets/colorWorker.js");
+		
+		colorWorkerThread.addEventListener("message", function (event) {
+			if(event.data.message === 'imageReady') {
+                console.log("kgonne kik iet printe");
+                ctx.putImageData(event.data.imageData, 0, 0);
+                colorProcessing = false;
+			}
+		});
+
+		colorWorkerThread.postMessage({
+			"message": "setImageData",
+			"imageData": ctx.createImageData(canvas.width, canvas.height)
+		});
+		this.ipc.on('colorFrame', function(imageBuffer){
+            console.log("Elaba");
+			if(!colorProcessing) {
+				colorProcessing = true;
+				colorWorkerThread.postMessage({ "message": "processImageData", "imageBuffer": imageBuffer });
+			}
+		});
+        
     }
 
     ngOnChanges(changes) {
