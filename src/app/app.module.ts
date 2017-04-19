@@ -8,6 +8,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component/home.component';
 
+import { KinectService } from './services/kinect.service';
+
 // routes variabelen
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { useHash: true }) //
 
   ],
-  providers: [HashLocationStrategy],
+  //services
+  providers: [HashLocationStrategy, KinectService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // to clear the router-outlet test, else it fails
 

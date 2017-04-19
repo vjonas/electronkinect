@@ -2,14 +2,16 @@
 //IPC inter process communication works like a message broker and handles the messages send from render-processes.
 //var ipc = require('ipc');
 const { app, BrowserWindow, Menu } = require('electron');
-var exec = require('child_process').exec;
+const { spawn, exec, fork } = require('child_process')
+
+//var exec = require('child_process').exec;
 //const { ipcRenderer } = window.require('electron');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 let server
-let spawn, ls;
 let cmd;
+let child;
 
 function createWindow() {
   // Create the browser window.
@@ -46,7 +48,9 @@ function createMenu() {
             type: 'separator'
           },
           {
-            label: 'quit', click: () => { app.quit() }
+            label: 'quit', click: () => { 
+              child.kill();
+              app.quit(); }
           }
         ]
       }
@@ -57,8 +61,8 @@ function createMenu() {
 
 function startKinect() {
   //spawn a child process to receive the kinect data
-  const { spawn, exec, fork } = require('child_process')
-  var child = spawn('node', ['worker.js'], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
+  //var 
+  child = spawn('node', ['worker.js'], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
   child.on('message', function (frame) {
     if (JSON.stringify(frame).substr(1, 1)==("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
       win.webContents.send('bodyFrame', frame.substr(1,frame.size)); //substring om de header (0 of 1) weg te krijgen
@@ -87,6 +91,8 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
+    console.log("gesloten via kruisje");
+    child.kill();  
   if (process.platform !== 'darwin') {
     app.quit()
   }
