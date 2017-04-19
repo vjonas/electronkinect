@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
 declare var electron: any;
 
 @Component({
@@ -6,8 +6,6 @@ declare var electron: any;
     templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
-    @ViewChild('kinectcanvas') canvasElement;
-    private ctx;
     private ipc;
 
     constructor() {
@@ -18,11 +16,9 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     ngOnInit() {
     }
     ngAfterViewInit() {
-        console.log(this.canvasElement);
-        this.ctx = this.canvasElement.nativeElement.getContext('2d');
-        console.log("voor de ON methode:" + this.ctx);       
-        this.ipc.on('bodyframe', function (event, bodyFrame) {      
-            //variables
+        this.ipc.on('bodyFrame', function (event, bodyFrame) {  
+            bodyFrame=JSON.parse(bodyFrame);    
+            //declaring the needed variables
             // handstate circle size
             var HANDSIZE = 20;
             // closed hand state color
@@ -31,7 +27,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
             var HANDOPENCOLOR = "green";
             // lasso hand state color
             var HANDLASSOCOLOR = "blue";
-            var canvas = <HTMLCanvasElement>document.getElementById('bodyCanvas');
+            var canvas = <HTMLCanvasElement>document.getElementById('bodyframecanvas');
             var ctx = canvas.getContext('2d');
             var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
 
@@ -63,10 +59,6 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
             }
 
             //main rendering process
-            //console.log(JSON.parse(bodyFrame));
-            //om 0 weg te krijgen
-            console.log(bodyFrame.substr(1,bodyFrame.size));
-            bodyFrame = JSON.parse(bodyFrame.substr(1,bodyFrame.size));
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             var index = 0;
             bodyFrame.bodies.forEach(function (body) {
@@ -82,10 +74,9 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
                     index++;
                 }
             });
-            console.log("homecomponent - ipcrenderer method")
         });
 
-        var canvas = <HTMLCanvasElement>document.getElementById('bodyCanvas');
+        var canvas = <HTMLCanvasElement>document.getElementById('colorframecanvas');
 		var ctx = canvas.getContext('2d');
 
 		var colorProcessing = false;
@@ -93,7 +84,6 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
 		
 		colorWorkerThread.addEventListener("message", function (event) {
 			if(event.data.message === 'imageReady') {
-                console.log("kgonne kik iet printe");
                 ctx.putImageData(event.data.imageData, 0, 0);
                 colorProcessing = false;
 			}
@@ -103,8 +93,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
 			"message": "setImageData",
 			"imageData": ctx.createImageData(canvas.width, canvas.height)
 		});
-		this.ipc.on('colorFrame', function(imageBuffer){
-            console.log("Elaba");
+		this.ipc.on('colorFrame', function(event,imageBuffer){          
 			if(!colorProcessing) {
 				colorProcessing = true;
 				colorWorkerThread.postMessage({ "message": "processImageData", "imageBuffer": imageBuffer });

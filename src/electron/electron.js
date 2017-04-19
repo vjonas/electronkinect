@@ -60,13 +60,15 @@ function startKinect() {
   const { spawn, exec, fork } = require('child_process')
   var child = spawn('node', ['worker.js'], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
   child.on('message', function (frame) {
-   // console.log(frame);
-    if (JSON.stringify(frame).substr(1, 1)==("0")) {
-      win.webContents.send('bodyframe', frame);
+    if (JSON.stringify(frame).substr(1, 1)==("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
+      win.webContents.send('bodyFrame', frame.substr(1,frame.size)); //substring om de header (0 of 1) weg te krijgen
     }
-    if (frame.substr(0, 1)==("1")) {
-      console.log("kzit in de 1");
-      win.webContents.send('colorFrame', frame)
+    else if (frame.substr(0, 1)==("1")) {
+      win.webContents.send('colorFrame', frame.substr(1,frame.size)) //substring om de header (0 of 1) weg te krijgen
+    }
+    else
+    {
+      console.log("algemeen childprocess log: "+frame);
     }
   })
 }
