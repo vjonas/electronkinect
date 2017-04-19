@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
+import { Kinect2 } from 'kinect2';
 declare var electron: any;
 
 @Component({
@@ -17,10 +18,11 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     }
     ngAfterViewInit() {
         this.ipc.on('bodyFrame', function (event, bodyFrame) {  
-            bodyFrame=JSON.parse(bodyFrame);    
+            bodyFrame=JSON.parse(bodyFrame);   
+            console.log(bodyFrame); 
             //declaring the needed variables
             // handstate circle size
-            var HANDSIZE = 20;
+            var HANDSIZE = 13;
             // closed hand state color
             var HANDCLOSEDCOLOR = "red";
             // open hand state color
@@ -66,8 +68,78 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
                     for (var jointType in body.joints) {
                         var joint = body.joints[jointType];
                         ctx.fillStyle = colors[index];
-                        ctx.fillRect(joint.depthX * 640, joint.depthY * 360, 10, 10);
+                        ctx.fillRect(joint.depthX * 640, joint.depthY * 360, 5, 5);
                     }
+                    //1 raakpunt tekenen
+                    ctx.beginPath();
+                    ctx.fillStyle = "#E88C00";
+                    ctx.fillRect(520, 120, 40, 40);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+                    //check for collision joint 11 and green thingy
+                    var joint = body.joints[11];
+                    
+                    if((parseFloat(joint.depthX) * 640 > 520 && parseFloat(joint.depthX) * 640 < 520+40) && (parseFloat(joint.depthY) * 360 > 120 && parseFloat(joint.depthY) * 360 < 120+40)){
+                        console.log("ik raak het");
+                        ctx.beginPath();
+                        ctx.fillStyle = "#7DFF00";
+                        ctx.fillRect(520, 120, 40, 40);
+                        ctx.fill();
+                        ctx.closePath();
+                        ctx.globalAlpha = 1;
+                    }
+
+                    //1 "volglijn" tekenen
+                    ctx.beginPath();
+                    ctx.fillStyle = "#E88C00";
+                    ctx.fillRect(420, 50, 40, 40);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+
+                    ctx.beginPath();
+                    ctx.fillStyle = "#E88C00";
+                    ctx.fillRect(420, 240, 40, 40);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+
+                    ctx.beginPath();
+                    ctx.globalAlpha= 0.5;
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(420, 90 ,40 , 150);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+
+                    //check for collision joint 11 with "volglijn"
+                    if((parseFloat(joint.depthX) * 640 > 420 && parseFloat(joint.depthX) * 640 < 420+40) && (parseFloat(joint.depthY) * 360 > 50 && parseFloat(joint.depthY) * 360 < 240+40)){
+                    ctx.beginPath();
+                    ctx.fillStyle = "#7DFF00";
+                    ctx.fillRect(420, 50, 40, 40);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+
+                    ctx.beginPath();
+                    ctx.fillStyle = "#7DFF00";
+                    ctx.fillRect(420, 240, 40, 40);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+
+                    ctx.beginPath();
+                    ctx.globalAlpha= 0.5;
+                    ctx.fillStyle = "#7DFF00";
+                    ctx.fillRect(420, 90 ,40 , 150);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+                    }
+
+
+
                     //draw hand states
                     updateHandState(body.leftHandState, body.joints[7]);
                     updateHandState(body.rightHandState, body.joints[11]);
