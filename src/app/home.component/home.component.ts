@@ -136,8 +136,27 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
                     ctx.fill();
                     ctx.closePath();
                     ctx.globalAlpha = 1;
-                    }
+                }
+                
 
+                //raakpunt met action
+                ctx.beginPath();
+                    ctx.fillStyle = "#E88C00";
+                    ctx.fillRect(250, 120, 40, 40);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.globalAlpha = 1;
+                    //check for collision joint 11 and green thingy
+                    var joint = body.joints[11];
+                    
+                    if(((parseFloat(joint.depthX) * 640 > 250 && parseFloat(joint.depthX) * 640 < 250+40) && (parseFloat(joint.depthY) * 360 > 120 && parseFloat(joint.depthY) * 360 < 120+40))&& body.rightHandState ==3){
+                        ctx.beginPath();
+                        ctx.fillStyle = "#7DFF00";
+                        ctx.fillRect(250, 120, 40, 40);
+                        ctx.fill();
+                        ctx.closePath();
+                        ctx.globalAlpha = 1;
+                    }
 
 
                     //draw hand states
