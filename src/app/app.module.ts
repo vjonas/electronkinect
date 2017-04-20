@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component/home.component';
 
 import { KinectService } from './services/kinect.service';
+import { DrawCanvasService } from './services/drawcanvas.service';
 
 // routes variabelen
 const appRoutes: Routes = [
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
 
   ],
   //services
-  providers: [HashLocationStrategy, KinectService],
+  providers: [HashLocationStrategy, KinectService, DrawCanvasService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // to clear the router-outlet test, else it fails
 

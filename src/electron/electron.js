@@ -24,11 +24,13 @@ function createWindow() {
   win.webContents.openDevTools()
 
   // Emitted when the window is closed. 
-  win.on('closed', () => {
+  win.on('close', () => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null
+    win = null;
+    console.log("closed method of browserwindow");
+    child.kill();
   })
 }
 
@@ -98,8 +100,10 @@ app.on('window-all-closed', () => {
   }
 })
 
-app.on('exit',()=>
+app.on('before-quit',()=>
 {
+  
+  console.log("app.exit");
   child.kill();
 })
 
