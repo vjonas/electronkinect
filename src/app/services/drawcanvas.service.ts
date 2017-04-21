@@ -8,7 +8,7 @@ export class DrawCanvasService {
     private HANDOPENCOLOR = "green";
     private HANDLASSOCOLOR = "blue";
     private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
-    private joints=null; //array with all joints (25)
+    private joints = null; //array with all recognised joints (25)
 
     constructor(private kinectService: KinectService) {
     }
@@ -32,7 +32,7 @@ export class DrawCanvasService {
                         bodyFrameCtx.fillRect(joint.depthX * 640, joint.depthY * 360, 5, 5);
                     }
                     index++;
-                    self.joints=body.joints; //save all joints to class variable
+                    self.joints = body.joints; //save all joints to class variable
                     //draw the hands
                     //draw hand states
                     self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
@@ -94,10 +94,14 @@ export class DrawCanvasService {
     public drawExcercise(bodyFrameCanvas: any) {
         const self = this;
         const ctx = bodyFrameCanvas.getContext('2d');
+        var counter: number = 0;
+        var currentStepNr: number = 0;
+        var stepColors: string[] = new Array();
         const excercise = `{
     "name":"exrightshoulder",
     "positions":[
         {
+            "stepnr":0,
             "x":520,
             "y":120,
             "w":40,
@@ -106,35 +110,73 @@ export class DrawCanvasService {
             "jointtype":11
         },
         {
+            "stepnr":1,
             "x":420,
             "y":90,
             "w":40,
             "h":150,
             "style":"#FFFFFF",
             "jointtype":21
+        },{
+            "stepnr":1,
+            "x":420,
+            "y":240,
+            "w":40,
+            "h":40,
+            "style":"#FFFFFF",
+            "jointtype":21
         }
+        
     ]
 }`
         const steps = JSON.parse(excercise);
         steps.positions.forEach((step) => {
-            ctx.fillStyle = step.style;
+            if (counter == 0) {
+                stepColors.push("#E88C00");
+                //ctx.fillStyle="#E88C00";
+            }
+            else {
+                stepColors.push("#FFFFFF");
+                //ctx.fillStyle = "#FFFFFF";
+            }
+            //the first step begins with color orange, the next step(s) are white. when the first step is done it becomes green and the next step will become orange.
+            ctx.fillStyle = stepColors[counter];
             ctx.fillRect(step.x, step.y, step.w, step.h);
             ctx.fill();
+            counter++;
         })
 
         ///check for collision joint 11 and green thingy with 30 FPS
         setInterval(function () {
-            steps.positions.forEach((step) => {
-                if (self.joints != null && (parseFloat(self.joints[step.jointtype].depthX) * 640 > step.x && parseFloat(self.joints[step.jointtype].depthX) * 640 < step.x + step.w) && (parseFloat(self.joints[step.jointtype].depthY) * 360 > step.y && parseFloat(self.joints[step.jointtype].depthY) * 360 < step.y + step.h)) {
-                    ctx.fillStyle = "#7DFF00";
+            var i = 0;
+            steps.positions.forEach((step,index) => {
+                if (self.joints != null &&
+                    (parseFloat(self.joints[step.jointtype].depthX) * 640 > step.x &&
+                        parseFloat(self.joints[step.jointtype].depthX) * 640 < step.x + step.w) &&
+                    (parseFloat(self.joints[step.jointtype].depthY) * 360 > step.y &&
+                        parseFloat(self.joints[step.jointtype].depthY) * 360 < step.y + step.h &&
+                        step.stepnr == currentStepNr)) {
+                    stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
+                    if (stepColors[i + 1] != null) {
+                        stepColors[i + 1] = "#E88C00";
+                        ctx.fillStyle = stepColors[i+1]; //if currentStep is achieved -> set color green.
+                        ctx.fillRect(steps.positions[index+1].x, steps.positions[index+1].y, steps.positions[index+1].w, steps.positions[index+1].h);
+                        ctx.fill();
+                    } //set the color of next step to orange                     
+                    ctx.fillStyle = stepColors[i]; //if currentStep is achieved -> set color green.
                     ctx.fillRect(step.x, step.y, step.w, step.h);
                     ctx.fill();
+                    currentStepNr++;
+                    i++;
+                    console.log(stepColors);
+
                 }
                 else {
-                    ctx.fillStyle = step.style;
+                    /*ctx.fillStyle = step.style;
                     ctx.fillRect(step.x, step.y, step.w, step.h);
-                    ctx.fill();
+                    ctx.fill();*/
                 }
+                i++;
             })
         }, 1000 / 30);
     }
