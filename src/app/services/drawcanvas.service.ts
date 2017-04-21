@@ -8,7 +8,7 @@ export class DrawCanvasService {
     private HANDOPENCOLOR = "green";
     private HANDLASSOCOLOR = "blue";
     private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
-    private rightHand = null;
+    private joints=null; //array with all joints (25)
 
     constructor(private kinectService: KinectService) {
     }
@@ -32,7 +32,7 @@ export class DrawCanvasService {
                         bodyFrameCtx.fillRect(joint.depthX * 640, joint.depthY * 360, 5, 5);
                     }
                     index++;
-                    self.rightHand = body.joints[11]; //
+                    self.joints=body.joints; //save all joints to class variable
                     //draw the hands
                     //draw hand states
                     self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
@@ -94,23 +94,48 @@ export class DrawCanvasService {
     public drawExcercise(bodyFrameCanvas: any) {
         const self = this;
         const ctx = bodyFrameCanvas.getContext('2d');
-        ctx.fillStyle = "#E88C00 ";
-        ctx.fillRect(520, 120, 40, 40);
-        ctx.fill();
-        ctx.closePath();
-        ctx.globalAlpha = 1;
-        //check for collision joint 11 and green thingy with 30 FPS
+        const excercise = `{
+    "name":"exrightshoulder",
+    "positions":[
+        {
+            "x":520,
+            "y":120,
+            "w":40,
+            "h":40,
+            "style":"#E88C00",
+            "jointtype":11
+        },
+        {
+            "x":420,
+            "y":90,
+            "w":40,
+            "h":150,
+            "style":"#FFFFFF",
+            "jointtype":21
+        }
+    ]
+}`
+        const steps = JSON.parse(excercise);
+        steps.positions.forEach((step) => {
+            ctx.fillStyle = step.style;
+            ctx.fillRect(step.x, step.y, step.w, step.h);
+            ctx.fill();
+        })
+
+        ///check for collision joint 11 and green thingy with 30 FPS
         setInterval(function () {
-                if (self.rightHand != null && (parseFloat(self.rightHand.depthX) * 640 > 520 && parseFloat(self.rightHand.depthX) * 640 < 520 + 40) && (parseFloat(self.rightHand.depthY) * 360 > 120 && parseFloat(self.rightHand.depthY) * 360 < 120 + 40)) {
-                    console.log("ik raak het");
-                    ctx.beginPath();
-                    ctx.fillStyle = "#7DFF00 ";
-                    ctx.fillRect(520, 120, 40, 40);
+            steps.positions.forEach((step) => {
+                if (self.joints != null && (parseFloat(self.joints[step.jointtype].depthX) * 640 > step.x && parseFloat(self.joints[step.jointtype].depthX) * 640 < step.x + step.w) && (parseFloat(self.joints[step.jointtype].depthY) * 360 > step.y && parseFloat(self.joints[step.jointtype].depthY) * 360 < step.y + step.h)) {
+                    ctx.fillStyle = "#7DFF00";
+                    ctx.fillRect(step.x, step.y, step.w, step.h);
                     ctx.fill();
-                    ctx.closePath();
-                    ctx.globalAlpha = 1;
-            }
-            console.log(self.rightHand)
+                }
+                else {
+                    ctx.fillStyle = step.style;
+                    ctx.fillRect(step.x, step.y, step.w, step.h);
+                    ctx.fill();
+                }
+            })
         }, 1000 / 30);
     }
 }
