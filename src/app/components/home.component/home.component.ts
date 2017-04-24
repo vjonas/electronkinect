@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
 import { Kinect2 } from 'kinect2';
-import { KinectService } from '../services/kinect.service';
-import { DrawCanvasService } from '../services/drawcanvas.service';
+import { KinectService } from '../../services/kinect.service';
+import { DrawCanvasService } from '../../services/drawcanvas.service';
 declare var electron: any;
 
 @Component({

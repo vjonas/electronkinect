@@ -29,10 +29,11 @@ export class DrawCanvasService {
                     for (var jointType in body.joints) {
                         var joint = body.joints[jointType];
                         bodyFrameCtx.fillStyle = colors[index];
-                        bodyFrameCtx.fillRect(joint.depthX * 640, joint.depthY * 360, 5, 5);
+                        bodyFrameCtx.fillRect(joint.depthX * bodyFrameCtx.canvas.width, joint.depthY * bodyFrameCtx.canvas.height, 5, 5);
                     }
                     index++;
                     self.joints = body.joints; //save all joints to class variable
+                    self.joints.push(body.bodyIndex);
                     //draw the hands
                     //draw hand states
                     self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
@@ -54,7 +55,7 @@ export class DrawCanvasService {
         });
         colorWorkerThread.postMessage({
             "message": "setImageData",
-            "imageData": colorFrameCtx.createImageData(colorFrameCanvas.width, colorFrameCanvas.height)
+            "imageData": colorFrameCtx.createImageData(colorFrameCtx.canvas.width, colorFrameCtx.canvas.height)
         });
         this.kinectService.getColorFrames().subscribe(imageBuffer => {
             if (!colorProcessing) {
@@ -85,15 +86,15 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 0.75;
         bodyFrameCtx.beginPath();
         bodyFrameCtx.fillStyle = handColor;
-        bodyFrameCtx.arc(jointPoint.depthX * 640, jointPoint.depthY * 360, this.HANDSIZE, 0, Math.PI * 2, true);
+        bodyFrameCtx.arc(jointPoint.depthX * bodyFrameCtx.canvas.width, jointPoint.depthY * bodyFrameCtx.canvas.height, this.HANDSIZE, 0, Math.PI * 2, true);
         bodyFrameCtx.fill();
         bodyFrameCtx.closePath();
         bodyFrameCtx.globalAlpha = 1;
     }
 
-    public drawExcercise(bodyFrameCanvas: any) {
+    public drawExcercise(excerciseCanvas: any) {
         const self = this;
-        const ctx = bodyFrameCanvas.getContext('2d');
+        const ctx = excerciseCanvas.getContext('2d');
         var counter: number = 0;
         var currentStepNr: number = 0;
         var stepColors: string[] = new Array();
@@ -118,7 +119,7 @@ export class DrawCanvasService {
             "style":"#FFFFFF",
             "jointtype":21
         },{
-            "stepnr":1,
+            "stepnr":2,
             "x":420,
             "y":240,
             "w":40,
@@ -129,7 +130,7 @@ export class DrawCanvasService {
         
     ]
 }`
-        const steps = JSON.parse(excercise);
+        const steps = JSON.parse(excercise); //loop over every step in the excercise and define the right color
         steps.positions.forEach((step) => {
             if (counter == 0) {
                 stepColors.push("#E88C00");
@@ -145,22 +146,22 @@ export class DrawCanvasService {
             ctx.fill();
             counter++;
         })
-
         ///check for collision joint 11 and green thingy with 30 FPS
         setInterval(function () {
             var i = 0;
-            steps.positions.forEach((step,index) => {
+            steps.positions.forEach((step, index) => {
                 if (self.joints != null &&
-                    (parseFloat(self.joints[step.jointtype].depthX) * 640 > step.x &&
-                        parseFloat(self.joints[step.jointtype].depthX) * 640 < step.x + step.w) &&
-                    (parseFloat(self.joints[step.jointtype].depthY) * 360 > step.y &&
-                        parseFloat(self.joints[step.jointtype].depthY) * 360 < step.y + step.h &&
+                    (parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width > step.x &&
+                        parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width < step.x + step.w) &&
+                    (parseFloat(self.joints[step.jointtype].depthY) * ctx.canvas.height > step.y &&
+                        parseFloat(self.joints[step.jointtype].depthY) * ctx.canvas.height < step.y + step.h &&
                         step.stepnr == currentStepNr)) {
+
                     stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
-                    if (stepColors[i + 1] != null) {
+                    if (stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
                         stepColors[i + 1] = "#E88C00";
-                        ctx.fillStyle = stepColors[i+1]; //if currentStep is achieved -> set color green.
-                        ctx.fillRect(steps.positions[index+1].x, steps.positions[index+1].y, steps.positions[index+1].w, steps.positions[index+1].h);
+                        ctx.fillStyle = stepColors[i + 1]; //if currentStep is achieved -> set color green.
+                        ctx.fillRect(steps.positions[index + 1].x, steps.positions[index + 1].y, steps.positions[index + 1].w, steps.positions[index + 1].h);
                         ctx.fill();
                     } //set the color of next step to orange                     
                     ctx.fillStyle = stepColors[i]; //if currentStep is achieved -> set color green.
@@ -168,13 +169,6 @@ export class DrawCanvasService {
                     ctx.fill();
                     currentStepNr++;
                     i++;
-                    console.log(stepColors);
-
-                }
-                else {
-                    /*ctx.fillStyle = step.style;
-                    ctx.fillRect(step.x, step.y, step.w, step.h);
-                    ctx.fill();*/
                 }
                 i++;
             })
