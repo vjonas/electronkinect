@@ -31,7 +31,7 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
     console.log("closed method of browserwindow");
-    child.kill();
+    if(child!=null)child.kill();
   })
 }
 
@@ -52,7 +52,7 @@ function createMenu() {
           },
           {
             label: 'quit', click: () => { 
-              child.kill();
+              if(child!=null)child.kill();
               app.quit(); }
           }
         ]
@@ -95,7 +95,7 @@ app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
     console.log("gesloten via kruisje");
-    child.kill();  
+    if(child!=null)child.kill();  
   if (process.platform !== 'darwin') {
     app.quit()
   }
@@ -105,7 +105,7 @@ app.on('before-quit',()=>
 {
   
   console.log("app.exit");
-  child.kill();
+  if(child!=null)child.kill();
 })
 
 app.on('activate', () => {

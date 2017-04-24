@@ -2,7 +2,11 @@ import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/cor
 import { Kinect2 } from 'kinect2';
 import { KinectService } from '../../services/kinect.service';
 import { DrawCanvasService } from '../../services/drawcanvas.service';
+import { DatabaseService } from '../../services/database.service';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 declare var electron: any;
+import { User } from '../../models/user.model';
+
 
 @Component({
     selector: 'home',
@@ -14,9 +18,21 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     private bodyFrameCanvas;
     private colorFrameCanvas;
     private excerciseCanvas;
+    private item: FirebaseObjectObservable<any>;
+    private items: any;
+    userdata:User=User.createEmptyUser();
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService) {
+    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService:DatabaseService) {
         this.ipc = electron.ipcRenderer;
+        this.dbService.getAll().subscribe(res=>
+        {
+            this.items=res;
+            console.log(res);
+        });
+        this.dbService.getUser().subscribe(res=>{
+            this.userdata=res;
+            console.log(res);
+        });
     }
 
     ngOnInit() {
@@ -35,8 +51,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
         console.log(changes);
     }
 
-    public drawExcercise()
-    {
+    public drawExcercise() {
         console.log("drawEX clicked");
         this.drawcanvasService.drawExcercise(this.excerciseCanvas);
 
