@@ -6,7 +6,7 @@ import { DatabaseService } from '../../services/database.service';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 declare var electron: any;
 import { User } from '../../models/user.model';
-
+import { Subject } from 'rxjs/Subject';
 
 @Component({
     selector: 'home',
@@ -20,17 +20,28 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     private excerciseCanvas;
     private item: FirebaseObjectObservable<any>;
     private items: any;
-    userdata:User=User.createEmptyUser();
+    userdata: User = User.createEmptyUser();
+    private oefeningNr = new Subject();
+    private oefeningObservable;
+    private currentExcercise;
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService:DatabaseService) {
+    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService) {
         this.ipc = electron.ipcRenderer;
-        this.dbService.getAll().subscribe(res=>
-        {
-            this.items=res;
+        this.oefeningObservable = af.database.list('oefeningen', //gets the right excercises from the database. the id of the ex is defined by the oefeningNr variable
+            {
+                query: {
+                    orderByChild: 'oefeningid',
+                    equalTo: this.oefeningNr
+                }
+            });
+            this.oefeningObservable.subscribe(res=>this.currentExcercise=res);
+        this.dbService.getUser().subscribe(res => {
+            //this.items=res;
             console.log(res);
         });
-        this.dbService.getUser().subscribe(res=>{
-            this.userdata=res;
+
+        this.dbService.getExcercisesOfUser().subscribe(res => {
+            this.items = res;
             console.log(res);
         });
     }
@@ -54,7 +65,9 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     public drawExcercise() {
         console.log("drawEX clicked");
         this.drawcanvasService.drawExcercise(this.excerciseCanvas);
+    }
 
-
+    public getExcercise(nr: number) {
+        this.oefeningNr.next(nr);
     }
 }
