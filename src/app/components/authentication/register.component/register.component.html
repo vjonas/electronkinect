@@ -1,6 +1,26 @@
 <h1>Register</h1>
 <form name="form" #formData='ngForm' (ngSubmit)="onSubmit(formData)" novalidate>
   <p *ngIf="error.message != ''" id="errMsg">{{error.message}}</p>
+  
+  <div class="form-group">
+    <input type="text" placeholder="Name" class="form-control" name="surname" (ngModel)="surname" required />
+  </div>
+
+  <div class="form-group">
+    <input type="text" placeholder="Last Name" class="form-control" name="lastname" (ngModel)="lastname" required />
+  </div>
+
+  <div class="form-group">
+    <input type="number" placeholder="Weight" class="form-control" name="weight" (ngModel)="weight" required />
+  </div>
+
+  <div class="form-group">
+    <input type="number" placeholder="Length" class="form-control" name="length" (ngModel)="length" required />
+  </div>
+
+  <div class="form-group">
+    <input type="date" placeholder="Birthdate" class="form-control" name="birthdate" (ngModel)="birthdate" required />
+  </div>
 
   <div class="form-group">
     <input type="email" placeholder="Email" class="form-control" name="email" (ngModel)="email" required />
@@ -14,6 +34,7 @@
   <div class="form-group">
     <input type="password" placeholder="Repeat your password" class="form-control" name="repeatPassword" required validateEqual="password"/>
   </div>
+
 
   <div class="form-group" id="buttons">
         <button type="submit" id=registerbutton [disabled]="!formData.valid" class="btn btn-success">Register</button>

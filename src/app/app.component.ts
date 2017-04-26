@@ -1,17 +1,30 @@
 import { Component } from '@angular/core';
 import { ipcRenderer } from 'electron';
+import { AngularFire } from 'angularfire2';
+import { Router } from '@angular/router';
 
 
-@Component({ 
+@Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   electron: any;
+  name: any;
 
-  title = 'app works!';
-  constructor(){
- 
+  constructor(public af: AngularFire, private router: Router) {
+    this.af.auth.subscribe(
+      auth => {
+        if (auth) { this.name = auth; }
+      }
+    )
+  }
+
+  logout() {
+    this.af.auth.logout();
+    this.name = null;
+    console.log("logged out");
+    this.router.navigateByUrl('/login');
   }
 }

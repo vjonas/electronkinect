@@ -27,23 +27,29 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService) {
         this.ipc = electron.ipcRenderer;
-        this.oefeningObservable = af.database.list('oefeningen', //gets the right excercises from the database. the id of the ex is defined by the oefeningNr variable
+        this.oefeningObservable = af.database.list('excercises', //gets the right excercises from the database. the id of the ex is defined by the oefeningNr variable
             {
                 query: {
                     orderByChild: 'oefeningid',
                     equalTo: this.oefeningNr
                 }
             });
-            this.oefeningObservable.subscribe(res=>this.currentExcercise=res);
-        this.dbService.getUser().subscribe(res => {
+        this.oefeningObservable.subscribe(res => this.currentExcercise = res);
+        //gets grootte of a user
+/*        this.dbService.getUserSize().subscribe(res => {
             //this.items=res;
             console.log(res);
-        });
-
-        this.dbService.getExcercisesOfUser().subscribe(res => {
-            this.items = res;
+        });*/
+        //get user trajects
+        this.dbService.getUserTrajects().subscribe(res => {
+            //this.items=res;
+            console.log("Trajecten");
             console.log(res);
         });
+        /*this.dbService.getExcercisesOfUser().subscribe(res => {
+            this.items = res;
+            console.log(res);
+        });*/
     }
 
     ngOnInit() {

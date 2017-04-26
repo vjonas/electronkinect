@@ -31,7 +31,7 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
     console.log("closed method of browserwindow");
-    if(child!=null)child.kill();
+    if (child != null) child.kill();
   })
 }
 
@@ -51,10 +51,17 @@ function createMenu() {
             type: 'separator'
           },
           {
-            label: 'quit', click: () => { 
-              if(child!=null)child.kill();
-              app.quit(); }
-          }
+            label: 'quit', click: () => {
+              if (child != null) child.kill();
+              app.quit();
+            }
+          }/*,
+          {
+            type: 'separator'
+          },
+          {
+            label: 'register', click: () => { startKinect() }
+          }*/
         ]
       }
     ]
@@ -67,15 +74,14 @@ function startKinect() {
   //var 
   child = spawn('node', ['worker.js'], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
   child.on('message', function (frame) {
-    if (JSON.stringify(frame).substr(1, 1)==("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
-      win.webContents.send('bodyFrame', frame.substr(1,frame.size)); //substring om de header (0 of 1) weg te krijgen
+    if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
+      win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen
     }
-    else if (frame.substr(0, 1)==("1")) {
-      win.webContents.send('colorFrame', frame.substr(1,frame.size)) //substring om de header (0 of 1) weg te krijgen
+    else if (frame.substr(0, 1) == ("1")) {
+      win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen
     }
-    else
-    {
-      console.log("algemeen childprocess log: "+frame);
+    else {
+      console.log("algemeen childprocess log: " + frame);
     }
   })
 }
@@ -94,18 +100,17 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-    console.log("gesloten via kruisje");
-    if(child!=null)child.kill();  
+  console.log("gesloten via kruisje");
+  if (child != null) child.kill();
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
-app.on('before-quit',()=>
-{
-  
+app.on('before-quit', () => {
+
   console.log("app.exit");
-  if(child!=null)child.kill();
+  if (child != null) child.kill();
 })
 
 app.on('activate', () => {
