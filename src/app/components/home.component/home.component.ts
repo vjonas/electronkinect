@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
             });
         this.oefeningObservable.subscribe(res => this.currentExcercise = res);
         //gets grootte of a user
-/*        this.dbService.getUserSize().subscribe(res => {
-            //this.items=res;
-            console.log(res);
-        });*/
+        /*        this.dbService.getUserSize().subscribe(res => {
+                    //this.items=res;
+                    console.log(res);
+                });*/
         //get user trajects
         this.dbService.getUserTrajects().subscribe(res => {
             //this.items=res;

@@ -134,11 +134,9 @@ export class DrawCanvasService {
         steps.positions.forEach((step) => {
             if (counter == 0) {
                 stepColors.push("#E88C00");
-                //ctx.fillStyle="#E88C00";
             }
             else {
                 stepColors.push("#FFFFFF");
-                //ctx.fillStyle = "#FFFFFF";
             }
             //the first step begins with color orange, the next step(s) are white. when the first step is done it becomes green and the next step will become orange.
             ctx.fillStyle = stepColors[counter];
@@ -146,7 +144,7 @@ export class DrawCanvasService {
             ctx.fill();
             counter++;
         })
-        ///check for collision joint 11 and green thingy with 30 FPS
+        ///check for collision with a kinect-joint and a point in the excercise with 30 FPS
         setInterval(function () {
             var i = 0;
             steps.positions.forEach((step, index) => {
@@ -156,7 +154,6 @@ export class DrawCanvasService {
                     (parseFloat(self.joints[step.jointtype].depthY) * ctx.canvas.height > step.y &&
                         parseFloat(self.joints[step.jointtype].depthY) * ctx.canvas.height < step.y + step.h &&
                         step.stepnr == currentStepNr)) {
-
                     stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
                     if (stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
                         stepColors[i + 1] = "#E88C00";

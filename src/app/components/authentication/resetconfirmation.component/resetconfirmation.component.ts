@@ -9,15 +9,15 @@ import { routerTransition } from '../../../animations/router.animations';
     templateUrl: './resetconfirmation.component.html',
     styleUrls: ["./resetconfirmation.component.css"],
     animations: [routerTransition()],
-    host: {'[@routerTransition]':''}
+    host: { '[@routerTransition]': '' }
 })
 
-export class ResetConfirmationComponent{
-    constructor(private router: Router){
+export class ResetConfirmationComponent {
+    constructor(private router: Router) {
 
     }
 
-    okButtonClicked(){
+    okButtonClicked() {
         this.router.navigate(['/login']);
     }
 }

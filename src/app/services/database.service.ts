@@ -30,12 +30,7 @@ export class DatabaseService {
     }
 
     getUserTrajects(): Observable<any> {
-        return this.af.database.object('/users/0/traject/0'); //werkt
-        /*var ref = new database("https://dinosaur-facts.firebaseio.com/dinosaurs");
-        ref.orderByChild("height").on("child_added", function (snapshot) {
-            console.log(snapshot.key() + " was " + snapshot.val().height + " meters tall");
-        });*/
-        //this.af.database.object()
+        return this.af.database.object('/users/0/traject/0'); //werkt        
     }
 
     getExcercisesOfUser(): Observable<any> {
@@ -47,34 +42,25 @@ export class DatabaseService {
         });
     }
 
-    //returns all details of an excercise
-    /*    getExcerciseDetails(): Observable<any> {
-            var returnvalue;
-            this.queryObservable.subscribe(res=>
-            {
-                returnvalue= res;
-            })
-            return returnvalue;
-        }*/
 
     //sets the excerciseNr to fetch from getExcerciseDetails
     public setOefening(excerciseNr: number) {
         this.oefening.next(excerciseNr);
     }
 
-    public createUser(userData: any,uid:string) {
-        console.log("in service");console.log(userData);
+    public createUser(userData: any, uid: string) {
+        console.log("in service"); console.log(userData);
         console.log(userData.value.email);
         console.log(userData.value.lastname);
         this.af.database.list('/users').push({
-            uid:uid,
+            uid: uid,
             name: userData.value.surname,
             lastname: userData.value.lastname,
             email: userData.value.email,
             weight: userData.value.weight,
             length: userData.value.length,
             birthdate: userData.value.birthdate,
-            traject:[]
+            traject: []
         })
     }
 
