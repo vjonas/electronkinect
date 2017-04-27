@@ -3,6 +3,7 @@
 //var ipc = require('ipc');
 const { app, BrowserWindow, Menu } = require('electron');
 const { spawn, exec, fork } = require('child_process')
+const fs = require('fs');
 
 //var exec = require('child_process').exec;
 //const { ipcRenderer } = window.require('electron');
@@ -51,6 +52,12 @@ function createMenu() {
             type: 'separator'
           },
           {
+            label: 'mock kinect', click: () => { startKinect(true) }
+          },
+          {
+            type: 'separator'
+          },
+          {
             label: 'quit', click: () => {
               if (child != null) child.kill();
               app.quit();
@@ -69,16 +76,21 @@ function createMenu() {
   Menu.setApplicationMenu(menu);
 }
 
-function startKinect() {
-  //spawn a child process to receive the kinect data
-  //var 
+function startKinect(mock) {
+  var setBeginningOfJson = true;
   child = spawn('node', ['worker.js'], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
   child.on('message', function (frame) {
     if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
-      win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen
+      if (child != null) win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen
+      if(setBeginningOfJson)
+      {
+        fs.appendFile('./src/assets/mockdata2.json',  "[");
+        setBeginningOfJson=false;
+      }
+      if(mock)fs.appendFile('./src/assets/mockdata2.json', frame.substr(1, frame.size) + ",");
     }
     else if (frame.substr(0, 1) == ("1")) {
-      win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen
+      if (child != null) win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen
     }
     else {
       console.log("algemeen childprocess log: " + frame);

@@ -40,6 +40,7 @@ export const firebaseConfig = {
 }
 
 @NgModule({
+  //component declarations
   declarations: [
     AppComponent, HomeComponent, LoginComponent, RegisterComponent, ResetPasswordComponent
   ],

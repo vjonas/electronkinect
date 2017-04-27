@@ -18,8 +18,10 @@ export class DrawCanvasService {
         const bodyFrameCtx = bodyFrameCanvas.getContext('2d');
         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
 
-        this.kinectService.getBodyFrames().subscribe(bodyFrame => {
+        //set mockdata true
+        this.kinectService.getBodyFrames(true).subscribe(bodyFrame => {
             bodyFrame = JSON.parse(bodyFrame);
+            console.log("drawcanvasService");
             //main rendering process
             bodyFrameCtx.clearRect(0, 0, bodyFrameCanvas.width, bodyFrameCanvas.height);
             var index = 0;

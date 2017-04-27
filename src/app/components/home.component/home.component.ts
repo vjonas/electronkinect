@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
         this.bodyFrameCanvas = <HTMLCanvasElement>document.getElementById('bodyframecanvas');
         this.colorFrameCanvas = <HTMLCanvasElement>document.getElementById('colorframecanvas');
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('excercisecanvas');
-        this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas);//draw the bodyframe (skeleton)        
+        //this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas);//draw the bodyframe (skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
     }
 
@@ -71,6 +71,8 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     public drawExcercise() {
         console.log("drawEX clicked");
         this.drawcanvasService.drawExcercise(this.excerciseCanvas);
+        this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas);//draw the bodyframe (skeleton)        
+        
     }
 
     public getExcercise(nr: number) {

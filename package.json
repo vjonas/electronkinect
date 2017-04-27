@@ -1,5 +1,6 @@
 {
   "name": "angular-electron",
+  "releaseName": "angular-electron",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -10,7 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-electron": "ng build --base-href . && copy src\\electron\\* dist",
-    "electron": "npm run build-electron && electron dist"
+    "electron": "npm run build-electron && electron dist",
+    "pack": "build --dir",
+    "dist": "build"
   },
   "private": true,
   "dependencies": {
@@ -50,5 +53,14 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
-  }
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    }
+  },
+  "main": "src/electron/electron.js",
+  "author": "joint-effor-crew",
+  "description":"getting your shit together"
 }
