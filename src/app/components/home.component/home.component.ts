@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     private excerciseCanvas;
     private item: FirebaseObjectObservable<any>;
     private items: any;
-    userdata: User = User.createEmptyUser();
+    private userdata: User;
     private oefeningNr = new Subject();
     private excerciseObservable;
     private currentExcercise;
@@ -28,14 +28,6 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth) {
         this.ipc = electron.ipcRenderer;
-        this.excerciseObservable = af.database.list('excercises', //gets the right excercises from the database. the id of the ex is defined by the oefeningNr variable
-            {
-                query: {
-                    orderByChild: 'oefeningid',
-                    equalTo: this.oefeningNr
-                }
-            });
-        this.excerciseObservable.subscribe(res => this.currentExcercise = res);
     }
 
     ngOnInit() {
@@ -49,11 +41,9 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
         //get all the data of the currentUser
-        this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;       
-        this.dbService.getExcercisesOfUser(this.userUid).subscribe(res => {
-            //this.items=res;
-            console.log("Trajecten");
-            console.log(res);
+        this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
+        this.dbService.getUserdataById(this.userUid).subscribe((userDate) => {
+            this.userdata = userDate[0]; //returns array of users, which contains 1 user
         });
     }
 
@@ -62,7 +52,6 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     }
 
     public drawExcercise() {
-        console.log("drawEX clicked");
         this.drawcanvasService.drawExcercise(this.excerciseCanvas);
     }
 

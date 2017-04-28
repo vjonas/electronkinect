@@ -2,19 +2,20 @@ import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AngularFireDatabase } from 'angularfire2';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { User } from "../models/user.model";
 
 @Injectable()
 export class DatabaseService {
     private items2: Subject<any> = new Subject<any>();
     items: FirebaseListObservable<any[]>;
     private oefening = new Subject();
-    
+
     constructor(private af: AngularFire) {
         this.items = af.database.list('items');
     }
 
-    getExcercisesOfUser(uid:string): Observable<any> {
-        console.log("dbservice uid:"+uid);
+    getUserdataById(uid: string): Observable<User[]> {
+        console.log("dbservice uid:" + uid);
         return this.af.database.list('users', {
             query: {
                 orderByChild: 'uid',
@@ -23,6 +24,14 @@ export class DatabaseService {
         });
     }
 
+    getExcerciseById(excercise: number): Observable<any> {
+        return this.af.database.list('excercises', {
+            query: {
+                orderByChild: 'excerciseid',
+                equalTo: excercise
+            }
+        });
+    }
 
     //sets the excerciseNr to fetch from getExcerciseDetails
     public setOefening(excerciseNr: number) {
@@ -44,5 +53,4 @@ export class DatabaseService {
             traject: []
         })
     }
-
 }

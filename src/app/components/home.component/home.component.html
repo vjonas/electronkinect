@@ -1,14 +1,19 @@
-<h1>Kinect Home Component</h1>
-<button (click)="playMockData(1)">Play linkerhand</button>
-<button (click)="playMockData(2)">Play rechterhand</button>
+<h1>Start your excerciset</h1>
+<button class="btn" (click)="playMockData(1)">Play linkerhand</button>
+<button class="btn" (click)="playMockData(2)">Play rechterhand</button>
 
-<select id="cboOefening"> playMock
+<!--<select id="cboOefening"> playMock
     <option value="1">Oefening1</option>
     <option value="2">Oefening2</option>
     <option value="3">Oefening3</option>
-</select>
+</select>-->
+
 <button (click)="getExcercise(1)">getEx1</button>
-<p> gebruiker: {{ userdata.username }} </p>
+<div>
+    <select>
+        <option *ngFor="let traject of userdata?.traject" value="{{traject.id}}">{{traject.name}}</option>
+    </select>
+</div>
 
 <button id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Oefening1</button>
 
