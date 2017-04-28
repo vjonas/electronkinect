@@ -1,6 +1,8 @@
 <h1>Kinect Home Component</h1>
+<button (click)="playMockData(1)">Play linkerhand</button>
+<button (click)="playMockData(2)">Play rechterhand</button>
 
-<select id ="cboOefening"> 
+<select id="cboOefening"> playMock
     <option value="1">Oefening1</option>
     <option value="2">Oefening2</option>
     <option value="3">Oefening3</option>
@@ -10,6 +12,6 @@
 
 <button id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Oefening1</button>
 
-<canvas id="colorframecanvas" width="960" height="540" style="position:absolute" ></canvas>
-<canvas id="bodyframecanvas" width="960" height="540" style="position:absolute" ></canvas>
-<canvas id="excercisecanvas" width="960" height="540" style="position:absolute" ></canvas>
+<canvas id="colorframecanvas" width="960" height="540" style="position:absolute"></canvas>
+<canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
+<canvas id="excercisecanvas" width="960" height="540" style="position:absolute"></canvas>

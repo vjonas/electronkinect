@@ -8,36 +8,17 @@ export class DatabaseService {
     private items2: Subject<any> = new Subject<any>();
     items: FirebaseListObservable<any[]>;
     private oefening = new Subject();
-    private queryObservable;
-
+    
     constructor(private af: AngularFire) {
         this.items = af.database.list('items');
-        this.queryObservable = af.database.list('oefeningen',
-            {
-                query: {
-                    orderByChild: 'oefeningid',
-                    equalTo: this.oefening
-                }
-            })
     }
 
-    getAll(): Observable<any> {
-        return this.af.database.list('/users/traject');
-    }
-
-    getUserSize(): Observable<any> {
-        return this.af.database.object('users/grootte');
-    }
-
-    getUserTrajects(): Observable<any> {
-        return this.af.database.object('/users/0/traject/0'); //werkt        
-    }
-
-    getExcercisesOfUser(): Observable<any> {
+    getExcercisesOfUser(uid:string): Observable<any> {
+        console.log("dbservice uid:"+uid);
         return this.af.database.list('users', {
             query: {
-                orderByChild: 'name',
-                equalTo: 'jonas'
+                orderByChild: 'uid',
+                equalTo: uid
             }
         });
     }

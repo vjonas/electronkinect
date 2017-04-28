@@ -3,7 +3,7 @@ import { Kinect2 } from 'kinect2';
 import { KinectService } from '../../services/kinect.service';
 import { DrawCanvasService } from '../../services/drawcanvas.service';
 import { DatabaseService } from '../../services/database.service';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, AngularFireAuth } from 'angularfire2';
 declare var electron: any;
 import { User } from '../../models/user.model';
 import { Subject } from 'rxjs/Subject';
@@ -22,34 +22,20 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     private items: any;
     userdata: User = User.createEmptyUser();
     private oefeningNr = new Subject();
-    private oefeningObservable;
+    private excerciseObservable;
     private currentExcercise;
+    private userUid: string;
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService) {
+    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth) {
         this.ipc = electron.ipcRenderer;
-        this.oefeningObservable = af.database.list('excercises', //gets the right excercises from the database. the id of the ex is defined by the oefeningNr variable
+        this.excerciseObservable = af.database.list('excercises', //gets the right excercises from the database. the id of the ex is defined by the oefeningNr variable
             {
                 query: {
                     orderByChild: 'oefeningid',
                     equalTo: this.oefeningNr
                 }
             });
-        this.oefeningObservable.subscribe(res => this.currentExcercise = res);
-        //gets grootte of a user
-        /*        this.dbService.getUserSize().subscribe(res => {
-                    //this.items=res;
-                    console.log(res);
-                });*/
-        //get user trajects
-        this.dbService.getUserTrajects().subscribe(res => {
-            //this.items=res;
-            console.log("Trajecten");
-            console.log(res);
-        });
-        /*this.dbService.getExcercisesOfUser().subscribe(res => {
-            this.items = res;
-            console.log(res);
-        });*/
+        this.excerciseObservable.subscribe(res => this.currentExcercise = res);
     }
 
     ngOnInit() {
@@ -60,8 +46,15 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
         this.bodyFrameCanvas = <HTMLCanvasElement>document.getElementById('bodyframecanvas');
         this.colorFrameCanvas = <HTMLCanvasElement>document.getElementById('colorframecanvas');
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('excercisecanvas');
-        //this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas);//draw the bodyframe (skeleton)        
+        this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
+        //get all the data of the currentUser
+        this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;       
+        this.dbService.getExcercisesOfUser(this.userUid).subscribe(res => {
+            //this.items=res;
+            console.log("Trajecten");
+            console.log(res);
+        });
     }
 
     ngOnChanges(changes) {
@@ -71,11 +64,23 @@ export class HomeComponent implements OnInit, OnChanges, AfterViewInit {
     public drawExcercise() {
         console.log("drawEX clicked");
         this.drawcanvasService.drawExcercise(this.excerciseCanvas);
-        this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas);//draw the bodyframe (skeleton)        
-        
     }
 
-    public getExcercise(nr: number) {
-        this.oefeningNr.next(nr);
+    public playMockData(mockExcerciseNr: number) {
+        switch (mockExcerciseNr) {
+            case 1: {
+                this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "linkerhand-op-en-neer");//draw the bodyframe with mock excercise 1  
+                return;
+            }
+            case 2:
+                {
+                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "rechterhand-op-en-neer");
+                    return;
+                }
+        }
     }
+
+    /*public getExcercise(nr: number) {
+        this.oefeningNr.next(nr);
+    }*/
 }

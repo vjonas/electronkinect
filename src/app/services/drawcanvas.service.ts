@@ -13,15 +13,17 @@ export class DrawCanvasService {
     constructor(private kinectService: KinectService) {
     }
 
-    public drawBodyFrame(bodyFrameCanvas: any) {
+    /**
+         * param2: boolean to set when playing mockdata
+         * param3: filename without .json that needs to be played
+         */
+    public drawBodyFrame(bodyFrameCanvas: any, mock: boolean, fileName: string) {
         const self = this;
         const bodyFrameCtx = bodyFrameCanvas.getContext('2d');
         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
-
-        //set mockdata true
-        this.kinectService.getBodyFrames(true).subscribe(bodyFrame => {
+        this.kinectService.getBodyFrames(mock, fileName).subscribe(bodyFrame => {
             bodyFrame = JSON.parse(bodyFrame);
-            console.log("drawcanvasService");
+            console.log(bodyFrame);
             //main rendering process
             bodyFrameCtx.clearRect(0, 0, bodyFrameCanvas.width, bodyFrameCanvas.height);
             var index = 0;

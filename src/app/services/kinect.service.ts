@@ -13,7 +13,9 @@ export class KinectService {
     private colorFrame: Subject<any> = new Subject<any>();
     mockData: boolean = false;
     private mockArray: any;
-    
+    private counter: number = 0;
+    private array: Array<any> = null;
+
     constructor(private _http: Http) {
         const self = this;
         this.ipc = electron.ipcRenderer;
@@ -27,9 +29,9 @@ export class KinectService {
         })
     }
 
-    getBodyFrames(mock: boolean): Observable<any> {
+    getBodyFrames(mock: boolean, fileName: string): Observable<any> {
         if (mock) {
-            this.streamMockData();
+            this.streamMockData(fileName);
             return this.bodyFrameMock.asObservable();
         }
         else
@@ -40,32 +42,25 @@ export class KinectService {
         return this.colorFrame.asObservable();
     }
 
-    public setMockData(mockdata: boolean) {
-        this.mockData = mockdata;
-    }
 
-    /**
-     * function to stream mockdata 
-     */
-    private streamMockData() {
-        let interval: any;
-        let counter: number = 0;
+    private streamMockData(fileName: string) {
         const self = this;
-        console.log("getting the mockdata from json with http call");
-        this._http.get('assets/mockdata2.json').map(res => {
-            var array = JSON.parse(JSON.stringify(res.json())).forEach(element => {
-                 this.bodyFrameMock.next(JSON.stringify(element));
-            });;
-            interval = setInterval(function (array,counter) {
-                console.log(counter);
-                if (counter <= array.length)
-                    console.log(array);//bodyFrameMock.next(mockArray.get(counter));
-                else
-                    clearInterval(array);
-                counter++;
-            }, 1000 / 60);        
-        }).subscribe(res=>console.log("in de subscribe functie"+res));
+        var interval;
+        console.log(fileName);
+        this._http.get('assets/' + fileName + '.json').map(res => {
+            this.array = JSON.parse(JSON.stringify(res.json()));
+            interval = setInterval(function () {
+                console.log(self.counter);
+                if (self.counter <= self.array.length) {
+                    console.log(self.array);
+                    self.bodyFrameMock.next(JSON.stringify(self.array[self.counter]));
+                }
+                else {
+                    clearInterval(interval);
+                    self.counter = 0;
+                }
+                self.counter++;
+            }, 1000 / 30);
+        }).subscribe(res => console.log("in de subscribe functie"));
     }
 }
-
-/**/

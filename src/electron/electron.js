@@ -52,7 +52,7 @@ function createMenu() {
             type: 'separator'
           },
           {
-            label: 'mock kinect', click: () => { startKinect(true) }
+            label: 'record kinect mockdata', click: () => { startKinect(true) }
           },
           {
             type: 'separator'
@@ -62,15 +62,20 @@ function createMenu() {
               if (child != null) child.kill();
               app.quit();
             }
-          }/*,
+          }
+        ]
+      }/*,
+      {
+        label:"mock",
+        submenu:[
           {
-            type: 'separator'
+            label:"linkerhand"
           },
           {
-            label: 'register', click: () => { startKinect() }
-          }*/
+            label:"rechterhand"
+          }
         ]
-      }
+      }*/
     ]
   const menu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(menu);
