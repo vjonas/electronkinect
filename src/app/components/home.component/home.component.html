@@ -8,14 +8,22 @@
     <option value="3">Oefening3</option>
 </select>-->
 
-<button (click)="getExcercise(1)">getEx1</button>
+<button (click)="loadExcercise(1)">getEx1</button>
+<!--combobox to display all the trajects of the user-->
 <div>
-    <select>
+    <select (change)="onChangeTraject($event.target.value)">
         <option *ngFor="let traject of userdata?.traject" value="{{traject.id}}">{{traject.name}}</option>
     </select>
 </div>
+<!--combobox to display all the excercises in the selected traject-->
+<div>
+    <select (change)="onChangeExcercise($event.target.value)">
+        <option *ngFor="let excercise of excercisesOfCurrentTraject" value="{{excercise?.excerciseid}}">{{excercise?.name}}</option>
+    </select>
+</div>
+<div>{{currentExcercise?.name}} </div>
 
-<button id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Oefening1</button>
+<button *ngIf="currentExcercise != null" id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Start Excercise</button>
 
 <canvas id="colorframecanvas" width="960" height="540" style="position:absolute"></canvas>
 <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>

@@ -3,6 +3,8 @@ import { AngularFire, FirebaseListObservable, AngularFireDatabase } from 'angula
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { User } from "../models/user.model";
+import { Excercise } from "app/models/excercise.model";
+import { FullExcercise } from "app/models/full.excercise.model";
 
 @Injectable()
 export class DatabaseService {
@@ -24,11 +26,11 @@ export class DatabaseService {
         });
     }
 
-    getExcerciseById(excercise: number): Observable<any> {
+    getExcerciseById(excercise: string): Observable<FullExcercise[]> {
         return this.af.database.list('excercises', {
             query: {
                 orderByChild: 'excerciseid',
-                equalTo: excercise
+                equalTo: Number(excercise)
             }
         });
     }

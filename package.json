@@ -13,7 +13,8 @@
     "build-electron": "ng build --base-href . && copy src\\electron\\* dist",
     "electron": "npm run build-electron && electron dist",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build",
+    "postinstall": "install-app-deps"
   },
   "private": true,
   "dependencies": {

@@ -1,12 +1,7 @@
-// src/electron/electron.js
-//IPC inter process communication works like a message broker and handles the messages send from render-processes.
-//var ipc = require('ipc');
 const { app, BrowserWindow, Menu } = require('electron');
 const { spawn, exec, fork } = require('child_process')
 const fs = require('fs');
 
-//var exec = require('child_process').exec;
-//const { ipcRenderer } = window.require('electron');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -15,11 +10,11 @@ let cmd;
 let child;
 
 function createWindow() {
-  // Create the browser window.
   win = new BrowserWindow({ width: 1200, height: 720 })
 
   // and load the index.html of the app.
-  win.loadURL(`file://${__dirname}/index.html`)
+  //win.loadURL(`file://${__dirname}/index.html`)
+  win.loadURL(`file:///${__dirname}/index.html`);
   win.maximize();
 
   // Open the DevTools.
@@ -64,18 +59,7 @@ function createMenu() {
             }
           }
         ]
-      }/*,
-      {
-        label:"mock",
-        submenu:[
-          {
-            label:"linkerhand"
-          },
-          {
-            label:"rechterhand"
-          }
-        ]
-      }*/
+      }
     ]
   const menu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(menu);
@@ -87,12 +71,11 @@ function startKinect(mock) {
   child.on('message', function (frame) {
     if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
       if (child != null) win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen
-      if(setBeginningOfJson)
-      {
-        fs.appendFile('./src/assets/mockdata2.json',  "[");
-        setBeginningOfJson=false;
+      if (setBeginningOfJson) {
+        fs.appendFile('./src/assets/mockdata2.json', "[");
+        setBeginningOfJson = false;
       }
-      if(mock)fs.appendFile('./src/assets/mockdata2.json', frame.substr(1, frame.size) + ",");
+      if (mock) fs.appendFile('./src/assets/mockdata2.json', frame.substr(1, frame.size) + ",");
     }
     else if (frame.substr(0, 1) == ("1")) {
       if (child != null) win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen

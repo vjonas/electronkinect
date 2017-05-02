@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { KinectService } from './kinect.service';
+import { FullExcercise } from "app/models/full.excercise.model";
 
 @Injectable()
 export class DrawCanvasService {
@@ -9,6 +10,7 @@ export class DrawCanvasService {
     private HANDLASSOCOLOR = "blue";
     private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
     private joints = null; //array with all recognised joints (25)
+    private intervalOfCurrentExcercise = null;
 
     constructor(private kinectService: KinectService) {
     }
@@ -96,46 +98,20 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 1;
     }
 
-    public drawExcercise(excerciseCanvas: any) {
+    public drawExcercise(excerciseCanvas: any, newExcercise: FullExcercise) {
         const self = this;
         const ctx = excerciseCanvas.getContext('2d');
         var counter: number = 0;
         var currentStepNr: number = 0;
         var stepColors: string[] = new Array();
-        const excercise = `{
-    "name":"exrightshoulder",
-    "positions":[
-        {
-            "stepnr":0,
-            "x":520,
-            "y":120,
-            "w":40,
-            "h":40,
-            "style":"#E88C00",
-            "jointtype":11
-        },
-        {
-            "stepnr":1,
-            "x":420,
-            "y":90,
-            "w":40,
-            "h":150,
-            "style":"#FFFFFF",
-            "jointtype":21
-        },{
-            "stepnr":2,
-            "x":420,
-            "y":240,
-            "w":40,
-            "h":40,
-            "style":"#FFFFFF",
-            "jointtype":21
+        const steps = newExcercise.steps;
+        //clear the current excercise if a new one is started
+        if (this.intervalOfCurrentExcercise != null) {
+            clearInterval(this.intervalOfCurrentExcercise);
+            ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
-        
-    ]
-}`
-        const steps = JSON.parse(excercise); //loop over every step in the excercise and define the right color
-        steps.positions.forEach((step) => {
+        //loop over every step in the excercise and define the right color
+        newExcercise.steps.forEach((step) => {
             if (counter == 0) {
                 stepColors.push("#E88C00");
             }
@@ -148,10 +124,11 @@ export class DrawCanvasService {
             ctx.fill();
             counter++;
         })
-        ///check for collision with a kinect-joint and a point in the excercise with 30 FPS
-        setInterval(function () {
+        ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
+        this.intervalOfCurrentExcercise = setInterval(function () {
+            console.log("interval");
             var i = 0;
-            steps.positions.forEach((step, index) => {
+            newExcercise.steps.forEach((step, index) => {
                 if (self.joints != null &&
                     (parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width > step.x &&
                         parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width < step.x + step.w) &&
@@ -162,7 +139,7 @@ export class DrawCanvasService {
                     if (stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
                         stepColors[i + 1] = "#E88C00";
                         ctx.fillStyle = stepColors[i + 1]; //if currentStep is achieved -> set color green.
-                        ctx.fillRect(steps.positions[index + 1].x, steps.positions[index + 1].y, steps.positions[index + 1].w, steps.positions[index + 1].h);
+                        ctx.fillRect(steps[index + 1].x, steps[index + 1].y, steps[index + 1].w, steps[index + 1].h);
                         ctx.fill();
                     } //set the color of next step to orange                     
                     ctx.fillStyle = stepColors[i]; //if currentStep is achieved -> set color green.
