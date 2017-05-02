@@ -41,7 +41,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -77,7 +77,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(237),
+        template: __webpack_require__(238),
         styles: [__webpack_require__(229)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
@@ -92,11 +92,11 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(159);
@@ -187,7 +187,7 @@ AppModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(70);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -265,7 +265,7 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'login',
-        template: __webpack_require__(238),
+        template: __webpack_require__(239),
         styles: [__webpack_require__(228)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
@@ -283,7 +283,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_database_service__ = __webpack_require__(71);
@@ -334,7 +334,7 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'register',
-        template: __webpack_require__(239),
+        template: __webpack_require__(240),
         styles: [__webpack_require__(230)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
@@ -353,7 +353,7 @@ var _a, _b, _c;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(70);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -399,7 +399,7 @@ var ResetPasswordComponent = (function () {
 ResetPasswordComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetpassword',
-        template: __webpack_require__(240),
+        template: __webpack_require__(241),
         styles: [__webpack_require__(231)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
@@ -448,29 +448,37 @@ var HomeComponent = (function () {
         this.dbService = dbService;
         this.auth = auth;
         this.oefeningNr = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__["Subject"]();
+        this.currentExcercise = null;
+        this.excercisesOfCurrentTraject = new Array();
         this.ipc = electron.ipcRenderer;
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
     HomeComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
         //declare canvas & context here after the view is loaded. else canvas = null
         this.bodyFrameCanvas = document.getElementById('bodyframecanvas');
         this.colorFrameCanvas = document.getElementById('colorframecanvas');
         this.excerciseCanvas = document.getElementById('excercisecanvas');
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, ""); //draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
-        //get all the data of the currentUser
-        this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
-        this.dbService.getUserdataById(this.userUid).subscribe(function (userDate) {
-            _this.userdata = userDate[0]; //returns array of users, which contains 1 user
+        this.loadUserData();
+    };
+    HomeComponent.prototype.onChangeTraject = function (newTrajectId) {
+        var _this = this;
+        //get all the excerciseIds in the currentTraject of the user
+        this.excercisesOfCurrentTraject.length = 0;
+        //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
+        this.userdata.traject[newTrajectId].excercises.forEach(function (ex) {
+            _this.dbService.getExcerciseById(ex.excerciseid).subscribe(function (ex2) {
+                _this.excercisesOfCurrentTraject.push(ex2[0]);
+            });
         });
     };
-    HomeComponent.prototype.ngOnChanges = function (changes) {
-        console.log(changes);
+    HomeComponent.prototype.onChangeExcercise = function (newExerciseId) {
+        this.loadExcercise(newExerciseId);
     };
     HomeComponent.prototype.drawExcercise = function () {
-        this.drawcanvasService.drawExcercise(this.excerciseCanvas);
+        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExcercise);
     };
     HomeComponent.prototype.playMockData = function (mockExcerciseNr) {
         switch (mockExcerciseNr) {
@@ -485,12 +493,34 @@ var HomeComponent = (function () {
                 }
         }
     };
+    HomeComponent.prototype.loadUserData = function () {
+        var _this = this;
+        //get all the data of the currentUser
+        this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
+        this.dbService.getUserdataById(this.userUid).subscribe(function (userDate) {
+            _this.userdata = userDate[0]; //returns array of users, which contains 1 user
+            //get all the excerciseIds in the currentTraject of the user
+            _this.userdata.traject[_this.userdata.currenttraject].excercises.forEach(function (ex) {
+                _this.dbService.getExcerciseById(ex.excerciseid).subscribe(function (ex2) {
+                    _this.excercisesOfCurrentTraject.push(ex2[0]);
+                });
+            });
+        });
+    };
+    HomeComponent.prototype.loadExcercise = function (excerciseId) {
+        var _this = this;
+        this.excercisesOfCurrentTraject.forEach(function (ex) {
+            if (ex.excerciseid == excerciseId)
+                _this.currentExcercise = ex;
+        });
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'home',
-        template: __webpack_require__(241)
+        template: __webpack_require__(242),
+        styles: [__webpack_require__(232)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */]) === "function" && _e || Object])
 ], HomeComponent);
@@ -504,10 +534,10 @@ var _a, _b, _c, _d, _e;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -570,12 +600,12 @@ var environment = {
 /***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(32)();
+exports = module.exports = __webpack_require__(30)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(97) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\n.form-control {\n  -webkit-transition: all 0.1s ease;\n  /* Safari and Chrome */\n  /* Firefox */\n  /* Opera */\n  transition: all 0.1s ease; }\n\n.form-control:focus {\n  -webkit-transform: scale(1.15);\n  /* Safari and Chrome */\n  /* Firefox */\n  /* IE 9 */\n  /* Opera */\n  transform: scale(1.15); }\n\nform {\n  width: 400px;\n  margin: auto; }\n\n.form-group {\n  width: 90%;\n  margin: auto; }\n\ninput {\n  width: 90%;\n  margin: auto;\n  margin-top: 2%;\n  height: 40px;\n  color: black;\n  font-size: 15px;\n  background: white;\n  border-radius: 5px; }\n\n#buttons {\n  margin: auto;\n  margin-top: 1%;\n  width: 80%;\n  text-align: center; }\n\nbutton {\n  width: 100%; }\n\na {\n  width: 100%;\n  height: 25px;\n  font-size: 15px;\n  margin-top: 3%; }\n\n.help-block p {\n  font-size: 12px; }\n\ninput {\n  font-family: Helvetica, sans-serif; }\n\n#loginbutton {\n  background: #3ED600;\n  font-size: 1.3em; }\n\n#resetpasswordbutton {\n  font-size: .8em;\n  text-align: right;\n  width: 98%;\n  margin: auto; }\n\n#errMsg {\n  padding: 5px;\n  width: 80%;\n  margin: auto;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  text-align: center;\n  color: orange;\n  background-color: rgba(50, 50, 50, 0.5);\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(97) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\n.form-control {\n  /* Safari and Chrome */\n  /* Firefox */\n  /* Opera */\n  transition: all 0.1s ease; }\n\n.form-control:focus {\n  -webkit-transform: scale(1.15);\n  /* Safari and Chrome */\n  /* Firefox */\n  /* IE 9 */\n  /* Opera */\n  transform: scale(1.15); }\n\nform {\n  width: 400px;\n  margin: auto; }\n\n.form-group {\n  width: 90%;\n  margin: auto; }\n\ninput {\n  width: 90%;\n  margin: auto;\n  margin-top: 2%;\n  height: 40px;\n  color: black;\n  font-size: 15px;\n  background: white;\n  border-radius: 5px; }\n\n#buttons {\n  margin: auto;\n  margin-top: 1%;\n  width: 80%;\n  text-align: center; }\n\nbutton {\n  width: 100%; }\n\na {\n  width: 100%;\n  height: 25px;\n  font-size: 15px;\n  margin-top: 3%; }\n\n.help-block p {\n  font-size: 12px; }\n\ninput {\n  font-family: Helvetica, sans-serif; }\n\n#loginbutton {\n  background: #3ED600;\n  font-size: 1.3em; }\n\n#resetpasswordbutton {\n  font-size: .8em;\n  text-align: right;\n  width: 98%;\n  margin: auto; }\n\n#errMsg {\n  padding: 5px;\n  width: 80%;\n  margin: auto;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  text-align: center;\n  color: orange;\n  background-color: rgba(50, 50, 50, 0.5);\n  border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -588,7 +618,7 @@ module.exports = module.exports.toString();
 /***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(32)();
+exports = module.exports = __webpack_require__(30)();
 // imports
 
 
@@ -606,12 +636,12 @@ module.exports = module.exports.toString();
 /***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(32)();
+exports = module.exports = __webpack_require__(30)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(97) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size: 5em;\r\n}\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n\r\n.form-control{\r\n  -webkit-transition: all 0.1s ease; /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n    transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n#registerbutton{\r\n  background:#3ED600;\r\n  font-size:1.3em; \r\n}\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(97) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size: 5em;\r\n}\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n\r\n.form-control{ /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n  transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n#registerbutton{\r\n  background:#3ED600;\r\n  font-size:1.3em; \r\n}\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -624,12 +654,12 @@ module.exports = module.exports.toString();
 /***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(32)();
+exports = module.exports = __webpack_require__(30)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(97) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\np{\r\n  text-align:center;\r\n}\r\n.form-control{\r\n  -webkit-transition: all 0.1s ease; /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n    transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#resetbutton{\r\n  background:#3ED600; \r\n  font-size:1.3em; \r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(97) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\np{\r\n  text-align:center;\r\n}\r\n.form-control{ /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n  transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#resetbutton{\r\n  background:#3ED600; \r\n  font-size:1.3em; \r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -639,42 +669,60 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 237:
-/***/ (function(module, exports) {
+/***/ 232:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<nav class=\"navbar navigation navbar-default\">\n  <div class=\"container-fluid\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\n        aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand brand\" [routerLink]=\"['/home']\">Joint Effort Client App</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <button *ngIf=\"name != null\" class=\"btn navbutton btn-danger\" (click)=\"logout()\">Logout</button>\n      </ul>\n    </div>\n    <!-- /.navbar-collapse -->\n  </div>\n  <!-- /.container-fluid -->\n</nav>\n\n<router-outlet> </router-outlet>"
+exports = module.exports = __webpack_require__(30)();
+// imports
+
+
+// module
+exports.push([module.i, "select{\r\n    color:black;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 238:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Login</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required />\r\n    <a [routerLink]=\"['/resetpassword']\" id=\"resetpasswordbutton\" class=\"btn btn-link\">Forgot password?</a>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=loginbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Login</button>\r\n  </div>\r\n  <a [routerLink]=\"['/register']\" id=\"registerButton\" class=\"btn btn-link\">No account yet? <strong>You can make one here!</strong></a>\r\n\r\n  <form>"
+module.exports = "<nav class=\"navbar navigation navbar-default\">\n  <div class=\"container-fluid\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\n        aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand brand\" [routerLink]=\"['/home']\">Joint Effort Client App</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <button *ngIf=\"name != null\" class=\"btn navbutton btn-danger\" (click)=\"logout()\">Logout</button>\n      </ul>\n    </div>\n    <!-- /.navbar-collapse -->\n  </div>\n  <!-- /.container-fluid -->\n</nav>\n\n<router-outlet> </router-outlet>"
 
 /***/ }),
 
 /***/ 239:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Register</h1>\r\n<form name=\"form\" #formData='ngForm' (ngSubmit)=\"onSubmit(formData)\" novalidate>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Name\" class=\"form-control\" name=\"surname\" (ngModel)=\"surname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Last Name\" class=\"form-control\" name=\"lastname\" (ngModel)=\"lastname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Weight\" class=\"form-control\" name=\"weight\" (ngModel)=\"weight\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Length\" class=\"form-control\" name=\"length\" (ngModel)=\"length\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"date\" placeholder=\"Birthdate\" class=\"form-control\" name=\"birthdate\" (ngModel)=\"birthdate\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required validateEqual=\"repeatPassword\"\r\n    />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Repeat your password\" class=\"form-control\" name=\"repeatPassword\" required validateEqual=\"password\"\r\n    />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button type=\"submit\" id=registerbutton [disabled]=\"!formData.valid\" class=\"btn btn-success\">Register</button>\r\n    <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go Back</a>\r\n  </div>\r\n\r\n  <form>"
+module.exports = "<h1>Login</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required />\r\n    <a [routerLink]=\"['/resetpassword']\" id=\"resetpasswordbutton\" class=\"btn btn-link\">Forgot password?</a>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=loginbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Login</button>\r\n  </div>\r\n  <a [routerLink]=\"['/register']\" id=\"registerButton\" class=\"btn btn-link\">No account yet? <strong>You can make one here!</strong></a>\r\n\r\n  <form>"
 
 /***/ }),
 
 /***/ 240:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=resetbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Send email</button>\r\n  </div>\r\n  <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go back</a>\r\n\r\n  <form>"
+module.exports = "<h1>Register</h1>\r\n<form name=\"form\" #formData='ngForm' (ngSubmit)=\"onSubmit(formData)\" novalidate>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Name\" class=\"form-control\" name=\"surname\" (ngModel)=\"surname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Last Name\" class=\"form-control\" name=\"lastname\" (ngModel)=\"lastname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Weight\" class=\"form-control\" name=\"weight\" (ngModel)=\"weight\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Length\" class=\"form-control\" name=\"length\" (ngModel)=\"length\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"date\" placeholder=\"Birthdate\" class=\"form-control\" name=\"birthdate\" (ngModel)=\"birthdate\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required validateEqual=\"repeatPassword\"\r\n    />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Repeat your password\" class=\"form-control\" name=\"repeatPassword\" required validateEqual=\"password\"\r\n    />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button type=\"submit\" id=registerbutton [disabled]=\"!formData.valid\" class=\"btn btn-success\">Register</button>\r\n    <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go Back</a>\r\n  </div>\r\n\r\n  <form>"
 
 /***/ }),
 
 /***/ 241:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Start your excerciset</h1>\r\n<button class=\"btn\" (click)=\"playMockData(1)\">Play linkerhand</button>\r\n<button class=\"btn\" (click)=\"playMockData(2)\">Play rechterhand</button>\r\n\r\n<!--<select id=\"cboOefening\"> playMock\r\n    <option value=\"1\">Oefening1</option>\r\n    <option value=\"2\">Oefening2</option>\r\n    <option value=\"3\">Oefening3</option>\r\n</select>-->\r\n\r\n<button (click)=\"getExcercise(1)\">getEx1</button>\r\n<div>\r\n    <select>\r\n        <option *ngFor=\"let traject of userdata?.traject\" value=\"{{traject.id}}\">{{traject.name}}</option>\r\n    </select>\r\n</div>\r\n\r\n<button id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Oefening1</button>\r\n\r\n<canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n<canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n<canvas id=\"excercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>"
+module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=resetbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Send email</button>\r\n  </div>\r\n  <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go back</a>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 506:
+/***/ 242:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Start your excercisesss7</h1>\r\n<button class=\"btn\" (click)=\"playMockData(1)\">Play linkerhand</button>\r\n<button class=\"btn\" (click)=\"playMockData(2)\">Play rechterhand</button>\r\n\r\n<!--<select id=\"cboOefening\"> playMock\r\n    <option value=\"1\">Oefening1</option>\r\n    <option value=\"2\">Oefening2</option>\r\n    <option value=\"3\">Oefening3</option>\r\n</select>-->\r\n\r\n<button (click)=\"loadExcercise(1)\">getEx1</button>\r\n<!--combobox to display all the trajects of the user-->\r\n<div>\r\n    <select (change)=\"onChangeTraject($event.target.value)\">\r\n        <option *ngFor=\"let traject of userdata?.traject\" value=\"{{traject.id}}\">{{traject.name}}</option>\r\n    </select>\r\n</div>\r\n<!--combobox to display all the excercises in the selected traject-->\r\n<div>\r\n    <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let excercise of excercisesOfCurrentTraject\" value=\"{{excercise?.excerciseid}}\">{{excercise?.name}}</option>\r\n    </select>\r\n</div>\r\n<div>{{currentExcercise?.name}} </div>\r\n\r\n<button *ngIf=\"currentExcercise != null\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n\r\n<canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n<canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n<canvas id=\"excercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>"
+
+/***/ }),
+
+/***/ 507:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(150);
@@ -787,7 +835,7 @@ var DatabaseService = (function () {
         return this.af.database.list('excercises', {
             query: {
                 orderByChild: 'excerciseid',
-                equalTo: excercise
+                equalTo: Number(excercise)
             }
         });
     };
@@ -862,6 +910,11 @@ var KinectService = (function () {
         //open the listener to the colorFrames
         this.ipc.on('colorFrame', function (event, colorFrame) {
             self.colorFrame.next(colorFrame);
+        });
+        //open listener for other logs
+        this.ipc.on('log', function (event, data) {
+            console.log(event);
+            console.log(data);
         });
     }
     KinectService.prototype.getBodyFrames = function (mock, fileName) {
@@ -942,6 +995,7 @@ var DrawCanvasService = (function () {
         this.HANDLASSOCOLOR = "blue";
         this.colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
         this.joints = null; //array with all recognised joints (25)
+        this.intervalOfCurrentExcercise = null;
     }
     /**
          * param2: boolean to set when playing mockdata
@@ -1023,15 +1077,20 @@ var DrawCanvasService = (function () {
         bodyFrameCtx.closePath();
         bodyFrameCtx.globalAlpha = 1;
     };
-    DrawCanvasService.prototype.drawExcercise = function (excerciseCanvas) {
+    DrawCanvasService.prototype.drawExcercise = function (excerciseCanvas, newExcercise) {
         var self = this;
         var ctx = excerciseCanvas.getContext('2d');
         var counter = 0;
         var currentStepNr = 0;
         var stepColors = new Array();
-        var excercise = "{\n    \"name\":\"exrightshoulder\",\n    \"positions\":[\n        {\n            \"stepnr\":0,\n            \"x\":520,\n            \"y\":120,\n            \"w\":40,\n            \"h\":40,\n            \"style\":\"#E88C00\",\n            \"jointtype\":11\n        },\n        {\n            \"stepnr\":1,\n            \"x\":420,\n            \"y\":90,\n            \"w\":40,\n            \"h\":150,\n            \"style\":\"#FFFFFF\",\n            \"jointtype\":21\n        },{\n            \"stepnr\":2,\n            \"x\":420,\n            \"y\":240,\n            \"w\":40,\n            \"h\":40,\n            \"style\":\"#FFFFFF\",\n            \"jointtype\":21\n        }\n        \n    ]\n}";
-        var steps = JSON.parse(excercise); //loop over every step in the excercise and define the right color
-        steps.positions.forEach(function (step) {
+        var steps = newExcercise.steps;
+        //clear the current excercise if a new one is started
+        if (this.intervalOfCurrentExcercise != null) {
+            clearInterval(this.intervalOfCurrentExcercise);
+            ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
+        }
+        //loop over every step in the excercise and define the right color
+        newExcercise.steps.forEach(function (step) {
             if (counter == 0) {
                 stepColors.push("#E88C00");
             }
@@ -1044,10 +1103,11 @@ var DrawCanvasService = (function () {
             ctx.fill();
             counter++;
         });
-        ///check for collision with a kinect-joint and a point in the excercise with 30 FPS
-        setInterval(function () {
+        ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
+        this.intervalOfCurrentExcercise = setInterval(function () {
+            console.log("interval");
             var i = 0;
-            steps.positions.forEach(function (step, index) {
+            newExcercise.steps.forEach(function (step, index) {
                 if (self.joints != null &&
                     (parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width > step.x &&
                         parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width < step.x + step.w) &&
@@ -1058,7 +1118,7 @@ var DrawCanvasService = (function () {
                     if (stepColors[i + 1] != null) {
                         stepColors[i + 1] = "#E88C00";
                         ctx.fillStyle = stepColors[i + 1]; //if currentStep is achieved -> set color green.
-                        ctx.fillRect(steps.positions[index + 1].x, steps.positions[index + 1].y, steps.positions[index + 1].w, steps.positions[index + 1].h);
+                        ctx.fillRect(steps[index + 1].x, steps[index + 1].y, steps[index + 1].w, steps[index + 1].h);
                         ctx.fill();
                     } //set the color of next step to orange                     
                     ctx.fillStyle = stepColors[i]; //if currentStep is achieved -> set color green.
@@ -1083,5 +1143,5 @@ var _a;
 
 /***/ })
 
-},[506]);
+},[507]);
 //# sourceMappingURL=main.bundle.js.map

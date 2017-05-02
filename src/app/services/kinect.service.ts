@@ -27,6 +27,11 @@ export class KinectService {
         this.ipc.on('colorFrame', function (event, colorFrame) {
             self.colorFrame.next(colorFrame);
         })
+        //open listener for other logs
+        this.ipc.on('log', function (event, data) {
+            console.log(event);
+            console.log(data);
+        })
     }
 
     getBodyFrames(mock: boolean, fileName: string): Observable<any> {

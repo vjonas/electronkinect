@@ -7,14 +7,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "electron build",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-electron": "ng build --base-href . && copy src\\electron\\* dist",
-    "electron": "npm run build-electron && electron dist",
+    "build-electron": "ng build --base-href . && copy src\\worker.js build",
+    "electron": "npm run build-electron && electron build",
     "pack": "build --dir",
     "dist": "build",
-    "postinstall": "install-app-deps"
+    "postinstall": "install-app-deps",
+    "deploy": "ng build && npm run pack"
   },
   "private": true,
   "dependencies": {
@@ -56,12 +57,13 @@
     "typescript": "~2.2.0"
   },
   "build": {
-    "appId": "your.id",
+    "appId": "com.jointeffort.kinect",
     "mac": {
-      "category": "your.app.category.type"
+      "category": "joint.effort"
+    },
+    "directories": {
+      "buildResources": "build",
+      "app": "build"
     }
-  },
-  "main": "src/electron/electron.js",
-  "author": "joint-effor-crew",
-  "description":"getting your shit together"
+  }
 }
