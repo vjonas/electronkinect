@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__(30)();
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nhtml\n{\n    -webkit-app-region:drag;\n    \n}\nbody{\n    -webkit-app-region:drag;\n}\n\nbutton{\n    -webkit-app-region: no-drag;    \n}\n\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\nhtml\r\n{\r\n    -webkit-app-region:drag;\r\n    \r\n}\r\nbody{\r\n    -webkit-app-region:drag;\r\n}\r\n\r\nbutton{\r\n    -webkit-app-region: no-drag;    \r\n}\r\n\r\n", ""]);
 
 // exports
 
