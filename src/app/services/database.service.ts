@@ -52,7 +52,8 @@ export class DatabaseService {
             weight: userData.value.weight,
             length: userData.value.length,
             birthdate: userData.value.birthdate,
-            traject: []
+            traject: [],
+            mentorId: "0"
         })
     }
 }

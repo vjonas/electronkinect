@@ -11,12 +11,13 @@ export class User {
         public length: string,
         public birthdate:string,
         public currenttraject:number,
-        public traject:Traject[]
+        public traject:Traject[],
+        public mentorId: string
     )
     { }
 
     public static createEmptyUser(): User {
-        return new User('','','','','','','',0,null);
+        return new User('','','','','','','',0,null,'');
     }
 }
 
