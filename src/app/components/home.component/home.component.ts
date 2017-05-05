@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     public drawExcercise() {
+        //KINECT OPZETTEN
         this.drawcanvasService.drawExcercise(this.excerciseCanvas,this.currentExcercise);
     }
 
