@@ -1,3 +1,20 @@
 select{
     color:black;
 }
+
+#uidModal{
+    color:black;
+}
+
+#uid{
+    font-weight: bold;
+}
+
+.wrapper{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.startButtonDiv{
+    margin-top:25px;
+}

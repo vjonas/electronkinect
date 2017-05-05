@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
+        this.loadUserData();
     }
 
     ngAfterViewInit() {
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('excercisecanvas');
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
-        this.loadUserData();
+        
     }
 
     onChangeTraject(newTrajectId) {
@@ -94,9 +95,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.dbService.getExcerciseById(ex.excerciseid).subscribe(
                     ex2 => {
                         this.excercisesOfCurrentTraject.push(ex2[0]);
+                        this.currentExcercise = this.excercisesOfCurrentTraject[0];
                     }
                 )
             });
+            
+           
         });
 
     }
