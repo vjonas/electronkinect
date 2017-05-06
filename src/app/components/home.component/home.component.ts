@@ -74,12 +74,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     public playMockData(mockExcerciseNr: number) {
         switch (mockExcerciseNr) {
             case 1: {
-                this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "linkerhand-op-en-neer");//draw the bodyframe with mock excercise 1  
+                this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "lefthand-up-and-down");//draw the bodyframe with mock excercise 1  
                 return;
             }
             case 2:
                 {
-                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "rechterhand-op-en-neer");
+                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "righthand-up-and-down");
                     return;
                 }
         }

@@ -22,7 +22,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(167);
 
 
 
@@ -40,8 +40,8 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -77,8 +77,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(238),
-        styles: [__webpack_require__(229)]
+        template: __webpack_require__(240),
+        styles: [__webpack_require__(230)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AppComponent);
@@ -92,23 +92,24 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_authentication_resetpassword_component_resetpassword_component__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_kinect_service__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_drawcanvas_service__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_database_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_authentication_reset_confirmation_component_reset_confirmation_component__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_kinect_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_drawcanvas_service__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_database_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(166);
 /* unused harmony export firebaseConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -134,12 +135,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // routes variabelen
 var appRoutes = [
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__["a" /* LoginComponent */] },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthGuard */]] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthGuard */]] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__["a" /* RegisterComponent */] },
-    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_11__components_authentication_resetpassword_component_resetpassword_component__["a" /* ResetPasswordComponent */] },
+    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__["a" /* ResetPasswordComponent */] },
     { path: '', redirectTo: '/login', pathMatch: 'full' }
     // PageNotFound { path: '**', component: PageNotFoundComponent }
 ];
@@ -160,7 +162,7 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         //component declarations
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_11__components_authentication_resetpassword_component_resetpassword_component__["a" /* ResetPasswordComponent */]
+            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__["a" /* ResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_12__components_authentication_reset_confirmation_component_reset_confirmation_component__["a" /* ResetConfirmationComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -168,10 +170,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { useHash: true }),
-            __WEBPACK_IMPORTED_MODULE_15_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig)
+            __WEBPACK_IMPORTED_MODULE_16_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig)
         ],
         //services
-        providers: [__WEBPACK_IMPORTED_MODULE_5__angular_common__["a" /* HashLocationStrategy */], __WEBPACK_IMPORTED_MODULE_12__services_kinect_service__["a" /* KinectService */], __WEBPACK_IMPORTED_MODULE_13__services_drawcanvas_service__["a" /* DrawCanvasService */], __WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_14__services_database_service__["a" /* DatabaseService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_5__angular_common__["a" /* HashLocationStrategy */], __WEBPACK_IMPORTED_MODULE_13__services_kinect_service__["a" /* KinectService */], __WEBPACK_IMPORTED_MODULE_14__services_drawcanvas_service__["a" /* DrawCanvasService */], __WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_15__services_database_service__["a" /* DatabaseService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]],
         schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */]] // to clear the router-outlet test, else it fails
     })
@@ -186,9 +188,9 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(50);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -265,8 +267,8 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'login',
-        template: __webpack_require__(239),
-        styles: [__webpack_require__(228)],
+        template: __webpack_require__(241),
+        styles: [__webpack_require__(229)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -283,10 +285,10 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_database_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_database_service__ = __webpack_require__(72);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -334,8 +336,8 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'register',
-        template: __webpack_require__(240),
-        styles: [__webpack_require__(230)],
+        template: __webpack_require__(242),
+        styles: [__webpack_require__(231)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -352,9 +354,54 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animations_router_animations__ = __webpack_require__(50);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetConfirmationComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ResetConfirmationComponent = (function () {
+    function ResetConfirmationComponent(router) {
+        this.router = router;
+    }
+    ResetConfirmationComponent.prototype.okButtonClicked = function () {
+        this.router.navigate(['/login']);
+    };
+    return ResetConfirmationComponent;
+}());
+ResetConfirmationComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+        selector: 'resetconfirmation',
+        template: __webpack_require__(243),
+        styles: [__webpack_require__(232)],
+        animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__animations_router_animations__["a" /* routerTransition */])()],
+        host: { '[@routerTransition]': '' }
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+], ResetConfirmationComponent);
+
+var _a;
+//# sourceMappingURL=reset-confirmation.component.js.map
+
+/***/ }),
+
+/***/ 164:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(50);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -399,8 +446,8 @@ var ResetPasswordComponent = (function () {
 ResetPasswordComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetpassword',
-        template: __webpack_require__(241),
-        styles: [__webpack_require__(231)],
+        template: __webpack_require__(244),
+        styles: [__webpack_require__(233)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -409,19 +456,19 @@ ResetPasswordComponent = __decorate([
 ], ResetPasswordComponent);
 
 var _a, _b;
-//# sourceMappingURL=resetpassword.component.js.map
+//# sourceMappingURL=reset-password.component.js.map
 
 /***/ }),
 
-/***/ 164:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_database_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_database_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
@@ -478,6 +525,7 @@ var HomeComponent = (function () {
         this.loadExcercise(newExerciseId);
     };
     HomeComponent.prototype.drawExcercise = function () {
+        //KINECT OPZETTEN
         this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExcercise);
     };
     HomeComponent.prototype.playMockData = function (mockExcerciseNr) {
@@ -520,8 +568,8 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'home',
-        template: __webpack_require__(242),
-        styles: [__webpack_require__(232)]
+        template: __webpack_require__(245),
+        styles: [__webpack_require__(234)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */]) === "function" && _e || Object])
 ], HomeComponent);
@@ -531,14 +579,14 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ 165:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -581,7 +629,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -598,15 +646,15 @@ var environment = {
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(30)();
+exports = module.exports = __webpack_require__(25)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(97) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\n.form-control {\n  -webkit-transition: all 0.1s ease;\n  /* Safari and Chrome */\n  /* Firefox */\n  /* Opera */\n  transition: all 0.1s ease; }\n\n.form-control:focus {\n  -webkit-transform: scale(1.15);\n  /* Safari and Chrome */\n  /* Firefox */\n  /* IE 9 */\n  /* Opera */\n  transform: scale(1.15); }\n\nform {\n  width: 400px;\n  margin: auto; }\n\n.form-group {\n  width: 90%;\n  margin: auto; }\n\ninput {\n  width: 90%;\n  margin: auto;\n  margin-top: 2%;\n  height: 40px;\n  color: black;\n  font-size: 15px;\n  background: white;\n  border-radius: 5px; }\n\n#buttons {\n  margin: auto;\n  margin-top: 1%;\n  width: 80%;\n  text-align: center; }\n\nbutton {\n  width: 100%; }\n\na {\n  width: 100%;\n  height: 25px;\n  font-size: 15px;\n  margin-top: 3%; }\n\n.help-block p {\n  font-size: 12px; }\n\ninput {\n  font-family: Helvetica, sans-serif; }\n\n#loginbutton {\n  background: #3ED600;\n  font-size: 1.3em; }\n\n#resetpasswordbutton {\n  font-size: .8em;\n  text-align: right;\n  width: 98%;\n  margin: auto; }\n\n#errMsg {\n  padding: 5px;\n  width: 80%;\n  margin: auto;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  text-align: center;\n  color: orange;\n  background-color: rgba(50, 50, 50, 0.5);\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\n.form-control {\n  /* Safari and Chrome */\n  /* Firefox */\n  /* Opera */\n  transition: all 0.1s ease; }\n\n.form-control:focus {\n  -webkit-transform: scale(1.15);\n  /* Safari and Chrome */\n  /* Firefox */\n  /* IE 9 */\n  /* Opera */\n  transform: scale(1.15); }\n\nform {\n  width: 400px;\n  margin: auto; }\n\n.form-group {\n  width: 90%;\n  margin: auto; }\n\ninput {\n  width: 90%;\n  margin: auto;\n  margin-top: 2%;\n  height: 40px;\n  color: black;\n  font-size: 15px;\n  background: white;\n  border-radius: 5px; }\n\n#buttons {\n  margin: auto;\n  margin-top: 1%;\n  width: 80%;\n  text-align: center; }\n\nbutton {\n  width: 100%; }\n\na {\n  width: 100%;\n  height: 25px;\n  font-size: 15px;\n  margin-top: 3%; }\n\n.help-block p {\n  font-size: 12px; }\n\ninput {\n  font-family: Helvetica, sans-serif; }\n\n#loginbutton {\n  background: #3ED600;\n  font-size: 1.3em; }\n\n#resetpasswordbutton {\n  font-size: .8em;\n  text-align: right;\n  width: 98%;\n  margin: auto; }\n\n#errMsg {\n  padding: 5px;\n  width: 80%;\n  margin: auto;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  text-align: center;\n  color: orange;\n  background-color: rgba(50, 50, 50, 0.5);\n  border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -616,10 +664,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(30)();
+exports = module.exports = __webpack_require__(25)();
 // imports
 
 
@@ -634,33 +682,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 230:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(30)();
-// imports
-
-
-// module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(97) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size: 5em;\r\n}\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n\r\n.form-control{\r\n  -webkit-transition: all 0.1s ease; /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n    transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n#registerbutton{\r\n  background:#3ED600;\r\n  font-size:1.3em; \r\n}\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(30)();
+exports = module.exports = __webpack_require__(25)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(97) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\np{\r\n  text-align:center;\r\n}\r\n.form-control{\r\n  -webkit-transition: all 0.1s ease; /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n    transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#resetbutton{\r\n  background:#3ED600; \r\n  font-size:1.3em; \r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(71) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size: 5em;\r\n}\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n\r\n.form-control{ /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n  transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n#registerbutton{\r\n  background:#3ED600;\r\n  font-size:1.3em; \r\n}\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -673,7 +703,43 @@ module.exports = module.exports.toString();
 /***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(30)();
+exports = module.exports = __webpack_require__(25)();
+// imports
+
+
+// module
+exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(71) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\ndiv{\r\n  margin:auto;\r\n  width:400px;\r\n  background-color: rgba(20,20,20,0.5);\r\n  text-align: center;\r\n  padding-bottom:2%;\r\n  border-radius: 10px;\r\n   text-shadow: 0px 1px #777777;\r\n   }\r\n\r\nbutton{\r\n  margin-top:5%;\r\n  width:150px;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 233:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(25)();
+// imports
+
+
+// module
+exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(71) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\np{\r\n  text-align:center;\r\n}\r\n.form-control{ /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n  transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#resetbutton{\r\n  background:#3ED600; \r\n  font-size:1.3em; \r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 234:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(25)();
 // imports
 
 
@@ -688,50 +754,49 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 238:
+/***/ 240:
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navigation navbar-default\">\r\n  <div class=\"container-fluid navigatieheader\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\r\n        aria-expanded=\"false\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand brand\" [routerLink]=\"['/home']\">Joint Effort Client App</a>\r\n    </div>\r\n\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <button id=\"logoutButton\" *ngIf=\"name != null\" class=\"btn navbutton btn-danger\" (click)=\"logout()\"><img id=\"logoutImg\" src=\"./assets/images/logout.svg\"></button>\r\n      </ul>\r\n    </div>\r\n    <!-- /.navbar-collapse -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</nav>\r\n\r\n<router-outlet> </router-outlet>"
 
 /***/ }),
 
-/***/ 239:
+/***/ 241:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Login</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required />\r\n    <a [routerLink]=\"['/resetpassword']\" id=\"resetpasswordbutton\" class=\"btn btn-link\">Forgot password?</a>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=loginbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Login</button>\r\n  </div>\r\n  <a [routerLink]=\"['/register']\" id=\"registerButton\" class=\"btn btn-link\">No account yet? <strong>You can make one here!</strong></a>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 240:
+/***/ 242:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Register</h1>\r\n<form name=\"form\" #formData='ngForm' (ngSubmit)=\"onSubmit(formData)\" novalidate>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Name\" class=\"form-control\" name=\"surname\" (ngModel)=\"surname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Last Name\" class=\"form-control\" name=\"lastname\" (ngModel)=\"lastname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Weight\" class=\"form-control\" name=\"weight\" (ngModel)=\"weight\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Length\" class=\"form-control\" name=\"length\" (ngModel)=\"length\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"date\" placeholder=\"Birthdate\" class=\"form-control\" name=\"birthdate\" (ngModel)=\"birthdate\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required validateEqual=\"repeatPassword\"\r\n    />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Repeat your password\" class=\"form-control\" name=\"repeatPassword\" required validateEqual=\"password\"\r\n    />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button type=\"submit\" id=registerbutton [disabled]=\"!formData.valid\" class=\"btn btn-success\">Register</button>\r\n    <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go Back</a>\r\n  </div>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 241:
+/***/ 243:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Reset password</h1>\r\n<div class=\"container\">\r\n    <h2>Email send!</h2>\r\n    <h3>Please check your inbox</h3>\r\n    <button class=\"btn btn-success\" (click)=\"okButtonClicked()\">Go back to login</button>\r\n</div>"
+
+/***/ }),
+
+/***/ 244:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=resetbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Send email</button>\r\n  </div>\r\n  <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go back</a>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 242:
+/***/ 245:
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    \r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"excercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeTraject($event.target.value)\">\r\n        <option *ngFor=\"let traject of userdata?.traject\" value=\"{{traject.id}}\">{{traject.name}}</option>\r\n    </select>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let excercise of excercisesOfCurrentTraject\" value=\"{{excercise?.excerciseid}}\">{{excercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
 
 /***/ }),
 
-/***/ 507:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(150);
-
-
-/***/ }),
-
-/***/ 70:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -795,12 +860,27 @@ function slideToLeft() {
 
 /***/ }),
 
+/***/ 510:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(150);
+
+
+/***/ }),
+
 /***/ 71:
+/***/ (function(module, exports) {
+
+module.exports = "data:font/opentype;base64,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"
+
+/***/ }),
+
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseService; });
@@ -873,7 +953,7 @@ var _a;
 
 /***/ }),
 
-/***/ 72:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -963,19 +1043,12 @@ var _a;
 
 /***/ }),
 
-/***/ 97:
-/***/ (function(module, exports) {
-
-module.exports = "data:font/opentype;base64,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"
-
-/***/ }),
-
 /***/ 99:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kinect_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kinect_service__ = __webpack_require__(73);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DrawCanvasService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1145,5 +1218,5 @@ var _a;
 
 /***/ })
 
-},[507]);
+},[510]);
 //# sourceMappingURL=main.bundle.js.map
