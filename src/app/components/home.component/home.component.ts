@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private userdata: User;
     private oefeningNr = new Subject();
     private excerciseObservable;
-    private currentExcercise=null;
+    private currentExcercise = null;
     private userUid: string;
     private excercisesOfCurrentTraject: Array<FullExcercise> = new Array<FullExcercise>();
 
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('excercisecanvas');
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
-        
+
     }
 
     onChangeTraject(newTrajectId) {
@@ -61,14 +61,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         });
     }
 
-    onChangeExcercise(newExerciseId)
-    {
-        this.loadExcercise(newExerciseId);        
+    onChangeExcercise(newExerciseId) {
+        this.loadExcercise(newExerciseId);
     }
 
     public drawExcercise() {
         //KINECT OPZETTEN
-        this.drawcanvasService.drawExcercise(this.excerciseCanvas,this.currentExcercise);
+        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExcercise);
     }
 
     public playMockData(mockExcerciseNr: number) {
@@ -93,15 +92,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.userdata = userDate[0]; //returns array of users, which contains 1 user
             //get all the excerciseIds in the currentTraject of the user
             this.userdata.traject[this.userdata.currenttraject].excercises.forEach(ex => {
-                this.dbService.getExcerciseById(ex.excerciseid).subscribe(
+                console.log(ex)
+                this.dbService.getExerciseByUid(ex.excerciseid).subscribe(
                     ex2 => {
-                        this.excercisesOfCurrentTraject.push(ex2[0]);
+                        console.log(ex2);
+                        this.excercisesOfCurrentTraject.push(ex2);
                         this.currentExcercise = this.excercisesOfCurrentTraject[0];
                     }
                 )
             });
-            
-           
+
+
         });
 
     }

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { User } from "../models/user.model";
 import { Excercise } from "app/models/excercise.model";
 import { FullExcercise } from "app/models/full.excercise.model";
+import { Traject } from "app/models/traject.model";
 
 @Injectable()
 export class DatabaseService {
@@ -27,12 +28,16 @@ export class DatabaseService {
     }
 
     getExcerciseById(excercise: string): Observable<FullExcercise[]> {
-        return this.af.database.list('excercises', {
+        return this.af.database.list('exercises', {
             query: {
                 orderByChild: 'excerciseid',
                 equalTo: Number(excercise)
             }
         });
+    }
+
+    getExerciseByUid(exercise: string): Observable<FullExcercise> {
+        return this.af.database.object('/exercises/'+exercise);
     }
 
     //sets the excerciseNr to fetch from getExcerciseDetails
@@ -52,7 +57,7 @@ export class DatabaseService {
             weight: userData.value.weight,
             length: userData.value.length,
             birthdate: userData.value.birthdate,
-            traject: [],
+            traject: new Array<Traject>(),
             mentorId: "0"
         })
     }

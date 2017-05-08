@@ -531,12 +531,12 @@ var HomeComponent = (function () {
     HomeComponent.prototype.playMockData = function (mockExcerciseNr) {
         switch (mockExcerciseNr) {
             case 1: {
-                this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "linkerhand-op-en-neer"); //draw the bodyframe with mock excercise 1  
+                this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "lefthand-up-and-down"); //draw the bodyframe with mock excercise 1  
                 return;
             }
             case 2:
                 {
-                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "rechterhand-op-en-neer");
+                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "righthand-up-and-down");
                     return;
                 }
         }
@@ -549,8 +549,10 @@ var HomeComponent = (function () {
             _this.userdata = userDate[0]; //returns array of users, which contains 1 user
             //get all the excerciseIds in the currentTraject of the user
             _this.userdata.traject[_this.userdata.currenttraject].excercises.forEach(function (ex) {
-                _this.dbService.getExcerciseById(ex.excerciseid).subscribe(function (ex2) {
-                    _this.excercisesOfCurrentTraject.push(ex2[0]);
+                console.log(ex);
+                _this.dbService.getExerciseByUid(ex.excerciseid).subscribe(function (ex2) {
+                    console.log(ex2);
+                    _this.excercisesOfCurrentTraject.push(ex2);
                     _this.currentExcercise = _this.excercisesOfCurrentTraject[0];
                 });
             });
@@ -919,6 +921,9 @@ var DatabaseService = (function () {
                 equalTo: Number(excercise)
             }
         });
+    };
+    DatabaseService.prototype.getExerciseByUid = function (exercise) {
+        return this.af.database.object('/excercises/' + exercise);
     };
     //sets the excerciseNr to fetch from getExcerciseDetails
     DatabaseService.prototype.setOefening = function (excerciseNr) {
