@@ -8,7 +8,7 @@ import { DatabaseService } from '../../../services/database.service';
 @Component({
     selector: 'register',
     templateUrl: './register.component.html',
-    styleUrls: ["./register.component.css"],
+    styleUrls: ["./register.component.scss"],
     animations: [routerTransition()],
     host: { '[@routerTransition]': '' }
 })
