@@ -7,7 +7,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, AngularF
 declare var electron: any;
 import { User } from '../../models/user.model';
 import { Subject } from 'rxjs/Subject';
-import { Excercise } from "app/models/excercise.model";
+import { Exercise } from "app/models/excercise.model";
 import { FullExcercise } from "app/models/full.excercise.model";
 
 @Component({
@@ -52,8 +52,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
         //get all the excerciseIds in the currentTraject of the user
         this.excercisesOfCurrentTraject.length = 0;
         //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
-        this.userdata.traject[newTrajectId].excercises.forEach(ex => {
-            this.dbService.getExcerciseById(ex.excerciseid).subscribe(
+        this.userdata.traject[newTrajectId].exercises.forEach(ex => {
+            this.dbService.getExerciseByUid(ex.exerciseid).subscribe(
                 ex2 => {
                     this.excercisesOfCurrentTraject.push(ex2[0]);
                 }
@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     onChangeExcercise(newExerciseId) {
+        console.log(newExerciseId);
         this.loadExcercise(newExerciseId);
     }
 
@@ -90,12 +91,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
         this.dbService.getUserdataById(this.userUid).subscribe((userDate) => {
             this.userdata = userDate[0]; //returns array of users, which contains 1 user
+            console.log("loaduserdata");
+            console.log(userDate);
+            console.log(this.userdata.traject);
             //get all the excerciseIds in the currentTraject of the user
-            this.userdata.traject[this.userdata.currenttraject].excercises.forEach(ex => {
-                console.log(ex)
-                this.dbService.getExerciseByUid(ex.excerciseid).subscribe(
+            this.userdata.traject[this.userdata.currenttraject].exercises.forEach(ex => {
+                this.dbService.getExerciseByUid(ex.exerciseid).subscribe(
                     ex2 => {
-                        console.log(ex2);
                         this.excercisesOfCurrentTraject.push(ex2);
                         this.currentExcercise = this.excercisesOfCurrentTraject[0];
                     }
@@ -104,7 +106,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
         });
-
     }
 
     private loadExcercise(excerciseId) {
@@ -113,5 +114,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.currentExcercise = ex;
         })
     }
-
 }

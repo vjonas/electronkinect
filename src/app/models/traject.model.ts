@@ -1,4 +1,4 @@
-import { Excercise } from "app/models/excercise.model";
+import { Exercise } from "app/models/excercise.model";
 
 export class Traject
 {
@@ -6,7 +6,7 @@ export class Traject
         public id:number,
         public name:string,
         public score:number,
-        public excercises:Excercise[]
+        public exercises:Exercise[]
     )
     {}
 

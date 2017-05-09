@@ -78,7 +78,7 @@ AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__(240),
-        styles: [__webpack_require__(230)]
+        styles: [__webpack_require__(234)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AppComponent);
@@ -337,7 +337,7 @@ RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'register',
         template: __webpack_require__(242),
-        styles: [__webpack_require__(231)],
+        styles: [__webpack_require__(230)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -382,7 +382,7 @@ ResetConfirmationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetconfirmation',
         template: __webpack_require__(243),
-        styles: [__webpack_require__(232)],
+        styles: [__webpack_require__(231)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -447,7 +447,7 @@ ResetPasswordComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetpassword',
         template: __webpack_require__(244),
-        styles: [__webpack_require__(233)],
+        styles: [__webpack_require__(232)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -515,13 +515,14 @@ var HomeComponent = (function () {
         //get all the excerciseIds in the currentTraject of the user
         this.excercisesOfCurrentTraject.length = 0;
         //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
-        this.userdata.traject[newTrajectId].excercises.forEach(function (ex) {
-            _this.dbService.getExcerciseById(ex.excerciseid).subscribe(function (ex2) {
+        this.userdata.traject[newTrajectId].exercises.forEach(function (ex) {
+            _this.dbService.getExerciseByUid(ex.exerciseid).subscribe(function (ex2) {
                 _this.excercisesOfCurrentTraject.push(ex2[0]);
             });
         });
     };
     HomeComponent.prototype.onChangeExcercise = function (newExerciseId) {
+        console.log(newExerciseId);
         this.loadExcercise(newExerciseId);
     };
     HomeComponent.prototype.drawExcercise = function () {
@@ -547,11 +548,12 @@ var HomeComponent = (function () {
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
         this.dbService.getUserdataById(this.userUid).subscribe(function (userDate) {
             _this.userdata = userDate[0]; //returns array of users, which contains 1 user
+            console.log("loaduserdata");
+            console.log(userDate);
+            console.log(_this.userdata.traject);
             //get all the excerciseIds in the currentTraject of the user
-            _this.userdata.traject[_this.userdata.currenttraject].excercises.forEach(function (ex) {
-                console.log(ex);
-                _this.dbService.getExerciseByUid(ex.excerciseid).subscribe(function (ex2) {
-                    console.log(ex2);
+            _this.userdata.traject[_this.userdata.currenttraject].exercises.forEach(function (ex) {
+                _this.dbService.getExerciseByUid(ex.exerciseid).subscribe(function (ex2) {
                     _this.excercisesOfCurrentTraject.push(ex2);
                     _this.currentExcercise = _this.excercisesOfCurrentTraject[0];
                 });
@@ -571,7 +573,7 @@ HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'home',
         template: __webpack_require__(245),
-        styles: [__webpack_require__(234)]
+        styles: [__webpack_require__(233)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */]) === "function" && _e || Object])
 ], HomeComponent);
@@ -656,7 +658,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\n.form-control {\n  /* Safari and Chrome */\n  /* Firefox */\n  /* Opera */\n  transition: all 0.1s ease; }\n\n.form-control:focus {\n  -webkit-transform: scale(1.15);\n  /* Safari and Chrome */\n  /* Firefox */\n  /* IE 9 */\n  /* Opera */\n  transform: scale(1.15); }\n\nform {\n  width: 400px;\n  margin: auto; }\n\n.form-group {\n  width: 90%;\n  margin: auto; }\n\ninput {\n  width: 90%;\n  margin: auto;\n  margin-top: 2%;\n  height: 40px;\n  color: black;\n  font-size: 15px;\n  background: white;\n  border-radius: 5px; }\n\n#buttons {\n  margin: auto;\n  margin-top: 1%;\n  width: 80%;\n  text-align: center; }\n\nbutton {\n  width: 100%; }\n\na {\n  width: 100%;\n  height: 25px;\n  font-size: 15px;\n  margin-top: 3%; }\n\n.help-block p {\n  font-size: 12px; }\n\ninput {\n  font-family: Helvetica, sans-serif; }\n\n#loginbutton {\n  background: #3ED600;\n  font-size: 1.3em; }\n\n#resetpasswordbutton {\n  font-size: .8em;\n  text-align: right;\n  width: 98%;\n  margin: auto; }\n\n#errMsg {\n  padding: 5px;\n  width: 80%;\n  margin: auto;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  text-align: center;\n  color: orange;\n  background-color: rgba(50, 50, 50, 0.5);\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto;\n  text-align: center; }\n  form p {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n    form .form-group button {\n      width: 100%; }\n    form .form-group a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form .form-group #resetpasswordbutton {\n      font-size: .8em;\n      text-align: right;\n      width: 98%;\n      margin: auto; }\n  form #buttons {\n    margin: auto;\n    margin-top: 1%;\n    width: 80%;\n    text-align: center; }\n    form #buttons #loginbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n", ""]);
 
 // exports
 
@@ -674,7 +676,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "\r\nbody{\r\n    background-image: url('/./assets/images/background.jpg');\r\n}\r\n\r\n#logoutButton{\r\n    padding:0;\r\n    background-color:transparent;\r\n    border: none;\r\n}\r\n\r\n#logoutImg{\r\n    width:40px;\r\n    height:40px;\r\n}\r\n\r\n.navigatieheader{\r\n    padding-right:5px;\r\n}", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      /* Safari and Chrome */\n      /* Firefox */\n      /* Opera */\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        /* Safari and Chrome */\n        /* Firefox */\n        /* IE 9 */\n        /* Opera */\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      background: white;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%; }\n    form #buttons a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form #buttons #registerbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -692,7 +694,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(71) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size: 5em;\r\n}\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n\r\n.form-control{ /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n  transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n#registerbutton{\r\n  background:#3ED600;\r\n  font-size:1.3em; \r\n}\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\ndiv {\n  margin: auto;\n  width: 400px;\n  background-color: rgba(20, 20, 20, 0.5);\n  text-align: center;\n  padding-bottom: 2%;\n  border-radius: 10px;\n  text-shadow: 0px 1px #777777; }\n  div button {\n    margin-top: 5%;\n    width: 150px; }\n", ""]);
 
 // exports
 
@@ -710,7 +712,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(71) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\ndiv{\r\n  margin:auto;\r\n  width:400px;\r\n  background-color: rgba(20,20,20,0.5);\r\n  text-align: center;\r\n  padding-bottom:2%;\r\n  border-radius: 10px;\r\n   text-shadow: 0px 1px #777777;\r\n   }\r\n\r\nbutton{\r\n  margin-top:5%;\r\n  width:150px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%;\n      background: #3ED600;\n      font-size: 1.3em; }\n  form a {\n    width: 100%;\n    height: 25px;\n    font-size: 15px;\n    margin-top: 3%; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -728,7 +730,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\r\nfont-family: 'Ostrich';\r\nsrc: url(" + __webpack_require__(71) + ");\r\nfont-weight: bold;\r\n}\r\n\r\nh1{\r\n  text-align:center;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  font-family: \"Ostrich\";\r\n  font-size:5em;\r\n}\r\n\r\np{\r\n  text-align:center;\r\n}\r\n.form-control{ /* Safari and Chrome */ /* Firefox */ /* Opera */\r\n  transition: all 0.1s ease;\r\n}\r\n\r\n.form-control:focus{\r\n  -webkit-transform:scale(1.15); /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */\r\n    transform:scale(1.15);\r\n}\r\n\r\n\r\nform {\r\n  width: 400px;\r\n  margin: auto;\r\n}\r\n  .form-group {\r\n    width: 90%;\r\n    margin: auto;\r\n\r\n  }\r\n\r\n      input {\r\n          width: 90%;\r\n          margin: auto;\r\n          margin-top: 2%;\r\n          height: 40px;\r\n          color:black;\r\n          font-size: 15px;\r\n          background: white;\r\n          border-radius: 5px;\r\n    }\r\n\r\n    #buttons {\r\n        margin: auto;\r\n        margin-top: 5%;\r\n        width: 80%;\r\n        text-align: center;\r\n    }\r\n        button {\r\n          width: 100%;\r\n        }\r\n\r\n        a {\r\n          width: 100%;\r\n          height: 25px;\r\n          font-size: 15px;\r\n          margin-top: 3%;\r\n        }\r\n\r\n  .help-block p {\r\n    font-size: 12px;\r\n  }\r\n\r\n\r\ninput{\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n#resetbutton{\r\n  background:#3ED600; \r\n  font-size:1.3em; \r\n}\r\n\r\n#errMsg{\r\n  padding: 5px;\r\n  width:80%;\r\n  margin:auto;\r\n  margin-top: 5%;\r\n  margin-bottom: 5%;\r\n  text-align:center;\r\n  color:orange;\r\n  background-color:rgba(50,50,50,0.5);\r\n  border-radius: 5px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n", ""]);
 
 // exports
 
@@ -746,7 +748,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "select{\r\n    color:black;\r\n}\r\n\r\n#uidModal{\r\n    color:black;\r\n}\r\n\r\n#uid{\r\n    font-weight: bold;\r\n}\r\n\r\n.wrapper{\r\n    margin-left: 5%;\r\n    margin-right: 5%;\r\n}\r\n\r\n.startButtonDiv{\r\n    margin-top:25px;\r\n}", ""]);
+exports.push([module.i, "\r\nbody{\r\n    background-image: url('/./assets/images/background.jpg');\r\n}\r\n\r\n#logoutButton{\r\n    padding:0;\r\n    background-color:transparent;\r\n    border: none;\r\n}\r\n\r\n#logoutImg{\r\n    width:40px;\r\n    height:40px;\r\n}\r\n\r\n.navigatieheader{\r\n    padding-right:5px;\r\n}", ""]);
 
 // exports
 
@@ -915,7 +917,7 @@ var DatabaseService = (function () {
         });
     };
     DatabaseService.prototype.getExcerciseById = function (excercise) {
-        return this.af.database.list('excercises', {
+        return this.af.database.list('exercises', {
             query: {
                 orderByChild: 'excerciseid',
                 equalTo: Number(excercise)
@@ -923,7 +925,7 @@ var DatabaseService = (function () {
         });
     };
     DatabaseService.prototype.getExerciseByUid = function (exercise) {
-        return this.af.database.object('/excercises/' + exercise);
+        return this.af.database.object('/exercises/' + exercise);
     };
     //sets the excerciseNr to fetch from getExcerciseDetails
     DatabaseService.prototype.setOefening = function (excerciseNr) {
@@ -942,7 +944,7 @@ var DatabaseService = (function () {
             weight: userData.value.weight,
             length: userData.value.length,
             birthdate: userData.value.birthdate,
-            traject: [],
+            traject: new Array(),
             mentorId: "0"
         });
     };

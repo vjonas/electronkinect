@@ -3,7 +3,7 @@ import { AngularFire, FirebaseListObservable, AngularFireDatabase } from 'angula
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { User } from "../models/user.model";
-import { Excercise } from "app/models/excercise.model";
+import { Exercise } from "app/models/excercise.model";
 import { FullExcercise } from "app/models/full.excercise.model";
 import { Traject } from "app/models/traject.model";
 
@@ -52,11 +52,11 @@ export class DatabaseService {
         this.af.database.list('/users').push({
             uid: uid,
             name: userData.value.surname,
-            lastname: userData.value.lastname,
+            lastName: userData.value.lastname,
             email: userData.value.email,
             weight: userData.value.weight,
             length: userData.value.length,
-            birthdate: userData.value.birthdate,
+            birthDate: userData.value.birthdate,
             traject: new Array<Traject>(),
             mentorId: "0"
         })

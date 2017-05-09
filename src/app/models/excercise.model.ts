@@ -1,17 +1,17 @@
-export class Excercise
+export class Exercise
 {
     constructor(
-        public excerciseid:string,
+        public exerciseid:string,
         public score:number
     )
 {}
 
 public static createEmptyExcercise()
 {
-    return new Excercise('',0);
+    return new Exercise('',0);
 }
 
-public static createEmptyExcercises(): Excercise[] {
-        return new Array<Excercise>();
+public static createEmptyExcercises(): Exercise[] {
+        return new Array<Exercise>();
     }
 }
