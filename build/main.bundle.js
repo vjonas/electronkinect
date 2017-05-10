@@ -495,8 +495,8 @@ var HomeComponent = (function () {
         this.dbService = dbService;
         this.auth = auth;
         this.oefeningNr = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__["Subject"]();
-        this.currentExcercise = null;
-        this.excercisesOfCurrentTraject = new Array();
+        this.currentExercise = null;
+        this.exercisesOfCurrentProgram = new Array();
         this.ipc = electron.ipcRenderer;
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -510,14 +510,14 @@ var HomeComponent = (function () {
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, ""); //draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
     };
-    HomeComponent.prototype.onChangeTraject = function (newTrajectId) {
+    HomeComponent.prototype.onChangeProgram = function (newProgramId) {
         var _this = this;
         //get all the excerciseIds in the currentTraject of the user
-        this.excercisesOfCurrentTraject.length = 0;
+        this.exercisesOfCurrentProgram.length = 0;
         //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
-        this.userdata.traject[newTrajectId].exercises.forEach(function (ex) {
-            _this.dbService.getExerciseByUid(ex.exerciseid).subscribe(function (ex2) {
-                _this.excercisesOfCurrentTraject.push(ex2[0]);
+        Object.keys(this.userdata.programs[newProgramId].exercises).forEach(function (ex) {
+            _this.dbService.getExerciseByUid(ex).subscribe(function (ex2) {
+                _this.exercisesOfCurrentProgram.push(ex2);
             });
         });
     };
@@ -527,7 +527,7 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.drawExcercise = function () {
         //KINECT OPZETTEN
-        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExcercise);
+        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExercise);
     };
     HomeComponent.prototype.playMockData = function (mockExcerciseNr) {
         switch (mockExcerciseNr) {
@@ -546,25 +546,24 @@ var HomeComponent = (function () {
         var _this = this;
         //get all the data of the currentUser
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
-        this.dbService.getUserdataById(this.userUid).subscribe(function (userDate) {
-            _this.userdata = userDate[0]; //returns array of users, which contains 1 user
-            console.log("loaduserdata");
-            console.log(userDate);
-            console.log(_this.userdata.traject);
+        this.dbService.getUserdataById(this.userUid).subscribe(function (userData) {
+            _this.userdata = userData;
             //get all the excerciseIds in the currentTraject of the user
-            _this.userdata.traject[_this.userdata.currenttraject].exercises.forEach(function (ex) {
-                _this.dbService.getExerciseByUid(ex.exerciseid).subscribe(function (ex2) {
-                    _this.excercisesOfCurrentTraject.push(ex2);
-                    _this.currentExcercise = _this.excercisesOfCurrentTraject[0];
+            Object.keys(_this.userdata.programs[_this.userdata.currentProgram].exercises).forEach(function (ex) {
+                _this.dbService.getExerciseByUid(ex).subscribe(function (ex2) {
+                    console.log("loaduserdata");
+                    console.log(ex2);
+                    _this.exercisesOfCurrentProgram.push(ex2);
+                    _this.currentExercise = _this.exercisesOfCurrentProgram[0];
                 });
             });
         });
     };
     HomeComponent.prototype.loadExcercise = function (excerciseId) {
         var _this = this;
-        this.excercisesOfCurrentTraject.forEach(function (ex) {
-            if (ex.excerciseid == excerciseId)
-                _this.currentExcercise = ex;
+        this.exercisesOfCurrentProgram.forEach(function (ex) {
+            if (ex["$key"] == excerciseId)
+                _this.currentExercise = ex;
         });
     };
     return HomeComponent;
@@ -796,7 +795,7 @@ module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"on
 /***/ 245:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    \r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"excercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeTraject($event.target.value)\">\r\n        <option *ngFor=\"let traject of userdata?.traject\" value=\"{{traject.id}}\">{{traject.name}}</option>\r\n    </select>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let excercise of excercisesOfCurrentTraject\" value=\"{{excercise?.excerciseid}}\">{{excercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
+module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    \r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"excercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeProgram($event.target.value)\">\r\n        <option *ngFor=\"let program of userdata?.programs\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
 
 /***/ }),
 
@@ -914,7 +913,7 @@ var DatabaseService = (function () {
                 orderByChild: 'uid',
                 equalTo: uid
             }
-        });
+        }).map(function (res) { return res[0]; });
     };
     DatabaseService.prototype.getExcerciseById = function (excercise) {
         return this.af.database.list('exercises', {
@@ -939,11 +938,11 @@ var DatabaseService = (function () {
         this.af.database.list('/users').push({
             uid: uid,
             name: userData.value.surname,
-            lastname: userData.value.lastname,
+            lastName: userData.value.lastname,
             email: userData.value.email,
             weight: userData.value.weight,
             length: userData.value.length,
-            birthdate: userData.value.birthdate,
+            birthDate: userData.value.birthdate,
             traject: new Array(),
             mentorId: "0"
         });

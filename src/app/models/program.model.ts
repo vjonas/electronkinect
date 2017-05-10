@@ -1,9 +1,9 @@
 import { Exercise } from "app/models/excercise.model";
 
-export class Traject
+export class Program
 {
     constructor(
-        public id:number,
+        public programId:number,
         public name:string,
         public score:number,
         public exercises:Exercise[]
@@ -12,10 +12,10 @@ export class Traject
 
     public static createEmptyTraject()
     {
-        return new Traject(0,'',0,null);
+        return new Program(0,'',0,null);
     }
 
-    public static createEmptyTrajects(): Traject[] {
-        return new Array<Traject>();
+    public static createEmptyTrajects(): Program[] {
+        return new Array<Program>();
     }
 }

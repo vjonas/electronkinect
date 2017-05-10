@@ -26,22 +26,22 @@
     <div class="canvasArea col-xs-8">
         <canvas id="colorframecanvas" width="960" height="540" style="position:absolute"></canvas>
         <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
-        <canvas id="excercisecanvas" width="960" height="540" style="position:absolute"></canvas>
+        <canvas id="exercisecanvas" width="960" height="540" style="position:absolute"></canvas>
     </div>
 
     <div class="col-xs-4 controls">
     <!--combobox to display all the trajects of the user-->
     <h2 class="col-xs-12">Program</h2>
     <div class="col-xs-12">
-        <select (change)="onChangeTraject($event.target.value)">
-        <option *ngFor="let traject of userdata?.traject" value="{{traject.id}}">{{traject.name}}</option>
+        <select (change)="onChangeProgram($event.target.value)">
+        <option *ngFor="let program of userdata?.programs" value="{{program.programId}}">{{program.name}}</option>
     </select>
     </div>
     <h2 class="col-xs-12">Exercise</h2>
     <!--combobox to display all the excercises in the selected traject-->
     <div class="col-xs-12">
         <select (change)="onChangeExcercise($event.target.value)">
-        <option *ngFor="let excercise of excercisesOfCurrentTraject" value="{{excercise?.excerciseid}}">{{excercise?.name}}</option>
+        <option *ngFor="let exercise of exercisesOfCurrentProgram" value="{{exercise?.$key}}">{{exercise?.name}}</option>
     </select>
     </div>
     <div class="col-xs-12 startButtonDiv">

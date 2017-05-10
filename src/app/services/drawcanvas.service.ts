@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { KinectService } from './kinect.service';
-import { FullExcercise } from "app/models/full.excercise.model";
+import { FullExercise } from "app/models/full.excercise.model";
 
 @Injectable()
 export class DrawCanvasService {
@@ -98,7 +98,7 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 1;
     }
 
-    public drawExcercise(excerciseCanvas: any, newExcercise: FullExcercise) {
+    public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise) {
         const self = this;
         const ctx = excerciseCanvas.getContext('2d');
         var counter: number = 0;

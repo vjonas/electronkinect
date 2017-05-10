@@ -4,8 +4,8 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { User } from "../models/user.model";
 import { Exercise } from "app/models/excercise.model";
-import { FullExcercise } from "app/models/full.excercise.model";
-import { Traject } from "app/models/traject.model";
+import { FullExercise } from "app/models/full.excercise.model";
+import { Program } from "app/models/program.model";
 
 @Injectable()
 export class DatabaseService {
@@ -17,17 +17,17 @@ export class DatabaseService {
         this.items = af.database.list('items');
     }
 
-    getUserdataById(uid: string): Observable<User[]> {
+    getUserdataById(uid: string): Observable<User> {
         console.log("dbservice uid:" + uid);
         return this.af.database.list('users', {
             query: {
                 orderByChild: 'uid',
                 equalTo: uid
             }
-        });
+        }).map(res=>{return res[0]});
     }
 
-    getExcerciseById(excercise: string): Observable<FullExcercise[]> {
+    getExcerciseById(excercise: string): Observable<FullExercise[]> {
         return this.af.database.list('exercises', {
             query: {
                 orderByChild: 'excerciseid',
@@ -36,7 +36,7 @@ export class DatabaseService {
         });
     }
 
-    getExerciseByUid(exercise: string): Observable<FullExcercise> {
+    getExerciseByUid(exercise: string): Observable<FullExercise> {
         return this.af.database.object('/exercises/'+exercise);
     }
 
@@ -57,7 +57,7 @@ export class DatabaseService {
             weight: userData.value.weight,
             length: userData.value.length,
             birthDate: userData.value.birthdate,
-            traject: new Array<Traject>(),
+            traject: new Array<Program>(),
             mentorId: "0"
         })
     }
