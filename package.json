@@ -37,8 +37,10 @@
   "devDependencies": {
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^4.0.0",
+    "@types/bezier-js": "0.0.6",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
+    "bezier-js": "^2.2.3",
     "codelyzer": "~2.0.0",
     "electron-prebuilt": "^1.4.13",
     "electron-rebuild": "^1.5.7",

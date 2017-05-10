@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { KinectService } from './kinect.service';
 import { FullExercise } from "app/models/full.excercise.model";
+import { Step } from "app/models/step.model";
+import Bezier from 'bezier-js';
 
 @Injectable()
 export class DrawCanvasService {
@@ -11,6 +13,8 @@ export class DrawCanvasService {
     private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
     private joints = null; //array with all recognised joints (25)
     private intervalOfCurrentExcercise = null;
+    private stepColors: string[] = new Array();
+    private currentStepNr: number = 0;
 
     constructor(private kinectService: KinectService) {
     }
@@ -25,7 +29,6 @@ export class DrawCanvasService {
         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
         this.kinectService.getBodyFrames(mock, fileName).subscribe(bodyFrame => {
             bodyFrame = JSON.parse(bodyFrame);
-            console.log(bodyFrame);
             //main rendering process
             bodyFrameCtx.clearRect(0, 0, bodyFrameCanvas.width, bodyFrameCanvas.height);
             var index = 0;
@@ -101,9 +104,9 @@ export class DrawCanvasService {
     public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise) {
         const self = this;
         const ctx = excerciseCanvas.getContext('2d');
-        var counter: number = 0;
-        var currentStepNr: number = 0;
-        var stepColors: string[] = new Array();
+        //var counter: number = 0;        
+        this.stepColors= new Array();
+        this.currentStepNr=0;
         const steps = newExcercise.steps;
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {
@@ -111,45 +114,101 @@ export class DrawCanvasService {
             ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
         //loop over every step in the excercise and define the right color
-        newExcercise.steps.forEach((step) => {
+        newExcercise.steps.forEach((step,counter) => {
             if (counter == 0) {
-                stepColors.push("#E88C00");
+                this.stepColors.push("#E88C00");
             }
             else {
-                stepColors.push("#FFFFFF");
+                this.stepColors.push("#FFFFFF");
             }
             //the first step begins with color orange, the next step(s) are white. when the first step is done it becomes green and the next step will become orange.
-            ctx.fillStyle = stepColors[counter];
-            ctx.fillRect(step.x, step.y, step.w, step.h);
-            ctx.fill();
-            counter++;
+            //check if the step is a TouchPoint or a TrackingLine
+            if (step.stepType == 0)
+                this.drawTouchPoint(step, ctx, this.stepColors[counter]);
+            else
+                this.drawTrackingLine(step, ctx);
+            //counter++;
         })
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
-            console.log("interval");
             var i = 0;
             newExcercise.steps.forEach((step, index) => {
-                if (self.joints != null &&
-                    (parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width > step.x &&
-                        parseFloat(self.joints[step.jointtype].depthX) * ctx.canvas.width < step.x + step.w) &&
-                    (parseFloat(self.joints[step.jointtype].depthY) * ctx.canvas.height > step.y &&
-                        parseFloat(self.joints[step.jointtype].depthY) * ctx.canvas.height < step.y + step.h &&
-                        step.stepnr == currentStepNr)) {
-                    stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
-                    if (stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
-                        stepColors[i + 1] = "#E88C00";
-                        ctx.fillStyle = stepColors[i + 1]; //if currentStep is achieved -> set color green.
-                        ctx.fillRect(steps[index + 1].x, steps[index + 1].y, steps[index + 1].w, steps[index + 1].h);
-                        ctx.fill();
-                    } //set the color of next step to orange                     
-                    ctx.fillStyle = stepColors[i]; //if currentStep is achieved -> set color green.
-                    ctx.fillRect(step.x, step.y, step.w, step.h);
-                    ctx.fill();
-                    currentStepNr++;
-                    i++;
-                }
+                //check if the step is a TouchPoint or TrackingLine then do collision detection
+                if (step.stepNr == self.currentStepNr && self.joints != null && step.stepType==0)                    
+                        self.detectCollisionWithTouchPoint(step, index, i, steps, ctx,excerciseCanvas);
+                    else
+                        self.detectCollisionWithTrackingLine(step,index, i, steps, ctx,excerciseCanvas);
+                    //i++;
+                
+                /*if (self.joints != null
+                    && ((parseFloat(self.joints[step.jointType].depthX) * ctx.canvas.width > step.x)
+                        && step.stepNr == currentStepNr
+                        && 
+                        )) {*/
                 i++;
             })
         }, 1000 / 30);
+    }
+
+    private drawTouchPoint(step: Step, context: any, color: string) {
+        context.beginPath();
+        context.arc(step.x0, step.y0, step.radius, 0, 2 * Math.PI, false);
+        context.fillStyle = color;
+        context.fill();
+        context.closePath();
+    }
+
+    private drawTrackingLine(step: Step, context: any) {
+        context.beginPath();
+        context.moveTo(step.x0, step.y0);
+        context.bezierCurveTo(step.x1, step.y1, step.x2, step.y2, step.x3, step.y3);
+        context.lineWidth = 2;
+        context.strokeStyle = 'white';
+        context.stroke();
+        context.closePath();
+    }
+
+    private detectCollisionWithTouchPoint(step: Step, index, i, steps, ctx,canvas:HTMLCanvasElement) {
+        var mousex = this.joints[step.jointType].depthX*canvas.width;
+        var mousey = this.joints[step.jointType].depthY*canvas.height;
+        //calculate the distance between the circle and the mousepointer            
+        var distance = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
+        console.log("jointtype:"+step.jointType+ " mousex:"+mousex +" mousey:"+mousey+" distance:"+distance+" radius:"+step.radius);
+        if (distance < step.radius) //you may drag the circle now
+        {
+            this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
+            if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
+                this.stepColors[i + 1] = "#E88C00";
+                this.drawTouchPoint(steps[index + 1], ctx, this.stepColors[i + 1]);
+            }
+            //if currentStep is achieved -> set color green.            
+            this.drawTouchPoint(step, ctx, this.stepColors[i]);
+            this.currentStepNr++;
+        }
+    }
+
+    private detectCollisionWithTrackingLine(step:Step,index, i, steps, ctx,canvas:HTMLCanvasElement)
+    {
+        /*var mouseX = this.joints[step.jointType].depthX*canvas.width;
+        var mouseY = this.joints[step.jointType].depthY*canvas.height;
+        //calculate the distance between the circle and the mousepointer
+        //calculate the bezier-distance
+        var curve: Bezier = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3,step.y3);
+        var mouseCoordinates = { x: mouseX, y: mouseY };
+        var distancePoint = curve.project(mouseCoordinates);  
+        if(distancePoint.d<step.trackingLineOffset)          
+        console.log("jointtype:"+step.jointType+ " mousex:"+mouseX +" mousey:"+mouseY+" distance:"+distance+" radius:"+step.radius);
+        if (distance < step.radius) //you may drag the circle now
+        {
+            this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
+            if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
+                this.stepColors[i + 1] = "#E88C00";
+                this.drawTouchPoint(steps[index + 1], ctx, this.stepColors[i + 1]);
+            }
+            //if currentStep is achieved -> set color green.            
+            this.drawTouchPoint(step, ctx, this.stepColors[i]);
+            this.currentStepNr++;
+        }*/
+
     }
 }
