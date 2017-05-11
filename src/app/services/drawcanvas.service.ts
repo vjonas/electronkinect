@@ -105,8 +105,8 @@ export class DrawCanvasService {
         const self = this;
         const ctx = excerciseCanvas.getContext('2d');
         //var counter: number = 0;        
-        this.stepColors= new Array();
-        this.currentStepNr=0;
+        this.stepColors = new Array();
+        this.currentStepNr = 0;
         const steps = newExcercise.steps;
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {
@@ -114,7 +114,7 @@ export class DrawCanvasService {
             ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
         //loop over every step in the excercise and define the right color
-        newExcercise.steps.forEach((step,counter) => {
+        newExcercise.steps.forEach((step, counter) => {
             if (counter == 0) {
                 this.stepColors.push("#E88C00");
             }
@@ -134,12 +134,12 @@ export class DrawCanvasService {
             var i = 0;
             newExcercise.steps.forEach((step, index) => {
                 //check if the step is a TouchPoint or TrackingLine then do collision detection
-                if (step.stepNr == self.currentStepNr && self.joints != null && step.stepType==0)                    
-                        self.detectCollisionWithTouchPoint(step, index, i, steps, ctx,excerciseCanvas);
-                    else
-                        self.detectCollisionWithTrackingLine(step,index, i, steps, ctx,excerciseCanvas);
-                    //i++;
-                
+                if (step.stepNr == self.currentStepNr && self.joints != null && step.stepType == 0)
+                    self.detectCollisionWithTouchPoint(step, index, i, steps, ctx, excerciseCanvas);
+                else
+                    self.detectCollisionWithTrackingLine(step, index, i, steps, ctx, excerciseCanvas);
+                //i++;
+
                 /*if (self.joints != null
                     && ((parseFloat(self.joints[step.jointType].depthX) * ctx.canvas.width > step.x)
                         && step.stepNr == currentStepNr
@@ -168,12 +168,12 @@ export class DrawCanvasService {
         context.closePath();
     }
 
-    private detectCollisionWithTouchPoint(step: Step, index, i, steps, ctx,canvas:HTMLCanvasElement) {
-        var mousex = this.joints[step.jointType].depthX*canvas.width;
-        var mousey = this.joints[step.jointType].depthY*canvas.height;
+    private detectCollisionWithTouchPoint(step: Step, index, i, steps, ctx, canvas: HTMLCanvasElement) {
+        var mousex = this.joints[step.jointType].depthX * canvas.width;
+        var mousey = this.joints[step.jointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
         var distance = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
-        console.log("jointtype:"+step.jointType+ " mousex:"+mousex +" mousey:"+mousey+" distance:"+distance+" radius:"+step.radius);
+        console.log("jointtype:" + step.jointType + " mousex:" + mousex + " mousey:" + mousey + " distance:" + distance + " radius:" + step.radius);
         if (distance < step.radius) //you may drag the circle now
         {
             this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
@@ -187,28 +187,29 @@ export class DrawCanvasService {
         }
     }
 
-    private detectCollisionWithTrackingLine(step:Step,index, i, steps, ctx,canvas:HTMLCanvasElement)
-    {
-        /*var mouseX = this.joints[step.jointType].depthX*canvas.width;
-        var mouseY = this.joints[step.jointType].depthY*canvas.height;
+    private detectCollisionWithTrackingLine(step: Step, index, i, steps, ctx, canvas: HTMLCanvasElement) {
+        var mouseX = this.joints[step.jointType].depthX * canvas.width;
+        var mouseY = this.joints[step.jointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer
         //calculate the bezier-distance
-        var curve: Bezier = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3,step.y3);
+        var curve: Bezier = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3);
         var mouseCoordinates = { x: mouseX, y: mouseY };
-        var distancePoint = curve.project(mouseCoordinates);  
-        if(distancePoint.d<step.trackingLineOffset)          
-        console.log("jointtype:"+step.jointType+ " mousex:"+mouseX +" mousey:"+mouseY+" distance:"+distance+" radius:"+step.radius);
-        if (distance < step.radius) //you may drag the circle now
-        {
-            this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
-            if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
-                this.stepColors[i + 1] = "#E88C00";
-                this.drawTouchPoint(steps[index + 1], ctx, this.stepColors[i + 1]);
-            }
-            //if currentStep is achieved -> set color green.            
-            this.drawTouchPoint(step, ctx, this.stepColors[i]);
-            this.currentStepNr++;
-        }*/
+        var distanceOfJoint = curve.project(mouseCoordinates);
+        //user has to stay between the trackingLineOffset
+        if (distanceOfJoint.d < step.trackingLineOffset) {
+             console.log("inside the offset");
+
+        }
+        //console.log("jointtype:" + step.jointType + " mousex:" + mouseX + " mousey:" + mouseY + " distance:" + distanceOfJoint.d + " trackinglineOffset:" + step.trackingLineOffset);
+
+        /*this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
+        if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
+            this.stepColors[i + 1] = "#E88C00";
+            this.drawTouchPoint(steps[index + 1], ctx, this.stepColors[i + 1]);
+        }
+        //if currentStep is achieved -> set color green.            
+        this.drawTouchPoint(step, ctx, this.stepColors[i]);
+        this.currentStepNr++;*/
 
     }
 }

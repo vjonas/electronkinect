@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 149:
+/***/ 151:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +9,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 149;
+webpackEmptyContext.id = 151;
 
 
 /***/ }),
 
-/***/ 150:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(169);
 
 
 
@@ -35,7 +35,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 159:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77,8 +77,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(240),
-        styles: [__webpack_require__(234)]
+        template: __webpack_require__(244),
+        styles: [__webpack_require__(238)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AppComponent);
@@ -88,28 +88,28 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_authentication_reset_confirmation_component_reset_confirmation_component__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_authentication_reset_confirmation_component_reset_confirmation_component__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_kinect_service__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_drawcanvas_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_database_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(168);
 /* unused harmony export firebaseConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -183,7 +183,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 161:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -267,8 +267,8 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'login',
-        template: __webpack_require__(241),
-        styles: [__webpack_require__(229)],
+        template: __webpack_require__(245),
+        styles: [__webpack_require__(233)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -280,7 +280,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 162:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -336,8 +336,8 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'register',
-        template: __webpack_require__(242),
-        styles: [__webpack_require__(230)],
+        template: __webpack_require__(246),
+        styles: [__webpack_require__(234)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -349,7 +349,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 163:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -381,8 +381,8 @@ var ResetConfirmationComponent = (function () {
 ResetConfirmationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetconfirmation',
-        template: __webpack_require__(243),
-        styles: [__webpack_require__(231)],
+        template: __webpack_require__(247),
+        styles: [__webpack_require__(235)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -394,7 +394,7 @@ var _a;
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -446,8 +446,8 @@ var ResetPasswordComponent = (function () {
 ResetPasswordComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetpassword',
-        template: __webpack_require__(244),
-        styles: [__webpack_require__(232)],
+        template: __webpack_require__(248),
+        styles: [__webpack_require__(236)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -460,7 +460,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -571,8 +571,8 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'home',
-        template: __webpack_require__(245),
-        styles: [__webpack_require__(233)]
+        template: __webpack_require__(249),
+        styles: [__webpack_require__(237)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */]) === "function" && _e || Object])
 ], HomeComponent);
@@ -582,14 +582,14 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -632,7 +632,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -649,7 +649,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 229:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)();
@@ -667,7 +667,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 230:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)();
@@ -685,7 +685,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 231:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)();
@@ -703,7 +703,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 232:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)();
@@ -721,7 +721,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 233:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)();
@@ -739,7 +739,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 234:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)();
@@ -757,42 +757,42 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 240:
+/***/ 244:
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navigation navbar-default\">\r\n  <div class=\"container-fluid navigatieheader\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\r\n        aria-expanded=\"false\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand brand\" [routerLink]=\"['/home']\">Joint Effort Client App</a>\r\n    </div>\r\n\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <button id=\"logoutButton\" *ngIf=\"name != null\" class=\"btn navbutton btn-danger\" (click)=\"logout()\"><img id=\"logoutImg\" src=\"./assets/images/logout.svg\"></button>\r\n      </ul>\r\n    </div>\r\n    <!-- /.navbar-collapse -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</nav>\r\n\r\n<router-outlet> </router-outlet>"
 
 /***/ }),
 
-/***/ 241:
+/***/ 245:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Login</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required />\r\n    <a [routerLink]=\"['/resetpassword']\" id=\"resetpasswordbutton\" class=\"btn btn-link\">Forgot password?</a>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=loginbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Login</button>\r\n  </div>\r\n  <a [routerLink]=\"['/register']\" id=\"registerButton\" class=\"btn btn-link\">No account yet? <strong>You can make one here!</strong></a>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 242:
+/***/ 246:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Register</h1>\r\n<form name=\"form\" #formData='ngForm' (ngSubmit)=\"onSubmit(formData)\" novalidate>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Name\" class=\"form-control\" name=\"surname\" (ngModel)=\"surname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Last Name\" class=\"form-control\" name=\"lastname\" (ngModel)=\"lastname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Weight\" class=\"form-control\" name=\"weight\" (ngModel)=\"weight\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Length\" class=\"form-control\" name=\"length\" (ngModel)=\"length\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"date\" placeholder=\"Birthdate\" class=\"form-control\" name=\"birthdate\" (ngModel)=\"birthdate\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required validateEqual=\"repeatPassword\"\r\n    />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Repeat your password\" class=\"form-control\" name=\"repeatPassword\" required validateEqual=\"password\"\r\n    />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button type=\"submit\" id=registerbutton [disabled]=\"!formData.valid\" class=\"btn btn-success\">Register</button>\r\n    <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go Back</a>\r\n  </div>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 243:
+/***/ 247:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Reset password</h1>\r\n<div class=\"container\">\r\n    <h2>Email send!</h2>\r\n    <h3>Please check your inbox</h3>\r\n    <button class=\"btn btn-success\" (click)=\"okButtonClicked()\">Go back to login</button>\r\n</div>"
 
 /***/ }),
 
-/***/ 244:
+/***/ 248:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=resetbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Send email</button>\r\n  </div>\r\n  <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go back</a>\r\n\r\n  <form>"
 
 /***/ }),
 
-/***/ 245:
+/***/ 249:
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    \r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeProgram($event.target.value)\">\r\n        <option *ngFor=\"let program of userdata?.programs\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
@@ -863,10 +863,10 @@ function slideToLeft() {
 
 /***/ }),
 
-/***/ 510:
+/***/ 514:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(150);
+module.exports = __webpack_require__(152);
 
 
 /***/ }),
@@ -1055,6 +1055,8 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kinect_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bezier_js__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bezier_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_bezier_js__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DrawCanvasService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1065,6 +1067,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 var DrawCanvasService = (function () {
@@ -1196,7 +1199,7 @@ var DrawCanvasService = (function () {
                 if (step.stepNr == self.currentStepNr && self.joints != null && step.stepType == 0)
                     self.detectCollisionWithTouchPoint(step, index, i, steps, ctx, excerciseCanvas);
                 else
-                    self.detectCollisionWithTrackingLine(step);
+                    self.detectCollisionWithTrackingLine(step, index, i, steps, ctx, excerciseCanvas);
                 //i++;
                 /*if (self.joints != null
                     && ((parseFloat(self.joints[step.jointType].depthX) * ctx.canvas.width > step.x)
@@ -1240,7 +1243,27 @@ var DrawCanvasService = (function () {
             this.currentStepNr++;
         }
     };
-    DrawCanvasService.prototype.detectCollisionWithTrackingLine = function (step) {
+    DrawCanvasService.prototype.detectCollisionWithTrackingLine = function (step, index, i, steps, ctx, canvas) {
+        var mouseX = this.joints[step.jointType].depthX * canvas.width;
+        var mouseY = this.joints[step.jointType].depthY * canvas.height;
+        //calculate the distance between the circle and the mousepointer
+        //calculate the bezier-distance
+        var curve = new __WEBPACK_IMPORTED_MODULE_2_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3);
+        var mouseCoordinates = { x: mouseX, y: mouseY };
+        var distanceOfJoint = curve.project(mouseCoordinates);
+        //user has to stay between the trackingLineOffset
+        if (distanceOfJoint.d < step.trackingLineOffset) {
+            console.log("inside the offset");
+        }
+        //console.log("jointtype:" + step.jointType + " mousex:" + mouseX + " mousey:" + mouseY + " distance:" + distanceOfJoint.d + " trackinglineOffset:" + step.trackingLineOffset);
+        /*this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
+        if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
+            this.stepColors[i + 1] = "#E88C00";
+            this.drawTouchPoint(steps[index + 1], ctx, this.stepColors[i + 1]);
+        }
+        //if currentStep is achieved -> set color green.
+        this.drawTouchPoint(step, ctx, this.stepColors[i]);
+        this.currentStepNr++;*/
     };
     return DrawCanvasService;
 }());
@@ -1254,5 +1277,5 @@ var _a;
 
 /***/ })
 
-},[510]);
+},[514]);
 //# sourceMappingURL=main.bundle.js.map
