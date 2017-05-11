@@ -11,7 +11,7 @@ export class DrawCanvasService {
     private HANDOPENCOLOR = "green";
     private HANDLASSOCOLOR = "blue";
     private COLOR_ACTION_CURRENT = "#E88C00";
-    private COLOR_ACTION_NEXT = "white";
+    private COLOR_ACTION_NEXT = "rgba(255,255,255,0.1)";
     private COLOR_ACTION_COMPLETED = "#7DFF00";
     private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
     private joints = null; //array with all recognised joints (25)
@@ -130,10 +130,11 @@ export class DrawCanvasService {
             //check if the step is a TouchPoint or a TrackingLine
             if (step.stepType == 0)
                 this.drawTouchPoint(step.x0, step.y0, step.radius, this.stepColors[counter]);
-            else
-                this.drawTrackingLine(step, "white");
-            //counter++;
-        })
+            else {
+                this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
+                this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+            }
+        });
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
             var i = 0;
@@ -142,16 +143,11 @@ export class DrawCanvasService {
                 if (step.stepNr == self.currentStepNr && self.joints != null) {
                     if (step.stepType == 0)
                         self.detectCollisionWithTouchPoint(step, index, i, steps, excerciseCanvas);
-                    else
+                    else if (step.stepType == 1)
                         self.detectCollisionWithTrackingLine(step, index, i, steps, excerciseCanvas);
                 }
-                //i++;
-
-                /*if (self.joints != null
-                    && ((parseFloat(self.joints[step.jointType].depthX) * ctx.canvas.width > step.x)
-                        && step.stepNr == currentStepNr
-                        && 
-                        )) {*/
+                if (self.currentStepNr >= newExcercise.steps.length)
+                    clearInterval(self.intervalOfCurrentExcercise);
                 i++;
             })
         }, 1000 / 30);
@@ -180,12 +176,11 @@ export class DrawCanvasService {
         var mousey = this.joints[step.jointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
         var distance = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
-        console.log("jointtype:" + step.jointType + " mousex:" + mousex + " mousey:" + mousey + " distance:" + distance + " radius:" + step.radius);
         if (distance < step.radius) //you may drag the circle now
         {
-            this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
+            this.stepColors[i] = this.COLOR_ACTION_COMPLETED; //if currentStep is achieved -> set color green.
             if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
-                this.stepColors[i + 1] = "#E88C00";
+                this.stepColors[i + 1] = this.COLOR_ACTION_NEXT;
                 this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.stepColors[i + 1]);
             }
             //if currentStep is achieved -> set color green.            
@@ -206,10 +201,16 @@ export class DrawCanvasService {
         var distanceFromEndingPoint = Math.sqrt((mouseX - step.x3) * (mouseX - step.x3) + (mouseY - step.y3) * (mouseY - step.y3));
         //First check if the user touched the starting point of the TrackingLine
         if (distanceFromStartingPoint < step.radius) {
-            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
             this.drawTrackingLine(step, this.COLOR_ACTION_CURRENT);
+            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
             this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
             this.hasToFollowTrackingLine = true;
+        } else if (distanceFromStartingPoint < step.radius && !this.hasToFollowTrackingLine) {
+            this.drawTrackingLine(step, this.COLOR_ACTION_CURRENT);
+            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
+            this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
+            this.hasToFollowTrackingLine = true;
+
         }
         //user has to stay between the TrackingLineOffset
         if (distanceOfJointFromTrackingLine.d < step.trackingLineOffset && this.hasToFollowTrackingLine) {
@@ -224,21 +225,10 @@ export class DrawCanvasService {
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
             //if the user is out of reach from the offset => reset the TrackingLine step. The user now has to retry the step.
-            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
             this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
+            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
             this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
-            this.hasToFollowTrackingLine = true;
+            this.hasToFollowTrackingLine = false;
         }
-        //console.log("jointtype:" + step.jointType + " mousex:" + mouseX + " mousey:" + mouseY + " distance:" + distanceOfJoint.d + " trackinglineOffset:" + step.trackingLineOffset);
-
-        /*this.stepColors[i] = "#7DFF00"; //if currentStep is achieved -> set color green.
-        if (this.stepColors[i + 1] != null) { //if there is a next step, set the next step to orange
-            this.stepColors[i + 1] = "#E88C00";
-            this.drawTouchPoint(steps[index + 1], ctx, this.stepColors[i + 1]);
-        }
-        //if currentStep is achieved -> set color green.            
-        this.drawTouchPoint(step, ctx, this.stepColors[i]);
-        this.currentStepNr++;*/
-
     }
 }
