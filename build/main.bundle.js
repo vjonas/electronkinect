@@ -912,7 +912,6 @@ var DatabaseService = (function () {
         this.items = af.database.list('items');
     }
     DatabaseService.prototype.getUserdataById = function (uid) {
-        console.log("dbservice uid:" + uid);
         return this.af.database.list('users', {
             query: {
                 orderByChild: 'uid',
@@ -1006,8 +1005,6 @@ var KinectService = (function () {
         });
         //open listener for other logs
         this.ipc.on('log', function (event, data) {
-            console.log(event);
-            console.log(data);
         });
     }
     KinectService.prototype.getBodyFrames = function (mock, fileName) {
@@ -1025,13 +1022,10 @@ var KinectService = (function () {
         var _this = this;
         var self = this;
         var interval;
-        console.log(fileName);
         this._http.get('assets/' + fileName + '.json').map(function (res) {
             _this.array = JSON.parse(JSON.stringify(res.json()));
             interval = setInterval(function () {
-                console.log(self.counter);
                 if (self.counter <= self.array.length) {
-                    console.log(self.array);
                     self.bodyFrameMock.next(JSON.stringify(self.array[self.counter]));
                 }
                 else {
@@ -1040,7 +1034,7 @@ var KinectService = (function () {
                 }
                 self.counter++;
             }, 1000 / 30);
-        }).subscribe(function (res) { return console.log("in de subscribe functie"); });
+        }).subscribe(function (res) { return res; });
     };
     return KinectService;
 }());
@@ -1197,23 +1191,22 @@ var DrawCanvasService = (function () {
                 _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.stepColors[counter]);
             else {
                 _this.drawTrackingLine(step, _this.COLOR_ACTION_NEXT);
-                _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                //this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
             }
         });
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
-            var i = 0;
             newExcercise.steps.forEach(function (step, index) {
                 //check if the step is a TouchPoint or TrackingLine then do collision detection
+                console.log(self.currentStepNr);
                 if (step.stepNr == self.currentStepNr && self.joints != null) {
                     if (step.stepType == 0)
-                        self.detectCollisionWithTouchPoint(step, index, i, steps, excerciseCanvas);
+                        self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas);
                     else if (step.stepType == 1)
-                        self.detectCollisionWithTrackingLine(step, index, i, steps, excerciseCanvas);
+                        self.detectCollisionWithTrackingLine(step, index, steps, excerciseCanvas);
                 }
                 if (self.currentStepNr >= newExcercise.steps.length)
                     clearInterval(self.intervalOfCurrentExcercise);
-                i++;
             });
         }, 1000 / 30);
     };
@@ -1233,23 +1226,22 @@ var DrawCanvasService = (function () {
         this.ctx.stroke();
         this.ctx.closePath();
     };
-    DrawCanvasService.prototype.detectCollisionWithTouchPoint = function (step, index, i, steps, canvas) {
+    DrawCanvasService.prototype.detectCollisionWithTouchPoint = function (step, index, steps, canvas) {
         var mousex = this.joints[step.jointType].depthX * canvas.width;
         var mousey = this.joints[step.jointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
         var distance = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
         if (distance < step.radius) {
-            this.stepColors[i] = this.COLOR_ACTION_COMPLETED; //if currentStep is achieved -> set color green.
-            if (this.stepColors[i + 1] != null) {
-                this.stepColors[i + 1] = this.COLOR_ACTION_NEXT;
-                this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.stepColors[i + 1]);
+            this.stepColors[index] = this.COLOR_ACTION_COMPLETED; //if currentStep is achieved -> set color green.
+            if (steps[index + 1] != null) {
+                this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
             }
-            //if currentStep is achieved -> set color green.            
-            this.drawTouchPoint(step.x0, step.y0, step.radius, this.stepColors[i]);
+            //if currentStep is completed -> set color green.            
+            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
             this.currentStepNr++;
         }
     };
-    DrawCanvasService.prototype.detectCollisionWithTrackingLine = function (step, index, i, steps, canvas) {
+    DrawCanvasService.prototype.detectCollisionWithTrackingLine = function (step, index, steps, canvas) {
         var mouseX = this.joints[step.jointType].depthX * canvas.width;
         var mouseY = this.joints[step.jointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer
@@ -1267,18 +1259,20 @@ var DrawCanvasService = (function () {
             this.hasToFollowTrackingLine = true;
         }
         else if (distanceFromStartingPoint < step.radius && !this.hasToFollowTrackingLine) {
-            this.drawTrackingLine(step, this.COLOR_ACTION_CURRENT);
+            this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
             this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
             this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
             this.hasToFollowTrackingLine = true;
         }
         //user has to stay between the TrackingLineOffset
         if (distanceOfJointFromTrackingLine.d < step.trackingLineOffset && this.hasToFollowTrackingLine) {
-            console.log("inside the offset");
             //check if the user touches the endpoint and completed the TrackingLine => step IS COMPLETE!!
             if (distanceFromEndingPoint < step.radius) {
                 this.drawTrackingLine(step, this.COLOR_ACTION_COMPLETED);
                 this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_COMPLETED);
+                if (steps[index + 1] != null) {
+                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
+                }
                 this.hasToFollowTrackingLine = false;
                 this.currentStepNr++;
             }

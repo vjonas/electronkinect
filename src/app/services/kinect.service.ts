@@ -29,8 +29,6 @@ export class KinectService {
         })
         //open listener for other logs
         this.ipc.on('log', function (event, data) {
-            console.log(event);
-            console.log(data);
         })
     }
 
@@ -51,13 +49,10 @@ export class KinectService {
     private streamMockData(fileName: string) {
         const self = this;
         var interval;
-        console.log(fileName);
         this._http.get('assets/' + fileName + '.json').map(res => {
             this.array = JSON.parse(JSON.stringify(res.json()));
             interval = setInterval(function () {
-                console.log(self.counter);
                 if (self.counter <= self.array.length) {
-                    console.log(self.array);
                     self.bodyFrameMock.next(JSON.stringify(self.array[self.counter]));
                 }
                 else {
@@ -66,6 +61,6 @@ export class KinectService {
                 }
                 self.counter++;
             }, 1000 / 30);
-        }).subscribe(res => console.log("in de subscribe functie"));
+        }).subscribe(res => res);
     }
 }

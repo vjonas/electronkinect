@@ -18,7 +18,6 @@ export class DatabaseService {
     }
 
     getUserdataById(uid: string): Observable<User> {
-        console.log("dbservice uid:" + uid);
         return this.af.database.list('users', {
             query: {
                 orderByChild: 'uid',
