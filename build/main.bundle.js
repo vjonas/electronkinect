@@ -469,8 +469,6 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_database_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -486,7 +484,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HomeComponent = (function () {
     function HomeComponent(kinectService, drawcanvasService, af, dbService, auth) {
         this.kinectService = kinectService;
@@ -494,7 +491,6 @@ var HomeComponent = (function () {
         this.af = af;
         this.dbService = dbService;
         this.auth = auth;
-        this.oefeningNr = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__["Subject"]();
         this.currentExercise = null;
         this.exercisesOfCurrentProgram = new Array();
         this.ipc = electron.ipcRenderer;
@@ -549,17 +545,13 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.loadUserData = function () {
         var _this = this;
-        //get all the data of the currentUser
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
         this.dbService.getUserdataById(this.userUid).subscribe(function (userData) {
             _this.userdata = userData;
             _this.currentProgram = userData.programs[userData.currentProgram];
-            //get all the excerciseIds in the currentTraject of the user
             if (_this.userdata.programs != undefined) {
                 Object.keys(_this.userdata.programs[_this.userdata.currentProgram].exercises).forEach(function (ex) {
                     _this.dbService.getExerciseByUid(ex).subscribe(function (ex2) {
-                        console.log("loaduserdata");
-                        console.log(ex2);
                         _this.exercisesOfCurrentProgram.push(ex2);
                         _this.currentExercise = _this.exercisesOfCurrentProgram[0];
                     });
@@ -803,7 +795,7 @@ module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"on
 /***/ 249:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>\r\n    \r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n    <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n    <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
+module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--<button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>-->    \r\n    <button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    \r\n    <h2 class=\"col-xs-12\">Current Program</h2>\r\n    <div class=\"col-xs-12\">\r\n    <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n    <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
 
 /***/ }),
 

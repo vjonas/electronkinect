@@ -22,15 +22,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private bodyFrameCanvas;
     private colorFrameCanvas;
     private excerciseCanvas;
-    private item: FirebaseObjectObservable<any>;
-    private items: any;
     private userdata: User;
-    private oefeningNr = new Subject();
-    private exerciseObservable;
     private currentExercise = null;
     private userUid: string;
     private exercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
-    private currentProgram:Program;
+    private currentProgram: Program;
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth) {
         this.ipc = electron.ipcRenderer;
@@ -94,18 +90,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
     private loadUserData() {
-        //get all the data of the currentUser
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
-        this.dbService.getUserdataById(this.userUid).subscribe((userData) => {
+        this.dbService.getUserdataById(this.userUid).subscribe((userData: User) => {
             this.userdata = userData;
-            this.currentProgram=userData.programs[userData.currentProgram];
-            //get all the excerciseIds in the currentTraject of the user
+            this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
                 Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach(ex => {
                     this.dbService.getExerciseByUid(ex).subscribe(
                         ex2 => {
-                            console.log("loaduserdata");
-                            console.log(ex2);
                             this.exercisesOfCurrentProgram.push(ex2);
                             this.currentExercise = this.exercisesOfCurrentProgram[0];
                         }
