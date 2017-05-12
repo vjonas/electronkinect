@@ -553,15 +553,18 @@ var HomeComponent = (function () {
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
         this.dbService.getUserdataById(this.userUid).subscribe(function (userData) {
             _this.userdata = userData;
+            _this.currentProgram = userData.programs[userData.currentProgram];
             //get all the excerciseIds in the currentTraject of the user
-            Object.keys(_this.userdata.programs[_this.userdata.currentProgram].exercises).forEach(function (ex) {
-                _this.dbService.getExerciseByUid(ex).subscribe(function (ex2) {
-                    console.log("loaduserdata");
-                    console.log(ex2);
-                    _this.exercisesOfCurrentProgram.push(ex2);
-                    _this.currentExercise = _this.exercisesOfCurrentProgram[0];
+            if (_this.userdata.programs != undefined) {
+                Object.keys(_this.userdata.programs[_this.userdata.currentProgram].exercises).forEach(function (ex) {
+                    _this.dbService.getExerciseByUid(ex).subscribe(function (ex2) {
+                        console.log("loaduserdata");
+                        console.log(ex2);
+                        _this.exercisesOfCurrentProgram.push(ex2);
+                        _this.currentExercise = _this.exercisesOfCurrentProgram[0];
+                    });
                 });
-            });
+            }
         });
     };
     HomeComponent.prototype.loadExcercise = function (excerciseId) {
@@ -734,7 +737,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n", ""]);
+exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n\n.header-current-program {\n  color: \"yellow\"; }\n", ""]);
 
 // exports
 
@@ -800,7 +803,7 @@ module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"on
 /***/ 249:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>\r\n    \r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeProgram($event.target.value)\">\r\n        <option *ngFor=\"let program of userdata?.programs\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
+module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\">{{userUid}}</p>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <!--combobox to display all the trajects of the user-->\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>\r\n    \r\n    <h2 class=\"col-xs-12\">Program</h2>\r\n    <div class=\"col-xs-12\">\r\n    <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n    <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
 
 /***/ }),
 
@@ -1165,10 +1168,8 @@ var DrawCanvasService = (function () {
         bodyFrameCtx.globalAlpha = 1;
     };
     DrawCanvasService.prototype.drawExcercise = function (excerciseCanvas, newExcercise) {
-        var _this = this;
         var self = this;
         this.ctx = excerciseCanvas.getContext('2d');
-        //var counter: number = 0;        
         this.stepColors = new Array();
         this.currentStepNr = 0;
         var steps = newExcercise.steps;
@@ -1178,22 +1179,7 @@ var DrawCanvasService = (function () {
             this.ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
         //loop over every step in the excercise and define the right color
-        newExcercise.steps.forEach(function (step, counter) {
-            if (counter == 0) {
-                _this.stepColors.push("#E88C00");
-            }
-            else {
-                _this.stepColors.push("#FFFFFF");
-            }
-            //the first step begins with color orange, the next step(s) are white. when the first step is done it becomes green and the next step will become orange.
-            //check if the step is a TouchPoint or a TrackingLine
-            if (step.stepType == 0)
-                _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.stepColors[counter]);
-            else {
-                _this.drawTrackingLine(step, _this.COLOR_ACTION_NEXT);
-                //this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
-            }
-        });
+        this.initializeExercise(newExcercise);
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
             newExcercise.steps.forEach(function (step, index) {
@@ -1232,12 +1218,12 @@ var DrawCanvasService = (function () {
         //calculate the distance between the circle and the mousepointer            
         var distance = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
         if (distance < step.radius) {
-            this.stepColors[index] = this.COLOR_ACTION_COMPLETED; //if currentStep is achieved -> set color green.
+            //if currentStep is completed -> set color green.            
+            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
+            //show the user the next step by color
             if (steps[index + 1] != null) {
                 this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
             }
-            //if currentStep is completed -> set color green.            
-            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
             this.currentStepNr++;
         }
     };
@@ -1279,11 +1265,29 @@ var DrawCanvasService = (function () {
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
             //if the user is out of reach from the offset => reset the TrackingLine step. The user now has to retry the step.
-            this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
+            this.drawTrackingLine(step, "white");
             this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
             this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
             this.hasToFollowTrackingLine = false;
         }
+    };
+    DrawCanvasService.prototype.initializeExercise = function (exercise) {
+        var _this = this;
+        exercise.steps.forEach(function (step, stepNr) {
+            if (step.stepType == 0) {
+                if (stepNr <= 0)
+                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                else
+                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
+            }
+            else {
+                _this.drawTrackingLine(step, _this.COLOR_ACTION_NEXT);
+                if (stepNr <= 0)
+                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                else
+                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
+            }
+        });
     };
     return DrawCanvasService;
 }());

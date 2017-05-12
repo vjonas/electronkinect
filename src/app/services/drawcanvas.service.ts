@@ -109,7 +109,6 @@ export class DrawCanvasService {
     public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise) {
         const self = this;
         this.ctx = excerciseCanvas.getContext('2d');
-        //var counter: number = 0;        
         this.stepColors = new Array();
         this.currentStepNr = 0;
         const steps = newExcercise.steps;
@@ -119,22 +118,7 @@ export class DrawCanvasService {
             this.ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
         //loop over every step in the excercise and define the right color
-        newExcercise.steps.forEach((step, counter) => {
-            if (counter == 0) {
-                this.stepColors.push("#E88C00");
-            }
-            else {
-                this.stepColors.push("#FFFFFF");
-            }
-            //the first step begins with color orange, the next step(s) are white. when the first step is done it becomes green and the next step will become orange.
-            //check if the step is a TouchPoint or a TrackingLine
-            if (step.stepType == 0)
-                this.drawTouchPoint(step.x0, step.y0, step.radius, this.stepColors[counter]);
-            else {
-                this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
-                //this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
-            }
-        });
+        this.initializeExercise(newExcercise);
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
             newExcercise.steps.forEach((step, index) => {
@@ -177,12 +161,12 @@ export class DrawCanvasService {
         var distance = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
         if (distance < step.radius) //you may drag the circle now
         {
-            this.stepColors[index] = this.COLOR_ACTION_COMPLETED; //if currentStep is achieved -> set color green.
+            //if currentStep is completed -> set color green.            
+            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
+            //show the user the next step by color
             if (steps[index + 1] != null) {
                 this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
             }
-            //if currentStep is completed -> set color green.            
-            this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
             this.currentStepNr++;
         }
     }
@@ -224,10 +208,28 @@ export class DrawCanvasService {
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
             //if the user is out of reach from the offset => reset the TrackingLine step. The user now has to retry the step.
-            this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
+            this.drawTrackingLine(step, "white");
             this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
             this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
             this.hasToFollowTrackingLine = false;
         }
+    }
+
+    private initializeExercise(exercise: FullExercise) {
+        exercise.steps.forEach((step, stepNr) => {
+            if (step.stepType == 0) {
+                if (stepNr <= 0)
+                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+                else
+                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
+            }
+            else {
+                this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
+                if (stepNr <= 0)
+                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+                else
+                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
+            }
+        });
     }
 }

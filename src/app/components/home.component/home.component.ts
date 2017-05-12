@@ -9,6 +9,7 @@ import { User } from '../../models/user.model';
 import { Subject } from 'rxjs/Subject';
 import { Exercise } from "app/models/excercise.model";
 import { FullExercise } from "app/models/full.excercise.model";
+import { Program } from "app/models/program.model";
 
 @Component({
     selector: 'home',
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private currentExercise = null;
     private userUid: string;
     private exercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
+    private currentProgram:Program;
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth) {
         this.ipc = electron.ipcRenderer;
@@ -85,7 +87,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
             case 3:
                 {
-                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas,true,"arrow-to-the-knee");
+                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "arrow-to-the-knee");
                 }
         }
     }
@@ -96,17 +98,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
         this.dbService.getUserdataById(this.userUid).subscribe((userData) => {
             this.userdata = userData;
+            this.currentProgram=userData.programs[userData.currentProgram];
             //get all the excerciseIds in the currentTraject of the user
-            Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach(ex => {
-                this.dbService.getExerciseByUid(ex).subscribe(
-                    ex2 => {
-                        console.log("loaduserdata");
-                        console.log(ex2);
-                        this.exercisesOfCurrentProgram.push(ex2);
-                        this.currentExercise = this.exercisesOfCurrentProgram[0];
-                    }
-                )
-            });
+            if (this.userdata.programs != undefined) {
+                Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach(ex => {
+                    this.dbService.getExerciseByUid(ex).subscribe(
+                        ex2 => {
+                            console.log("loaduserdata");
+                            console.log(ex2);
+                            this.exercisesOfCurrentProgram.push(ex2);
+                            this.currentExercise = this.exercisesOfCurrentProgram[0];
+                        }
+                    )
+                });
+            }
         });
     }
 
