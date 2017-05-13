@@ -129,6 +129,9 @@ export class DrawCanvasService {
                         self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas);
                     else if (step.stepType == 1)
                         self.detectCollisionWithTrackingLine(step, index, steps, excerciseCanvas);
+                    else if (step.stepType == 2) {
+                        
+                    }
                 }
                 if (self.currentStepNr >= newExcercise.steps.length)
                     clearInterval(self.intervalOfCurrentExcercise);

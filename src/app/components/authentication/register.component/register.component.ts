@@ -28,7 +28,8 @@ export class RegisterComponent {
                 email: formData.value.email,
                 password: formData.value.password
             }).then((success) => {
-                console.log("in registercomponent"); console.log(formData);
+                console.log("in registercomponent");
+                localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
                 //create a new userobject in the database
                 this.dbService.createUser(formData, success.uid);
                 this.router.navigate(['/home'])
