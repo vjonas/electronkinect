@@ -567,11 +567,10 @@ var HomeComponent = (function () {
                 _this.currentExercise = ex;
         });
     };
-    HomeComponent.prototype.copyUserId = function (uid) {
-        console.log(uid);
+    HomeComponent.prototype.copyUserId = function (uidParagraph) {
         var selection = window.getSelection();
         var range = document.createRange();
-        range.selectNodeContents(uid);
+        range.selectNodeContents(uidParagraph);
         selection.addRange(range);
         document.execCommand('copy');
     };
