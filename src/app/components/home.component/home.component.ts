@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                             this.currentExercise = this.exercisesOfCurrentProgram[0];
                         }
                     )
-                });
+                }); 
             }
         });
     }
