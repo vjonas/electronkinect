@@ -567,11 +567,10 @@ var HomeComponent = (function () {
                 _this.currentExercise = ex;
         });
     };
-    HomeComponent.prototype.copyUserId = function (uid) {
-        console.log(uid);
+    HomeComponent.prototype.copyUserId = function (uidParagraph) {
         var selection = window.getSelection();
         var range = document.createRange();
-        range.selectNodeContents(uid);
+        range.selectNodeContents(uidParagraph);
         selection.addRange(range);
         document.execCommand('copy');
     };
@@ -1283,12 +1282,18 @@ var DrawCanvasService = (function () {
                 else
                     _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
             }
-            else {
+            else if (step.stepType == 1) {
                 _this.drawTrackingLine(step, _this.COLOR_ACTION_NEXT);
                 if (stepNr <= 0)
                     _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
                 else
                     _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
+            }
+            else if (step.stepType == 2) {
+                if (stepNr <= 0)
+                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                else
+                    _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_CURRENT);
             }
         });
     };

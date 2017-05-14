@@ -126,11 +126,11 @@ export class DrawCanvasService {
                 console.log(self.currentStepNr);
                 if (step.stepNr == self.currentStepNr && self.joints != null) {
                     if (step.stepType == 0)
-                        self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas);
+                        self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas,false);
                     else if (step.stepType == 1)
                         self.detectCollisionWithTrackingLine(step, index, steps, excerciseCanvas);
                     else if (step.stepType == 2) {
-                        
+                        self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas,true);
                     }
                 }
                 if (self.currentStepNr >= newExcercise.steps.length)
@@ -157,7 +157,7 @@ export class DrawCanvasService {
         this.ctx.closePath();
     }
 
-    private detectCollisionWithTouchPoint(step: Step, index, steps, canvas: HTMLCanvasElement) {
+    private detectCollisionWithTouchPoint(step: Step, index, steps, canvas: HTMLCanvasElement,hasSecondTouchPoint:boolean) {
         var mousex = this.joints[step.jointType].depthX * canvas.width;
         var mousey = this.joints[step.jointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
@@ -226,12 +226,18 @@ export class DrawCanvasService {
                 else
                     this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
             }
-            else {
+            else if (step.stepType == 1) {
                 this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
                 if (stepNr <= 0)
                     this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
                 else
                     this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
+            }
+            else if (step.stepType == 2) {
+                if (stepNr <= 0)
+                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+                else
+                    this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);                
             }
         });
     }
