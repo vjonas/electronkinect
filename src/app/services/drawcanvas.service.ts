@@ -13,6 +13,7 @@ export class DrawCanvasService {
     private COLOR_ACTION_CURRENT = "#E88C00";
     private COLOR_ACTION_NEXT = "rgba(255,255,255,0.1)";
     private COLOR_ACTION_COMPLETED = "#7DFF00";
+    private COLOR_OFFSET = "red";
     private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
     private joints = null; //array with all recognised joints (25)
     private intervalOfCurrentExcercise = null;
@@ -153,6 +154,28 @@ export class DrawCanvasService {
         this.ctx.lineWidth = 2;
         this.ctx.strokeStyle = lineColor;
         this.ctx.stroke();
+        this.ctx.closePath();
+        if(this.currentStepNr == step.stepNr){
+            this.drawOffsetOfTrackingLine(step);
+        }
+    }
+
+    private drawOffsetOfTrackingLine(step: Step){
+        var offsetLeft = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(step.trackingLineOffset);
+        var offsetRight = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(-step.trackingLineOffset);
+        this.ctx.beginPath();
+        this.ctx.moveTo(offsetLeft[0].points[0].x, offsetLeft[0].points[0].y);
+        for(var i=0; i < Object.keys(offsetLeft).length; i++){
+            this.ctx.strokeStyle = this.COLOR_OFFSET;
+            this.ctx.bezierCurveTo(offsetLeft[i].points[1].x,offsetLeft[i].points[1].y,offsetLeft[i].points[2].x,offsetLeft[i].points[2].y,offsetLeft[i].points[3].x,offsetLeft[i].points[3].y);
+            this.ctx.stroke();
+        }
+        this.ctx.moveTo(offsetRight[0].points[0].x,offsetRight[0].points[0].y);
+        for(var i=0; i < Object.keys(offsetRight).length; i++){
+            this.ctx.strokeStyle = this.COLOR_OFFSET;
+            this.ctx.bezierCurveTo(offsetRight[i].points[1].x,offsetRight[i].points[1].y,offsetRight[i].points[2].x,offsetRight[i].points[2].y,offsetRight[i].points[3].x,offsetRight[i].points[3].y);
+            this.ctx.stroke();
+        }
         this.ctx.closePath();
     }
 
