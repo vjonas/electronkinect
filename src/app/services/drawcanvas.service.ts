@@ -155,36 +155,40 @@ export class DrawCanvasService {
         this.ctx.strokeStyle = lineColor;
         this.ctx.stroke();
         this.ctx.closePath();
-        if(this.currentStepNr == step.stepNr){
+        if (this.currentStepNr == step.stepNr) {
             this.drawOffsetOfTrackingLine(step);
         }
     }
 
-    private drawOffsetOfTrackingLine(step: Step){
+    private drawOffsetOfTrackingLine(step: Step) {
         var offsetLeft = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(step.trackingLineOffset);
         var offsetRight = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(-step.trackingLineOffset);
         this.ctx.beginPath();
         this.ctx.moveTo(offsetLeft[0].points[0].x, offsetLeft[0].points[0].y);
-        for(var i=0; i < Object.keys(offsetLeft).length; i++){
+        for (var i = 0; i < Object.keys(offsetLeft).length; i++) {
             this.ctx.strokeStyle = this.COLOR_OFFSET;
-            this.ctx.bezierCurveTo(offsetLeft[i].points[1].x,offsetLeft[i].points[1].y,offsetLeft[i].points[2].x,offsetLeft[i].points[2].y,offsetLeft[i].points[3].x,offsetLeft[i].points[3].y);
+            this.ctx.bezierCurveTo(offsetLeft[i].points[1].x, offsetLeft[i].points[1].y, offsetLeft[i].points[2].x, offsetLeft[i].points[2].y, offsetLeft[i].points[3].x, offsetLeft[i].points[3].y);
             this.ctx.stroke();
         }
-        this.ctx.moveTo(offsetRight[0].points[0].x,offsetRight[0].points[0].y);
-        for(var i=0; i < Object.keys(offsetRight).length; i++){
+        this.ctx.moveTo(offsetRight[0].points[0].x, offsetRight[0].points[0].y);
+        for (var i = 0; i < Object.keys(offsetRight).length; i++) {
             this.ctx.strokeStyle = this.COLOR_OFFSET;
-            this.ctx.bezierCurveTo(offsetRight[i].points[1].x,offsetRight[i].points[1].y,offsetRight[i].points[2].x,offsetRight[i].points[2].y,offsetRight[i].points[3].x,offsetRight[i].points[3].y);
+            this.ctx.bezierCurveTo(offsetRight[i].points[1].x, offsetRight[i].points[1].y, offsetRight[i].points[2].x, offsetRight[i].points[2].y, offsetRight[i].points[3].x, offsetRight[i].points[3].y);
             this.ctx.stroke();
         }
         this.ctx.closePath();
     }
 
     private detectCollisionWithTouchPoint(step: Step, index, steps, canvas: HTMLCanvasElement, hasSecondTouchPoint: boolean) {
-        var mousex = this.joints[step.jointType].depthX * canvas.width;
-        var mousey = this.joints[step.jointType].depthY * canvas.height;
+        var firstJointX = this.joints[step.jointType].depthX * canvas.width;
+        var firstJointY = this.joints[step.jointType].depthY * canvas.height;
+        var secondJointX = this.joints[step.secondJointType].depthX * canvas.width;
+        var secondJointY = this.joints[step.secondJointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
-        var distanceToFirstTrackingPoint = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
-        var distanceToSecondTrackingPoint = Math.sqrt((mousex - step.x1) * (mousex - step.x1) + (mousey - step.y1) * (mousey - step.y1));
+        var distanceToFirstTrackingPoint = Math.sqrt((firstJointX - step.x0) * (firstJointX - step.x0) + (firstJointY - step.y0) * (firstJointY - step.y0));
+        var distanceToSecondTrackingPoint = Math.sqrt((secondJointX - step.x1) * (secondJointX - step.x1) + (secondJointY - step.y1) * (secondJointY - step.y1));
+        console.log(step);
+        console.log(distanceToFirstTrackingPoint);
         if (hasSecondTouchPoint) {
             if (distanceToFirstTrackingPoint < step.radius) //you may drag the circle now
             {
@@ -277,10 +281,16 @@ export class DrawCanvasService {
                     this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
             }
             else if (step.stepType == 2) {
-                if (stepNr <= 0)
+                if (stepNr <= 0) {
                     this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
-                else
                     this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
+
+                }
+                else
+                {
+                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
+                    this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_NEXT);
+                }
             }
         });
     }

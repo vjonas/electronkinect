@@ -665,7 +665,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto;\n  text-align: center; }\n  form p {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      -webkit-transition: all 0.1s ease;\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n    form .form-group button {\n      width: 100%; }\n    form .form-group a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form .form-group #resetpasswordbutton {\n      font-size: .8em;\n      text-align: right;\n      width: 98%;\n      margin: auto; }\n  form #buttons {\n    margin: auto;\n    margin-top: 1%;\n    width: 80%;\n    text-align: center; }\n    form #buttons #loginbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto;\n  text-align: center; }\n  form p {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n    form .form-group button {\n      width: 100%; }\n    form .form-group a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form .form-group #resetpasswordbutton {\n      font-size: .8em;\n      text-align: right;\n      width: 98%;\n      margin: auto; }\n  form #buttons {\n    margin: auto;\n    margin-top: 1%;\n    width: 80%;\n    text-align: center; }\n    form #buttons #loginbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n", ""]);
 
 // exports
 
@@ -683,7 +683,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      -webkit-transition: all 0.1s ease;\n      /* Safari and Chrome */\n      /* Firefox */\n      /* Opera */\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        /* Safari and Chrome */\n        /* Firefox */\n        /* IE 9 */\n        /* Opera */\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      background: white;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%; }\n    form #buttons a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form #buttons #registerbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      /* Safari and Chrome */\n      /* Firefox */\n      /* Opera */\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        /* Safari and Chrome */\n        /* Firefox */\n        /* IE 9 */\n        /* Opera */\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      background: white;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%; }\n    form #buttons a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form #buttons #registerbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -719,7 +719,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      -webkit-transition: all 0.1s ease;\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%;\n      background: #3ED600;\n      font-size: 1.3em; }\n  form a {\n    width: 100%;\n    height: 25px;\n    font-size: 15px;\n    margin-top: 3%; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(71) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%;\n      background: #3ED600;\n      font-size: 1.3em; }\n  form a {\n    width: 100%;\n    height: 25px;\n    font-size: 15px;\n    margin-top: 3%; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -1237,11 +1237,15 @@ var DrawCanvasService = (function () {
         this.ctx.closePath();
     };
     DrawCanvasService.prototype.detectCollisionWithTouchPoint = function (step, index, steps, canvas, hasSecondTouchPoint) {
-        var mousex = this.joints[step.jointType].depthX * canvas.width;
-        var mousey = this.joints[step.jointType].depthY * canvas.height;
+        var firstJointX = this.joints[step.jointType].depthX * canvas.width;
+        var firstJointY = this.joints[step.jointType].depthY * canvas.height;
+        var secondJointX = this.joints[step.secondJointType].depthX * canvas.width;
+        var secondJointY = this.joints[step.secondJointType].depthY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
-        var distanceToFirstTrackingPoint = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
-        var distanceToSecondTrackingPoint = Math.sqrt((mousex - step.x1) * (mousex - step.x1) + (mousey - step.y1) * (mousey - step.y1));
+        var distanceToFirstTrackingPoint = Math.sqrt((firstJointX - step.x0) * (firstJointX - step.x0) + (firstJointY - step.y0) * (firstJointY - step.y0));
+        var distanceToSecondTrackingPoint = Math.sqrt((secondJointX - step.x1) * (secondJointX - step.x1) + (secondJointY - step.y1) * (secondJointY - step.y1));
+        console.log(step);
+        console.log(distanceToFirstTrackingPoint);
         if (hasSecondTouchPoint) {
             if (distanceToFirstTrackingPoint < step.radius) {
                 this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
@@ -1333,10 +1337,14 @@ var DrawCanvasService = (function () {
                     _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
             }
             else if (step.stepType == 2) {
-                if (stepNr <= 0)
+                if (stepNr <= 0) {
                     _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
-                else
                     _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_CURRENT);
+                }
+                else {
+                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
+                    _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_NEXT);
+                }
             }
         });
     };
