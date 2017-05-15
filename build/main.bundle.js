@@ -1184,7 +1184,6 @@ var DrawCanvasService = (function () {
         this.intervalOfCurrentExcercise = setInterval(function () {
             newExcercise.steps.forEach(function (step, index) {
                 //check if the step is a TouchPoint or TrackingLine then do collision detection
-                console.log(self.currentStepNr);
                 if (step.stepNr == self.currentStepNr && self.joints != null) {
                     if (step.stepType == 0)
                         self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas, false);
@@ -1221,7 +1220,6 @@ var DrawCanvasService = (function () {
         //calculate the distance between the circle and the mousepointer            
         var distanceToFirstTrackingPoint = Math.sqrt((mousex - step.x0) * (mousex - step.x0) + (mousey - step.y0) * (mousey - step.y0));
         var distanceToSecondTrackingPoint = Math.sqrt((mousex - step.x1) * (mousex - step.x1) + (mousey - step.y1) * (mousey - step.y1));
-        console.log(hasSecondTouchPoint);
         if (hasSecondTouchPoint) {
             if (distanceToFirstTrackingPoint < step.radius) {
                 this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
@@ -1243,7 +1241,6 @@ var DrawCanvasService = (function () {
             }
         }
         else {
-            console.log("no second touchpoint if");
             if (distanceToFirstTrackingPoint < step.radius) {
                 this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
                 if (steps[index + 1] != null) {
