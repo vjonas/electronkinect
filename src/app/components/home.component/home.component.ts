@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
 
+
     }
 
     onChangeProgram(newProgramId) {
@@ -102,7 +103,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                             this.currentExercise = this.exercisesOfCurrentProgram[0];
                         }
                     )
-                }); 
+                });
             }
         });
     }
@@ -114,9 +115,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
         })
     }
 
-    private copyUserId(uidParagraph:HTMLParagraphElement)
-    {
-        var selection=window.getSelection();
+    private copyUserId(uidParagraph: HTMLParagraphElement) {
+        var selection = window.getSelection();
         var range = document.createRange();
         range.selectNodeContents(uidParagraph);
         selection.addRange(range);

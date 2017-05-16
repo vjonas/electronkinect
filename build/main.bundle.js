@@ -737,7 +737,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n\n.header-current-program {\n  color: \"yellow\"; }\n", ""]);
+exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n\n.header-current-program {\n  color: \"yellow\"; }\n\n#colorframecanvas {\n  width: 960px;\n  height: 540px; }\n", ""]);
 
 // exports
 
@@ -803,7 +803,7 @@ module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"on
 /***/ 249:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\" #uid>{{userUid}}</p>\r\n                <button (click)=\"copyUserId(uid)\"> COPY</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>    \r\n    <button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    \r\n    <h2 class=\"col-xs-12\">Current Program</h2>\r\n    <div class=\"col-xs-12\">\r\n    <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n    <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
+module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\" #uid>{{userUid}}</p>\r\n                <button (click)=\"copyUserId(uid)\"> COPY</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExcercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-8\">\r\n        <canvas id=\"colorframecanvas\" width=\"640\" height=\"360\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-4 controls\">\r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>    \r\n    <button class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#uidModal\">Show Uid</button>\r\n    \r\n    <h2 class=\"col-xs-12\">Current Program</h2>\r\n    <div class=\"col-xs-12\">\r\n    <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n    <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
 
 /***/ }),
 
@@ -993,6 +993,7 @@ var KinectService = (function () {
         this.bodyFrame = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
         this.bodyFrameMock = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
         this.colorFrame = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        this.colorFrame2 = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
         this.mockData = false;
         this.counter = 0;
         this.array = null;
@@ -1005,6 +1006,9 @@ var KinectService = (function () {
         //open the listener to the colorFrames
         this.ipc.on('colorFrame', function (event, colorFrame) {
             self.colorFrame.next(colorFrame);
+        });
+        this.ipc.on('colorFrame2', function (event, colorFrame) {
+            self.colorFrame2.next(colorFrame.data);
         });
         //open listener for other logs
         this.ipc.on('log', function (event, data) {
@@ -1020,6 +1024,9 @@ var KinectService = (function () {
     };
     KinectService.prototype.getColorFrames = function () {
         return this.colorFrame.asObservable();
+    };
+    KinectService.prototype.getColorFrames2 = function () {
+        return this.colorFrame2.asObservable();
     };
     KinectService.prototype.streamMockData = function (fileName) {
         var _this = this;
@@ -1088,6 +1095,7 @@ var DrawCanvasService = (function () {
         this.intervalOfCurrentExcercise = null;
         this.stepColors = new Array();
         this.currentStepNr = 0;
+        this.tracked = true;
     }
     /**
          * param2: boolean to set when playing mockdata
@@ -1104,11 +1112,14 @@ var DrawCanvasService = (function () {
             var index = 0;
             bodyFrame.bodies.forEach(function (body) {
                 if (body.tracked) {
+                    if (self.tracked)
+                        console.log(body);
+                    self.tracked = false;
                     //draw the joints
                     for (var jointType in body.joints) {
                         var joint = body.joints[jointType];
                         bodyFrameCtx.fillStyle = colors[index];
-                        bodyFrameCtx.fillRect(joint.depthX * bodyFrameCtx.canvas.width, joint.depthY * bodyFrameCtx.canvas.height, 5, 5);
+                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width - 2.5, joint.colorY * bodyFrameCtx.canvas.height - 2.5, 5, 5);
                     }
                     index++;
                     self.joints = body.joints; //save all joints to class variable
@@ -1163,7 +1174,7 @@ var DrawCanvasService = (function () {
         bodyFrameCtx.globalAlpha = 0.75;
         bodyFrameCtx.beginPath();
         bodyFrameCtx.fillStyle = handColor;
-        bodyFrameCtx.arc(jointPoint.depthX * bodyFrameCtx.canvas.width, jointPoint.depthY * bodyFrameCtx.canvas.height, this.HANDSIZE, 0, Math.PI * 2, true);
+        bodyFrameCtx.arc(jointPoint.colorX * bodyFrameCtx.canvas.width - (this.HANDSIZE / 2), jointPoint.colorY * bodyFrameCtx.canvas.height - (this.HANDSIZE / 2), this.HANDSIZE, 0, Math.PI * 2, true);
         bodyFrameCtx.fill();
         bodyFrameCtx.closePath();
         bodyFrameCtx.globalAlpha = 1;
@@ -1179,7 +1190,6 @@ var DrawCanvasService = (function () {
             clearInterval(this.intervalOfCurrentExcercise);
             this.ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
-        //loop over every step in the excercise and define the right color
         this.initializeExercise(newExcercise);
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
@@ -1258,20 +1268,13 @@ var DrawCanvasService = (function () {
             else
                 this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
             if (distanceToSecondTrackingPoint < step.radius && distanceToFirstTrackingPoint < step.radius) {
-                this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
-                this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_COMPLETED);
-                if (steps[index + 1] != null) {
-                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
-                }
+                this.drawTwoNextSteps(steps, index, canvas);
                 this.currentStepNr++;
             }
         }
         else {
             if (distanceToFirstTrackingPoint < step.radius) {
-                this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
-                if (steps[index + 1] != null) {
-                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
-                }
+                this.drawTwoNextSteps(steps, index, canvas);
                 this.currentStepNr++;
             }
         }
@@ -1303,11 +1306,7 @@ var DrawCanvasService = (function () {
         if (distanceOfJointFromTrackingLine.d < step.trackingLineOffset && this.hasToFollowTrackingLine) {
             //check if the user touches the endpoint and completed the TrackingLine => step IS COMPLETE!!
             if (distanceFromEndingPoint < step.radius) {
-                this.drawTrackingLine(step, this.COLOR_ACTION_COMPLETED);
-                this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_COMPLETED);
-                if (steps[index + 1] != null) {
-                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
-                }
+                this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
                 this.currentStepNr++;
             }
@@ -1320,30 +1319,64 @@ var DrawCanvasService = (function () {
             this.hasToFollowTrackingLine = false;
         }
     };
+    DrawCanvasService.prototype.drawTwoNextSteps = function (steps, indexCurrentStep, canvas) {
+        this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var currentStep;
+        //first step
+        currentStep = steps[indexCurrentStep + 1];
+        if (currentStep != null && currentStep.stepType == 0) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_CURRENT);
+        }
+        else if (currentStep != null && currentStep.stepType == 1) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_CURRENT);
+            this.drawTrackingLine(currentStep, this.COLOR_ACTION_NEXT);
+            this.drawTouchPoint(currentStep.x3, currentStep.y3, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+        else if (currentStep != null && currentStep.stepType == 2) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_CURRENT);
+            this.drawTouchPoint(currentStep.x1, currentStep.y1, currentStep.radius, this.COLOR_ACTION_CURRENT);
+        }
+        //second step
+        currentStep = steps[indexCurrentStep + 2];
+        if (currentStep != null && currentStep.stepType == 0) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+        else if (currentStep != null && currentStep.stepType == 1) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_NEXT);
+            this.drawTrackingLine(currentStep, this.COLOR_ACTION_NEXT);
+            this.drawTouchPoint(currentStep.x3, currentStep.y3, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+        else if (currentStep != null && currentStep.stepType == 2) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_NEXT);
+            this.drawTouchPoint(currentStep.x1, currentStep.y1, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+    };
     DrawCanvasService.prototype.initializeExercise = function (exercise) {
         var _this = this;
         exercise.steps.forEach(function (step, stepNr) {
-            if (step.stepType == 0) {
-                if (stepNr <= 0)
-                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
-                else
-                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
-            }
-            else if (step.stepType == 1) {
-                _this.drawTrackingLine(step, _this.COLOR_ACTION_NEXT);
-                if (stepNr <= 0)
-                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
-                else
-                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
-            }
-            else if (step.stepType == 2) {
-                if (stepNr <= 0) {
-                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
-                    _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_CURRENT);
+            if (stepNr <= 1) {
+                if (step.stepType == 0) {
+                    if (stepNr <= 0)
+                        _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                    else
+                        _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
                 }
-                else {
-                    _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
-                    _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_NEXT);
+                else if (step.stepType == 1) {
+                    _this.drawTrackingLine(step, _this.COLOR_ACTION_NEXT);
+                    if (stepNr <= 0)
+                        _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                    else
+                        _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
+                }
+                else if (step.stepType == 2) {
+                    if (stepNr <= 0) {
+                        _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_CURRENT);
+                        _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_CURRENT);
+                    }
+                    else {
+                        _this.drawTouchPoint(step.x0, step.y0, step.radius, _this.COLOR_ACTION_NEXT);
+                        _this.drawTouchPoint(step.x1, step.y1, step.radius, _this.COLOR_ACTION_NEXT);
+                    }
                 }
             }
         });

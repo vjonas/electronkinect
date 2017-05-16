@@ -27,17 +27,11 @@ if (kinect.open()) {
 
 	var i = 0;
 	kinect.on('bodyFrame', function (bodyFrame) {
-		//process.send(bodyframe);
-		//io.sockets.emit('bodyFrame', bodyFrame);
-		//ipc.send('kinect-bodyframe', bodyFrame);
-		//console.log(JSON.stringify(bodyFrame));
 		process.send("0" + JSON.stringify(bodyFrame));
 
 	});
 
-	var compression = 2;
-	process.send("compression:" + compression.toString());
-
+	var compression = 3;
 	var origWidth = 1920;
 	var origHeight = 1080;
 	var origLength = 4 * origWidth * origHeight;

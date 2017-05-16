@@ -21,8 +21,10 @@ export class DrawCanvasService {
     private currentStepNr: number = 0;
     private ctx;
     private hasToFollowTrackingLine: boolean;
+    private tracked: boolean = true;
 
     constructor(private kinectService: KinectService) {
+
     }
 
     /**
@@ -40,11 +42,14 @@ export class DrawCanvasService {
             var index = 0;
             bodyFrame.bodies.forEach(function (body) {
                 if (body.tracked) {
+                    if (self.tracked)
+                        console.log(body);
+                    self.tracked = false;
                     //draw the joints
                     for (var jointType in body.joints) {
                         var joint = body.joints[jointType];
                         bodyFrameCtx.fillStyle = colors[index];
-                        bodyFrameCtx.fillRect(joint.depthX * bodyFrameCtx.canvas.width, joint.depthY * bodyFrameCtx.canvas.height, 5, 5);
+                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-2.5, joint.colorY * bodyFrameCtx.canvas.height-2.5, 5, 5);
                     }
                     index++;
                     self.joints = body.joints; //save all joints to class variable
@@ -101,7 +106,7 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 0.75;
         bodyFrameCtx.beginPath();
         bodyFrameCtx.fillStyle = handColor;
-        bodyFrameCtx.arc(jointPoint.depthX * bodyFrameCtx.canvas.width, jointPoint.depthY * bodyFrameCtx.canvas.height, this.HANDSIZE, 0, Math.PI * 2, true);
+        bodyFrameCtx.arc(jointPoint.colorX * bodyFrameCtx.canvas.width - (this.HANDSIZE / 2), jointPoint.colorY * bodyFrameCtx.canvas.height - (this.HANDSIZE / 2), this.HANDSIZE, 0, Math.PI * 2, true);
         bodyFrameCtx.fill();
         bodyFrameCtx.closePath();
         bodyFrameCtx.globalAlpha = 1;
@@ -118,7 +123,6 @@ export class DrawCanvasService {
             clearInterval(this.intervalOfCurrentExcercise);
             this.ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
         }
-        //loop over every step in the excercise and define the right color
         this.initializeExercise(newExcercise);
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
@@ -201,21 +205,14 @@ export class DrawCanvasService {
             else
                 this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
             if (distanceToSecondTrackingPoint < step.radius && distanceToFirstTrackingPoint < step.radius) {
-                this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
-                this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_COMPLETED);
-                if (steps[index + 1] != null) {
-                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
-                }
+                this.drawTwoNextSteps(steps, index, canvas);
                 this.currentStepNr++;
             }
         }
         else {
             if (distanceToFirstTrackingPoint < step.radius) //you may drag the circle now
             {
-                this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
-                if (steps[index + 1] != null) {
-                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
-                }
+                this.drawTwoNextSteps(steps, index, canvas);
                 this.currentStepNr++;
             }
         }
@@ -247,11 +244,7 @@ export class DrawCanvasService {
         if (distanceOfJointFromTrackingLine.d < step.trackingLineOffset && this.hasToFollowTrackingLine) {
             //check if the user touches the endpoint and completed the TrackingLine => step IS COMPLETE!!
             if (distanceFromEndingPoint < step.radius) {
-                this.drawTrackingLine(step, this.COLOR_ACTION_COMPLETED);
-                this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_COMPLETED);
-                if (steps[index + 1] != null) {
-                    this.drawTouchPoint(steps[index + 1].x0, steps[index + 1].y0, steps[index + 1].radius, this.COLOR_ACTION_CURRENT);
-                }
+                this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
                 this.currentStepNr++;
             }
@@ -265,31 +258,67 @@ export class DrawCanvasService {
         }
     }
 
+    private drawTwoNextSteps(steps: Step[], indexCurrentStep: number, canvas: HTMLCanvasElement) {
+        this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        var currentStep;
+        //first step
+        currentStep = steps[indexCurrentStep + 1];
+        if (currentStep != null && currentStep.stepType == 0) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_CURRENT);
+        }
+        else if (currentStep != null && currentStep.stepType == 1) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_CURRENT);
+            this.drawTrackingLine(currentStep, this.COLOR_ACTION_NEXT)
+            this.drawTouchPoint(currentStep.x3, currentStep.y3, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+        else if (currentStep != null && currentStep.stepType == 2) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_CURRENT);
+            this.drawTouchPoint(currentStep.x1, currentStep.y1, currentStep.radius, this.COLOR_ACTION_CURRENT);
+        }
+        //second step
+        currentStep = steps[indexCurrentStep + 2];
+        if (currentStep != null && currentStep.stepType == 0) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+        else if (currentStep != null && currentStep.stepType == 1) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_NEXT);
+            this.drawTrackingLine(currentStep, this.COLOR_ACTION_NEXT)
+            this.drawTouchPoint(currentStep.x3, currentStep.y3, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+        else if (currentStep != null && currentStep.stepType == 2) {
+            this.drawTouchPoint(currentStep.x0, currentStep.y0, currentStep.radius, this.COLOR_ACTION_NEXT);
+            this.drawTouchPoint(currentStep.x1, currentStep.y1, currentStep.radius, this.COLOR_ACTION_NEXT);
+        }
+
+    }
+
     private initializeExercise(exercise: FullExercise) {
         exercise.steps.forEach((step, stepNr) => {
-            if (step.stepType == 0) {
-                if (stepNr <= 0)
-                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
-                else
-                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
-            }
-            else if (step.stepType == 1) {
-                this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
-                if (stepNr <= 0)
-                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
-                else
-                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
-            }
-            else if (step.stepType == 2) {
-                if (stepNr <= 0) {
-                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
-                    this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
-
+            if (stepNr <= 1) {
+                if (step.stepType == 0) {
+                    if (stepNr <= 0)
+                        this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+                    else
+                        this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
                 }
-                else
-                {
-                    this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
-                    this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_NEXT);
+                else if (step.stepType == 1) {
+                    this.drawTrackingLine(step, this.COLOR_ACTION_NEXT);
+                    if (stepNr <= 0)
+                        this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+                    else
+                        this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
+                }
+                else if (step.stepType == 2) {
+                    if (stepNr <= 0) {
+                        this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
+                        this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
+
+                    }
+                    else {
+                        this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_NEXT);
+                        this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_NEXT);
+                    }
                 }
             }
         });

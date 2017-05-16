@@ -11,6 +11,7 @@ export class KinectService {
     private bodyFrame: Subject<any> = new Subject<any>();
     private bodyFrameMock: Subject<any> = new Subject<any>();
     private colorFrame: Subject<any> = new Subject<any>();
+    private colorFrame2: Subject<any> = new Subject<any>();
     mockData: boolean = false;
     private mockArray: any;
     private counter: number = 0;
@@ -26,6 +27,9 @@ export class KinectService {
         //open the listener to the colorFrames
         this.ipc.on('colorFrame', function (event, colorFrame) {
             self.colorFrame.next(colorFrame);
+        })
+        this.ipc.on('colorFrame2', function (event, colorFrame) {
+            self.colorFrame2.next(colorFrame.data);
         })
         //open listener for other logs
         this.ipc.on('log', function (event, data) {
@@ -43,6 +47,10 @@ export class KinectService {
 
     getColorFrames(): Observable<any> {
         return this.colorFrame.asObservable();
+    }
+
+    getColorFrames2(): Observable<any> {
+        return this.colorFrame2.asObservable();
     }
 
 

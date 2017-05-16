@@ -1,6 +1,7 @@
-const { app, BrowserWindow, Menu, path } = require('electron');
+const { app, BrowserWindow, Menu, path, ipcMain } = require('electron');
 const { spawn, exec, fork } = require('child_process');
 const fs = require('fs');
+
 //var workerjsScript = require(`${__dirname}/worker.js`);
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -9,6 +10,8 @@ let win
 let server
 let cmd;
 let child;
+let colorWorkerChild;
+let colorProcessing = false;
 
 function createWindow() {
   win = new BrowserWindow({ width: 1200, height: 720 })
@@ -69,6 +72,8 @@ function createMenu() {
 function startKinect(mock) {
   var setBeginningOfJson = true;
   //child = spawn('node', [`${__dirname}/worker.js`], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
+
+
   child = spawn('node', [`${__dirname}/worker.js`], { detached: false, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
   child.on('message', function (frame) {
     if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
@@ -80,7 +85,10 @@ function startKinect(mock) {
       if (mock) fs.appendFile('./src/assets/mockdata2.json', frame.substr(1, frame.size) + ",");
     }
     else if (frame.substr(0, 1) == ("1")) {
-      if (child != null) win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen
+      if (child != null) {
+        win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen
+      }
+
     }
     else {
       console.log("algemeen childprocess log: " + frame);
@@ -98,7 +106,6 @@ function startKinect(mock) {
 app.on('ready', () => {
   createWindow();
   createMenu();
-  // startKinect();
 }
 )
 
