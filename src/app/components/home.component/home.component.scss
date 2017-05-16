@@ -30,3 +30,8 @@ select{
     width:960px;
     height: 540px;
 }
+
+.placeholderCanvas{
+    position:absolute; 
+    background-image:url('../../../assets/images/kinectBeforeStart.jpg');
+}

@@ -21,10 +21,8 @@ export class DrawCanvasService {
     private currentStepNr: number = 0;
     private ctx;
     private hasToFollowTrackingLine: boolean;
-    private tracked: boolean = true;
 
     constructor(private kinectService: KinectService) {
-
     }
 
     /**
@@ -42,14 +40,13 @@ export class DrawCanvasService {
             var index = 0;
             bodyFrame.bodies.forEach(function (body) {
                 if (body.tracked) {
-                    if (self.tracked)
-                        console.log(body);
-                    self.tracked = false;
                     //draw the joints
                     for (var jointType in body.joints) {
                         var joint = body.joints[jointType];
+                        /*bodyFrameCtx.fillStyle="rgba(0,0,0,0.5)";
+                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-5, joint.colorY * bodyFrameCtx.canvas.height-5, 10, 10);
                         bodyFrameCtx.fillStyle = colors[index];
-                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-2.5, joint.colorY * bodyFrameCtx.canvas.height-2.5, 5, 5);
+                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-2.5, joint.colorY * bodyFrameCtx.canvas.height-2.5, 5, 5);*/
                     }
                     index++;
                     self.joints = body.joints; //save all joints to class variable
@@ -184,10 +181,10 @@ export class DrawCanvasService {
     }
 
     private detectCollisionWithTouchPoint(step: Step, index, steps, canvas: HTMLCanvasElement, hasSecondTouchPoint: boolean) {
-        var firstJointX = this.joints[step.jointType].depthX * canvas.width;
-        var firstJointY = this.joints[step.jointType].depthY * canvas.height;
-        var secondJointX = this.joints[step.secondJointType].depthX * canvas.width;
-        var secondJointY = this.joints[step.secondJointType].depthY * canvas.height;
+        var firstJointX = this.joints[step.jointType].colorX * canvas.width;
+        var firstJointY = this.joints[step.jointType].colorY * canvas.height;
+        var secondJointX = this.joints[step.secondJointType].colorX * canvas.width;
+        var secondJointY = this.joints[step.secondJointType].colorY * canvas.height;
         //calculate the distance between the circle and the mousepointer            
         var distanceToFirstTrackingPoint = Math.sqrt((firstJointX - step.x0) * (firstJointX - step.x0) + (firstJointY - step.y0) * (firstJointY - step.y0));
         var distanceToSecondTrackingPoint = Math.sqrt((secondJointX - step.x1) * (secondJointX - step.x1) + (secondJointY - step.y1) * (secondJointY - step.y1));
@@ -219,8 +216,8 @@ export class DrawCanvasService {
     }
 
     private detectCollisionWithTrackingLine(step: Step, index, steps, canvas: HTMLCanvasElement) {
-        var mouseX = this.joints[step.jointType].depthX * canvas.width;
-        var mouseY = this.joints[step.jointType].depthY * canvas.height;
+        var mouseX = this.joints[step.jointType].colorX * canvas.width;
+        var mouseY = this.joints[step.jointType].colorY * canvas.height;
         //calculate the distance between the circle and the mousepointer
         //calculate the bezier-distance
         var curve: Bezier = new Bezier(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3);

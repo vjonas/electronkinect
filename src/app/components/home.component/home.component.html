@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-
+<img id="kinectPlaceholder" style="display:none;" src="./assets/images/kinectBeforeStart.jpg">
 <div class="wrapper">
     <h1 class="col-xs-12">{{currentExcercise?.name}}</h1>
     <!--<button class="btn btn-warning" (click)="playMockData(1)">Play linkerhand</button>    
@@ -23,6 +23,7 @@
     <!--<button (click)="loadExcercise(1)">getEx1</button>-->
 
     <div class="canvasArea col-xs-8">
+        <canvas class="placeholderCanvas" width="960" height="540" ></canvas>
         <canvas id="colorframecanvas" width="640" height="360" style="position:absolute"></canvas>
         <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
         <canvas id="exercisecanvas" width="960" height="540" style="position:absolute"></canvas>
