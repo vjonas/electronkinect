@@ -17,12 +17,12 @@
 </div>
 <img id="kinectPlaceholder" style="display:none;" src="./assets/images/kinectBeforeStart.jpg">
 <div class="wrapper">
-    <h1 class="col-xs-12">{{currentExcercise?.name}}</h1>
+    <h1 class="col-xs-12">{{currentExercise?.name}}</h1>
     <!--<button class="btn btn-warning" (click)="playMockData(1)">Play linkerhand</button>    
     <button class="btn btn-warning" (click)="playMockData(2)">Play rechterhand</button>-->
     <!--<button (click)="loadExcercise(1)">getEx1</button>-->
 
-    <div class="canvasArea col-xs-8">
+    <div class="canvasArea col-xs-7">
         <canvas class="placeholderCanvas" width="960" height="540" ></canvas>
         <canvas id="colorframecanvas" width="640" height="360" style="position:absolute"></canvas>
         <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
@@ -30,8 +30,8 @@
     </div>
     
 
-    <div class="col-xs-4 controls">
-    <button class="btn btn-warning" (click)="playMockData(3)">Play arrow to the knee</button>    
+    <div class="col-xs-5 controls">
+<!--    <button class="btn btn-warning" (click)="playMockData(3)">Play arrow to the knee</button>    -->
     <button class="btn btn-warning" data-toggle="modal" data-target="#uidModal">Show Uid</button>
     
     <h2 class="col-xs-12">Current Program</h2>
@@ -52,5 +52,13 @@
     <button class="col-xs-6" id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Start Excercise</button>
     </div>
     </div>
-    
+    <div class="col-xs-12 progressBarArea">
+    <div id="myProgress" class="progressBarParent">
+        <div id="myBar" class="progressBar"></div>
+    </div>
+    </div>
+    <div class="col-xs-12 descriptionArea">
+        <h2>Description</h2>
+        <h4>{{currentExercise?.description}}</h4>
+    </div>
 </div>
