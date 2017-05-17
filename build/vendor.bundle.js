@@ -5,8 +5,8 @@ webpackJsonp([3,4],[
 "use strict";
 
 var root_1 = __webpack_require__(10);
-var toSubscriber_1 = __webpack_require__(511);
-var observable_1 = __webpack_require__(64);
+var toSubscriber_1 = __webpack_require__(512);
+var observable_1 = __webpack_require__(65);
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
  * of RxJS.
@@ -157,10 +157,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(69);
+var isFunction_1 = __webpack_require__(70);
 var Subscription_1 = __webpack_require__(7);
-var Observer_1 = __webpack_require__(116);
-var rxSubscriber_1 = __webpack_require__(65);
+var Observer_1 = __webpack_require__(117);
+var rxSubscriber_1 = __webpack_require__(66);
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -457,13 +457,13 @@ exports.OuterSubscriber = OuterSubscriber;
 "use strict";
 
 var root_1 = __webpack_require__(10);
-var isArrayLike_1 = __webpack_require__(147);
-var isPromise_1 = __webpack_require__(149);
-var isObject_1 = __webpack_require__(148);
+var isArrayLike_1 = __webpack_require__(148);
+var isPromise_1 = __webpack_require__(150);
+var isObject_1 = __webpack_require__(149);
 var Observable_1 = __webpack_require__(0);
 var iterator_1 = __webpack_require__(47);
-var InnerSubscriber_1 = __webpack_require__(250);
-var observable_1 = __webpack_require__(64);
+var InnerSubscriber_1 = __webpack_require__(251);
+var observable_1 = __webpack_require__(65);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -542,9 +542,9 @@ exports.subscribeToResult = subscribeToResult;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
@@ -554,39 +554,39 @@ exports.subscribeToResult = subscribeToResult;
 /* unused harmony export destroyPlatform */
 /* unused harmony export getPlatform */
 /* unused harmony export PlatformRef */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return ApplicationRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return ApplicationRef; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return enableProdMode; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return isDevMode; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return createPlatformFactory; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return NgProbeToken; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return APP_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return isDevMode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return createPlatformFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return NgProbeToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return APP_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_53", function() { return PACKAGE_ROOT_URL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return PLATFORM_INITIALIZER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return PLATFORM_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return PLATFORM_INITIALIZER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return PLATFORM_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_11", function() { return APP_BOOTSTRAP_LISTENER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return APP_INITIALIZER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return APP_INITIALIZER; });
 /* unused harmony export ApplicationInitStatus */
 /* unused harmony export DebugElement */
 /* unused harmony export DebugNode */
 /* unused harmony export asNativeElements */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return getDebugNode; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return Testability; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return getDebugNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return Testability; });
 /* unused harmony export TestabilityRegistry */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return setTestabilityGetter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return setTestabilityGetter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_73", function() { return TRANSLATIONS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_31", function() { return TRANSLATIONS_FORMAT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return LOCALE_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_24", function() { return MissingTranslationStrategy; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return ApplicationModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return ApplicationModule; });
 /* unused harmony export wtfCreateScope */
 /* unused harmony export wtfLeave */
 /* unused harmony export wtfStartTimeRange */
 /* unused harmony export wtfEndTimeRange */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_59", function() { return Type; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return EventEmitter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return ErrorHandler; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return Sanitizer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return SecurityContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return EventEmitter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return ErrorHandler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return Sanitizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return SecurityContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return ANALYZE_FOR_ENTRY_COMPONENTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return Attribute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_64", function() { return ContentChild; });
@@ -604,8 +604,8 @@ exports.subscribeToResult = subscribeToResult;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CUSTOM_ELEMENTS_SCHEMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_61", function() { return NO_ERRORS_SCHEMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return ViewEncapsulation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Version; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return ViewEncapsulation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Version; });
 /* unused harmony export VERSION */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_12", function() { return forwardRef; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_54", function() { return resolveForwardRef; });
@@ -613,20 +613,20 @@ exports.subscribeToResult = subscribeToResult;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_4", function() { return ReflectiveInjector; });
 /* unused harmony export ResolvedReflectiveFactory */
 /* unused harmony export ReflectiveKey */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return InjectionToken; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return OpaqueToken; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Inject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return Optional; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Injectable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return InjectionToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return OpaqueToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Inject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Optional; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Injectable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_14", function() { return Self; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return SkipSelf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return SkipSelf; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return Host; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return NgZone; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return NgZone; });
 /* unused harmony export RenderComponentType */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return Renderer; });
 /* unused harmony export Renderer2 */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return RendererFactory2; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return RendererStyleFlags2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return RendererFactory2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return RendererStyleFlags2; });
 /* unused harmony export RootRenderer */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_21", function() { return COMPILER_OPTIONS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return Compiler; });
@@ -654,7 +654,7 @@ exports.subscribeToResult = subscribeToResult;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return KeyValueDiffers; });
 /* unused harmony export SimpleChange */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return WrappedValue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return platformCore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return platformCore; });
 /* unused harmony export ɵALLOW_MULTIPLE_PLATFORMS */
 /* unused harmony export ɵAPP_ID_RANDOM_PROVIDER */
 /* unused harmony export ɵValueUnwrapper */
@@ -674,7 +674,7 @@ exports.subscribeToResult = subscribeToResult;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_63", function() { return ReflectionCapabilities; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_56", function() { return ReflectorReader; });
 /* unused harmony export ɵRenderDebugInfo */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return _global; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return _global; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_13", function() { return looseIdentical; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return stringify; });
 /* unused harmony export ɵmakeDecorator */
@@ -751,7 +751,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -1607,7 +1607,7 @@ var Version = (function () {
 /**
  * \@stable
  */
-var VERSION = new Version('4.0.2');
+var VERSION = new Version('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -6614,7 +6614,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__(151)(module)
+        return __webpack_require__(152)(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -6630,7 +6630,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__(151)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__(152)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -8642,7 +8642,6 @@ var DefaultKeyValueDiffer = (function () {
                 insertBefore._prev._next = null;
             }
             this._removalsHead = insertBefore;
-            this._removalsTail = insertBefore;
             for (var /** @type {?} */ record = insertBefore; record !== null; record = record._nextRemoved) {
                 if (record === this._mapHead) {
                     this._mapHead = null;
@@ -8655,6 +8654,11 @@ var DefaultKeyValueDiffer = (function () {
                 record._next = null;
             }
         }
+        // Make sure tails have no next records from previous runs
+        if (this._changesTail)
+            this._changesTail._nextChanged = null;
+        if (this._additionsTail)
+            this._additionsTail._nextAdded = null;
         return this.isDirty;
     };
     /**
@@ -8700,7 +8704,7 @@ var DefaultKeyValueDiffer = (function () {
      */
     DefaultKeyValueDiffer.prototype._getOrCreateRecordForKey = function (key, value) {
         if (this._records.has(key)) {
-            var /** @type {?} */ record_1 = this._records.get(key);
+            var /** @type {?} */ record_1 = ((this._records.get(key)));
             this._maybeAddToChanges(record_1, value);
             var /** @type {?} */ prev = record_1._prev;
             var /** @type {?} */ next = record_1._next;
@@ -8742,7 +8746,7 @@ var DefaultKeyValueDiffer = (function () {
             }
             this._changesHead = this._changesTail = null;
             this._additionsHead = this._additionsTail = null;
-            this._removalsHead = this._removalsTail = null;
+            this._removalsHead = null;
         }
     };
     /**
@@ -8792,22 +8796,11 @@ var DefaultKeyValueDiffer = (function () {
         var /** @type {?} */ changes = [];
         var /** @type {?} */ additions = [];
         var /** @type {?} */ removals = [];
-        var /** @type {?} */ record;
-        for (record = this._mapHead; record !== null; record = record._next) {
-            items.push(stringify(record));
-        }
-        for (record = this._previousMapHead; record !== null; record = record._nextPrevious) {
-            previous.push(stringify(record));
-        }
-        for (record = this._changesHead; record !== null; record = record._nextChanged) {
-            changes.push(stringify(record));
-        }
-        for (record = this._additionsHead; record !== null; record = record._nextAdded) {
-            additions.push(stringify(record));
-        }
-        for (record = this._removalsHead; record !== null; record = record._nextRemoved) {
-            removals.push(stringify(record));
-        }
+        this.forEachItem(function (r) { return items.push(stringify(r)); });
+        this.forEachPreviousItem(function (r) { return previous.push(stringify(r)); });
+        this.forEachChangedItem(function (r) { return changes.push(stringify(r)); });
+        this.forEachAddedItem(function (r) { return additions.push(stringify(r)); });
+        this.forEachRemovedItem(function (r) { return removals.push(stringify(r)); });
         return 'map: ' + items.join(', ') + '\n' +
             'previous: ' + previous.join(', ') + '\n' +
             'additions: ' + additions.join(', ') + '\n' +
@@ -10251,7 +10244,7 @@ function setElementClass(view, renderNode$$1, name, value) {
  * @return {?}
  */
 function setElementStyle(view, binding, renderNode$$1, name, value) {
-    var /** @type {?} */ renderValue = view.root.sanitizer.sanitize(SecurityContext.STYLE, value);
+    var /** @type {?} */ renderValue = view.root.sanitizer.sanitize(SecurityContext.STYLE, /** @type {?} */ (value));
     if (renderValue != null) {
         renderValue = renderValue.toString();
         var /** @type {?} */ unit = binding.suffix;
@@ -10524,8 +10517,9 @@ var ComponentFactory_ = (function (_super) {
          */
         get: function () {
             var /** @type {?} */ inputsArr = [];
-            for (var /** @type {?} */ propName in this._inputs) {
-                var /** @type {?} */ templateName = this._inputs[propName];
+            var /** @type {?} */ inputs = ((this._inputs));
+            for (var /** @type {?} */ propName in inputs) {
+                var /** @type {?} */ templateName = inputs[propName];
                 inputsArr.push({ propName: propName, templateName: templateName });
             }
             return inputsArr;
@@ -14716,6 +14710,7 @@ function transition$$1(stateChangeExpr, steps) {
  * @description
  * Entry point for all public APIs of the core package.
  */
+// This file only reexports content of the `src` folder. Keep it that way.
 /**
  * Generated bundle index. Do not edit.
  */
@@ -14738,9 +14733,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(0);
 var Subscriber_1 = __webpack_require__(1);
 var Subscription_1 = __webpack_require__(7);
-var ObjectUnsubscribedError_1 = __webpack_require__(67);
-var SubjectSubscription_1 = __webpack_require__(117);
-var rxSubscriber_1 = __webpack_require__(65);
+var ObjectUnsubscribedError_1 = __webpack_require__(68);
+var SubjectSubscription_1 = __webpack_require__(118);
+var rxSubscriber_1 = __webpack_require__(66);
 /**
  * @class SubjectSubscriber<T>
  */
@@ -14905,11 +14900,11 @@ exports.AnonymousSubject = AnonymousSubject;
 "use strict";
 
 var isArray_1 = __webpack_require__(20);
-var isObject_1 = __webpack_require__(148);
-var isFunction_1 = __webpack_require__(69);
+var isObject_1 = __webpack_require__(149);
+var isFunction_1 = __webpack_require__(70);
 var tryCatch_1 = __webpack_require__(11);
 var errorObject_1 = __webpack_require__(9);
-var UnsubscriptionError_1 = __webpack_require__(145);
+var UnsubscriptionError_1 = __webpack_require__(146);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -15114,16 +15109,22 @@ exports.errorObject = { e: {} };
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
-/**
- * window: browser in DOM main thread
- * self: browser in WebWorker
- * global: Node.js/other
- */
-exports.root = (typeof window == 'object' && window.window === window && window
-    || typeof self == 'object' && self.self === self && self
-    || typeof global == 'object' && global.global === global && global);
-if (!exports.root) {
-    throw new Error('RxJS could not find any global context (window, self, global)');
+if (typeof window == 'object' && window.window === window) {
+    exports.root = window;
+}
+else if (typeof self == 'object' && self.self === self) {
+    exports.root = self;
+}
+else if (typeof global == 'object' && global.global === global) {
+    exports.root = global;
+}
+else {
+    // Workaround Closure Compiler restriction: The body of a goog.module cannot use throw.
+    // This is needed when used with angular/tsickle which inserts a goog.module statement.
+    // Wrap in IIFE
+    (function () {
+        throw new Error('RxJS could not find any global context (window, self, global)');
+    })();
 }
 //# sourceMappingURL=root.js.map
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
@@ -15223,7 +15224,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var ScalarObservable_1 = __webpack_require__(92);
+var ScalarObservable_1 = __webpack_require__(93);
 var EmptyObservable_1 = __webpack_require__(26);
 var isScheduler_1 = __webpack_require__(21);
 /**
@@ -15365,7 +15366,7 @@ var Subscriber_1 = __webpack_require__(1);
  * applies a projection to each value and emits that projection in the output
  * Observable.
  *
- * @example <caption>Map every every click to the clientX position of that click</caption>
+ * @example <caption>Map every click to the clientX position of that click</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
  * var positions = clicks.map(ev => ev.clientX);
  * positions.subscribe(x => console.log(x));
@@ -15458,7 +15459,7 @@ exports.isScheduler = isScheduler;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_scheduler_queue__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_scheduler_queue__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_scheduler_queue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_scheduler_queue__);
 /* harmony export (immutable) */ __webpack_exports__["c"] = isNil;
 /* harmony export (immutable) */ __webpack_exports__["d"] = hasKey;
@@ -15743,42 +15744,42 @@ module.exports = g;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_platform_browser__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__);
 /* unused harmony export RouterLink */
 /* unused harmony export RouterLinkWithHref */
@@ -15836,7 +15837,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */ 
@@ -16115,7 +16116,7 @@ function isNavigationCancelingError(error) {
  * @return {?}
  */
 function defaultUrlMatcher(segments, segmentGroup, route) {
-    var /** @type {?} */ parts = route.path.split('/');
+    var /** @type {?} */ parts = ((route.path)).split('/');
     if (parts.length > segments.length) {
         // The actual URL is shorter than the config, no match
         return null;
@@ -16140,6 +16141,110 @@ function defaultUrlMatcher(segments, segmentGroup, route) {
         }
     }
     return { consumed: segments.slice(0, parts.length), posParams: posParams };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var LoadedRouterConfig = (function () {
+    /**
+     * @param {?} routes
+     * @param {?} module
+     */
+    function LoadedRouterConfig(routes, module) {
+        this.routes = routes;
+        this.module = module;
+    }
+    return LoadedRouterConfig;
+}());
+/**
+ * @param {?} config
+ * @param {?=} parentPath
+ * @return {?}
+ */
+function validateConfig(config, parentPath) {
+    if (parentPath === void 0) { parentPath = ''; }
+    // forEach doesn't iterate undefined values
+    for (var /** @type {?} */ i = 0; i < config.length; i++) {
+        var /** @type {?} */ route = config[i];
+        var /** @type {?} */ fullPath = getFullPath(parentPath, route);
+        validateNode(route, fullPath);
+    }
+}
+/**
+ * @param {?} route
+ * @param {?} fullPath
+ * @return {?}
+ */
+function validateNode(route, fullPath) {
+    if (!route) {
+        throw new Error("\n      Invalid configuration of route '" + fullPath + "': Encountered undefined route.\n      The reason might be an extra comma.\n\n      Example:\n      const routes: Routes = [\n        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },\n        { path: 'dashboard',  component: DashboardComponent },, << two commas\n        { path: 'detail/:id', component: HeroDetailComponent }\n      ];\n    ");
+    }
+    if (Array.isArray(route)) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': Array cannot be specified");
+    }
+    if (!route.component && (route.outlet && route.outlet !== PRIMARY_OUTLET)) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': a componentless route cannot have a named outlet set");
+    }
+    if (route.redirectTo && route.children) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': redirectTo and children cannot be used together");
+    }
+    if (route.redirectTo && route.loadChildren) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': redirectTo and loadChildren cannot be used together");
+    }
+    if (route.children && route.loadChildren) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': children and loadChildren cannot be used together");
+    }
+    if (route.redirectTo && route.component) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': redirectTo and component cannot be used together");
+    }
+    if (route.path && route.matcher) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': path and matcher cannot be used together");
+    }
+    if (route.redirectTo === void 0 && !route.component && !route.children && !route.loadChildren) {
+        throw new Error("Invalid configuration of route '" + fullPath + "'. One of the following must be provided: component, redirectTo, children or loadChildren");
+    }
+    if (route.path === void 0 && route.matcher === void 0) {
+        throw new Error("Invalid configuration of route '" + fullPath + "': routes must have either a path or a matcher specified");
+    }
+    if (typeof route.path === 'string' && route.path.charAt(0) === '/') {
+        throw new Error("Invalid configuration of route '" + fullPath + "': path cannot start with a slash");
+    }
+    if (route.path === '' && route.redirectTo !== void 0 && route.pathMatch === void 0) {
+        var /** @type {?} */ exp = "The default value of 'pathMatch' is 'prefix', but often the intent is to use 'full'.";
+        throw new Error("Invalid configuration of route '{path: \"" + fullPath + "\", redirectTo: \"" + route.redirectTo + "\"}': please provide 'pathMatch'. " + exp);
+    }
+    if (route.pathMatch !== void 0 && route.pathMatch !== 'full' && route.pathMatch !== 'prefix') {
+        throw new Error("Invalid configuration of route '" + fullPath + "': pathMatch can only be set to 'prefix' or 'full'");
+    }
+    if (route.children) {
+        validateConfig(route.children, fullPath);
+    }
+}
+/**
+ * @param {?} parentPath
+ * @param {?} currentRoute
+ * @return {?}
+ */
+function getFullPath(parentPath, currentRoute) {
+    if (!currentRoute) {
+        return parentPath;
+    }
+    if (!parentPath && !currentRoute.path) {
+        return '';
+    }
+    else if (parentPath && !currentRoute.path) {
+        return parentPath + "/";
+    }
+    else if (!parentPath && currentRoute.path) {
+        return currentRoute.path;
+    }
+    else {
+        return parentPath + "/" + currentRoute.path;
+    }
 }
 /**
  * @license
@@ -16263,83 +16368,6 @@ function wrapIntoObservable(value) {
     }
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(value);
 }
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * \@docsNotRequired
- * \@experimental
- */
-var ROUTES = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('ROUTES');
-var LoadedRouterConfig = (function () {
-    /**
-     * @param {?} routes
-     * @param {?} module
-     */
-    function LoadedRouterConfig(routes, module) {
-        this.routes = routes;
-        this.module = module;
-    }
-    return LoadedRouterConfig;
-}());
-var RouterConfigLoader = (function () {
-    /**
-     * @param {?} loader
-     * @param {?} compiler
-     * @param {?=} onLoadStartListener
-     * @param {?=} onLoadEndListener
-     */
-    function RouterConfigLoader(loader, compiler, onLoadStartListener, onLoadEndListener) {
-        this.loader = loader;
-        this.compiler = compiler;
-        this.onLoadStartListener = onLoadStartListener;
-        this.onLoadEndListener = onLoadEndListener;
-    }
-    /**
-     * @param {?} parentInjector
-     * @param {?} route
-     * @return {?}
-     */
-    RouterConfigLoader.prototype.load = function (parentInjector, route) {
-        var _this = this;
-        if (this.onLoadStartListener) {
-            this.onLoadStartListener(route);
-        }
-        var /** @type {?} */ moduleFactory$ = this.loadModuleFactory(route.loadChildren);
-        return __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__["map"].call(moduleFactory$, function (factory) {
-            if (_this.onLoadEndListener) {
-                _this.onLoadEndListener(route);
-            }
-            var /** @type {?} */ module = factory.create(parentInjector);
-            return new LoadedRouterConfig(flatten(module.injector.get(ROUTES)), module);
-        });
-    };
-    /**
-     * @param {?} loadChildren
-     * @return {?}
-     */
-    RouterConfigLoader.prototype.loadModuleFactory = function (loadChildren) {
-        var _this = this;
-        if (typeof loadChildren === 'string') {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__["fromPromise"])(this.loader.load(loadChildren));
-        }
-        else {
-            return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__["mergeMap"].call(wrapIntoObservable(loadChildren()), function (t) {
-                if (t instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_0" /* NgModuleFactory */]) {
-                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(t);
-                }
-                else {
-                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__["fromPromise"])(_this.compiler.compileModuleAsync(t));
-                }
-            });
-        }
-    };
-    return RouterConfigLoader;
-}());
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -16708,7 +16736,7 @@ var DefaultUrlSerializer = (function () {
     DefaultUrlSerializer.prototype.serialize = function (tree) {
         var /** @type {?} */ segment = "/" + serializeSegment(tree.root, true);
         var /** @type {?} */ query = serializeQueryParams(tree.queryParams);
-        var /** @type {?} */ fragment = typeof tree.fragment === "string" ? "#" + encodeURI(tree.fragment) : '';
+        var /** @type {?} */ fragment = typeof tree.fragment === "string" ? "#" + encodeURI(/** @type {?} */ ((tree.fragment))) : '';
         return "" + segment + query + fragment;
     };
     return DefaultUrlSerializer;
@@ -16853,7 +16881,9 @@ var UrlParser = (function () {
     /**
      * @return {?}
      */
-    UrlParser.prototype.parseFragment = function () { return this.consumeOptional('#') ? decodeURI(this.remaining) : null; };
+    UrlParser.prototype.parseFragment = function () {
+        return this.consumeOptional('#') ? decodeURI(this.remaining) : null;
+    };
     /**
      * @return {?}
      */
@@ -16974,7 +17004,7 @@ var UrlParser = (function () {
             if (next !== '/' && next !== ')' && next !== ';') {
                 throw new Error("Cannot parse url '" + this.url + "'");
             }
-            var /** @type {?} */ outletName = void 0;
+            var /** @type {?} */ outletName = ((undefined));
             if (path.indexOf(':') > -1) {
                 outletName = path.substr(0, path.indexOf(':'));
                 this.capture(outletName);
@@ -17038,8 +17068,7 @@ var NoMatch = (function () {
      * @param {?=} segmentGroup
      */
     function NoMatch(segmentGroup) {
-        if (segmentGroup === void 0) { segmentGroup = null; }
-        this.segmentGroup = segmentGroup;
+        this.segmentGroup = segmentGroup || null;
     }
     return NoMatch;
 }());
@@ -17116,7 +17145,7 @@ var ApplyRedirects = (function () {
     ApplyRedirects.prototype.apply = function () {
         var _this = this;
         var /** @type {?} */ expanded$ = this.expandSegmentGroup(this.ngModule, this.config, this.urlTree.root, PRIMARY_OUTLET);
-        var /** @type {?} */ urlTrees$ = __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, _this.urlTree.queryParams, _this.urlTree.fragment); });
+        var /** @type {?} */ urlTrees$ = __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, _this.urlTree.queryParams, /** @type {?} */ ((_this.urlTree.fragment))); });
         return __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__["_catch"].call(urlTrees$, function (e) {
             if (e instanceof AbsoluteRedirect) {
                 // after an absolute redirect we do not apply any more redirects!
@@ -17137,7 +17166,7 @@ var ApplyRedirects = (function () {
     ApplyRedirects.prototype.match = function (tree) {
         var _this = this;
         var /** @type {?} */ expanded$ = this.expandSegmentGroup(this.ngModule, this.config, tree.root, PRIMARY_OUTLET);
-        var /** @type {?} */ mapped$ = __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, tree.queryParams, tree.fragment); });
+        var /** @type {?} */ mapped$ = __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, tree.queryParams, /** @type {?} */ ((tree.fragment))); });
         return __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__["_catch"].call(mapped$, function (e) {
             if (e instanceof NoMatch) {
                 throw _this.noMatchError(e);
@@ -17276,8 +17305,8 @@ var ApplyRedirects = (function () {
      */
     ApplyRedirects.prototype.expandWildCardWithParamsAgainstRouteUsingRedirect = function (ngModule, routes, route, outlet) {
         var _this = this;
-        var /** @type {?} */ newTree = this.applyRedirectCommands([], route.redirectTo, {});
-        if (route.redirectTo.startsWith('/')) {
+        var /** @type {?} */ newTree = this.applyRedirectCommands([], /** @type {?} */ ((route.redirectTo)), {});
+        if (((route.redirectTo)).startsWith('/')) {
             return absoluteRedirect(newTree);
         }
         return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__["mergeMap"].call(this.lineralizeSegments(route, newTree), function (newSegments) {
@@ -17299,8 +17328,8 @@ var ApplyRedirects = (function () {
         var _a = match(segmentGroup, route, segments), matched = _a.matched, consumedSegments = _a.consumedSegments, lastChild = _a.lastChild, positionalParamSegments = _a.positionalParamSegments;
         if (!matched)
             return noMatch(segmentGroup);
-        var /** @type {?} */ newTree = this.applyRedirectCommands(consumedSegments, route.redirectTo, /** @type {?} */ (positionalParamSegments));
-        if (route.redirectTo.startsWith('/')) {
+        var /** @type {?} */ newTree = this.applyRedirectCommands(consumedSegments, /** @type {?} */ ((route.redirectTo)), /** @type {?} */ (positionalParamSegments));
+        if (((route.redirectTo)).startsWith('/')) {
             return absoluteRedirect(newTree);
         }
         return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__["mergeMap"].call(this.lineralizeSegments(route, newTree), function (newSegments) {
@@ -17387,7 +17416,7 @@ var ApplyRedirects = (function () {
                 return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(res);
             }
             if (c.numberOfChildren > 1 || !c.children[PRIMARY_OUTLET]) {
-                return namedOutletsRedirect(route.redirectTo);
+                return namedOutletsRedirect(/** @type {?} */ ((route.redirectTo)));
             }
             c = c.children[PRIMARY_OUTLET];
         }
@@ -17520,9 +17549,9 @@ function match(segmentGroup, route, segments) {
     }
     return {
         matched: true,
-        consumedSegments: res.consumed,
-        lastChild: res.consumed.length,
-        positionalParamSegments: res.posParams,
+        consumedSegments: /** @type {?} */ ((res.consumed)),
+        lastChild: /** @type {?} */ ((res.consumed.length)),
+        positionalParamSegments: /** @type {?} */ ((res.posParams)),
     };
 }
 /**
@@ -17625,99 +17654,6 @@ function isEmptyPathRedirect(segmentGroup, segments, r) {
  */
 function getOutlet$1(route) {
     return route.outlet || PRIMARY_OUTLET;
-}
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @param {?} config
- * @param {?=} parentPath
- * @return {?}
- */
-function validateConfig(config, parentPath) {
-    if (parentPath === void 0) { parentPath = ''; }
-    // forEach doesn't iterate undefined values
-    for (var /** @type {?} */ i = 0; i < config.length; i++) {
-        var /** @type {?} */ route = config[i];
-        var /** @type {?} */ fullPath = getFullPath(parentPath, route);
-        validateNode(route, fullPath);
-    }
-}
-/**
- * @param {?} route
- * @param {?} fullPath
- * @return {?}
- */
-function validateNode(route, fullPath) {
-    if (!route) {
-        throw new Error("\n      Invalid configuration of route '" + fullPath + "': Encountered undefined route.\n      The reason might be an extra comma.\n\n      Example:\n      const routes: Routes = [\n        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },\n        { path: 'dashboard',  component: DashboardComponent },, << two commas\n        { path: 'detail/:id', component: HeroDetailComponent }\n      ];\n    ");
-    }
-    if (Array.isArray(route)) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': Array cannot be specified");
-    }
-    if (!route.component && (route.outlet && route.outlet !== PRIMARY_OUTLET)) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': a componentless route cannot have a named outlet set");
-    }
-    if (route.redirectTo && route.children) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': redirectTo and children cannot be used together");
-    }
-    if (route.redirectTo && route.loadChildren) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': redirectTo and loadChildren cannot be used together");
-    }
-    if (route.children && route.loadChildren) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': children and loadChildren cannot be used together");
-    }
-    if (route.redirectTo && route.component) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': redirectTo and component cannot be used together");
-    }
-    if (route.path && route.matcher) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': path and matcher cannot be used together");
-    }
-    if (route.redirectTo === void 0 && !route.component && !route.children && !route.loadChildren) {
-        throw new Error("Invalid configuration of route '" + fullPath + "'. One of the following must be provided: component, redirectTo, children or loadChildren");
-    }
-    if (route.path === void 0 && route.matcher === void 0) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': routes must have either a path or a matcher specified");
-    }
-    if (typeof route.path === 'string' && route.path.charAt(0) === '/') {
-        throw new Error("Invalid configuration of route '" + fullPath + "': path cannot start with a slash");
-    }
-    if (route.path === '' && route.redirectTo !== void 0 && route.pathMatch === void 0) {
-        var /** @type {?} */ exp = "The default value of 'pathMatch' is 'prefix', but often the intent is to use 'full'.";
-        throw new Error("Invalid configuration of route '{path: \"" + fullPath + "\", redirectTo: \"" + route.redirectTo + "\"}': please provide 'pathMatch'. " + exp);
-    }
-    if (route.pathMatch !== void 0 && route.pathMatch !== 'full' && route.pathMatch !== 'prefix') {
-        throw new Error("Invalid configuration of route '" + fullPath + "': pathMatch can only be set to 'prefix' or 'full'");
-    }
-    if (route.children) {
-        validateConfig(route.children, fullPath);
-    }
-}
-/**
- * @param {?} parentPath
- * @param {?} currentRoute
- * @return {?}
- */
-function getFullPath(parentPath, currentRoute) {
-    if (!currentRoute) {
-        return parentPath;
-    }
-    if (!parentPath && !currentRoute.path) {
-        return '';
-    }
-    else if (parentPath && !currentRoute.path) {
-        return parentPath + "/";
-    }
-    else if (!parentPath && currentRoute.path) {
-        return currentRoute.path;
-    }
-    else {
-        return parentPath + "/" + currentRoute.path;
-    }
 }
 /**
  * @license
@@ -18334,7 +18270,7 @@ function equalParamsAndUrlSegments(a, b) {
     var /** @type {?} */ equalUrlParams = shallowEqual(a.params, b.params) && equalSegments(a.url, b.url);
     var /** @type {?} */ parentsMismatch = !a.parent !== !b.parent;
     return equalUrlParams && !parentsMismatch &&
-        (!a.parent || equalParamsAndUrlSegments(a.parent, b.parent));
+        (!a.parent || equalParamsAndUrlSegments(a.parent, /** @type {?} */ ((b.parent))));
 }
 /**
  * @license
@@ -18608,7 +18544,7 @@ function createPositionApplyingDoubleDots(group, index, numberOfDoubleDots) {
     var /** @type {?} */ dd = numberOfDoubleDots;
     while (dd > ci) {
         dd -= ci;
-        g = g.parent;
+        g = ((g.parent));
         if (!g) {
             throw new Error('Invalid number of \'../\'');
         }
@@ -18846,7 +18782,7 @@ var Recognizer = (function () {
         try {
             var /** @type {?} */ rootSegmentGroup = split$1(this.urlTree.root, [], [], this.config).segmentGroup;
             var /** @type {?} */ children = this.processSegmentGroup(this.config, rootSegmentGroup, PRIMARY_OUTLET);
-            var /** @type {?} */ root = new ActivatedRouteSnapshot([], Object.freeze({}), Object.freeze(this.urlTree.queryParams), this.urlTree.fragment, {}, PRIMARY_OUTLET, this.rootComponentType, null, this.urlTree.root, -1, {});
+            var /** @type {?} */ root = new ActivatedRouteSnapshot([], Object.freeze({}), Object.freeze(this.urlTree.queryParams), /** @type {?} */ ((this.urlTree.fragment)), {}, PRIMARY_OUTLET, this.rootComponentType, null, this.urlTree.root, -1, {});
             var /** @type {?} */ rootNode = new TreeNode(root, children);
             var /** @type {?} */ routeState = new RouterStateSnapshot(this.url, rootNode);
             this.inheriteParamsAndData(routeState._root);
@@ -18937,15 +18873,15 @@ var Recognizer = (function () {
         if ((route.outlet || PRIMARY_OUTLET) !== outlet)
             throw new NoMatch$1();
         if (route.path === '**') {
-            var /** @type {?} */ params = segments.length > 0 ? last$1(segments).parameters : {};
-            var /** @type {?} */ snapshot_1 = new ActivatedRouteSnapshot(segments, params, Object.freeze(this.urlTree.queryParams), this.urlTree.fragment, getData(route), outlet, route.component, route, getSourceSegmentGroup(rawSegment), getPathIndexShift(rawSegment) + segments.length, getResolve(route));
+            var /** @type {?} */ params = segments.length > 0 ? ((last$1(segments))).parameters : {};
+            var /** @type {?} */ snapshot_1 = new ActivatedRouteSnapshot(segments, params, Object.freeze(this.urlTree.queryParams), /** @type {?} */ ((this.urlTree.fragment)), getData(route), outlet, /** @type {?} */ ((route.component)), route, getSourceSegmentGroup(rawSegment), getPathIndexShift(rawSegment) + segments.length, getResolve(route));
             return [new TreeNode(snapshot_1, [])];
         }
         var _a = match$1(rawSegment, route, segments), consumedSegments = _a.consumedSegments, parameters = _a.parameters, lastChild = _a.lastChild;
         var /** @type {?} */ rawSlicedSegments = segments.slice(lastChild);
         var /** @type {?} */ childConfig = getChildConfig(route);
         var _b = split$1(rawSegment, consumedSegments, rawSlicedSegments, childConfig), segmentGroup = _b.segmentGroup, slicedSegments = _b.slicedSegments;
-        var /** @type {?} */ snapshot = new ActivatedRouteSnapshot(consumedSegments, parameters, Object.freeze(this.urlTree.queryParams), this.urlTree.fragment, getData(route), outlet, route.component, route, getSourceSegmentGroup(rawSegment), getPathIndexShift(rawSegment) + consumedSegments.length, getResolve(route));
+        var /** @type {?} */ snapshot = new ActivatedRouteSnapshot(consumedSegments, parameters, Object.freeze(this.urlTree.queryParams), /** @type {?} */ ((this.urlTree.fragment)), getData(route), outlet, /** @type {?} */ ((route.component)), route, getSourceSegmentGroup(rawSegment), getPathIndexShift(rawSegment) + consumedSegments.length, getResolve(route));
         if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
             var /** @type {?} */ children_3 = this.processChildren(childConfig, segmentGroup);
             return [new TreeNode(snapshot, children_3)];
@@ -18980,7 +18916,7 @@ function getChildConfig(route) {
         return route.children;
     }
     if (route.loadChildren) {
-        return route._loadedConfig.routes;
+        return ((route._loadedConfig)).routes;
     }
     return [];
 }
@@ -19002,7 +18938,7 @@ function match$1(segmentGroup, route, segments) {
     if (!res)
         throw new NoMatch$1();
     var /** @type {?} */ posParams = {};
-    forEach(res.posParams, function (v, k) { posParams[k] = v.path; });
+    forEach(/** @type {?} */ ((res.posParams)), function (v, k) { posParams[k] = v.path; });
     var /** @type {?} */ parameters = __assign$3({}, posParams, res.consumed[res.consumed.length - 1].parameters);
     return { consumedSegments: res.consumed, lastChild: res.consumed.length, parameters: parameters };
 }
@@ -19175,6 +19111,72 @@ function getResolve(route) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
+ * \@docsNotRequired
+ * \@experimental
+ */
+var ROUTES = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('ROUTES');
+var RouterConfigLoader = (function () {
+    /**
+     * @param {?} loader
+     * @param {?} compiler
+     * @param {?=} onLoadStartListener
+     * @param {?=} onLoadEndListener
+     */
+    function RouterConfigLoader(loader, compiler, onLoadStartListener, onLoadEndListener) {
+        this.loader = loader;
+        this.compiler = compiler;
+        this.onLoadStartListener = onLoadStartListener;
+        this.onLoadEndListener = onLoadEndListener;
+    }
+    /**
+     * @param {?} parentInjector
+     * @param {?} route
+     * @return {?}
+     */
+    RouterConfigLoader.prototype.load = function (parentInjector, route) {
+        var _this = this;
+        if (this.onLoadStartListener) {
+            this.onLoadStartListener(route);
+        }
+        var /** @type {?} */ moduleFactory$ = this.loadModuleFactory(/** @type {?} */ ((route.loadChildren)));
+        return __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__["map"].call(moduleFactory$, function (factory) {
+            if (_this.onLoadEndListener) {
+                _this.onLoadEndListener(route);
+            }
+            var /** @type {?} */ module = factory.create(parentInjector);
+            return new LoadedRouterConfig(flatten(module.injector.get(ROUTES)), module);
+        });
+    };
+    /**
+     * @param {?} loadChildren
+     * @return {?}
+     */
+    RouterConfigLoader.prototype.loadModuleFactory = function (loadChildren) {
+        var _this = this;
+        if (typeof loadChildren === 'string') {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__["fromPromise"])(this.loader.load(loadChildren));
+        }
+        else {
+            return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__["mergeMap"].call(wrapIntoObservable(loadChildren()), function (t) {
+                if (t instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_0" /* NgModuleFactory */]) {
+                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(t);
+                }
+                else {
+                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__["fromPromise"])(_this.compiler.compileModuleAsync(t));
+                }
+            });
+        }
+    };
+    return RouterConfigLoader;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
  * \@whatItDoes Contains all the router outlets created in a component.
  *
  * \@stable
@@ -19198,7 +19200,7 @@ var RouterOutletMap = (function () {
      * @param {?} name
      * @return {?}
      */
-    RouterOutletMap.prototype.removeOutlet = function (name) { this._outlets[name] = undefined; };
+    RouterOutletMap.prototype.removeOutlet = function (name) { this._outlets[name] = ((undefined)); };
     return RouterOutletMap;
 }());
 /**
@@ -19300,7 +19302,7 @@ function defaultErrorHandler(error) {
  * @return {?}
  */
 function defaultRouterHook(snapshot) {
-    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(null);
+    return (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(null));
 }
 /**
  * Does not detach any subtrees. Reuses routes as long as their route config is the same.
@@ -19366,7 +19368,7 @@ var Router = (function () {
         this.outletMap = outletMap;
         this.location = location;
         this.config = config;
-        this.navigations = new __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__["BehaviorSubject"](null);
+        this.navigations = new __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__["BehaviorSubject"](/** @type {?} */ ((null)));
         this.routerEvents = new __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__["Subject"]();
         this.navigationId = 0;
         /**
@@ -19506,7 +19508,7 @@ var Router = (function () {
     Router.prototype.dispose = function () {
         if (this.locationSubscription) {
             this.locationSubscription.unsubscribe();
-            this.locationSubscription = null;
+            this.locationSubscription = ((null));
         }
     };
     /**
@@ -19555,7 +19557,7 @@ var Router = (function () {
      */
     Router.prototype.createUrlTree = function (commands, _a) {
         var _b = _a === void 0 ? {} : _a, relativeTo = _b.relativeTo, queryParams = _b.queryParams, fragment = _b.fragment, preserveQueryParams = _b.preserveQueryParams, queryParamsHandling = _b.queryParamsHandling, preserveFragment = _b.preserveFragment;
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* isDevMode */])() && preserveQueryParams && (console) && (console.warn)) {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* isDevMode */])() && preserveQueryParams && (console) && (console.warn)) {
             console.warn('preserveQueryParams is deprecated, use queryParamsHandling instead.');
         }
         var /** @type {?} */ a = relativeTo || this.routerState.root;
@@ -19570,13 +19572,13 @@ var Router = (function () {
                     q = this.currentUrlTree.queryParams;
                     break;
                 default:
-                    q = queryParams;
+                    q = queryParams || null;
             }
         }
         else {
-            q = preserveQueryParams ? this.currentUrlTree.queryParams : queryParams;
+            q = preserveQueryParams ? this.currentUrlTree.queryParams : queryParams || null;
         }
-        return createUrlTree(a, this.currentUrlTree, commands, q, f);
+        return createUrlTree(a, this.currentUrlTree, commands, /** @type {?} */ ((q)), /** @type {?} */ ((f)));
     };
     /**
      * Navigate based on the provided url. This navigation is always absolute.
@@ -19711,14 +19713,14 @@ var Router = (function () {
         // we should skip those.
         if (lastNavigation && source !== 'imperative' && lastNavigation.source === 'imperative' &&
             lastNavigation.rawUrl.toString() === rawUrl.toString()) {
-            return null; // return value is not used
+            return Promise.resolve(true); // return value is not used
         }
         // Because of a bug in IE and Edge, the location class fires two events (popstate and
         // hashchange) every single time. The second one should be ignored. Otherwise, the URL will
         // flicker.
         if (lastNavigation && source == 'hashchange' && lastNavigation.source === 'popstate' &&
             lastNavigation.rawUrl.toString() === rawUrl.toString()) {
-            return null; // return value is not used
+            return Promise.resolve(true); // return value is not used
         }
         var /** @type {?} */ resolve = null;
         var /** @type {?} */ reject = null;
@@ -19744,7 +19746,7 @@ var Router = (function () {
         if (urlTransition && this.urlHandlingStrategy.shouldProcessUrl(rawUrl)) {
             this.routerEvents.next(new NavigationStart(id, this.serializeUrl(url)));
             Promise.resolve()
-                .then(function (_) { return _this.runNavigate(url, rawUrl, extras.skipLocationChange, extras.replaceUrl, id, null); })
+                .then(function (_) { return _this.runNavigate(url, rawUrl, !!extras.skipLocationChange, !!extras.replaceUrl, id, null); })
                 .then(resolve, reject);
         }
         else if (urlTransition && this.rawUrlTree &&
@@ -19995,7 +19997,7 @@ var PreActivation = (function () {
             _this.traverseRoutes(c, prevChildren[c.value.outlet], outletMap, futurePath.concat([c.value]));
             delete prevChildren[c.value.outlet];
         });
-        forEach(prevChildren, function (v, k) { return _this.deactiveRouteAndItsChildren(v, outletMap._outlets[k]); });
+        forEach(prevChildren, function (v, k) { return _this.deactiveRouteAndItsChildren(v, /** @type {?} */ ((outletMap))._outlets[k]); });
     };
     /**
      * @param {?} futureNode
@@ -20010,9 +20012,9 @@ var PreActivation = (function () {
         var /** @type {?} */ outlet = parentOutletMap ? parentOutletMap._outlets[futureNode.value.outlet] : null;
         // reusing the node
         if (curr && future._routeConfig === curr._routeConfig) {
-            if (this.shouldRunGuardsAndResolvers(curr, future, future._routeConfig.runGuardsAndResolvers)) {
+            if (this.shouldRunGuardsAndResolvers(curr, future, /** @type {?} */ ((future._routeConfig)).runGuardsAndResolvers)) {
                 this.canActivateChecks.push(new CanActivate(futurePath));
-                this.canDeactivateChecks.push(new CanDeactivate(outlet.component, curr));
+                this.canDeactivateChecks.push(new CanDeactivate(/** @type {?} */ ((outlet)).component, curr));
             }
             else {
                 // we need to set the data
@@ -20613,7 +20615,7 @@ var RouterLink = (function () {
          * @return {?}
          */
         set: function (value) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* isDevMode */])() && (console) && (console.warn)) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* isDevMode */])() && (console) && (console.warn)) {
                 console.warn('preserveQueryParams is deprecated!, use queryParamsHandling instead.');
             }
             this.preserve = value;
@@ -20724,7 +20726,7 @@ var RouterLinkWithHref = (function () {
          * @return {?}
          */
         set: function (value) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* isDevMode */])() && (console) && (console.warn)) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* isDevMode */])() && (console) && (console.warn)) {
                 console.warn('preserveQueryParams is deprecated, use queryParamsHandling instead.');
             }
             this.preserve = value;
@@ -20956,9 +20958,8 @@ var RouterLinkActive = (function () {
         var /** @type {?} */ hasActiveLinks = this.hasActiveLinks();
         // react only when status has changed to prevent unnecessary dom updates
         if (this.active !== hasActiveLinks) {
-            this.active = hasActiveLinks;
             this.classes.forEach(function (c) { return _this.renderer.setElementClass(_this.element.nativeElement, c, hasActiveLinks); });
-            this.cdr.detectChanges();
+            Promise.resolve(hasActiveLinks).then(function (active) { return _this.active = active; });
         }
     };
     /**
@@ -21042,8 +21043,8 @@ var RouterOutlet = (function () {
         this.location = location;
         this.resolver = resolver;
         this.name = name;
-        this.activateEvents = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* EventEmitter */]();
-        this.deactivateEvents = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* EventEmitter */]();
+        this.activateEvents = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* EventEmitter */]();
+        this.deactivateEvents = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* EventEmitter */]();
         parentOutletMap.registerOutlet(name ? name : PRIMARY_OUTLET, this);
     }
     /**
@@ -21108,8 +21109,8 @@ var RouterOutlet = (function () {
             throw new Error('Outlet is not activated');
         this.location.detach();
         var /** @type {?} */ r = this.activated;
-        this.activated = null;
-        this._activatedRoute = null;
+        this.activated = ((null));
+        this._activatedRoute = ((null));
         return r;
     };
     /**
@@ -21129,8 +21130,8 @@ var RouterOutlet = (function () {
         if (this.activated) {
             var /** @type {?} */ c = this.component;
             this.activated.destroy();
-            this.activated = null;
-            this._activatedRoute = null;
+            this.activated = ((null));
+            this._activatedRoute = ((null));
             this.deactivateEvents.emit(c);
         }
     };
@@ -21150,8 +21151,8 @@ var RouterOutlet = (function () {
         this.outletMap = outletMap;
         this._activatedRoute = activatedRoute;
         var /** @type {?} */ snapshot = activatedRoute._futureSnapshot;
-        var /** @type {?} */ component = (snapshot._routeConfig.component);
-        var /** @type {?} */ factory = resolver.resolveComponentFactory(component);
+        var /** @type {?} */ component = (((snapshot._routeConfig)).component);
+        var /** @type {?} */ factory = ((resolver.resolveComponentFactory(component)));
         var /** @type {?} */ inj = __WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* ReflectiveInjector */].fromResolvedProviders(providers, injector);
         this.activated = this.location.createComponent(factory, this.location.length, inj, []);
         this.activated.changeDetectorRef.detectChanges();
@@ -21170,9 +21171,9 @@ var RouterOutlet = (function () {
         this.outletMap = outletMap;
         this._activatedRoute = activatedRoute;
         var /** @type {?} */ snapshot = activatedRoute._futureSnapshot;
-        var /** @type {?} */ component = (snapshot._routeConfig.component);
+        var /** @type {?} */ component = (((snapshot._routeConfig)).component);
         resolver = resolver || this.resolver;
-        var /** @type {?} */ factory = resolver.resolveComponentFactory(component);
+        var /** @type {?} */ factory = ((resolver.resolveComponentFactory(component)));
         var /** @type {?} */ injector = new OutletInjector(activatedRoute, outletMap, this.location.injector);
         this.activated = this.location.createComponent(factory, this.location.length, injector, []);
         this.activated.changeDetectorRef.detectChanges();
@@ -21381,8 +21382,8 @@ var RouterPreloader = (function () {
      */
     RouterPreloader.prototype.setUpPreloading = function () {
         var _this = this;
-        var /** @type {?} */ navigations = __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__["filter"].call(this.router.events, function (e) { return e instanceof NavigationEnd; });
-        this.subscription = __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__["concatMap"].call(navigations, function () { return _this.preload(); }).subscribe(function () { });
+        var /** @type {?} */ navigations$ = __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__["filter"].call(this.router.events, function (e) { return e instanceof NavigationEnd; });
+        this.subscription = __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__["concatMap"].call(navigations$, function () { return _this.preload(); }).subscribe(function () { });
     };
     /**
      * @return {?}
@@ -21403,8 +21404,7 @@ var RouterPreloader = (function () {
     RouterPreloader.prototype.processRoutes = function (ngModule, routes) {
         var /** @type {?} */ res = [];
         for (var _i = 0, routes_5 = routes; _i < routes_5.length; _i++) {
-            var r = routes_5[_i];
-            var /** @type {?} */ route = r;
+            var route = routes_5[_i];
             // we already have the config loaded, just recurse
             if (route.loadChildren && !route.canLoad && route._loadedConfig) {
                 var /** @type {?} */ childConfig = route._loadedConfig;
@@ -21427,8 +21427,8 @@ var RouterPreloader = (function () {
     RouterPreloader.prototype.preloadConfig = function (ngModule, route) {
         var _this = this;
         return this.preloadingStrategy.preload(route, function () {
-            var /** @type {?} */ loaded = _this.loader.load(ngModule.injector, route);
-            return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__["mergeMap"].call(loaded, function (config) {
+            var /** @type {?} */ loaded$ = _this.loader.load(ngModule.injector, route);
+            return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__["mergeMap"].call(loaded$, function (config) {
                 route._loadedConfig = config;
                 return _this.processRoutes(config.module, config.routes);
             });
@@ -21437,7 +21437,7 @@ var RouterPreloader = (function () {
     return RouterPreloader;
 }());
 RouterPreloader.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -21465,11 +21465,11 @@ var ROUTER_DIRECTIVES = [RouterOutlet, RouterLink, RouterLinkWithHref, RouterLin
  * \@whatItDoes Is used in DI to configure the router.
  * \@stable
  */
-var ROUTER_CONFIGURATION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('ROUTER_CONFIGURATION');
+var ROUTER_CONFIGURATION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('ROUTER_CONFIGURATION');
 /**
  * \@docsNotRequired
  */
-var ROUTER_FORROOT_GUARD = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('ROUTER_FORROOT_GUARD');
+var ROUTER_FORROOT_GUARD = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('ROUTER_FORROOT_GUARD');
 var ROUTER_PROVIDERS = [
     __WEBPACK_IMPORTED_MODULE_0__angular_common__["f" /* Location */],
     { provide: UrlSerializer, useClass: DefaultUrlSerializer },
@@ -21477,9 +21477,9 @@ var ROUTER_PROVIDERS = [
         provide: Router,
         useFactory: setupRouter,
         deps: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* ApplicationRef */], UrlSerializer, RouterOutletMap, __WEBPACK_IMPORTED_MODULE_0__angular_common__["f" /* Location */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* Injector */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_6" /* NgModuleFactoryLoader */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_core__["_7" /* Compiler */], ROUTES, ROUTER_CONFIGURATION, [UrlHandlingStrategy, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */]()],
-            [RouteReuseStrategy, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */]()]
+            __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* ApplicationRef */], UrlSerializer, RouterOutletMap, __WEBPACK_IMPORTED_MODULE_0__angular_common__["f" /* Location */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* Injector */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_6" /* NgModuleFactoryLoader */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_core__["_7" /* Compiler */], ROUTES, ROUTER_CONFIGURATION, [UrlHandlingStrategy, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */]()],
+            [RouteReuseStrategy, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */]()]
         ]
     },
     RouterOutletMap,
@@ -21494,7 +21494,7 @@ var ROUTER_PROVIDERS = [
  * @return {?}
  */
 function routerNgProbeToken() {
-    return new __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* NgProbeToken */]('Router', Router);
+    return new __WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* NgProbeToken */]('Router', Router);
 }
 /**
  * \@whatItDoes Adds router directives and providers.
@@ -21577,14 +21577,14 @@ var RouterModule = (function () {
                 {
                     provide: ROUTER_FORROOT_GUARD,
                     useFactory: provideForRootGuard,
-                    deps: [[Router, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* SkipSelf */]()]]
+                    deps: [[Router, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* SkipSelf */]()]]
                 },
                 { provide: ROUTER_CONFIGURATION, useValue: config ? config : {} },
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_0__angular_common__["e" /* LocationStrategy */],
                     useFactory: provideLocationStrategy,
                     deps: [
-                        __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* PlatformLocation */], [new __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */](__WEBPACK_IMPORTED_MODULE_0__angular_common__["g" /* APP_BASE_HREF */]), new __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */]()], ROUTER_CONFIGURATION
+                        __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* PlatformLocation */], [new __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */](__WEBPACK_IMPORTED_MODULE_0__angular_common__["g" /* APP_BASE_HREF */]), new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */]()], ROUTER_CONFIGURATION
                     ]
                 },
                 {
@@ -21592,7 +21592,7 @@ var RouterModule = (function () {
                     useExisting: config && config.preloadingStrategy ? config.preloadingStrategy :
                         NoPreloading
                 },
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* NgProbeToken */], multi: true, useFactory: routerNgProbeToken },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* NgProbeToken */], multi: true, useFactory: routerNgProbeToken },
                 provideRouterInitializer(),
             ],
         };
@@ -21614,8 +21614,8 @@ RouterModule.decorators = [
  * @nocollapse
  */
 RouterModule.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [ROUTER_FORROOT_GUARD,] },] },
-    { type: Router, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [ROUTER_FORROOT_GUARD,] },] },
+    { type: Router, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */] },] },
 ]; };
 /**
  * @param {?} platformLocationStrategy
@@ -21732,7 +21732,7 @@ var RouterInitializer = (function () {
         var _this = this;
         var /** @type {?} */ p = this.injector.get(__WEBPACK_IMPORTED_MODULE_0__angular_common__["i" /* LOCATION_INITIALIZED */], Promise.resolve(null));
         return p.then(function () {
-            var /** @type {?} */ resolve = null;
+            var /** @type {?} */ resolve = ((null));
             var /** @type {?} */ res = new Promise(function (r) { return resolve = r; });
             var /** @type {?} */ router = _this.injector.get(Router);
             var /** @type {?} */ opts = _this.injector.get(ROUTER_CONFIGURATION);
@@ -21752,7 +21752,7 @@ var RouterInitializer = (function () {
                         return _this.resultOfPreactivationDone;
                     }
                     else {
-                        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(null);
+                        return (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__["of"])(null));
                     }
                 };
                 router.initialNavigation();
@@ -21771,7 +21771,7 @@ var RouterInitializer = (function () {
         var /** @type {?} */ opts = this.injector.get(ROUTER_CONFIGURATION);
         var /** @type {?} */ preloader = this.injector.get(RouterPreloader);
         var /** @type {?} */ router = this.injector.get(Router);
-        var /** @type {?} */ ref = this.injector.get(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* ApplicationRef */]);
+        var /** @type {?} */ ref = this.injector.get(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* ApplicationRef */]);
         if (bootstrappedComponentRef !== ref.components[0]) {
             return;
         }
@@ -21783,7 +21783,7 @@ var RouterInitializer = (function () {
         }
         preloader.setUpPreloading();
         router.resetRootComponentType(ref.componentTypes[0]);
-        this.resultOfPreactivationDone.next(null);
+        this.resultOfPreactivationDone.next(/** @type {?} */ ((null)));
         this.resultOfPreactivationDone.complete();
     };
     /**
@@ -21804,7 +21804,7 @@ var RouterInitializer = (function () {
     return RouterInitializer;
 }());
 RouterInitializer.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -21831,7 +21831,7 @@ function getBootstrapListener(r) {
  *
  * \@experimental
  */
-var ROUTER_INITIALIZER = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('Router Initializer');
+var ROUTER_INITIALIZER = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('Router Initializer');
 /**
  * @return {?}
  */
@@ -21839,7 +21839,7 @@ function provideRouterInitializer() {
     return [
         RouterInitializer,
         {
-            provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* APP_INITIALIZER */],
+            provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* APP_INITIALIZER */],
             multi: true,
             useFactory: getAppInitializer,
             deps: [RouterInitializer]
@@ -21863,7 +21863,7 @@ function provideRouterInitializer() {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -21903,7 +21903,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Version */]
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angularfire2__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angularfire2__ = __webpack_require__(101);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__angularfire2__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__angularfire2__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__angularfire2__["c"]; });
@@ -21973,7 +21973,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -21986,7 +21986,7 @@ var __extends = (this && this.__extends) || function (d, b) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-var _DOM = null;
+var _DOM = ((null));
 /**
  * @return {?}
  */
@@ -22015,7 +22015,7 @@ function setRootDomAdapter(adapter) {
  */
 var DomAdapter = (function () {
     function DomAdapter() {
-        this.resourceLoaderType = null;
+        this.resourceLoaderType = ((null));
     }
     /**
      * @abstract
@@ -22929,8 +22929,8 @@ var _chromeNumKeyPadMap = {
     '\x90': 'NumLock'
 };
 var nodeContains;
-if (__WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['Node']) {
-    nodeContains = __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['Node'].prototype.contains || function (node) {
+if (__WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['Node']) {
+    nodeContains = __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['Node'].prototype.contains || function (node) {
         return !!(this.compareDocumentPosition(node) & 16);
     };
 }
@@ -23432,7 +23432,6 @@ var BrowserDomAdapter = (function (_super) {
      * @return {?}
      */
     BrowserDomAdapter.prototype.hasStyle = function (element, styleName, styleValue) {
-        if (styleValue === void 0) { styleValue = null; }
         var /** @type {?} */ value = this.getStyle(element, styleName) || '';
         return styleValue ? value == styleValue : value.length > 0;
     };
@@ -23657,6 +23656,7 @@ var BrowserDomAdapter = (function (_super) {
         if (target === 'body') {
             return document.body;
         }
+        return null;
     };
     /**
      * @return {?}
@@ -23709,7 +23709,7 @@ var BrowserDomAdapter = (function (_super) {
      * @param {?} value
      * @return {?}
      */
-    BrowserDomAdapter.prototype.setGlobalVar = function (path, value) { setValueOnPath(__WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */], path, value); };
+    BrowserDomAdapter.prototype.setGlobalVar = function (path, value) { setValueOnPath(__WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */], path, value); };
     /**
      * @return {?}
      */
@@ -23752,7 +23752,7 @@ var baseElement = null;
  */
 function getBaseElementHref() {
     if (!baseElement) {
-        baseElement = document.querySelector('base');
+        baseElement = ((document.querySelector('base')));
         if (!baseElement) {
             return null;
         }
@@ -23800,7 +23800,7 @@ function setValueOnPath(global, path, value) {
     var /** @type {?} */ parts = path.split('.');
     var /** @type {?} */ obj = global;
     while (parts.length > 1) {
-        var /** @type {?} */ name = parts.shift();
+        var /** @type {?} */ name = ((parts.shift()));
         if (obj.hasOwnProperty(name) && obj[name] != null) {
             obj = obj[name];
         }
@@ -23811,7 +23811,7 @@ function setValueOnPath(global, path, value) {
     if (obj === undefined || obj === null) {
         obj = {};
     }
-    obj[parts.shift()] = value;
+    obj[((parts.shift()))] = value;
 }
 /**
  * @license
@@ -23828,7 +23828,7 @@ function setValueOnPath(global, path, value) {
  *
  * \@stable
  */
-var DOCUMENT = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('DocumentToken');
+var DOCUMENT = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('DocumentToken');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -23882,7 +23882,7 @@ var BrowserPlatformLocation = (function (_super) {
     /**
      * @return {?}
      */
-    BrowserPlatformLocation.prototype.getBaseHrefFromDOM = function () { return getDOM().getBaseHref(this._doc); };
+    BrowserPlatformLocation.prototype.getBaseHrefFromDOM = function () { return ((getDOM().getBaseHref(this._doc))); };
     /**
      * @param {?} fn
      * @return {?}
@@ -23965,13 +23965,13 @@ var BrowserPlatformLocation = (function (_super) {
     return BrowserPlatformLocation;
 }(__WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* PlatformLocation */]));
 BrowserPlatformLocation.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 BrowserPlatformLocation.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @license
@@ -24049,7 +24049,7 @@ var Meta = (function () {
         if (!tag)
             return null;
         selector = selector || this._parseSelector(tag);
-        var /** @type {?} */ meta = this.getTag(selector);
+        var /** @type {?} */ meta = ((this.getTag(selector)));
         if (meta) {
             return this._setMetaElementAttributes(tag, meta);
         }
@@ -24059,7 +24059,7 @@ var Meta = (function () {
      * @param {?} attrSelector
      * @return {?}
      */
-    Meta.prototype.removeTag = function (attrSelector) { this.removeTagElement(this.getTag(attrSelector)); };
+    Meta.prototype.removeTag = function (attrSelector) { this.removeTagElement(/** @type {?} */ ((this.getTag(attrSelector)))); };
     /**
      * @param {?} meta
      * @return {?}
@@ -24078,7 +24078,7 @@ var Meta = (function () {
         if (forceCreation === void 0) { forceCreation = false; }
         if (!forceCreation) {
             var /** @type {?} */ selector = this._parseSelector(meta);
-            var /** @type {?} */ elem = this.getTag(selector);
+            var /** @type {?} */ elem = ((this.getTag(selector)));
             // It's allowed to have multiple elements with the same name so it's not enough to
             // just check that element with the same name already present on the page. We also need to
             // check if element has tag attributes
@@ -24121,13 +24121,13 @@ var Meta = (function () {
     return Meta;
 }());
 Meta.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 Meta.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @license
@@ -24140,7 +24140,7 @@ Meta.ctorParameters = function () { return [
  * An id that identifies a particular application being bootstrapped, that should
  * match across the client/server boundary.
  */
-var TRANSITION_ID = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('TRANSITION_ID');
+var TRANSITION_ID = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('TRANSITION_ID');
 /**
  * @param {?} transitionId
  * @param {?} document
@@ -24157,7 +24157,7 @@ function bootstrapListenerFactory(transitionId, document) {
 }
 var SERVER_TRANSITION_PROVIDERS = [
     {
-        provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* APP_INITIALIZER */],
+        provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* APP_INITIALIZER */],
         useFactory: bootstrapListenerFactory,
         deps: [TRANSITION_ID, DOCUMENT],
         multi: true
@@ -24176,13 +24176,13 @@ var BrowserGetTestability = (function () {
     /**
      * @return {?}
      */
-    BrowserGetTestability.init = function () { __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* setTestabilityGetter */])(new BrowserGetTestability()); };
+    BrowserGetTestability.init = function () { __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* setTestabilityGetter */])(new BrowserGetTestability()); };
     /**
      * @param {?} registry
      * @return {?}
      */
     BrowserGetTestability.prototype.addToWindow = function (registry) {
-        __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['getAngularTestability'] = function (elem, findInAncestors) {
+        __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['getAngularTestability'] = function (elem, findInAncestors) {
             if (findInAncestors === void 0) { findInAncestors = true; }
             var /** @type {?} */ testability = registry.findTestabilityInTree(elem, findInAncestors);
             if (testability == null) {
@@ -24190,10 +24190,10 @@ var BrowserGetTestability = (function () {
             }
             return testability;
         };
-        __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['getAllAngularTestabilities'] = function () { return registry.getAllTestabilities(); };
-        __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['getAllAngularRootElements'] = function () { return registry.getAllRootElements(); };
+        __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['getAllAngularTestabilities'] = function () { return registry.getAllTestabilities(); };
+        __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['getAllAngularRootElements'] = function () { return registry.getAllRootElements(); };
         var /** @type {?} */ whenAllStable = function (callback /** TODO #9100 */) {
-            var /** @type {?} */ testabilities = __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['getAllAngularTestabilities']();
+            var /** @type {?} */ testabilities = __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['getAllAngularTestabilities']();
             var /** @type {?} */ count = testabilities.length;
             var /** @type {?} */ didWork = false;
             var /** @type {?} */ decrement = function (didWork_ /** TODO #9100 */) {
@@ -24207,10 +24207,10 @@ var BrowserGetTestability = (function () {
                 testability.whenStable(decrement);
             });
         };
-        if (!__WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['frameworkStabilizers']) {
-            __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['frameworkStabilizers'] = [];
+        if (!__WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['frameworkStabilizers']) {
+            __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['frameworkStabilizers'] = [];
         }
-        __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */]['frameworkStabilizers'].push(whenAllStable);
+        __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */]['frameworkStabilizers'].push(whenAllStable);
     };
     /**
      * @param {?} registry
@@ -24274,13 +24274,13 @@ var Title = (function () {
     return Title;
 }());
 Title.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 Title.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @license
@@ -24299,8 +24299,8 @@ var __assign = (undefined && undefined.__assign) || Object.assign || function (t
     return t;
 };
 var CORE_TOKENS = {
-    'ApplicationRef': __WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* ApplicationRef */],
-    'NgZone': __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* NgZone */],
+    'ApplicationRef': __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* ApplicationRef */],
+    'NgZone': __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* NgZone */],
 };
 var INSPECT_GLOBAL_NAME = 'ng.probe';
 var CORE_TOKENS_GLOBAL_NAME = 'ng.coreTokens';
@@ -24312,7 +24312,7 @@ var CORE_TOKENS_GLOBAL_NAME = 'ng.coreTokens';
  * @return {?}
  */
 function inspectNativeElement(element) {
-    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* getDebugNode */])(element);
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* getDebugNode */])(element);
 }
 /**
  * Deprecated. Use the one from '\@angular/core'.
@@ -24352,11 +24352,11 @@ function _ngProbeTokensToMap(tokens) {
  */
 var ELEMENT_PROBE_PROVIDERS = [
     {
-        provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* APP_INITIALIZER */],
+        provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* APP_INITIALIZER */],
         useFactory: _createNgProbe,
         deps: [
-            [NgProbeToken$1, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */]()],
-            [__WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* NgProbeToken */], new __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */]()],
+            [NgProbeToken$1, new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */]()],
+            [__WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* NgProbeToken */], new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */]()],
         ],
         multi: true,
     },
@@ -24371,7 +24371,7 @@ var ELEMENT_PROBE_PROVIDERS = [
 /**
  * \@stable
  */
-var EVENT_MANAGER_PLUGINS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('EventManagerPlugins');
+var EVENT_MANAGER_PLUGINS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('EventManagerPlugins');
 /**
  * \@stable
  */
@@ -24434,14 +24434,14 @@ var EventManager = (function () {
     return EventManager;
 }());
 EventManager.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 EventManager.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [EVENT_MANAGER_PLUGINS,] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* NgZone */], },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [EVENT_MANAGER_PLUGINS,] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* NgZone */], },
 ]; };
 /**
  * @abstract
@@ -24524,7 +24524,7 @@ var SharedStylesHost = (function () {
     return SharedStylesHost;
 }());
 SharedStylesHost.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -24584,13 +24584,13 @@ var DomSharedStylesHost = (function (_super) {
     return DomSharedStylesHost;
 }(SharedStylesHost));
 DomSharedStylesHost.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 DomSharedStylesHost.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @license
@@ -24679,7 +24679,7 @@ var DomRendererFactory2 = (function () {
             return this.defaultRenderer;
         }
         switch (type.encapsulation) {
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* ViewEncapsulation */].Emulated: {
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* ViewEncapsulation */].Emulated: {
                 var /** @type {?} */ renderer = this.rendererByCompId.get(type.id);
                 if (!renderer) {
                     renderer =
@@ -24689,7 +24689,7 @@ var DomRendererFactory2 = (function () {
                 ((renderer)).applyToHost(element);
                 return renderer;
             }
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* ViewEncapsulation */].Native:
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* ViewEncapsulation */].Native:
                 return new ShadowDomRenderer(this.eventManager, this.sharedStylesHost, element, type);
             default: {
                 if (!this.rendererByCompId.has(type.id)) {
@@ -24704,7 +24704,7 @@ var DomRendererFactory2 = (function () {
     return DomRendererFactory2;
 }());
 DomRendererFactory2.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -24858,8 +24858,8 @@ var DefaultDomRenderer2 = (function () {
      * @return {?}
      */
     DefaultDomRenderer2.prototype.setStyle = function (el, style, value, flags) {
-        if (flags & __WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* RendererStyleFlags2 */].DashCase) {
-            el.style.setProperty(style, value, !!(flags & __WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* RendererStyleFlags2 */].Important) ? 'important' : '');
+        if (flags & __WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* RendererStyleFlags2 */].DashCase) {
+            el.style.setProperty(style, value, !!(flags & __WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* RendererStyleFlags2 */].Important) ? 'important' : '');
         }
         else {
             el.style[style] = value;
@@ -24872,7 +24872,7 @@ var DefaultDomRenderer2 = (function () {
      * @return {?}
      */
     DefaultDomRenderer2.prototype.removeStyle = function (el, style, flags) {
-        if (flags & __WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* RendererStyleFlags2 */].DashCase) {
+        if (flags & __WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* RendererStyleFlags2 */].DashCase) {
             el.style.removeProperty(style);
         }
         else {
@@ -25055,13 +25055,13 @@ var DomEventsPlugin = (function (_super) {
     return DomEventsPlugin;
 }(EventManagerPlugin));
 DomEventsPlugin.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 DomEventsPlugin.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @license
@@ -25113,7 +25113,7 @@ var EVENT_NAMES = {
  *
  * \@experimental
  */
-var HAMMER_GESTURE_CONFIG = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* InjectionToken */]('HammerGestureConfig');
+var HAMMER_GESTURE_CONFIG = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["k" /* InjectionToken */]('HammerGestureConfig');
 /**
  * \@experimental
  */
@@ -25138,7 +25138,7 @@ var HammerGestureConfig = (function () {
     return HammerGestureConfig;
 }());
 HammerGestureConfig.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -25196,14 +25196,14 @@ var HammerGesturesPlugin = (function (_super) {
     return HammerGesturesPlugin;
 }(EventManagerPlugin));
 HammerGesturesPlugin.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 HammerGesturesPlugin.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
-    { type: HammerGestureConfig, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [HAMMER_GESTURE_CONFIG,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
+    { type: HammerGestureConfig, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [HAMMER_GESTURE_CONFIG,] },] },
 ]; };
 /**
  * @license
@@ -25242,7 +25242,7 @@ var KeyEventsPlugin = (function (_super) {
      * @return {?}
      */
     KeyEventsPlugin.prototype.addEventListener = function (element, eventName, handler) {
-        var /** @type {?} */ parsedEvent = KeyEventsPlugin.parseEventName(eventName);
+        var /** @type {?} */ parsedEvent = ((KeyEventsPlugin.parseEventName(eventName)));
         var /** @type {?} */ outsideHandler = KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
         return this.manager.getZone().runOutsideAngular(function () {
             return getDOM().onAndCancel(element, parsedEvent['domEventName'], outsideHandler);
@@ -25258,7 +25258,7 @@ var KeyEventsPlugin = (function (_super) {
         if ((parts.length === 0) || !(domEventName === 'keydown' || domEventName === 'keyup')) {
             return null;
         }
-        var /** @type {?} */ key = KeyEventsPlugin._normalizeKey(parts.pop());
+        var /** @type {?} */ key = KeyEventsPlugin._normalizeKey(/** @type {?} */ ((parts.pop())));
         var /** @type {?} */ fullKey = '';
         MODIFIER_KEYS.forEach(function (modifierName) {
             var /** @type {?} */ index = parts.indexOf(modifierName);
@@ -25332,13 +25332,13 @@ var KeyEventsPlugin = (function (_super) {
     return KeyEventsPlugin;
 }(EventManagerPlugin));
 KeyEventsPlugin.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 KeyEventsPlugin.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @license
@@ -25384,7 +25384,7 @@ function sanitizeUrl(url) {
     url = String(url);
     if (url.match(SAFE_URL_PATTERN) || url.match(DATA_URL_PATTERN))
         return url;
-    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* isDevMode */])()) {
+    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* isDevMode */])()) {
         getDOM().log("WARNING: sanitizing unsafe URL value " + url + " (see http://g.co/ng/security#xss)");
     }
     return 'unsafe:' + url;
@@ -25407,7 +25407,7 @@ function sanitizeSrcset(srcset) {
 /** A <body> element that can be safely used to parse untrusted HTML. Lazily initialized below. */
 var inertElement = null;
 /** Lazily initialized to make sure the DOM adapter gets set before use. */
-var DOM = null;
+var DOM = ((null));
 /**
  * Returns an HTML element that is guaranteed to not execute code when creating elements in it.
  * @return {?}
@@ -25516,20 +25516,20 @@ var SanitizingHtmlSerializer = (function () {
         // This cannot use a TreeWalker, as it has to run on Angular's various DOM adapters.
         // However this code never accesses properties off of `document` before deleting its contents
         // again, so it shouldn't be vulnerable to DOM clobbering.
-        var /** @type {?} */ current = el.firstChild;
+        var /** @type {?} */ current = ((el.firstChild));
         while (current) {
             if (DOM.isElementNode(current)) {
                 this.startElement(/** @type {?} */ (current));
             }
             else if (DOM.isTextNode(current)) {
-                this.chars(DOM.nodeValue(current));
+                this.chars(/** @type {?} */ ((DOM.nodeValue(current))));
             }
             else {
                 // Strip non-element, non-text nodes.
                 this.sanitizedSomething = true;
             }
             if (DOM.firstChild(current)) {
-                current = DOM.firstChild(current);
+                current = ((DOM.firstChild(current)));
                 continue;
             }
             while (current) {
@@ -25537,12 +25537,12 @@ var SanitizingHtmlSerializer = (function () {
                 if (DOM.isElementNode(current)) {
                     this.endElement(/** @type {?} */ (current));
                 }
-                var /** @type {?} */ next = checkClobberedElement(current, DOM.nextSibling(current));
+                var /** @type {?} */ next = checkClobberedElement(current, /** @type {?} */ ((DOM.nextSibling(current))));
                 if (next) {
                     current = next;
                     break;
                 }
-                current = checkClobberedElement(current, DOM.parentElement(current));
+                current = checkClobberedElement(current, /** @type {?} */ ((DOM.parentElement(current))));
             }
         }
         return this.buf.join('');
@@ -25689,7 +25689,7 @@ function sanitizeHtml(defaultDoc, unsafeHtmlInput) {
             var child = _a[_i];
             DOM.removeChild(parent, child);
         }
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* isDevMode */])() && sanitizer.sanitizedSomething) {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* isDevMode */])() && sanitizer.sanitizedSomething) {
             DOM.log('WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).');
         }
         return safeHtml;
@@ -25790,7 +25790,7 @@ function sanitizeStyle(value) {
         value.match(SAFE_STYLE_VALUE) && hasBalancedQuotes(value)) {
         return value; // Safe style values.
     }
-    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* isDevMode */])()) {
+    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* isDevMode */])()) {
         getDOM().log("WARNING: sanitizing unsafe style value " + value + " (see http://g.co/ng/security#xss).");
     }
     return 'unsafe';
@@ -25925,31 +25925,31 @@ var DomSanitizerImpl = (function (_super) {
         if (value == null)
             return null;
         switch (ctx) {
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* SecurityContext */].NONE:
-                return value;
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* SecurityContext */].HTML:
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* SecurityContext */].NONE:
+                return (value);
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* SecurityContext */].HTML:
                 if (value instanceof SafeHtmlImpl)
                     return value.changingThisBreaksApplicationSecurity;
                 this.checkNotSafeValue(value, 'HTML');
                 return sanitizeHtml(this._doc, String(value));
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* SecurityContext */].STYLE:
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* SecurityContext */].STYLE:
                 if (value instanceof SafeStyleImpl)
                     return value.changingThisBreaksApplicationSecurity;
                 this.checkNotSafeValue(value, 'Style');
-                return sanitizeStyle(value);
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* SecurityContext */].SCRIPT:
+                return sanitizeStyle(/** @type {?} */ (value));
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* SecurityContext */].SCRIPT:
                 if (value instanceof SafeScriptImpl)
                     return value.changingThisBreaksApplicationSecurity;
                 this.checkNotSafeValue(value, 'Script');
                 throw new Error('unsafe value used in a script context');
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* SecurityContext */].URL:
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* SecurityContext */].URL:
                 if (value instanceof SafeResourceUrlImpl || value instanceof SafeUrlImpl) {
                     // Allow resource URLs in URL contexts, they are strictly more trusted.
                     return value.changingThisBreaksApplicationSecurity;
                 }
                 this.checkNotSafeValue(value, 'URL');
                 return sanitizeUrl(String(value));
-            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* SecurityContext */].RESOURCE_URL:
+            case __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* SecurityContext */].RESOURCE_URL:
                 if (value instanceof SafeResourceUrlImpl) {
                     return value.changingThisBreaksApplicationSecurity;
                 }
@@ -26000,13 +26000,13 @@ var DomSanitizerImpl = (function (_super) {
     return DomSanitizerImpl;
 }(DomSanitizer));
 DomSanitizerImpl.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 DomSanitizerImpl.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */], args: [DOCUMENT,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */], args: [DOCUMENT,] },] },
 ]; };
 /**
  * @abstract
@@ -26096,8 +26096,8 @@ var SafeResourceUrlImpl = (function (_super) {
  * found in the LICENSE file at https://angular.io/license
  */
 var INTERNAL_BROWSER_PLATFORM_PROVIDERS = [
-    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* PLATFORM_ID */], useValue: __WEBPACK_IMPORTED_MODULE_0__angular_common__["c" /* ɵPLATFORM_BROWSER_ID */] },
-    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* PLATFORM_INITIALIZER */], useValue: initDomAdapter, multi: true },
+    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* PLATFORM_ID */], useValue: __WEBPACK_IMPORTED_MODULE_0__angular_common__["c" /* ɵPLATFORM_BROWSER_ID */] },
+    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["w" /* PLATFORM_INITIALIZER */], useValue: initDomAdapter, multi: true },
     { provide: __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* PlatformLocation */], useClass: BrowserPlatformLocation },
     { provide: DOCUMENT, useFactory: _document, deps: [] },
 ];
@@ -26108,13 +26108,13 @@ var INTERNAL_BROWSER_PLATFORM_PROVIDERS = [
  * \@experimental
  */
 var BROWSER_SANITIZATION_PROVIDERS = [
-    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["w" /* Sanitizer */], useExisting: DomSanitizer },
+    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* Sanitizer */], useExisting: DomSanitizer },
     { provide: DomSanitizer, useClass: DomSanitizerImpl },
 ];
 /**
  * \@stable
  */
-var platformBrowser = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* createPlatformFactory */])(__WEBPACK_IMPORTED_MODULE_1__angular_core__["y" /* platformCore */], 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
+var platformBrowser = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["y" /* createPlatformFactory */])(__WEBPACK_IMPORTED_MODULE_1__angular_core__["z" /* platformCore */], 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
 /**
  * @return {?}
  */
@@ -26126,7 +26126,7 @@ function initDomAdapter() {
  * @return {?}
  */
 function errorHandler() {
-    return new __WEBPACK_IMPORTED_MODULE_1__angular_core__["z" /* ErrorHandler */]();
+    return new __WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* ErrorHandler */]();
 }
 /**
  * @return {?}
@@ -26161,8 +26161,8 @@ var BrowserModule = (function () {
         return {
             ngModule: BrowserModule,
             providers: [
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* APP_ID */], useValue: params.appId },
-                { provide: TRANSITION_ID, useExisting: __WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* APP_ID */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* APP_ID */], useValue: params.appId },
+                { provide: TRANSITION_ID, useExisting: __WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* APP_ID */] },
                 SERVER_TRANSITION_PROVIDERS,
             ],
         };
@@ -26173,29 +26173,29 @@ BrowserModule.decorators = [
     { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */], args: [{
                 providers: [
                     BROWSER_SANITIZATION_PROVIDERS,
-                    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["z" /* ErrorHandler */], useFactory: errorHandler, deps: [] },
+                    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* ErrorHandler */], useFactory: errorHandler, deps: [] },
                     { provide: EVENT_MANAGER_PLUGINS, useClass: DomEventsPlugin, multi: true },
                     { provide: EVENT_MANAGER_PLUGINS, useClass: KeyEventsPlugin, multi: true },
                     { provide: EVENT_MANAGER_PLUGINS, useClass: HammerGesturesPlugin, multi: true },
                     { provide: HAMMER_GESTURE_CONFIG, useClass: HammerGestureConfig },
                     DomRendererFactory2,
-                    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* RendererFactory2 */], useExisting: DomRendererFactory2 },
+                    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* RendererFactory2 */], useExisting: DomRendererFactory2 },
                     { provide: SharedStylesHost, useExisting: DomSharedStylesHost },
                     DomSharedStylesHost,
-                    __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Testability */],
+                    __WEBPACK_IMPORTED_MODULE_1__angular_core__["D" /* Testability */],
                     EventManager,
                     ELEMENT_PROBE_PROVIDERS,
                     Meta,
                     Title,
                 ],
-                exports: [__WEBPACK_IMPORTED_MODULE_0__angular_common__["d" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["D" /* ApplicationModule */]]
+                exports: [__WEBPACK_IMPORTED_MODULE_0__angular_common__["d" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* ApplicationModule */]]
             },] },
 ];
 /**
  * @nocollapse
  */
 BrowserModule.ctorParameters = function () { return [
-    { type: BrowserModule, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* SkipSelf */] },] },
+    { type: BrowserModule, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* SkipSelf */] },] },
 ]; };
 /**
  * @license
@@ -26232,7 +26232,7 @@ var AngularProfiler = (function () {
      * @param {?} ref
      */
     function AngularProfiler(ref) {
-        this.appRef = ref.injector.get(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* ApplicationRef */]);
+        this.appRef = ref.injector.get(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* ApplicationRef */]);
     }
     /**
      * Exercises change detection in a loop and then prints the average amount of
@@ -26368,7 +26368,7 @@ var By = (function () {
      * @return {?}
      */
     By.directive = function (type) {
-        return function (debugElement) { return debugElement.providerTokens.indexOf(type) !== -1; };
+        return function (debugElement) { return ((debugElement.providerTokens)).indexOf(type) !== -1; };
     };
     return By;
 }());
@@ -26394,7 +26394,7 @@ var By = (function () {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -26428,7 +26428,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Version */]
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(118);
+var ConnectableObservable_1 = __webpack_require__(119);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -26582,12 +26582,12 @@ exports.ObserveOnMessage = ObserveOnMessage;
 /* unused harmony export FirebaseRef */
 /* unused harmony export FirebaseUrl */
 
-var FirebaseConfig = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* OpaqueToken */]('FirebaseUrl');
-var FirebaseApp = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* OpaqueToken */]('FirebaseApp');
-var FirebaseAuthConfig = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* OpaqueToken */]('FirebaseAuthConfig');
-var FirebaseUserConfig = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* OpaqueToken */]('FirebaseUserConfig');
-var FirebaseAppName = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* OpaqueToken */]('FirebaseAppName');
-var WindowLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* OpaqueToken */]('WindowLocation');
+var FirebaseConfig = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* OpaqueToken */]('FirebaseUrl');
+var FirebaseApp = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* OpaqueToken */]('FirebaseApp');
+var FirebaseAuthConfig = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* OpaqueToken */]('FirebaseAuthConfig');
+var FirebaseUserConfig = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* OpaqueToken */]('FirebaseUserConfig');
+var FirebaseAppName = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* OpaqueToken */]('FirebaseAppName');
+var WindowLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* OpaqueToken */]('WindowLocation');
 var FirebaseRef = FirebaseApp;
 var FirebaseUrl = FirebaseConfig;
 //# sourceMappingURL=tokens.js.map
@@ -27048,7 +27048,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var root_1 = __webpack_require__(10);
-var Action_1 = __webpack_require__(492);
+var Action_1 = __webpack_require__(493);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -27110,11 +27110,11 @@ var AsyncAction = (function (_super) {
     AsyncAction.prototype.recycleAsyncId = function (scheduler, id, delay) {
         if (delay === void 0) { delay = 0; }
         // If this action is rescheduled with the same delay time, don't clear the interval id.
-        if (delay !== null && this.delay === delay) {
+        if (delay !== null && this.delay === delay && this.pending === false) {
             return id;
         }
         // Otherwise, if the action's delay time is different from the current delay,
-        // clear the interval id
+        // or the action has been rescheduled before it's executed, clear the interval id
         return root_1.root.clearInterval(id) && undefined || undefined;
     };
     /**
@@ -27195,7 +27195,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Scheduler_1 = __webpack_require__(252);
+var Scheduler_1 = __webpack_require__(253);
 var AsyncScheduler = (function (_super) {
     __extends(AsyncScheduler, _super);
     function AsyncScheduler() {
@@ -27378,7 +27378,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -27437,30 +27437,21 @@ var PlatformLocation = (function () {
      * @return {?}
      */
     PlatformLocation.prototype.onHashChange = function (fn) { };
-    Object.defineProperty(PlatformLocation.prototype, "pathname", {
-        /**
-         * @return {?}
-         */
-        get: function () { return null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(PlatformLocation.prototype, "search", {
-        /**
-         * @return {?}
-         */
-        get: function () { return null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(PlatformLocation.prototype, "hash", {
-        /**
-         * @return {?}
-         */
-        get: function () { return null; },
-        enumerable: true,
-        configurable: true
-    });
+    /**
+     * @abstract
+     * @return {?}
+     */
+    PlatformLocation.prototype.pathname = function () { };
+    /**
+     * @abstract
+     * @return {?}
+     */
+    PlatformLocation.prototype.search = function () { };
+    /**
+     * @abstract
+     * @return {?}
+     */
+    PlatformLocation.prototype.hash = function () { };
     /**
      * @abstract
      * @param {?} state
@@ -27493,7 +27484,7 @@ var PlatformLocation = (function () {
  * \@whatItDoes indicates when a location is initialized
  * \@experimental
  */
-var LOCATION_INITIALIZED = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('Location Initialized');
+var LOCATION_INITIALIZED = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('Location Initialized');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -27598,7 +27589,7 @@ var LocationStrategy = (function () {
  *
  * \@stable
  */
-var APP_BASE_HREF = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('appBaseHref');
+var APP_BASE_HREF = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('appBaseHref');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -27636,7 +27627,7 @@ var Location = (function () {
         /**
          * \@internal
          */
-        this._subject = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this._subject = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
         this._platformStrategy = platformStrategy;
         var browserBaseHref = this._platformStrategy.getBaseHref();
         this._baseHref = Location.stripTrailingSlash(_stripIndexHtml(browserBaseHref));
@@ -27729,8 +27720,6 @@ var Location = (function () {
      * @return {?}
      */
     Location.prototype.subscribe = function (onNext, onThrow, onReturn) {
-        if (onThrow === void 0) { onThrow = null; }
-        if (onReturn === void 0) { onReturn = null; }
         return this._subject.subscribe({ next: onNext, error: onThrow, complete: onReturn });
     };
     /**
@@ -27779,7 +27768,7 @@ var Location = (function () {
     return Location;
 }());
 Location.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -27913,14 +27902,14 @@ var HashLocationStrategy = (function (_super) {
     return HashLocationStrategy;
 }(LocationStrategy));
 HashLocationStrategy.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 HashLocationStrategy.ctorParameters = function () { return [
     { type: PlatformLocation, },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [APP_BASE_HREF,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [APP_BASE_HREF,] },] },
 ]; };
 /**
  * @license
@@ -28036,14 +28025,14 @@ var PathLocationStrategy = (function (_super) {
     return PathLocationStrategy;
 }(LocationStrategy));
 PathLocationStrategy.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 PathLocationStrategy.ctorParameters = function () { return [
     { type: PlatformLocation, },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [APP_BASE_HREF,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [APP_BASE_HREF,] },] },
 ]; };
 /**
  * @license
@@ -28138,13 +28127,13 @@ var NgLocaleLocalization = (function (_super) {
     return NgLocaleLocalization;
 }(NgLocalization));
 NgLocaleLocalization.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 NgLocaleLocalization.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
 ]; };
 var Plural = {};
 Plural.Zero = 0;
@@ -29037,7 +29026,7 @@ var NgForOf = (function () {
          * @return {?}
          */
         set: function (fn) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* isDevMode */])() && fn != null && typeof fn !== 'function') {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* isDevMode */])() && fn != null && typeof fn !== 'function') {
                 // TODO(vicb): use a log service once there is a public one available
                 if ((console) && (console.warn)) {
                     console.warn("trackBy must be a function, but received " + JSON.stringify(fn) + ". " +
@@ -29102,7 +29091,7 @@ var NgForOf = (function () {
         var /** @type {?} */ insertTuples = [];
         changes.forEachOperation(function (item, adjustedPreviousIndex, currentIndex) {
             if (item.previousIndex == null) {
-                var /** @type {?} */ view = _this._viewContainer.createEmbeddedView(_this._template, new NgForOfContext(null, _this.ngForOf, null, null), currentIndex);
+                var /** @type {?} */ view = _this._viewContainer.createEmbeddedView(_this._template, new NgForOfContext(/** @type {?} */ ((null)), _this.ngForOf, -1, -1), currentIndex);
                 var /** @type {?} */ tuple = new RecordViewTuple(item, view);
                 insertTuples.push(tuple);
             }
@@ -29110,7 +29099,7 @@ var NgForOf = (function () {
                 _this._viewContainer.remove(adjustedPreviousIndex);
             }
             else {
-                var /** @type {?} */ view = _this._viewContainer.get(adjustedPreviousIndex);
+                var /** @type {?} */ view = ((_this._viewContainer.get(adjustedPreviousIndex)));
                 _this._viewContainer.move(view, currentIndex);
                 var /** @type {?} */ tuple = new RecordViewTuple(item, /** @type {?} */ (view));
                 insertTuples.push(tuple);
@@ -30099,7 +30088,7 @@ var AsyncPipe = (function () {
         this._latestReturnedValue = null;
         this._subscription = null;
         this._obj = null;
-        this._strategy = null;
+        this._strategy = ((null));
     }
     /**
      * @return {?}
@@ -30158,7 +30147,7 @@ var AsyncPipe = (function () {
      * @return {?}
      */
     AsyncPipe.prototype._dispose = function () {
-        this._strategy.dispose(this._subscription);
+        this._strategy.dispose(/** @type {?} */ ((this._subscription)));
         this._latestValue = null;
         this._latestReturnedValue = null;
         this._subscription = null;
@@ -30320,7 +30309,7 @@ var NumberFormatter = (function () {
             style: NumberFormatStyle[style].toLowerCase()
         };
         if (style == NumberFormatStyle.Currency) {
-            options.currency = currency;
+            options.currency = typeof currency == 'string' ? currency : undefined;
             options.currencyDisplay = currencyAsSymbol ? 'symbol' : 'code';
         }
         return new Intl.NumberFormat(locale, options).format(num);
@@ -30506,15 +30495,16 @@ function dateFormatter(format, date, locale) {
         parts = [];
         var /** @type {?} */ match = void 0;
         DATE_FORMATS_SPLIT.exec(format);
-        while (format) {
-            match = DATE_FORMATS_SPLIT.exec(format);
+        var /** @type {?} */ _format = format;
+        while (_format) {
+            match = DATE_FORMATS_SPLIT.exec(_format);
             if (match) {
                 parts = parts.concat(match.slice(1));
-                format = parts.pop();
+                _format = ((parts.pop()));
             }
             else {
-                parts.push(format);
-                format = null;
+                parts.push(_format);
+                _format = null;
             }
         }
         DATE_FORMATTER_CACHE.set(cacheKey, parts);
@@ -30558,7 +30548,7 @@ var _NUMBER_FORMAT_REGEXP = /^(\d+)?\.((\d+)(-(\d+))?)?$/;
  * @param {?} locale
  * @param {?} value
  * @param {?} style
- * @param {?} digits
+ * @param {?=} digits
  * @param {?=} currency
  * @param {?=} currencyAsSymbol
  * @return {?}
@@ -30573,9 +30563,9 @@ function formatNumber(pipe, locale, value, style, digits, currency, currencyAsSy
     if (typeof value !== 'number') {
         throw invalidPipeArgumentError(pipe, value);
     }
-    var /** @type {?} */ minInt;
-    var /** @type {?} */ minFraction;
-    var /** @type {?} */ maxFraction;
+    var /** @type {?} */ minInt = undefined;
+    var /** @type {?} */ minFraction = undefined;
+    var /** @type {?} */ maxFraction = undefined;
     if (style !== NumberFormatStyle.Currency) {
         // rely on Intl default for currency
         minInt = 1;
@@ -30645,7 +30635,6 @@ var DecimalPipe = (function () {
      * @return {?}
      */
     DecimalPipe.prototype.transform = function (value, digits) {
-        if (digits === void 0) { digits = null; }
         return formatNumber(DecimalPipe, this._locale, value, NumberFormatStyle.Decimal, digits);
     };
     return DecimalPipe;
@@ -30657,7 +30646,7 @@ DecimalPipe.decorators = [
  * @nocollapse
  */
 DecimalPipe.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
 ]; };
 /**
  * \@ngModule CommonModule
@@ -30692,7 +30681,6 @@ var PercentPipe = (function () {
      * @return {?}
      */
     PercentPipe.prototype.transform = function (value, digits) {
-        if (digits === void 0) { digits = null; }
         return formatNumber(PercentPipe, this._locale, value, NumberFormatStyle.Percent, digits);
     };
     return PercentPipe;
@@ -30704,7 +30692,7 @@ PercentPipe.decorators = [
  * @nocollapse
  */
 PercentPipe.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
 ]; };
 /**
  * \@ngModule CommonModule
@@ -30747,7 +30735,6 @@ var CurrencyPipe = (function () {
     CurrencyPipe.prototype.transform = function (value, currencyCode, symbolDisplay, digits) {
         if (currencyCode === void 0) { currencyCode = 'USD'; }
         if (symbolDisplay === void 0) { symbolDisplay = false; }
-        if (digits === void 0) { digits = null; }
         return formatNumber(CurrencyPipe, this._locale, value, NumberFormatStyle.Currency, digits, currencyCode, symbolDisplay);
     };
     return CurrencyPipe;
@@ -30759,7 +30746,7 @@ CurrencyPipe.decorators = [
  * @nocollapse
  */
 CurrencyPipe.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
 ]; };
 /**
  * @param {?} text
@@ -30931,7 +30918,7 @@ DatePipe.decorators = [
  * @nocollapse
  */
 DatePipe.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],] },] },
 ]; };
 /**
  * @param {?} obj
@@ -31328,7 +31315,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -31363,21 +31350,22 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]
 
 /***/ }),
 /* 50 */,
-/* 51 */
+/* 51 */,
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__database__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__database__ = __webpack_require__(174);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__database__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase_list_factory__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase_list_factory__ = __webpack_require__(175);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__firebase_list_factory__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_list_observable__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_list_observable__ = __webpack_require__(102);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_object_factory__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_object_factory__ = __webpack_require__(176);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__firebase_object_factory__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebase_object_observable__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebase_object_observable__ = __webpack_require__(177);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__firebase_object_observable__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__query_observable__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__query_observable__ = __webpack_require__(103);
 /* unused harmony namespace reexport */
 
 
@@ -31388,12 +31376,12 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 52 */,
 /* 53 */,
 /* 54 */,
 /* 55 */,
 /* 56 */,
-/* 57 */
+/* 57 */,
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31407,21 +31395,21 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var firebase = __webpack_require__(41);
-__webpack_require__(239);
+__webpack_require__(240);
 var Storage, XMLHttpRequest;
 
-__webpack_require__(240);
-__webpack_require__(242);
+__webpack_require__(241);
+__webpack_require__(243);
 var AsyncStorage;
 
-__webpack_require__(241);
+__webpack_require__(242);
 exports.default = firebase;
 module.exports = exports['default'];
 //# sourceMappingURL=firebase.js.map
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31480,7 +31468,7 @@ exports.AsyncSubject = AsyncSubject;
 //# sourceMappingURL=AsyncSubject.js.map
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31491,11 +31479,11 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subject_1 = __webpack_require__(6);
-var queue_1 = __webpack_require__(97);
+var queue_1 = __webpack_require__(98);
 var Subscription_1 = __webpack_require__(7);
 var observeOn_1 = __webpack_require__(34);
-var ObjectUnsubscribedError_1 = __webpack_require__(67);
-var SubjectSubscription_1 = __webpack_require__(117);
+var ObjectUnsubscribedError_1 = __webpack_require__(68);
+var SubjectSubscription_1 = __webpack_require__(118);
 /**
  * @class ReplaySubject<T>
  */
@@ -31588,17 +31576,17 @@ var ReplayEvent = (function () {
 //# sourceMappingURL=ReplaySubject.js.map
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var PromiseObservable_1 = __webpack_require__(120);
+var PromiseObservable_1 = __webpack_require__(121);
 exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 //# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31608,7 +31596,7 @@ exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31766,7 +31754,7 @@ exports.CombineLatestSubscriber = CombineLatestSubscriber;
 //# sourceMappingURL=combineLatest.js.map
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31898,7 +31886,7 @@ exports.ReduceSubscriber = ReduceSubscriber;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31930,7 +31918,7 @@ exports.$$observable = exports.observable;
 //# sourceMappingURL=observable.js.map
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31946,7 +31934,7 @@ exports.$$rxSubscriber = exports.rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31980,7 +31968,7 @@ exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32013,7 +32001,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32025,7 +32013,7 @@ exports.isDate = isDate;
 //# sourceMappingURL=isDate.js.map
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32037,7 +32025,7 @@ exports.isFunction = isFunction;
 //# sourceMappingURL=isFunction.js.map
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32055,10 +32043,10 @@ exports.isNumeric = isNumeric;
 //# sourceMappingURL=isNumeric.js.map
 
 /***/ }),
-/* 71 */,
 /* 72 */,
 /* 73 */,
-/* 74 */
+/* 74 */,
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32152,7 +32140,6 @@ function stripProviderId(providerId) {
 //# sourceMappingURL=auth_backend.js.map
 
 /***/ }),
-/* 75 */,
 /* 76 */,
 /* 77 */,
 /* 78 */,
@@ -32168,7 +32155,8 @@ function stripProviderId(providerId) {
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */
+/* 91 */,
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32179,7 +32167,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subject_1 = __webpack_require__(6);
-var ObjectUnsubscribedError_1 = __webpack_require__(67);
+var ObjectUnsubscribedError_1 = __webpack_require__(68);
 /**
  * @class BehaviorSubject<T>
  */
@@ -32223,7 +32211,7 @@ exports.BehaviorSubject = BehaviorSubject;
 //# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32287,7 +32275,7 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32467,7 +32455,7 @@ exports.concatStatic = concatStatic;
 //# sourceMappingURL=concat.js.map
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32566,7 +32554,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32717,7 +32705,7 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33002,13 +32990,13 @@ var ZipBufferIterator = (function (_super) {
 //# sourceMappingURL=zip.js.map
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var QueueAction_1 = __webpack_require__(497);
-var QueueScheduler_1 = __webpack_require__(498);
+var QueueAction_1 = __webpack_require__(498);
+var QueueScheduler_1 = __webpack_require__(499);
 /**
  *
  * Queue Scheduler
@@ -33074,7 +33062,7 @@ exports.queue = new QueueScheduler_1.QueueScheduler(QueueAction_1.QueueAction);
 //# sourceMappingURL=queue.js.map
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33121,7 +33109,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -33152,7 +33140,7 @@ var BrowserXhr = (function () {
     return BrowserXhr;
 }());
 BrowserXhr.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -33382,7 +33370,7 @@ var Headers = (function () {
         this._headers.forEach(function (values, name) {
             var /** @type {?} */ split = [];
             values.forEach(function (v) { return split.push.apply(split, v.split(',')); });
-            serialized[_this._normalizedNames.get(name)] = split;
+            serialized[((_this._normalizedNames.get(name)))] = split;
         });
         return serialized;
     };
@@ -33392,7 +33380,7 @@ var Headers = (function () {
      * @return {?}
      */
     Headers.prototype.getAll = function (name) {
-        return this.has(name) ? this._headers.get(name.toLowerCase()) : null;
+        return this.has(name) ? this._headers.get(name.toLowerCase()) || null : null;
     };
     /**
      * This method is not implemented.
@@ -33552,7 +33540,7 @@ var BaseResponseOptions = (function (_super) {
     return BaseResponseOptions;
 }(ResponseOptions));
 BaseResponseOptions.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -33657,7 +33645,7 @@ function getResponseURL(xhr) {
     if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
         return xhr.getResponseHeader('X-Request-URL');
     }
-    return;
+    return null;
 }
 /**
  * @param {?} input
@@ -34087,7 +34075,7 @@ var BrowserJsonp = (function () {
     return BrowserJsonp;
 }());
 BrowserJsonp.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -34244,7 +34232,7 @@ var JSONPBackend_ = (function (_super) {
     return JSONPBackend_;
 }(JSONPBackend));
 JSONPBackend_.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -34491,7 +34479,7 @@ var XHRBackend = (function () {
     return XHRBackend;
 }());
 XHRBackend.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -34600,7 +34588,7 @@ var RequestOptions = (function () {
         });
     };
     /**
-     * @param {?} params
+     * @param {?=} params
      * @return {?}
      */
     RequestOptions.prototype._mergeSearchParams = function (params) {
@@ -34694,7 +34682,7 @@ var BaseRequestOptions = (function (_super) {
     return BaseRequestOptions;
 }(RequestOptions));
 BaseRequestOptions.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -34881,7 +34869,7 @@ function mergeOptions(defaultOpts, providedOpts, method, url) {
     var /** @type {?} */ newOptions = defaultOpts;
     if (providedOpts) {
         // Hack so Dart can used named parameters
-        return newOptions.merge(new RequestOptions({
+        return (newOptions.merge(new RequestOptions({
             method: providedOpts.method || method,
             url: providedOpts.url || url,
             search: providedOpts.search,
@@ -34890,9 +34878,9 @@ function mergeOptions(defaultOpts, providedOpts, method, url) {
             body: providedOpts.body,
             withCredentials: providedOpts.withCredentials,
             responseType: providedOpts.responseType
-        }));
+        })));
     }
-    return newOptions.merge(new RequestOptions({ method: method, url: url }));
+    return (newOptions.merge(new RequestOptions({ method: method, url: url })));
 }
 /**
  * Performs http requests using `XMLHttpRequest` as the default backend.
@@ -35054,7 +35042,7 @@ var Http = (function () {
     return Http;
 }());
 Http.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -35112,7 +35100,7 @@ var Jsonp = (function (_super) {
     return Jsonp;
 }(Http));
 Jsonp.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -35226,7 +35214,7 @@ JsonpModule.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -35255,18 +35243,18 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]
 
 
 /***/ }),
-/* 99 */,
-/* 100 */
+/* 100 */,
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tokens__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_index__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__database_index__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_index__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__database_index__ = __webpack_require__(52);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_4__auth_index__["a"]; });
 /* unused harmony reexport AngularFireDatabase */
 /* unused harmony reexport FirebaseListObservable */
@@ -35319,8 +35307,8 @@ var AngularFire = (function () {
     return AngularFire;
 }());
 AngularFire = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["d" /* Injectable */])(),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__tokens__["a" /* FirebaseConfig */])),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["e" /* Injectable */])(),
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__tokens__["a" /* FirebaseConfig */])),
     __metadata("design:paramtypes", [Object, __WEBPACK_IMPORTED_MODULE_4__auth_index__["a" /* AngularFireAuth */],
         __WEBPACK_IMPORTED_MODULE_5__database_index__["a" /* AngularFireDatabase */]])
 ], AngularFire);
@@ -35404,7 +35392,7 @@ var AngularFireModule_1;
 //# sourceMappingURL=angularfire2.js.map
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35481,23 +35469,23 @@ var FirebaseListObservable = (function (_super) {
 //# sourceMappingURL=firebase_list_observable.js.map
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_combineLatest__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_combineLatest__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_combineLatest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_combineLatest__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_auditTime__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_auditTime__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_auditTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_auditTime__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interfaces__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interfaces__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(22);
 /* harmony export (immutable) */ __webpack_exports__["a"] = observeQuery;
 /* unused harmony export getOrderObservables */
@@ -35693,7 +35681,7 @@ function hasObservableProperties(query) {
 //# sourceMappingURL=query_observable.js.map
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -35717,10 +35705,10 @@ function hasObservableProperties(query) {
       ZERO = {x:0,y:0,z:0};
 
   // quite needed
-  var utils = __webpack_require__(104);
+  var utils = __webpack_require__(105);
 
   // not quite needed, but eventually this'll be useful...
-  var PolyBezier = __webpack_require__(179);
+  var PolyBezier = __webpack_require__(180);
 
   /**
    * Bezier curve constructor. The constructor argument can be one of three things:
@@ -36547,7 +36535,7 @@ function hasObservableProperties(query) {
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function() {
@@ -36773,7 +36761,7 @@ function hasObservableProperties(query) {
     },
 
     makeline: function(p1,p2) {
-      var Bezier = __webpack_require__(103);
+      var Bezier = __webpack_require__(104);
       var x1 = p1.x, y1 = p1.y, x2 = p2.x, y2 = p2.y, dx = (x2-x1)/3, dy = (y2-y1)/3;
       return new Bezier(x1, y1, x1+dx, y1+dy, x1+2*dx, y1+2*dy, x2, y2);
     },
@@ -37101,7 +37089,6 @@ function hasObservableProperties(query) {
 
 
 /***/ }),
-/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -37112,7 +37099,8 @@ function hasObservableProperties(query) {
 /* 113 */,
 /* 114 */,
 /* 115 */,
-/* 116 */
+/* 116 */,
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37126,7 +37114,7 @@ exports.empty = {
 //# sourceMappingURL=Observer.js.map
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37172,7 +37160,7 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37342,7 +37330,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37353,16 +37341,16 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var isArray_1 = __webpack_require__(20);
-var isArrayLike_1 = __webpack_require__(147);
-var isPromise_1 = __webpack_require__(149);
-var PromiseObservable_1 = __webpack_require__(120);
-var IteratorObservable_1 = __webpack_require__(391);
+var isArrayLike_1 = __webpack_require__(148);
+var isPromise_1 = __webpack_require__(150);
+var PromiseObservable_1 = __webpack_require__(121);
+var IteratorObservable_1 = __webpack_require__(392);
 var ArrayObservable_1 = __webpack_require__(18);
-var ArrayLikeObservable_1 = __webpack_require__(380);
+var ArrayLikeObservable_1 = __webpack_require__(381);
 var iterator_1 = __webpack_require__(47);
 var Observable_1 = __webpack_require__(0);
 var observeOn_1 = __webpack_require__(34);
-var observable_1 = __webpack_require__(64);
+var observable_1 = __webpack_require__(65);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -37470,7 +37458,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37597,7 +37585,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38016,24 +38004,14 @@ exports.AjaxTimeoutError = AjaxTimeoutError;
 //# sourceMappingURL=AjaxObservable.js.map
 
 /***/ }),
-/* 122 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var ForkJoinObservable_1 = __webpack_require__(385);
-exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
-//# sourceMappingURL=forkJoin.js.map
-
-/***/ }),
 /* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromObservable_1 = __webpack_require__(119);
-exports.from = FromObservable_1.FromObservable.create;
-//# sourceMappingURL=from.js.map
+var ForkJoinObservable_1 = __webpack_require__(386);
+exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
+//# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
 /* 124 */
@@ -38041,12 +38019,22 @@ exports.from = FromObservable_1.FromObservable.create;
 
 "use strict";
 
-var merge_1 = __webpack_require__(95);
+var FromObservable_1 = __webpack_require__(120);
+exports.from = FromObservable_1.FromObservable.create;
+//# sourceMappingURL=from.js.map
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var merge_1 = __webpack_require__(96);
 exports.merge = merge_1.mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38156,7 +38144,7 @@ function dispatchNext(subscriber) {
 //# sourceMappingURL=auditTime.js.map
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38278,7 +38266,7 @@ var CatchSubscriber = (function (_super) {
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38340,7 +38328,7 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38416,7 +38404,7 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38530,7 +38518,7 @@ var DistinctUntilChangedSubscriber = (function (_super) {
 //# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38610,7 +38598,7 @@ var EverySubscriber = (function (_super) {
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38717,7 +38705,7 @@ exports.FindValueSubscriber = FindValueSubscriber;
 //# sourceMappingURL=find.js.map
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38875,7 +38863,7 @@ var FirstSubscriber = (function (_super) {
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39000,7 +38988,7 @@ var LastSubscriber = (function (_super) {
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39161,7 +39149,7 @@ exports.MergeMapToSubscriber = MergeMapToSubscriber;
 //# sourceMappingURL=mergeMapTo.js.map
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39171,7 +39159,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var FromObservable_1 = __webpack_require__(119);
+var FromObservable_1 = __webpack_require__(120);
 var isArray_1 = __webpack_require__(20);
 var OuterSubscriber_1 = __webpack_require__(2);
 var subscribeToResult_1 = __webpack_require__(3);
@@ -39243,7 +39231,7 @@ var OnErrorResumeNextSubscriber = (function (_super) {
 //# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39360,7 +39348,7 @@ exports.RaceSubscriber = RaceSubscriber;
 //# sourceMappingURL=race.js.map
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39390,7 +39378,7 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39455,7 +39443,7 @@ var TimeIntervalSubscriber = (function (_super) {
 //# sourceMappingURL=timeInterval.js.map
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39511,7 +39499,7 @@ var TimestampSubscriber = (function (_super) {
 //# sourceMappingURL=timestamp.js.map
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39630,13 +39618,13 @@ exports.VirtualAction = VirtualAction;
 //# sourceMappingURL=VirtualTimeScheduler.js.map
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var AsapAction_1 = __webpack_require__(495);
-var AsapScheduler_1 = __webpack_require__(496);
+var AsapAction_1 = __webpack_require__(496);
+var AsapScheduler_1 = __webpack_require__(497);
 /**
  *
  * Asap Scheduler
@@ -39675,7 +39663,7 @@ exports.asap = new AsapScheduler_1.AsapScheduler(AsapAction_1.AsapAction);
 //# sourceMappingURL=asap.js.map
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39692,12 +39680,12 @@ exports.SubscriptionLog = SubscriptionLog;
 //# sourceMappingURL=SubscriptionLog.js.map
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var SubscriptionLog_1 = __webpack_require__(142);
+var SubscriptionLog_1 = __webpack_require__(143);
 var SubscriptionLoggable = (function () {
     function SubscriptionLoggable() {
         this.subscriptions = [];
@@ -39717,7 +39705,7 @@ exports.SubscriptionLoggable = SubscriptionLoggable;
 //# sourceMappingURL=SubscriptionLoggable.js.map
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39748,7 +39736,7 @@ exports.TimeoutError = TimeoutError;
 //# sourceMappingURL=TimeoutError.js.map
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39779,7 +39767,7 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39798,7 +39786,7 @@ exports.applyMixins = applyMixins;
 //# sourceMappingURL=applyMixins.js.map
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39807,7 +39795,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39819,7 +39807,7 @@ exports.isObject = isObject;
 //# sourceMappingURL=isObject.js.map
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39831,7 +39819,7 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39842,11 +39830,11 @@ exports.noop = noop;
 //# sourceMappingURL=noop.js.map
 
 /***/ }),
-/* 151 */,
 /* 152 */,
 /* 153 */,
 /* 154 */,
-/* 155 */
+/* 155 */,
+/* 156 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40716,11 +40704,11 @@ var AnimationGroupPlayer = (function () {
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(156);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AnimationDriver; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimationEngine; });
 /* unused harmony export ɵAnimation */
@@ -43253,7 +43241,7 @@ function supportsWebAnimations() {
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43337,6 +43325,7 @@ function supportsWebAnimations() {
 /* unused harmony export unescapeIdentifier */
 /* unused harmony export AotSummaryResolver */
 /* unused harmony export SummaryResolver */
+/* unused harmony export i18nHtmlParserFactory */
 /* unused harmony export COMPILER_PROVIDERS */
 /* unused harmony export JitCompilerFactory */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return platformCoreDynamic; });
@@ -43352,6 +43341,7 @@ function supportsWebAnimations() {
 /* unused harmony export MessageBundle */
 /* unused harmony export Serializer */
 /* unused harmony export Xliff */
+/* unused harmony export Xliff2 */
 /* unused harmony export Xmb */
 /* unused harmony export Xtb */
 /* unused harmony export DirectiveNormalizer */
@@ -43409,6 +43399,9 @@ function supportsWebAnimations() {
 /* unused harmony export getHtmlTagDefinition */
 /* unused harmony export TagContentType */
 /* unused harmony export splitNsName */
+/* unused harmony export isNgContainer */
+/* unused harmony export isNgContent */
+/* unused harmony export isNgTemplate */
 /* unused harmony export getNsPrefix */
 /* unused harmony export mergeNsAndName */
 /* unused harmony export NAMED_ENTITIES */
@@ -43442,7 +43435,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -43462,7 +43455,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -43917,7 +43910,7 @@ function templateVisitAll(visitor, asts, context) {
     if (context === void 0) { context = null; }
     var /** @type {?} */ result = [];
     var /** @type {?} */ visit = visitor.visit ?
-        function (ast) { return visitor.visit(ast, context) || ast.visit(visitor, context); } :
+        function (ast) { return ((visitor.visit))(ast, context) || ast.visit(visitor, context); } :
         function (ast) { return ast.visit(visitor, context); };
     asts.forEach(function (ast) {
         var /** @type {?} */ astResult = visit(ast);
@@ -44002,6 +43995,27 @@ function splitNsName(elementName) {
     return [elementName.slice(1, colonIndex), elementName.slice(colonIndex + 1)];
 }
 /**
+ * @param {?} tagName
+ * @return {?}
+ */
+function isNgContainer(tagName) {
+    return splitNsName(tagName)[1] === 'ng-container';
+}
+/**
+ * @param {?} tagName
+ * @return {?}
+ */
+function isNgContent(tagName) {
+    return splitNsName(tagName)[1] === 'ng-content';
+}
+/**
+ * @param {?} tagName
+ * @return {?}
+ */
+function isNgTemplate(tagName) {
+    return splitNsName(tagName)[1] === 'ng-template';
+}
+/**
  * @param {?} fullName
  * @return {?}
  */
@@ -44019,7 +44033,8 @@ function mergeNsAndName(prefix, localName) {
 // see http://www.w3.org/TR/html51/syntax.html#named-character-references
 // see https://html.spec.whatwg.org/multipage/entities.json
 // This list is not exhaustive to keep the compiler footprint low.
-// The `&#123;` / `&#x1ab;` syntax should be used when the named character reference does not exist.
+// The `&#123;` / `&#x1ab;` syntax should be used when the named character reference does not
+// exist.
 var NAMED_ENTITIES = {
     'Aacute': '\u00C1',
     'aacute': '\u00E1',
@@ -44302,7 +44317,7 @@ var HtmlTagDefinition = (function () {
             this.parentToAdd = requiredParents[0];
             requiredParents.forEach(function (tagName) { return _this.requiredParents[tagName] = true; });
         }
-        this.implicitNamespacePrefix = implicitNamespacePrefix;
+        this.implicitNamespacePrefix = implicitNamespacePrefix || null;
         this.contentType = contentType;
         this.ignoreFirstLf = ignoreFirstLf;
     }
@@ -44569,7 +44584,7 @@ var SelectorMatcher = (function () {
      * @return {?}
      */
     SelectorMatcher.prototype.addSelectables = function (cssSelectors, callbackCtxt) {
-        var /** @type {?} */ listContext = null;
+        var /** @type {?} */ listContext = ((null));
         if (cssSelectors.length > 1) {
             listContext = new SelectorListContext(cssSelectors);
             this._listContexts.push(listContext);
@@ -44674,7 +44689,7 @@ var SelectorMatcher = (function () {
      */
     SelectorMatcher.prototype.match = function (cssSelector, matchedCallback) {
         var /** @type {?} */ result = false;
-        var /** @type {?} */ element = cssSelector.element;
+        var /** @type {?} */ element = ((cssSelector.element));
         var /** @type {?} */ classNames = cssSelector.classNames;
         var /** @type {?} */ attrs = cssSelector.attrs;
         for (var /** @type {?} */ i = 0; i < this._listContexts.length; i++) {
@@ -44697,14 +44712,14 @@ var SelectorMatcher = (function () {
             for (var /** @type {?} */ i = 0; i < attrs.length; i += 2) {
                 var /** @type {?} */ name = attrs[i];
                 var /** @type {?} */ value = attrs[i + 1];
-                var /** @type {?} */ terminalValuesMap = this._attrValueMap.get(name);
+                var /** @type {?} */ terminalValuesMap = ((this._attrValueMap.get(name)));
                 if (value) {
                     result =
                         this._matchTerminal(terminalValuesMap, '', cssSelector, matchedCallback) || result;
                 }
                 result =
                     this._matchTerminal(terminalValuesMap, value, cssSelector, matchedCallback) || result;
-                var /** @type {?} */ partialValuesMap = this._attrValuePartialMap.get(name);
+                var /** @type {?} */ partialValuesMap = ((this._attrValuePartialMap.get(name)));
                 if (value) {
                     result = this._matchPartial(partialValuesMap, '', cssSelector, matchedCallback) || result;
                 }
@@ -44727,7 +44742,7 @@ var SelectorMatcher = (function () {
             return false;
         }
         var /** @type {?} */ selectables = map.get(name) || [];
-        var /** @type {?} */ starSelectables = map.get('*');
+        var /** @type {?} */ starSelectables = ((map.get('*')));
         if (starSelectables) {
             selectables = selectables.concat(starSelectables);
         }
@@ -44880,6 +44895,21 @@ function visitValue(value, visitor, context) {
         return visitor.visitPrimitive(value, context);
     }
     return visitor.visitOther(value, context);
+}
+/**
+ * @param {?} val
+ * @return {?}
+ */
+function isDefined(val) {
+    return val !== null && val !== undefined;
+}
+/**
+ * @template T
+ * @param {?} val
+ * @return {?}
+ */
+function noUndefined(val) {
+    return val === undefined ? ((null)) : val;
 }
 var ValueTransformer = (function () {
     function ValueTransformer() {
@@ -45266,7 +45296,7 @@ var CompileStylesheetMetadata = (function () {
      */
     function CompileStylesheetMetadata(_a) {
         var _b = _a === void 0 ? {} : _a, moduleUrl = _b.moduleUrl, styles = _b.styles, styleUrls = _b.styleUrls;
-        this.moduleUrl = moduleUrl;
+        this.moduleUrl = moduleUrl || null;
         this.styles = _normalizeArray(styles);
         this.styleUrls = _normalizeArray(styleUrls);
     }
@@ -45277,10 +45307,10 @@ var CompileStylesheetMetadata = (function () {
  */
 var CompileTemplateMetadata = (function () {
     /**
-     * @param {?=} __0
+     * @param {?} __0
      */
     function CompileTemplateMetadata(_a) {
-        var _b = _a === void 0 ? {} : _a, encapsulation = _b.encapsulation, template = _b.template, templateUrl = _b.templateUrl, styles = _b.styles, styleUrls = _b.styleUrls, externalStylesheets = _b.externalStylesheets, animations = _b.animations, ngContentSelectors = _b.ngContentSelectors, interpolation = _b.interpolation, isInline = _b.isInline;
+        var encapsulation = _a.encapsulation, template = _a.template, templateUrl = _a.templateUrl, styles = _a.styles, styleUrls = _a.styleUrls, externalStylesheets = _a.externalStylesheets, animations = _a.animations, ngContentSelectors = _a.ngContentSelectors, interpolation = _a.interpolation, isInline = _a.isInline;
         this.encapsulation = encapsulation;
         this.template = template;
         this.templateUrl = templateUrl;
@@ -45312,10 +45342,10 @@ var CompileTemplateMetadata = (function () {
  */
 var CompileDirectiveMetadata = (function () {
     /**
-     * @param {?=} __0
+     * @param {?} __0
      */
     function CompileDirectiveMetadata(_a) {
-        var _b = _a === void 0 ? {} : _a, isHost = _b.isHost, type = _b.type, isComponent = _b.isComponent, selector = _b.selector, exportAs = _b.exportAs, changeDetection = _b.changeDetection, inputs = _b.inputs, outputs = _b.outputs, hostListeners = _b.hostListeners, hostProperties = _b.hostProperties, hostAttributes = _b.hostAttributes, providers = _b.providers, viewProviders = _b.viewProviders, queries = _b.queries, viewQueries = _b.viewQueries, entryComponents = _b.entryComponents, template = _b.template, componentViewType = _b.componentViewType, rendererType = _b.rendererType, componentFactory = _b.componentFactory;
+        var isHost = _a.isHost, type = _a.type, isComponent = _a.isComponent, selector = _a.selector, exportAs = _a.exportAs, changeDetection = _a.changeDetection, inputs = _a.inputs, outputs = _a.outputs, hostListeners = _a.hostListeners, hostProperties = _a.hostProperties, hostAttributes = _a.hostAttributes, providers = _a.providers, viewProviders = _a.viewProviders, queries = _a.queries, viewQueries = _a.viewQueries, entryComponents = _a.entryComponents, template = _a.template, componentViewType = _a.componentViewType, rendererType = _a.rendererType, componentFactory = _a.componentFactory;
         this.isHost = !!isHost;
         this.type = type;
         this.isComponent = isComponent;
@@ -45338,11 +45368,11 @@ var CompileDirectiveMetadata = (function () {
         this.componentFactory = componentFactory;
     }
     /**
-     * @param {?=} __0
+     * @param {?} __0
      * @return {?}
      */
     CompileDirectiveMetadata.create = function (_a) {
-        var _b = _a === void 0 ? {} : _a, isHost = _b.isHost, type = _b.type, isComponent = _b.isComponent, selector = _b.selector, exportAs = _b.exportAs, changeDetection = _b.changeDetection, inputs = _b.inputs, outputs = _b.outputs, host = _b.host, providers = _b.providers, viewProviders = _b.viewProviders, queries = _b.queries, viewQueries = _b.viewQueries, entryComponents = _b.entryComponents, template = _b.template, componentViewType = _b.componentViewType, rendererType = _b.rendererType, componentFactory = _b.componentFactory;
+        var isHost = _a.isHost, type = _a.type, isComponent = _a.isComponent, selector = _a.selector, exportAs = _a.exportAs, changeDetection = _a.changeDetection, inputs = _a.inputs, outputs = _a.outputs, host = _a.host, providers = _a.providers, viewProviders = _a.viewProviders, queries = _a.queries, viewQueries = _a.viewQueries, entryComponents = _a.entryComponents, template = _a.template, componentViewType = _a.componentViewType, rendererType = _a.rendererType, componentFactory = _a.componentFactory;
         var /** @type {?} */ hostListeners = {};
         var /** @type {?} */ hostProperties = {};
         var /** @type {?} */ hostAttributes = {};
@@ -45436,12 +45466,12 @@ var CompileDirectiveMetadata = (function () {
  * @return {?}
  */
 function createHostComponentMeta(hostTypeReference, compMeta, hostViewType) {
-    var /** @type {?} */ template = CssSelector.parse(compMeta.selector)[0].getMatchingElementTemplate();
+    var /** @type {?} */ template = CssSelector.parse(/** @type {?} */ ((compMeta.selector)))[0].getMatchingElementTemplate();
     return CompileDirectiveMetadata.create({
         isHost: true,
         type: { reference: hostTypeReference, diDeps: [], lifecycleHooks: [] },
         template: new CompileTemplateMetadata({
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].None,
             template: template,
             templateUrl: '',
             styles: [],
@@ -45449,7 +45479,10 @@ function createHostComponentMeta(hostTypeReference, compMeta, hostViewType) {
             ngContentSelectors: [],
             animations: [],
             isInline: true,
+            externalStylesheets: [],
+            interpolation: null
         }),
+        exportAs: null,
         changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* ChangeDetectionStrategy */].Default,
         inputs: [],
         outputs: [],
@@ -45461,15 +45494,17 @@ function createHostComponentMeta(hostTypeReference, compMeta, hostViewType) {
         queries: [],
         viewQueries: [],
         componentViewType: hostViewType,
-        rendererType: { id: '__Host__', encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None, styles: [], data: {} }
+        rendererType: { id: '__Host__', encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].None, styles: [], data: {} },
+        entryComponents: [],
+        componentFactory: null
     });
 }
 var CompilePipeMetadata = (function () {
     /**
-     * @param {?=} __0
+     * @param {?} __0
      */
     function CompilePipeMetadata(_a) {
-        var _b = _a === void 0 ? {} : _a, type = _b.type, name = _b.name, pure = _b.pure;
+        var type = _a.type, name = _a.name, pure = _a.pure;
         this.type = type;
         this.name = name;
         this.pure = !!pure;
@@ -45492,11 +45527,11 @@ var CompilePipeMetadata = (function () {
  */
 var CompileNgModuleMetadata = (function () {
     /**
-     * @param {?=} __0
+     * @param {?} __0
      */
     function CompileNgModuleMetadata(_a) {
-        var _b = _a === void 0 ? {} : _a, type = _b.type, providers = _b.providers, declaredDirectives = _b.declaredDirectives, exportedDirectives = _b.exportedDirectives, declaredPipes = _b.declaredPipes, exportedPipes = _b.exportedPipes, entryComponents = _b.entryComponents, bootstrapComponents = _b.bootstrapComponents, importedModules = _b.importedModules, exportedModules = _b.exportedModules, schemas = _b.schemas, transitiveModule = _b.transitiveModule, id = _b.id;
-        this.type = type;
+        var type = _a.type, providers = _a.providers, declaredDirectives = _a.declaredDirectives, exportedDirectives = _a.exportedDirectives, declaredPipes = _a.declaredPipes, exportedPipes = _a.exportedPipes, entryComponents = _a.entryComponents, bootstrapComponents = _a.bootstrapComponents, importedModules = _a.importedModules, exportedModules = _a.exportedModules, schemas = _a.schemas, transitiveModule = _a.transitiveModule, id = _a.id;
+        this.type = type || null;
         this.declaredDirectives = _normalizeArray(declaredDirectives);
         this.exportedDirectives = _normalizeArray(exportedDirectives);
         this.declaredPipes = _normalizeArray(declaredPipes);
@@ -45507,21 +45542,22 @@ var CompileNgModuleMetadata = (function () {
         this.importedModules = _normalizeArray(importedModules);
         this.exportedModules = _normalizeArray(exportedModules);
         this.schemas = _normalizeArray(schemas);
-        this.id = id;
-        this.transitiveModule = transitiveModule;
+        this.id = id || null;
+        this.transitiveModule = transitiveModule || null;
     }
     /**
      * @return {?}
      */
     CompileNgModuleMetadata.prototype.toSummary = function () {
+        var /** @type {?} */ module = ((this.transitiveModule));
         return {
             summaryKind: CompileSummaryKind.NgModule,
             type: this.type,
-            entryComponents: this.transitiveModule.entryComponents,
-            providers: this.transitiveModule.providers,
-            modules: this.transitiveModule.modules,
-            exportedDirectives: this.transitiveModule.exportedDirectives,
-            exportedPipes: this.transitiveModule.exportedPipes
+            entryComponents: module.entryComponents,
+            providers: module.providers,
+            modules: module.modules,
+            exportedDirectives: module.exportedDirectives,
+            exportedPipes: module.exportedPipes
         };
     };
     return CompileNgModuleMetadata;
@@ -45627,11 +45663,11 @@ var ProviderMeta = (function () {
     function ProviderMeta(token, _a) {
         var useClass = _a.useClass, useValue = _a.useValue, useExisting = _a.useExisting, useFactory = _a.useFactory, deps = _a.deps, multi = _a.multi;
         this.token = token;
-        this.useClass = useClass;
+        this.useClass = useClass || null;
         this.useValue = useValue;
         this.useExisting = useExisting;
-        this.useFactory = useFactory;
-        this.dependencies = deps;
+        this.useFactory = useFactory || null;
+        this.dependencies = deps || null;
         this.multi = !!multi;
     }
     return ProviderMeta;
@@ -45675,7 +45711,7 @@ function templateSourceUrl(ngModuleType, compMeta, templateMeta) {
         }
     }
     else {
-        url = templateMeta.templateUrl;
+        url = ((templateMeta.templateUrl));
     }
     // always prepend ng:// to make angular resources easy to find and not clobber
     // user resources.
@@ -45687,7 +45723,7 @@ function templateSourceUrl(ngModuleType, compMeta, templateMeta) {
  * @return {?}
  */
 function sharedStylesheetJitUrl(meta, id) {
-    var /** @type {?} */ pathParts = meta.moduleUrl.split(/\/\\/g);
+    var /** @type {?} */ pathParts = ((meta.moduleUrl)).split(/\/\\/g);
     var /** @type {?} */ baseName = pathParts[pathParts.length - 1];
     return sourceUrl("css/" + id + baseName + ".ngstyle.js");
 }
@@ -45718,10 +45754,10 @@ var CompilerConfig = (function () {
      * @param {?=} __0
      */
     function CompilerConfig(_a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.defaultEncapsulation, defaultEncapsulation = _c === void 0 ? __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].Emulated : _c, _d = _b.useJit, useJit = _d === void 0 ? true : _d, missingTranslation = _b.missingTranslation, enableLegacyTemplate = _b.enableLegacyTemplate;
+        var _b = _a === void 0 ? {} : _a, _c = _b.defaultEncapsulation, defaultEncapsulation = _c === void 0 ? __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].Emulated : _c, _d = _b.useJit, useJit = _d === void 0 ? true : _d, missingTranslation = _b.missingTranslation, enableLegacyTemplate = _b.enableLegacyTemplate;
         this.defaultEncapsulation = defaultEncapsulation;
-        this.useJit = useJit;
-        this.missingTranslation = missingTranslation;
+        this.useJit = !!useJit;
+        this.missingTranslation = missingTranslation || null;
         this.enableLegacyTemplate = enableLegacyTemplate !== false;
     }
     return CompilerConfig;
@@ -46367,7 +46403,7 @@ var RecursiveAstVisitor = (function () {
      * @return {?}
      */
     RecursiveAstVisitor.prototype.visitFunctionCall = function (ast, context) {
-        ast.target.visit(this);
+        ((ast.target)).visit(this);
         this.visitAll(ast.args, context);
         return null;
     };
@@ -46570,7 +46606,7 @@ var AstTransformer = (function () {
      * @return {?}
      */
     AstTransformer.prototype.visitFunctionCall = function (ast, context) {
-        return new FunctionCall(ast.span, ast.target.visit(this), this.visitAll(ast.args));
+        return new FunctionCall(ast.span, /** @type {?} */ ((ast.target)).visit(this), this.visitAll(ast.args));
     };
     /**
      * @param {?} ast
@@ -46778,7 +46814,7 @@ function CompilerInjectable() {
  * @return {?}
  */
 function assertArrayOfStrings(identifier, value) {
-    if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* isDevMode */])() || value == null) {
+    if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* isDevMode */])() || value == null) {
         return;
     }
     if (!Array.isArray(value)) {
@@ -46806,7 +46842,7 @@ function assertInterpolationSymbols(identifier, value) {
     if (value != null && !(Array.isArray(value) && value.length == 2)) {
         throw new Error("Expected '" + identifier + "' to be an array, [start, end].");
     }
-    else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* isDevMode */])() && value != null) {
+    else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* isDevMode */])() && value != null) {
         var /** @type {?} */ start_1 = (value[0]);
         var /** @type {?} */ end_1 = (value[1]);
         // black list checking
@@ -47835,7 +47871,7 @@ var _ParseAST = (function () {
                 this.error('Cannot have a pipe in an action expression');
             }
             do {
-                var /** @type {?} */ name = this.expectIdentifierOrKeyword();
+                var /** @type {?} */ name = ((this.expectIdentifierOrKeyword()));
                 var /** @type {?} */ args = [];
                 while (this.optionalCharacter($COLON)) {
                     args.push(this.parseExpression());
@@ -48131,7 +48167,7 @@ var _ParseAST = (function () {
         if (!this.optionalCharacter($RBRACE)) {
             this.rbracesExpected++;
             do {
-                var /** @type {?} */ key = this.expectIdentifierOrKeywordOrString();
+                var /** @type {?} */ key = ((this.expectIdentifierOrKeywordOrString()));
                 keys.push(key);
                 this.expectCharacter($COLON);
                 values.push(this.parsePipe());
@@ -48149,7 +48185,7 @@ var _ParseAST = (function () {
     _ParseAST.prototype.parseAccessMemberOrMethodCall = function (receiver, isSafe) {
         if (isSafe === void 0) { isSafe = false; }
         var /** @type {?} */ start = receiver.span.start;
-        var /** @type {?} */ id = this.expectIdentifierOrKeyword();
+        var /** @type {?} */ id = ((this.expectIdentifierOrKeyword()));
         if (this.optionalCharacter($LPAREN)) {
             this.rparensExpected++;
             var /** @type {?} */ args = this.parseCallArguments();
@@ -48217,7 +48253,7 @@ var _ParseAST = (function () {
      */
     _ParseAST.prototype.parseTemplateBindings = function () {
         var /** @type {?} */ bindings = [];
-        var /** @type {?} */ prefix = null;
+        var /** @type {?} */ prefix = ((null));
         var /** @type {?} */ warnings = [];
         while (this.index < this.tokens.length) {
             var /** @type {?} */ start = this.inputIndex;
@@ -48236,8 +48272,8 @@ var _ParseAST = (function () {
                 }
             }
             this.optionalCharacter($COLON);
-            var /** @type {?} */ name = null;
-            var /** @type {?} */ expression = null;
+            var /** @type {?} */ name = ((null));
+            var /** @type {?} */ expression = ((null));
             if (keyIsVar) {
                 if (this.optionalOperator('=')) {
                     name = this.expectTemplateBindingKey();
@@ -48264,7 +48300,7 @@ var _ParseAST = (function () {
                 var /** @type {?} */ letStart = this.inputIndex;
                 this.advance(); // consume `as`
                 var /** @type {?} */ letName = this.expectTemplateBindingKey(); // read local var name
-                bindings.push(new TemplateBinding(this.span(letStart), letName, true, key, null));
+                bindings.push(new TemplateBinding(this.span(letStart), letName, true, key, /** @type {?} */ ((null))));
             }
             if (!this.optionalCharacter($SEMICOLON)) {
                 this.optionalCharacter($COMMA);
@@ -48303,7 +48339,7 @@ var _ParseAST = (function () {
             (this.rbracesExpected <= 0 || !n.isCharacter($RBRACE)) &&
             (this.rbracketsExpected <= 0 || !n.isCharacter($RBRACKET))) {
             if (this.next.isError()) {
-                this.errors.push(new ParserError(this.next.toString(), this.input, this.locationText(), this.location));
+                this.errors.push(new ParserError(/** @type {?} */ ((this.next.toString())), this.input, this.locationText(), this.location));
             }
             this.advance();
             n = this.next;
@@ -48624,7 +48660,7 @@ function typeSourceSpan(kind, type) {
     var /** @type {?} */ sourceFileName = moduleUrl != null ? "in " + kind + " " + identifierName(type) + " in " + moduleUrl :
         "in " + kind + " " + identifierName(type);
     var /** @type {?} */ sourceFile = new ParseSourceFile('', sourceFileName);
-    return new ParseSourceSpan(new ParseLocation(sourceFile, null, null, null), new ParseLocation(sourceFile, null, null, null));
+    return new ParseSourceSpan(new ParseLocation(sourceFile, -1, -1, -1), new ParseLocation(sourceFile, -1, -1, -1));
 }
 /**
  * @license
@@ -48723,10 +48759,12 @@ var Element = (function () {
      * @param {?} attrs
      * @param {?} children
      * @param {?} sourceSpan
-     * @param {?} startSourceSpan
-     * @param {?} endSourceSpan
+     * @param {?=} startSourceSpan
+     * @param {?=} endSourceSpan
      */
     function Element(name, attrs, children, sourceSpan, startSourceSpan, endSourceSpan) {
+        if (startSourceSpan === void 0) { startSourceSpan = null; }
+        if (endSourceSpan === void 0) { endSourceSpan = null; }
         this.name = name;
         this.attrs = attrs;
         this.children = children;
@@ -48769,7 +48807,7 @@ function visitAll(visitor, nodes, context) {
     if (context === void 0) { context = null; }
     var /** @type {?} */ result = [];
     var /** @type {?} */ visit = visitor.visit ?
-        function (ast) { return visitor.visit(ast, context) || ast.visit(visitor, context); } :
+        function (ast) { return ((visitor.visit))(ast, context) || ast.visit(visitor, context); } :
         function (ast) { return ast.visit(visitor, context); };
     nodes.forEach(function (ast) {
         var /** @type {?} */ astResult = visit(ast);
@@ -49044,8 +49082,8 @@ var _Tokenizer = (function () {
         if (end === void 0) { end = this._getLocation(); }
         var /** @type {?} */ token = new Token$1(this._currentTokenType, parts, new ParseSourceSpan(this._currentTokenStart, end));
         this.tokens.push(token);
-        this._currentTokenStart = null;
-        this._currentTokenType = null;
+        this._currentTokenStart = ((null));
+        this._currentTokenType = ((null));
         return token;
     };
     /**
@@ -49058,8 +49096,8 @@ var _Tokenizer = (function () {
             msg += " (Do you have an unescaped \"{\" in your template? Use \"{{ '{' }}\") to escape it.)";
         }
         var /** @type {?} */ error = new TokenError(msg, this._currentTokenType, span);
-        this._currentTokenStart = null;
-        this._currentTokenType = null;
+        this._currentTokenStart = ((null));
+        this._currentTokenType = ((null));
         return new _ControlFlowError(error);
     };
     /**
@@ -49306,7 +49344,7 @@ var _Tokenizer = (function () {
      */
     _Tokenizer.prototype._consumePrefixAndName = function () {
         var /** @type {?} */ nameOrPrefixStart = this._index;
-        var /** @type {?} */ prefix = null;
+        var /** @type {?} */ prefix = ((null));
         while (this._peek !== $COLON && !isPrefixEnd(this._peek)) {
             this._advance();
         }
@@ -49387,7 +49425,7 @@ var _Tokenizer = (function () {
             return _this._attemptCharCode($GT);
         });
         this._beginToken(TokenType$1.TAG_CLOSE, textToken.sourceSpan.end);
-        this._endToken([null, lowercaseTagName]);
+        this._endToken([/** @type {?} */ ((null)), lowercaseTagName]);
     };
     /**
      * @param {?} start
@@ -49667,7 +49705,7 @@ function toUpperCaseCharCode(code) {
  */
 function mergeTextTokens(srcTokens) {
     var /** @type {?} */ dstTokens = [];
-    var /** @type {?} */ lastDstToken;
+    var /** @type {?} */ lastDstToken = undefined;
     for (var /** @type {?} */ i = 0; i < srcTokens.length; i++) {
         var /** @type {?} */ token = srcTokens[i];
         if (lastDstToken && lastDstToken.type == TokenType$1.TEXT && token.type == TokenType$1.TEXT) {
@@ -49980,7 +50018,7 @@ var _TreeBuilder = (function () {
         }
         var /** @type {?} */ end = this._peek.sourceSpan.start;
         var /** @type {?} */ span = new ParseSourceSpan(startTagToken.sourceSpan.start, end);
-        var /** @type {?} */ el = new Element(fullName, attrs, [], span, span, null);
+        var /** @type {?} */ el = new Element(fullName, attrs, [], span, span, undefined);
         this._pushElement(el);
         if (selfClosing) {
             this._popElement(fullName);
@@ -50014,7 +50052,7 @@ var _TreeBuilder = (function () {
     _TreeBuilder.prototype._consumeEndTag = function (endTagToken) {
         var /** @type {?} */ fullName = this._getElementFullName(endTagToken.parts[0], endTagToken.parts[1], this._getParentElement());
         if (this._getParentElement()) {
-            this._getParentElement().endSourceSpan = endTagToken.sourceSpan;
+            ((this._getParentElement())).endSourceSpan = endTagToken.sourceSpan;
         }
         if (this.getTagDefinition(fullName).isVoid) {
             this._errors.push(TreeError.create(fullName, endTagToken.sourceSpan, "Void elements do not have end tags \"" + endTagToken.parts[1] + "\""));
@@ -50049,7 +50087,7 @@ var _TreeBuilder = (function () {
         var /** @type {?} */ fullName = mergeNsAndName(attrName.parts[0], attrName.parts[1]);
         var /** @type {?} */ end = attrName.sourceSpan.end;
         var /** @type {?} */ value = '';
-        var /** @type {?} */ valueSpan;
+        var /** @type {?} */ valueSpan = ((undefined));
         if (this._peek.type === TokenType$1.ATTR_VALUE) {
             var /** @type {?} */ valueToken = this._advance();
             value = valueToken.parts[0];
@@ -50073,7 +50111,7 @@ var _TreeBuilder = (function () {
     _TreeBuilder.prototype._getParentElementSkippingContainers = function () {
         var /** @type {?} */ container = null;
         for (var /** @type {?} */ i = this._elementStack.length - 1; i >= 0; i--) {
-            if (this._elementStack[i].name !== 'ng-container') {
+            if (!isNgContainer(this._elementStack[i].name)) {
                 return { parent: this._elementStack[i], container: container };
             }
             container = this._elementStack[i];
@@ -50130,7 +50168,7 @@ var _TreeBuilder = (function () {
      */
     _TreeBuilder.prototype._getElementFullName = function (prefix, localName, parentElement) {
         if (prefix == null) {
-            prefix = this.getTagDefinition(localName).implicitNamespacePrefix;
+            prefix = ((this.getTagDefinition(localName).implicitNamespacePrefix));
             if (prefix == null && parentElement != null) {
                 prefix = getNsPrefix(parentElement.name);
             }
@@ -50170,6 +50208,18 @@ var Message = (function () {
         this.meaning = meaning;
         this.description = description;
         this.id = id;
+        if (nodes.length) {
+            this.sources = [{
+                    filePath: nodes[0].sourceSpan.start.file.url,
+                    startLine: nodes[0].sourceSpan.start.line + 1,
+                    startCol: nodes[0].sourceSpan.start.col + 1,
+                    endLine: nodes[nodes.length - 1].sourceSpan.end.line + 1,
+                    endCol: nodes[0].sourceSpan.start.col + 1
+                }];
+        }
+        else {
+            this.sources = [];
+        }
     }
     return Message;
 }());
@@ -50600,13 +50650,13 @@ var _I18nVisitor = (function () {
         });
         var /** @type {?} */ isVoid = getHtmlTagDefinition(el.name).isVoid;
         var /** @type {?} */ startPhName = this._placeholderRegistry.getStartTagPlaceholderName(el.name, attrs, isVoid);
-        this._placeholderToContent[startPhName] = el.sourceSpan.toString();
+        this._placeholderToContent[startPhName] = ((el.sourceSpan)).toString();
         var /** @type {?} */ closePhName = '';
         if (!isVoid) {
             closePhName = this._placeholderRegistry.getCloseTagPlaceholderName(el.name);
             this._placeholderToContent[closePhName] = "</" + el.name + ">";
         }
-        return new TagPlaceholder(el.name, attrs, startPhName, closePhName, children, isVoid, el.sourceSpan);
+        return new TagPlaceholder(el.name, attrs, startPhName, closePhName, children, isVoid, /** @type {?} */ ((el.sourceSpan)));
     };
     /**
      * @param {?} attribute
@@ -50622,7 +50672,7 @@ var _I18nVisitor = (function () {
      * @return {?}
      */
     _I18nVisitor.prototype.visitText = function (text, context) {
-        return this._visitTextWithInterpolation(text.value, text.sourceSpan);
+        return this._visitTextWithInterpolation(text.value, /** @type {?} */ ((text.sourceSpan)));
     };
     /**
      * @param {?} comment
@@ -50829,7 +50879,7 @@ var _Visitor = (function () {
         this._init(_VisitorMode.Merge, interpolationConfig);
         this._translations = translations;
         // Construct a single fake root element
-        var /** @type {?} */ wrapper = new Element('wrapper', [], nodes, null, null, null);
+        var /** @type {?} */ wrapper = new Element('wrapper', [], nodes, /** @type {?} */ ((undefined)), undefined, undefined);
         var /** @type {?} */ translatedNode = wrapper.visit(this, null);
         if (this._inI18nBlock) {
             this._reportError(nodes[nodes.length - 1], 'Unclosed block');
@@ -50892,7 +50942,7 @@ var _Visitor = (function () {
                     this._inI18nBlock = true;
                     this._blockStartDepth = this._depth;
                     this._blockChildren = [];
-                    this._blockMeaningAndDesc = comment.value.replace(_I18N_COMMENT_PREFIX_REGEXP, '').trim();
+                    this._blockMeaningAndDesc = ((comment.value)).replace(_I18N_COMMENT_PREFIX_REGEXP, '').trim();
                     this._openTranslatableSection(comment);
                 }
             }
@@ -50901,7 +50951,7 @@ var _Visitor = (function () {
                     if (this._depth == this._blockStartDepth) {
                         this._closeTranslatableSection(comment, this._blockChildren);
                         this._inI18nBlock = false;
-                        var /** @type {?} */ message = this._addMessage(this._blockChildren, this._blockMeaningAndDesc);
+                        var /** @type {?} */ message = ((this._addMessage(this._blockChildren, this._blockMeaningAndDesc)));
                         // merge attributes in sections
                         var /** @type {?} */ nodes = this._translateMessage(comment, message);
                         return visitAll(this, nodes);
@@ -50937,7 +50987,7 @@ var _Visitor = (function () {
         var /** @type {?} */ wasInI18nNode = this._inI18nNode;
         var /** @type {?} */ wasInImplicitNode = this._inImplicitNode;
         var /** @type {?} */ childNodes = [];
-        var /** @type {?} */ translatedChildNodes;
+        var /** @type {?} */ translatedChildNodes = ((undefined));
         // Extract:
         // - top level nodes with the (implicit) "i18n" attribute if not already in a section
         // - ICU messages
@@ -50950,7 +51000,7 @@ var _Visitor = (function () {
         if (!this._isInTranslatableSection && !this._inIcu) {
             if (i18nAttr || isTopLevelImplicit) {
                 this._inI18nNode = true;
-                var /** @type {?} */ message = this._addMessage(el.children, i18nMeta);
+                var /** @type {?} */ message = ((this._addMessage(el.children, i18nMeta)));
                 translatedChildNodes = this._translateMessage(el, message);
             }
             if (this._mode == _VisitorMode.Extract) {
@@ -50990,6 +51040,7 @@ var _Visitor = (function () {
             var /** @type {?} */ translatedAttrs = this._translateAttributes(el);
             return new Element(el.name, translatedAttrs, childNodes, el.sourceSpan, el.startSourceSpan, el.endSourceSpan);
         }
+        return null;
     };
     /**
      * @param {?} attribute
@@ -51010,7 +51061,7 @@ var _Visitor = (function () {
         this._inI18nNode = false;
         this._depth = 0;
         this._inIcu = false;
-        this._msgCountAtSectionStart = void 0;
+        this._msgCountAtSectionStart = undefined;
         this._errors = [];
         this._messages = [];
         this._inImplicitNode = false;
@@ -51045,7 +51096,7 @@ var _Visitor = (function () {
         if (ast.length == 0 ||
             ast.length == 1 && ast[0] instanceof Attribute$1 && !((ast[0])).value) {
             // Do not create empty messages
-            return;
+            return null;
         }
         var _a = _parseMessageMeta(msgMeta), meaning = _a.meaning, description = _a.description, id = _a.id;
         var /** @type {?} */ message = this._createI18nMessage(ast, meaning, description, id);
@@ -51187,7 +51238,7 @@ var _Visitor = (function () {
                 }
             }
         }
-        this._msgCountAtSectionStart = void 0;
+        this._msgCountAtSectionStart = undefined;
     };
     /**
      * @param {?} node
@@ -51195,7 +51246,7 @@ var _Visitor = (function () {
      * @return {?}
      */
     _Visitor.prototype._reportError = function (node, msg) {
-        this._errors.push(new I18nError(node.sourceSpan, msg));
+        this._errors.push(new I18nError(/** @type {?} */ ((node.sourceSpan)), msg));
     };
     return _Visitor;
 }());
@@ -51204,14 +51255,14 @@ var _Visitor = (function () {
  * @return {?}
  */
 function _isOpeningComment(n) {
-    return n instanceof Comment && n.value && n.value.startsWith('i18n');
+    return !!(n instanceof Comment && n.value && n.value.startsWith('i18n'));
 }
 /**
  * @param {?} n
  * @return {?}
  */
 function _isClosingComment(n) {
-    return n instanceof Comment && n.value && n.value === '/i18n';
+    return !!(n instanceof Comment && n.value && n.value === '/i18n');
 }
 /**
  * @param {?} p
@@ -51221,7 +51272,7 @@ function _getI18nAttr(p) {
     return p.attrs.find(function (attr) { return attr.name === _I18N_ATTR; }) || null;
 }
 /**
- * @param {?} i18n
+ * @param {?=} i18n
  * @return {?}
  */
 function _parseMessageMeta(i18n) {
@@ -51290,7 +51341,7 @@ var XmlParser = (function (_super) {
      */
     XmlParser.prototype.parse = function (source, url, parseExpansionForms) {
         if (parseExpansionForms === void 0) { parseExpansionForms = false; }
-        return _super.prototype.parse.call(this, source, url, parseExpansionForms, null);
+        return _super.prototype.parse.call(this, source, url, parseExpansionForms);
     };
     return XmlParser;
 }(Parser$1));
@@ -52049,6 +52100,8 @@ var _FILE_TAG = 'file';
 var _SOURCE_TAG = 'source';
 var _TARGET_TAG = 'target';
 var _UNIT_TAG = 'trans-unit';
+var _CONTEXT_GROUP_TAG = 'context-group';
+var _CONTEXT_TAG = 'context';
 var Xliff = (function (_super) {
     __extends(Xliff, _super);
     function Xliff() {
@@ -52063,8 +52116,14 @@ var Xliff = (function (_super) {
         var /** @type {?} */ visitor = new _WriteVisitor();
         var /** @type {?} */ transUnits = [];
         messages.forEach(function (message) {
+            var /** @type {?} */ contextTags = [];
+            message.sources.forEach(function (source) {
+                var /** @type {?} */ contextGroupTag = new Tag(_CONTEXT_GROUP_TAG, { purpose: 'location' });
+                contextGroupTag.children.push(new CR(10), new Tag(_CONTEXT_TAG, { 'context-type': 'sourcefile' }, [new Text$2(source.filePath)]), new CR(10), new Tag(_CONTEXT_TAG, { 'context-type': 'linenumber' }, [new Text$2("" + source.startLine)]), new CR(8));
+                contextTags.push(new CR(8), contextGroupTag);
+            });
             var /** @type {?} */ transUnit = new Tag(_UNIT_TAG, { id: message.id, datatype: 'html' });
-            transUnit.children.push(new CR(8), new Tag(_SOURCE_TAG, {}, visitor.serialize(message.nodes)), new CR(8), new Tag(_TARGET_TAG));
+            (_a = transUnit.children).push.apply(_a, [new CR(8), new Tag(_SOURCE_TAG, {}, visitor.serialize(message.nodes)), new CR(8), new Tag(_TARGET_TAG)].concat(contextTags));
             if (message.description) {
                 transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'description' }, [new Text$2(message.description)]));
             }
@@ -52073,6 +52132,7 @@ var Xliff = (function (_super) {
             }
             transUnit.children.push(new CR(6));
             transUnits.push(new CR(6), transUnit);
+            var _a;
         });
         var /** @type {?} */ body = new Tag('body', {}, transUnits.concat([new CR(4)]));
         var /** @type {?} */ file = new Tag('file', {
@@ -52093,19 +52153,19 @@ var Xliff = (function (_super) {
     Xliff.prototype.load = function (content, url) {
         // xliff to xml nodes
         var /** @type {?} */ xliffParser = new XliffParser();
-        var _a = xliffParser.parse(content, url), locale = _a.locale, mlNodesByMsgId = _a.mlNodesByMsgId, errors = _a.errors;
+        var _a = xliffParser.parse(content, url), locale = _a.locale, msgIdToHtml = _a.msgIdToHtml, errors = _a.errors;
         // xml nodes to i18n nodes
         var /** @type {?} */ i18nNodesByMsgId = {};
         var /** @type {?} */ converter = new XmlToI18n();
-        Object.keys(mlNodesByMsgId).forEach(function (msgId) {
-            var _a = converter.convert(mlNodesByMsgId[msgId]), i18nNodes = _a.i18nNodes, e = _a.errors;
+        Object.keys(msgIdToHtml).forEach(function (msgId) {
+            var _a = converter.convert(msgIdToHtml[msgId], url), i18nNodes = _a.i18nNodes, e = _a.errors;
             errors.push.apply(errors, e);
             i18nNodesByMsgId[msgId] = i18nNodes;
         });
         if (errors.length) {
             throw new Error("xliff parse errors:\n" + errors.join('\n'));
         }
-        return { locale: locale, i18nNodesByMsgId: i18nNodesByMsgId };
+        return { locale: /** @type {?} */ ((locale)), i18nNodesByMsgId: i18nNodesByMsgId };
     };
     /**
      * @param {?} message
@@ -52140,16 +52200,12 @@ var _WriteVisitor = (function () {
      * @return {?}
      */
     _WriteVisitor.prototype.visitIcu = function (icu, context) {
-        if (this._isInIcu) {
-            // nested ICU is not supported
-            throw new Error('xliff does not support nested ICU messages');
-        }
-        this._isInIcu = true;
-        // TODO(vicb): support ICU messages
-        // https://lists.oasis-open.org/archives/xliff/201201/msg00028.html
-        // http://docs.oasis-open.org/xliff/v1.2/xliff-profile-po/xliff-profile-po-1.2-cd02.html
-        var /** @type {?} */ nodes = [];
-        this._isInIcu = false;
+        var _this = this;
+        var /** @type {?} */ nodes = [new Text$2("{" + icu.expressionPlaceholder + ", " + icu.type + ", ")];
+        Object.keys(icu.cases).forEach(function (c) {
+            nodes.push.apply(nodes, [new Text$2(c + " {")].concat(icu.cases[c].visit(_this), [new Text$2("} ")]));
+        });
+        nodes.push(new Text$2("}"));
         return nodes;
     };
     /**
@@ -52189,7 +52245,6 @@ var _WriteVisitor = (function () {
      */
     _WriteVisitor.prototype.serialize = function (nodes) {
         var _this = this;
-        this._isInIcu = false;
         return [].concat.apply([], nodes.map(function (node) { return node.visit(_this); }));
     };
     return _WriteVisitor;
@@ -52204,13 +52259,13 @@ var XliffParser = (function () {
      * @return {?}
      */
     XliffParser.prototype.parse = function (xliff, url) {
-        this._unitMlNodes = [];
-        this._mlNodesByMsgId = {};
+        this._unitMlString = null;
+        this._msgIdToHtml = {};
         var /** @type {?} */ xml = new XmlParser().parse(xliff, url, false);
         this._errors = xml.errors;
         visitAll(this, xml.rootNodes, null);
         return {
-            mlNodesByMsgId: this._mlNodesByMsgId,
+            msgIdToHtml: this._msgIdToHtml,
             errors: this._errors,
             locale: this._locale,
         };
@@ -52223,20 +52278,20 @@ var XliffParser = (function () {
     XliffParser.prototype.visitElement = function (element, context) {
         switch (element.name) {
             case _UNIT_TAG:
-                this._unitMlNodes = null;
+                this._unitMlString = ((null));
                 var /** @type {?} */ idAttr = element.attrs.find(function (attr) { return attr.name === 'id'; });
                 if (!idAttr) {
                     this._addError(element, "<" + _UNIT_TAG + "> misses the \"id\" attribute");
                 }
                 else {
                     var /** @type {?} */ id = idAttr.value;
-                    if (this._mlNodesByMsgId.hasOwnProperty(id)) {
+                    if (this._msgIdToHtml.hasOwnProperty(id)) {
                         this._addError(element, "Duplicated translations for msg " + id);
                     }
                     else {
                         visitAll(this, element.children, null);
-                        if (this._unitMlNodes) {
-                            this._mlNodesByMsgId[id] = this._unitMlNodes;
+                        if (typeof this._unitMlString === 'string') {
+                            this._msgIdToHtml[id] = this._unitMlString;
                         }
                         else {
                             this._addError(element, "Message " + id + " misses a translation");
@@ -52248,7 +52303,11 @@ var XliffParser = (function () {
                 // ignore source message
                 break;
             case _TARGET_TAG:
-                this._unitMlNodes = element.children;
+                var /** @type {?} */ innerTextStart = ((element.startSourceSpan)).end.offset;
+                var /** @type {?} */ innerTextEnd = ((element.endSourceSpan)).start.offset;
+                var /** @type {?} */ content = ((element.startSourceSpan)).start.file.content;
+                var /** @type {?} */ innerText = content.slice(innerTextStart, innerTextEnd);
+                this._unitMlString = innerText;
                 break;
             case _FILE_TAG:
                 var /** @type {?} */ localeAttr = element.attrs.find(function (attr) { return attr.name === 'target-language'; });
@@ -52299,7 +52358,7 @@ var XliffParser = (function () {
      * @return {?}
      */
     XliffParser.prototype._addError = function (node, message) {
-        this._errors.push(new I18nError(node.sourceSpan, message));
+        this._errors.push(new I18nError(/** @type {?} */ ((node.sourceSpan)), message));
     };
     return XliffParser;
 }());
@@ -52307,13 +52366,18 @@ var XmlToI18n = (function () {
     function XmlToI18n() {
     }
     /**
-     * @param {?} nodes
+     * @param {?} message
+     * @param {?} url
      * @return {?}
      */
-    XmlToI18n.prototype.convert = function (nodes) {
-        this._errors = [];
+    XmlToI18n.prototype.convert = function (message, url) {
+        var /** @type {?} */ xmlIcu = new XmlParser().parse(message, url, true);
+        this._errors = xmlIcu.errors;
+        var /** @type {?} */ i18nNodes = this._errors.length > 0 || xmlIcu.rootNodes.length == 0 ?
+            [] :
+            visitAll(this, xmlIcu.rootNodes);
         return {
-            i18nNodes: visitAll(this, nodes),
+            i18nNodes: i18nNodes,
             errors: this._errors,
         };
     };
@@ -52322,7 +52386,7 @@ var XmlToI18n = (function () {
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n.prototype.visitText = function (text, context) { return new Text$1(text.value, text.sourceSpan); };
+    XmlToI18n.prototype.visitText = function (text, context) { return new Text$1(text.value, /** @type {?} */ ((text.sourceSpan))); };
     /**
      * @param {?} el
      * @param {?} context
@@ -52332,26 +52396,38 @@ var XmlToI18n = (function () {
         if (el.name === _PLACEHOLDER_TAG) {
             var /** @type {?} */ nameAttr = el.attrs.find(function (attr) { return attr.name === 'id'; });
             if (nameAttr) {
-                return new Placeholder('', nameAttr.value, el.sourceSpan);
+                return new Placeholder('', nameAttr.value, /** @type {?} */ ((el.sourceSpan)));
             }
             this._addError(el, "<" + _PLACEHOLDER_TAG + "> misses the \"id\" attribute");
         }
         else {
             this._addError(el, "Unexpected tag");
         }
+        return null;
     };
     /**
      * @param {?} icu
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n.prototype.visitExpansion = function (icu, context) { };
+    XmlToI18n.prototype.visitExpansion = function (icu, context) {
+        var /** @type {?} */ caseMap = {};
+        visitAll(this, icu.cases).forEach(function (c) {
+            caseMap[c.value] = new Container(c.nodes, icu.sourceSpan);
+        });
+        return new Icu(icu.switchValue, icu.type, caseMap, icu.sourceSpan);
+    };
     /**
      * @param {?} icuCase
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n.prototype.visitExpansionCase = function (icuCase, context) { };
+    XmlToI18n.prototype.visitExpansionCase = function (icuCase, context) {
+        return {
+            value: icuCase.value,
+            nodes: visitAll(this, icuCase.expression),
+        };
+    };
     /**
      * @param {?} comment
      * @param {?} context
@@ -52370,7 +52446,7 @@ var XmlToI18n = (function () {
      * @return {?}
      */
     XmlToI18n.prototype._addError = function (node, message) {
-        this._errors.push(new I18nError(node.sourceSpan, message));
+        this._errors.push(new I18nError(/** @type {?} */ ((node.sourceSpan)), message));
     };
     return XmlToI18n;
 }());
@@ -52395,10 +52471,437 @@ function getCtypeForTag(tag) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+var _VERSION$1 = '2.0';
+var _XMLNS$1 = 'urn:oasis:names:tc:xliff:document:2.0';
+// TODO(vicb): make this a param (s/_/-/)
+var _DEFAULT_SOURCE_LANG$1 = 'en';
+var _PLACEHOLDER_TAG$1 = 'ph';
+var _PLACEHOLDER_SPANNING_TAG = 'pc';
+var _XLIFF_TAG = 'xliff';
+var _SOURCE_TAG$1 = 'source';
+var _TARGET_TAG$1 = 'target';
+var _UNIT_TAG$1 = 'unit';
+var Xliff2 = (function (_super) {
+    __extends(Xliff2, _super);
+    function Xliff2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * @param {?} messages
+     * @param {?} locale
+     * @return {?}
+     */
+    Xliff2.prototype.write = function (messages, locale) {
+        var /** @type {?} */ visitor = new _WriteVisitor$1();
+        var /** @type {?} */ units = [];
+        messages.forEach(function (message) {
+            var /** @type {?} */ unit = new Tag(_UNIT_TAG$1, { id: message.id });
+            if (message.description || message.meaning) {
+                var /** @type {?} */ notes = new Tag('notes');
+                if (message.description) {
+                    notes.children.push(new CR(8), new Tag('note', { category: 'description' }, [new Text$2(message.description)]));
+                }
+                if (message.meaning) {
+                    notes.children.push(new CR(8), new Tag('note', { category: 'meaning' }, [new Text$2(message.meaning)]));
+                }
+                notes.children.push(new CR(6));
+                unit.children.push(new CR(6), notes);
+            }
+            var /** @type {?} */ segment = new Tag('segment');
+            segment.children.push(new CR(8), new Tag(_SOURCE_TAG$1, {}, visitor.serialize(message.nodes)), new CR(6));
+            unit.children.push(new CR(6), segment, new CR(4));
+            units.push(new CR(4), unit);
+        });
+        var /** @type {?} */ file = new Tag('file', { 'original': 'ng.template', id: 'ngi18n' }, units.concat([new CR(2)]));
+        var /** @type {?} */ xliff = new Tag(_XLIFF_TAG, { version: _VERSION$1, xmlns: _XMLNS$1, srcLang: locale || _DEFAULT_SOURCE_LANG$1 }, [new CR(2), file, new CR()]);
+        return serialize([
+            new Declaration({ version: '1.0', encoding: 'UTF-8' }), new CR(), xliff, new CR()
+        ]);
+    };
+    /**
+     * @param {?} content
+     * @param {?} url
+     * @return {?}
+     */
+    Xliff2.prototype.load = function (content, url) {
+        // xliff to xml nodes
+        var /** @type {?} */ xliff2Parser = new Xliff2Parser();
+        var _a = xliff2Parser.parse(content, url), locale = _a.locale, msgIdToHtml = _a.msgIdToHtml, errors = _a.errors;
+        // xml nodes to i18n nodes
+        var /** @type {?} */ i18nNodesByMsgId = {};
+        var /** @type {?} */ converter = new XmlToI18n$1();
+        Object.keys(msgIdToHtml).forEach(function (msgId) {
+            var _a = converter.convert(msgIdToHtml[msgId], url), i18nNodes = _a.i18nNodes, e = _a.errors;
+            errors.push.apply(errors, e);
+            i18nNodesByMsgId[msgId] = i18nNodes;
+        });
+        if (errors.length) {
+            throw new Error("xliff2 parse errors:\n" + errors.join('\n'));
+        }
+        return { locale: /** @type {?} */ ((locale)), i18nNodesByMsgId: i18nNodesByMsgId };
+    };
+    /**
+     * @param {?} message
+     * @return {?}
+     */
+    Xliff2.prototype.digest = function (message) { return decimalDigest(message); };
+    return Xliff2;
+}(Serializer));
+var _WriteVisitor$1 = (function () {
+    function _WriteVisitor$1() {
+    }
+    /**
+     * @param {?} text
+     * @param {?=} context
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.visitText = function (text, context) { return [new Text$2(text.value)]; };
+    /**
+     * @param {?} container
+     * @param {?=} context
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.visitContainer = function (container, context) {
+        var _this = this;
+        var /** @type {?} */ nodes = [];
+        container.children.forEach(function (node) { return nodes.push.apply(nodes, node.visit(_this)); });
+        return nodes;
+    };
+    /**
+     * @param {?} icu
+     * @param {?=} context
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.visitIcu = function (icu, context) {
+        var _this = this;
+        var /** @type {?} */ nodes = [new Text$2("{" + icu.expressionPlaceholder + ", " + icu.type + ", ")];
+        Object.keys(icu.cases).forEach(function (c) {
+            nodes.push.apply(nodes, [new Text$2(c + " {")].concat(icu.cases[c].visit(_this), [new Text$2("} ")]));
+        });
+        nodes.push(new Text$2("}"));
+        return nodes;
+    };
+    /**
+     * @param {?} ph
+     * @param {?=} context
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.visitTagPlaceholder = function (ph, context) {
+        var _this = this;
+        var /** @type {?} */ type = getTypeForTag(ph.tag);
+        if (ph.isVoid) {
+            var /** @type {?} */ tagPh = new Tag(_PLACEHOLDER_TAG$1, {
+                id: (this._nextPlaceholderId++).toString(),
+                equiv: ph.startName,
+                type: type,
+                disp: "<" + ph.tag + "/>",
+            });
+            return [tagPh];
+        }
+        var /** @type {?} */ tagPc = new Tag(_PLACEHOLDER_SPANNING_TAG, {
+            id: (this._nextPlaceholderId++).toString(),
+            equivStart: ph.startName,
+            equivEnd: ph.closeName,
+            type: type,
+            dispStart: "<" + ph.tag + ">",
+            dispEnd: "</" + ph.tag + ">",
+        });
+        var /** @type {?} */ nodes = [].concat.apply([], ph.children.map(function (node) { return node.visit(_this); }));
+        if (nodes.length) {
+            nodes.forEach(function (node) { return tagPc.children.push(node); });
+        }
+        else {
+            tagPc.children.push(new Text$2(''));
+        }
+        return [tagPc];
+    };
+    /**
+     * @param {?} ph
+     * @param {?=} context
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.visitPlaceholder = function (ph, context) {
+        return [new Tag(_PLACEHOLDER_TAG$1, {
+                id: (this._nextPlaceholderId++).toString(),
+                equiv: ph.name,
+                disp: "{{" + ph.value + "}}",
+            })];
+    };
+    /**
+     * @param {?} ph
+     * @param {?=} context
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.visitIcuPlaceholder = function (ph, context) {
+        return [new Tag(_PLACEHOLDER_TAG$1, { id: (this._nextPlaceholderId++).toString() })];
+    };
+    /**
+     * @param {?} nodes
+     * @return {?}
+     */
+    _WriteVisitor$1.prototype.serialize = function (nodes) {
+        var _this = this;
+        this._nextPlaceholderId = 0;
+        return [].concat.apply([], nodes.map(function (node) { return node.visit(_this); }));
+    };
+    return _WriteVisitor$1;
+}());
+var Xliff2Parser = (function () {
+    function Xliff2Parser() {
+        this._locale = null;
+    }
+    /**
+     * @param {?} xliff
+     * @param {?} url
+     * @return {?}
+     */
+    Xliff2Parser.prototype.parse = function (xliff, url) {
+        this._unitMlString = null;
+        this._msgIdToHtml = {};
+        var /** @type {?} */ xml = new XmlParser().parse(xliff, url, false);
+        this._errors = xml.errors;
+        visitAll(this, xml.rootNodes, null);
+        return {
+            msgIdToHtml: this._msgIdToHtml,
+            errors: this._errors,
+            locale: this._locale,
+        };
+    };
+    /**
+     * @param {?} element
+     * @param {?} context
+     * @return {?}
+     */
+    Xliff2Parser.prototype.visitElement = function (element, context) {
+        switch (element.name) {
+            case _UNIT_TAG$1:
+                this._unitMlString = null;
+                var /** @type {?} */ idAttr = element.attrs.find(function (attr) { return attr.name === 'id'; });
+                if (!idAttr) {
+                    this._addError(element, "<" + _UNIT_TAG$1 + "> misses the \"id\" attribute");
+                }
+                else {
+                    var /** @type {?} */ id = idAttr.value;
+                    if (this._msgIdToHtml.hasOwnProperty(id)) {
+                        this._addError(element, "Duplicated translations for msg " + id);
+                    }
+                    else {
+                        visitAll(this, element.children, null);
+                        if (typeof this._unitMlString === 'string') {
+                            this._msgIdToHtml[id] = this._unitMlString;
+                        }
+                        else {
+                            this._addError(element, "Message " + id + " misses a translation");
+                        }
+                    }
+                }
+                break;
+            case _SOURCE_TAG$1:
+                // ignore source message
+                break;
+            case _TARGET_TAG$1:
+                var /** @type {?} */ innerTextStart = ((element.startSourceSpan)).end.offset;
+                var /** @type {?} */ innerTextEnd = ((element.endSourceSpan)).start.offset;
+                var /** @type {?} */ content = ((element.startSourceSpan)).start.file.content;
+                var /** @type {?} */ innerText = content.slice(innerTextStart, innerTextEnd);
+                this._unitMlString = innerText;
+                break;
+            case _XLIFF_TAG:
+                var /** @type {?} */ localeAttr = element.attrs.find(function (attr) { return attr.name === 'trgLang'; });
+                if (localeAttr) {
+                    this._locale = localeAttr.value;
+                }
+                var /** @type {?} */ versionAttr = element.attrs.find(function (attr) { return attr.name === 'version'; });
+                if (versionAttr) {
+                    var /** @type {?} */ version = versionAttr.value;
+                    if (version !== '2.0') {
+                        this._addError(element, "The XLIFF file version " + version + " is not compatible with XLIFF 2.0 serializer");
+                    }
+                    else {
+                        visitAll(this, element.children, null);
+                    }
+                }
+                break;
+            default:
+                visitAll(this, element.children, null);
+        }
+    };
+    /**
+     * @param {?} attribute
+     * @param {?} context
+     * @return {?}
+     */
+    Xliff2Parser.prototype.visitAttribute = function (attribute, context) { };
+    /**
+     * @param {?} text
+     * @param {?} context
+     * @return {?}
+     */
+    Xliff2Parser.prototype.visitText = function (text, context) { };
+    /**
+     * @param {?} comment
+     * @param {?} context
+     * @return {?}
+     */
+    Xliff2Parser.prototype.visitComment = function (comment, context) { };
+    /**
+     * @param {?} expansion
+     * @param {?} context
+     * @return {?}
+     */
+    Xliff2Parser.prototype.visitExpansion = function (expansion, context) { };
+    /**
+     * @param {?} expansionCase
+     * @param {?} context
+     * @return {?}
+     */
+    Xliff2Parser.prototype.visitExpansionCase = function (expansionCase, context) { };
+    /**
+     * @param {?} node
+     * @param {?} message
+     * @return {?}
+     */
+    Xliff2Parser.prototype._addError = function (node, message) {
+        this._errors.push(new I18nError(node.sourceSpan, message));
+    };
+    return Xliff2Parser;
+}());
+var XmlToI18n$1 = (function () {
+    function XmlToI18n$1() {
+    }
+    /**
+     * @param {?} message
+     * @param {?} url
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.convert = function (message, url) {
+        var /** @type {?} */ xmlIcu = new XmlParser().parse(message, url, true);
+        this._errors = xmlIcu.errors;
+        var /** @type {?} */ i18nNodes = this._errors.length > 0 || xmlIcu.rootNodes.length == 0 ?
+            [] : [].concat.apply([], visitAll(this, xmlIcu.rootNodes));
+        return {
+            i18nNodes: i18nNodes,
+            errors: this._errors,
+        };
+    };
+    /**
+     * @param {?} text
+     * @param {?} context
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.visitText = function (text, context) { return new Text$1(text.value, text.sourceSpan); };
+    /**
+     * @param {?} el
+     * @param {?} context
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.visitElement = function (el, context) {
+        var _this = this;
+        switch (el.name) {
+            case _PLACEHOLDER_TAG$1:
+                var /** @type {?} */ nameAttr = el.attrs.find(function (attr) { return attr.name === 'equiv'; });
+                if (nameAttr) {
+                    return [new Placeholder('', nameAttr.value, el.sourceSpan)];
+                }
+                this._addError(el, "<" + _PLACEHOLDER_TAG$1 + "> misses the \"equiv\" attribute");
+                break;
+            case _PLACEHOLDER_SPANNING_TAG:
+                var /** @type {?} */ startAttr = el.attrs.find(function (attr) { return attr.name === 'equivStart'; });
+                var /** @type {?} */ endAttr = el.attrs.find(function (attr) { return attr.name === 'equivEnd'; });
+                if (!startAttr) {
+                    this._addError(el, "<" + _PLACEHOLDER_TAG$1 + "> misses the \"equivStart\" attribute");
+                }
+                else if (!endAttr) {
+                    this._addError(el, "<" + _PLACEHOLDER_TAG$1 + "> misses the \"equivEnd\" attribute");
+                }
+                else {
+                    var /** @type {?} */ startId = startAttr.value;
+                    var /** @type {?} */ endId = endAttr.value;
+                    var /** @type {?} */ nodes = [];
+                    return nodes.concat.apply(nodes, [new Placeholder('', startId, el.sourceSpan)].concat(el.children.map(function (node) { return node.visit(_this, null); }), [new Placeholder('', endId, el.sourceSpan)]));
+                }
+                break;
+            default:
+                this._addError(el, "Unexpected tag");
+        }
+        return null;
+    };
+    /**
+     * @param {?} icu
+     * @param {?} context
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.visitExpansion = function (icu, context) {
+        var /** @type {?} */ caseMap = {};
+        visitAll(this, icu.cases).forEach(function (c) {
+            caseMap[c.value] = new Container(c.nodes, icu.sourceSpan);
+        });
+        return new Icu(icu.switchValue, icu.type, caseMap, icu.sourceSpan);
+    };
+    /**
+     * @param {?} icuCase
+     * @param {?} context
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.visitExpansionCase = function (icuCase, context) {
+        return {
+            value: icuCase.value,
+            nodes: [].concat.apply([], visitAll(this, icuCase.expression)),
+        };
+    };
+    /**
+     * @param {?} comment
+     * @param {?} context
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.visitComment = function (comment, context) { };
+    /**
+     * @param {?} attribute
+     * @param {?} context
+     * @return {?}
+     */
+    XmlToI18n$1.prototype.visitAttribute = function (attribute, context) { };
+    /**
+     * @param {?} node
+     * @param {?} message
+     * @return {?}
+     */
+    XmlToI18n$1.prototype._addError = function (node, message) {
+        this._errors.push(new I18nError(node.sourceSpan, message));
+    };
+    return XmlToI18n$1;
+}());
+/**
+ * @param {?} tag
+ * @return {?}
+ */
+function getTypeForTag(tag) {
+    switch (tag.toLowerCase()) {
+        case 'br':
+        case 'b':
+        case 'i':
+        case 'u':
+            return 'fmt';
+        case 'img':
+            return 'image';
+        case 'a':
+            return 'link';
+        default:
+            return 'other';
+    }
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var _MESSAGES_TAG = 'messagebundle';
 var _MESSAGE_TAG = 'msg';
-var _PLACEHOLDER_TAG$1 = 'ph';
+var _PLACEHOLDER_TAG$2 = 'ph';
 var _EXEMPLE_TAG = 'ex';
+var _SOURCE_TAG$2 = 'source';
 var _DOCTYPE = "<!ELEMENT messagebundle (msg)*>\n<!ATTLIST messagebundle class CDATA #IMPLIED>\n\n<!ELEMENT msg (#PCDATA|ph|source)*>\n<!ATTLIST msg id CDATA #IMPLIED>\n<!ATTLIST msg seq CDATA #IMPLIED>\n<!ATTLIST msg name CDATA #IMPLIED>\n<!ATTLIST msg desc CDATA #IMPLIED>\n<!ATTLIST msg meaning CDATA #IMPLIED>\n<!ATTLIST msg obsolete (obsolete) #IMPLIED>\n<!ATTLIST msg xml:space (default|preserve) \"default\">\n<!ATTLIST msg is_hidden CDATA #IMPLIED>\n\n<!ELEMENT source (#PCDATA)>\n\n<!ELEMENT ph (#PCDATA|ex)*>\n<!ATTLIST ph name CDATA #REQUIRED>\n\n<!ELEMENT ex (#PCDATA)>";
 var Xmb = (function (_super) {
     __extends(Xmb, _super);
@@ -52422,7 +52925,13 @@ var Xmb = (function (_super) {
             if (message.meaning) {
                 attrs['meaning'] = message.meaning;
             }
-            rootNode.children.push(new CR(2), new Tag(_MESSAGE_TAG, attrs, visitor.serialize(message.nodes)));
+            var /** @type {?} */ sourceTags = [];
+            message.sources.forEach(function (source) {
+                sourceTags.push(new Tag(_SOURCE_TAG$2, {}, [
+                    new Text$2(source.filePath + ":" + source.startLine + (source.endLine !== source.startLine ? ',' + source.endLine : ''))
+                ]));
+            });
+            rootNode.children.push(new CR(2), new Tag(_MESSAGE_TAG, attrs, sourceTags.concat(visitor.serialize(message.nodes))));
         });
         rootNode.children.push(new CR());
         return serialize([
@@ -52497,13 +53006,13 @@ var _Visitor$2 = (function () {
      */
     _Visitor$2.prototype.visitTagPlaceholder = function (ph, context) {
         var /** @type {?} */ startEx = new Tag(_EXEMPLE_TAG, {}, [new Text$2("<" + ph.tag + ">")]);
-        var /** @type {?} */ startTagPh = new Tag(_PLACEHOLDER_TAG$1, { name: ph.startName }, [startEx]);
+        var /** @type {?} */ startTagPh = new Tag(_PLACEHOLDER_TAG$2, { name: ph.startName }, [startEx]);
         if (ph.isVoid) {
             // void tags have no children nor closing tags
             return [startTagPh];
         }
         var /** @type {?} */ closeEx = new Tag(_EXEMPLE_TAG, {}, [new Text$2("</" + ph.tag + ">")]);
-        var /** @type {?} */ closeTagPh = new Tag(_PLACEHOLDER_TAG$1, { name: ph.closeName }, [closeEx]);
+        var /** @type {?} */ closeTagPh = new Tag(_PLACEHOLDER_TAG$2, { name: ph.closeName }, [closeEx]);
         return [startTagPh].concat(this.serialize(ph.children), [closeTagPh]);
     };
     /**
@@ -52512,7 +53021,7 @@ var _Visitor$2 = (function () {
      * @return {?}
      */
     _Visitor$2.prototype.visitPlaceholder = function (ph, context) {
-        return [new Tag(_PLACEHOLDER_TAG$1, { name: ph.name })];
+        return [new Tag(_PLACEHOLDER_TAG$2, { name: ph.name })];
     };
     /**
      * @param {?} ph
@@ -52520,7 +53029,7 @@ var _Visitor$2 = (function () {
      * @return {?}
      */
     _Visitor$2.prototype.visitIcuPlaceholder = function (ph, context) {
-        return [new Tag(_PLACEHOLDER_TAG$1, { name: ph.name })];
+        return [new Tag(_PLACEHOLDER_TAG$2, { name: ph.name })];
     };
     /**
      * @param {?} nodes
@@ -52556,7 +53065,7 @@ var ExampleVisitor = (function () {
      */
     ExampleVisitor.prototype.visitTag = function (tag) {
         var _this = this;
-        if (tag.name === _PLACEHOLDER_TAG$1) {
+        if (tag.name === _PLACEHOLDER_TAG$2) {
             if (!tag.children || tag.children.length == 0) {
                 var /** @type {?} */ exText = new Text$2(tag.attrs['name'] || '...');
                 tag.children = [new Tag(_EXEMPLE_TAG, {}, [exText])];
@@ -52599,7 +53108,7 @@ function toPublicName(internalName) {
  */
 var _TRANSLATIONS_TAG = 'translationbundle';
 var _TRANSLATION_TAG = 'translation';
-var _PLACEHOLDER_TAG$2 = 'ph';
+var _PLACEHOLDER_TAG$3 = 'ph';
 var Xtb = (function (_super) {
     __extends(Xtb, _super);
     function Xtb() {
@@ -52622,7 +53131,7 @@ var Xtb = (function (_super) {
         var _a = xtbParser.parse(content, url), locale = _a.locale, msgIdToHtml = _a.msgIdToHtml, errors = _a.errors;
         // xml nodes to i18n nodes
         var /** @type {?} */ i18nNodesByMsgId = {};
-        var /** @type {?} */ converter = new XmlToI18n$1();
+        var /** @type {?} */ converter = new XmlToI18n$2();
         // Because we should be able to load xtb files that rely on features not supported by angular,
         // we need to delay the conversion of html to i18n nodes so that non angular messages are not
         // converted
@@ -52639,7 +53148,7 @@ var Xtb = (function (_super) {
         if (errors.length) {
             throw new Error("xtb parse errors:\n" + errors.join('\n'));
         }
-        return { locale: locale, i18nNodesByMsgId: i18nNodesByMsgId };
+        return { locale: /** @type {?} */ ((locale)), i18nNodesByMsgId: i18nNodesByMsgId };
     };
     /**
      * @param {?} message
@@ -52726,10 +53235,10 @@ var XtbParser = (function () {
                         this._addError(element, "Duplicated translations for msg " + id);
                     }
                     else {
-                        var /** @type {?} */ innerTextStart = element.startSourceSpan.end.offset;
-                        var /** @type {?} */ innerTextEnd = element.endSourceSpan.start.offset;
-                        var /** @type {?} */ content = element.startSourceSpan.start.file.content;
-                        var /** @type {?} */ innerText = content.slice(innerTextStart, innerTextEnd);
+                        var /** @type {?} */ innerTextStart = ((element.startSourceSpan)).end.offset;
+                        var /** @type {?} */ innerTextEnd = ((element.endSourceSpan)).start.offset;
+                        var /** @type {?} */ content = ((element.startSourceSpan)).start.file.content;
+                        var /** @type {?} */ innerText = content.slice(/** @type {?} */ ((innerTextStart)), /** @type {?} */ ((innerTextEnd)));
                         this._msgIdToHtml[id] = innerText;
                     }
                 }
@@ -52774,19 +53283,19 @@ var XtbParser = (function () {
      * @return {?}
      */
     XtbParser.prototype._addError = function (node, message) {
-        this._errors.push(new I18nError(node.sourceSpan, message));
+        this._errors.push(new I18nError(/** @type {?} */ ((node.sourceSpan)), message));
     };
     return XtbParser;
 }());
-var XmlToI18n$1 = (function () {
-    function XmlToI18n$1() {
+var XmlToI18n$2 = (function () {
+    function XmlToI18n$2() {
     }
     /**
      * @param {?} message
      * @param {?} url
      * @return {?}
      */
-    XmlToI18n$1.prototype.convert = function (message, url) {
+    XmlToI18n$2.prototype.convert = function (message, url) {
         var /** @type {?} */ xmlIcu = new XmlParser().parse(message, url, true);
         this._errors = xmlIcu.errors;
         var /** @type {?} */ i18nNodes = this._errors.length > 0 || xmlIcu.rootNodes.length == 0 ?
@@ -52802,13 +53311,13 @@ var XmlToI18n$1 = (function () {
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n$1.prototype.visitText = function (text, context) { return new Text$1(text.value, text.sourceSpan); };
+    XmlToI18n$2.prototype.visitText = function (text, context) { return new Text$1(text.value, /** @type {?} */ ((text.sourceSpan))); };
     /**
      * @param {?} icu
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n$1.prototype.visitExpansion = function (icu, context) {
+    XmlToI18n$2.prototype.visitExpansion = function (icu, context) {
         var /** @type {?} */ caseMap = {};
         visitAll(this, icu.cases).forEach(function (c) {
             caseMap[c.value] = new Container(c.nodes, icu.sourceSpan);
@@ -52820,7 +53329,7 @@ var XmlToI18n$1 = (function () {
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n$1.prototype.visitExpansionCase = function (icuCase, context) {
+    XmlToI18n$2.prototype.visitExpansionCase = function (icuCase, context) {
         return {
             value: icuCase.value,
             nodes: visitAll(this, icuCase.expression),
@@ -52831,39 +53340,40 @@ var XmlToI18n$1 = (function () {
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n$1.prototype.visitElement = function (el, context) {
-        if (el.name === _PLACEHOLDER_TAG$2) {
+    XmlToI18n$2.prototype.visitElement = function (el, context) {
+        if (el.name === _PLACEHOLDER_TAG$3) {
             var /** @type {?} */ nameAttr = el.attrs.find(function (attr) { return attr.name === 'name'; });
             if (nameAttr) {
-                return new Placeholder('', nameAttr.value, el.sourceSpan);
+                return new Placeholder('', nameAttr.value, /** @type {?} */ ((el.sourceSpan)));
             }
-            this._addError(el, "<" + _PLACEHOLDER_TAG$2 + "> misses the \"name\" attribute");
+            this._addError(el, "<" + _PLACEHOLDER_TAG$3 + "> misses the \"name\" attribute");
         }
         else {
             this._addError(el, "Unexpected tag");
         }
+        return null;
     };
     /**
      * @param {?} comment
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n$1.prototype.visitComment = function (comment, context) { };
+    XmlToI18n$2.prototype.visitComment = function (comment, context) { };
     /**
      * @param {?} attribute
      * @param {?} context
      * @return {?}
      */
-    XmlToI18n$1.prototype.visitAttribute = function (attribute, context) { };
+    XmlToI18n$2.prototype.visitAttribute = function (attribute, context) { };
     /**
      * @param {?} node
      * @param {?} message
      * @return {?}
      */
-    XmlToI18n$1.prototype._addError = function (node, message) {
-        this._errors.push(new I18nError(node.sourceSpan, message));
+    XmlToI18n$2.prototype._addError = function (node, message) {
+        this._errors.push(new I18nError(/** @type {?} */ ((node.sourceSpan)), message));
     };
-    return XmlToI18n$1;
+    return XmlToI18n$2;
 }());
 /**
  * @license
@@ -52936,7 +53446,7 @@ var TranslationBundle = (function () {
     TranslationBundle.load = function (content, url, serializer, missingTranslationStrategy, console) {
         var _a = serializer.load(content, url), locale = _a.locale, i18nNodesByMsgId = _a.i18nNodesByMsgId;
         var /** @type {?} */ digestFn = function (m) { return serializer.digest(m); };
-        var /** @type {?} */ mapperFactory = function (m) { return serializer.createNameMapper(m); };
+        var /** @type {?} */ mapperFactory = function (m) { return ((serializer.createNameMapper(m))); };
         return new TranslationBundle(i18nNodesByMsgId, locale, digestFn, mapperFactory, missingTranslationStrategy, console);
     };
     /**
@@ -53083,7 +53593,7 @@ var I18nToHtmlVisitor = (function () {
             // When there is a translation use its nodes as the source
             // And create a mapper to convert serialized placeholder names to internal names
             nodes = this._i18nNodesByMsgId[id];
-            this._mapper = function (name) { return mapper ? mapper.toInternalName(name) : name; };
+            this._mapper = function (name) { return mapper ? ((mapper.toInternalName(name))) : name; };
         }
         else {
             // When no translation has been found
@@ -53103,7 +53613,7 @@ var I18nToHtmlVisitor = (function () {
             this._mapper = function (name) { return name; };
         }
         var /** @type {?} */ text = nodes.map(function (node) { return node.visit(_this); }).join('');
-        var /** @type {?} */ context = this._contextStack.pop();
+        var /** @type {?} */ context = ((this._contextStack.pop()));
         this._srcMsg = context.msg;
         this._mapper = context.mapper;
         return text;
@@ -53175,6 +53685,9 @@ function createSerializer(format) {
             return new Xmb();
         case 'xtb':
             return new Xtb();
+        case 'xliff2':
+        case 'xlf2':
+            return new Xliff2();
         case 'xliff':
         case 'xlf':
         default:
@@ -53229,7 +53742,7 @@ Identifiers.RegisterModuleFactoryFn = {
     runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_30" /* ɵregisterModuleFactory */],
 };
 Identifiers.Injector = { name: 'Injector', moduleUrl: CORE, runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* Injector */] };
-Identifiers.ViewEncapsulation = { name: 'ViewEncapsulation', moduleUrl: CORE, runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */] };
+Identifiers.ViewEncapsulation = { name: 'ViewEncapsulation', moduleUrl: CORE, runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */] };
 Identifiers.ChangeDetectionStrategy = {
     name: 'ChangeDetectionStrategy',
     moduleUrl: CORE,
@@ -53238,7 +53751,7 @@ Identifiers.ChangeDetectionStrategy = {
 Identifiers.SecurityContext = {
     name: 'SecurityContext',
     moduleUrl: CORE,
-    runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */],
+    runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */],
 };
 Identifiers.LOCALE_ID = { name: 'LOCALE_ID', moduleUrl: CORE, runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */] };
 Identifiers.TRANSLATIONS_FORMAT = { name: 'TRANSLATIONS_FORMAT', moduleUrl: CORE, runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_31" /* TRANSLATIONS_FORMAT */] };
@@ -53690,27 +54203,27 @@ var ProviderElementContext = (function () {
         this._seenProviders.set(tokenReference(token), true);
         var /** @type {?} */ transformedProviders = resolvedProvider.providers.map(function (provider) {
             var /** @type {?} */ transformedUseValue = provider.useValue;
-            var /** @type {?} */ transformedUseExisting = provider.useExisting;
-            var /** @type {?} */ transformedDeps;
+            var /** @type {?} */ transformedUseExisting = ((provider.useExisting));
+            var /** @type {?} */ transformedDeps = ((undefined));
             if (provider.useExisting != null) {
-                var /** @type {?} */ existingDiDep = _this._getDependency(resolvedProvider.providerType, { token: provider.useExisting }, eager);
+                var /** @type {?} */ existingDiDep = ((_this._getDependency(resolvedProvider.providerType, { token: provider.useExisting }, eager)));
                 if (existingDiDep.token != null) {
                     transformedUseExisting = existingDiDep.token;
                 }
                 else {
-                    transformedUseExisting = null;
+                    transformedUseExisting = ((null));
                     transformedUseValue = existingDiDep.value;
                 }
             }
             else if (provider.useFactory) {
                 var /** @type {?} */ deps = provider.deps || provider.useFactory.diDeps;
                 transformedDeps =
-                    deps.map(function (dep) { return _this._getDependency(resolvedProvider.providerType, dep, eager); });
+                    deps.map(function (dep) { return ((_this._getDependency(resolvedProvider.providerType, dep, eager))); });
             }
             else if (provider.useClass) {
                 var /** @type {?} */ deps = provider.deps || provider.useClass.diDeps;
                 transformedDeps =
-                    deps.map(function (dep) { return _this._getDependency(resolvedProvider.providerType, dep, eager); });
+                    deps.map(function (dep) { return ((_this._getDependency(resolvedProvider.providerType, dep, eager))); });
             }
             return _transformProvider(provider, {
                 useExisting: transformedUseExisting,
@@ -53730,9 +54243,9 @@ var ProviderElementContext = (function () {
      * @return {?}
      */
     ProviderElementContext.prototype._getLocalDependency = function (requestingProviderType, dep, eager) {
-        if (eager === void 0) { eager = null; }
+        if (eager === void 0) { eager = false; }
         if (dep.isAttribute) {
-            var /** @type {?} */ attrValue = this._attrs[dep.token.value];
+            var /** @type {?} */ attrValue = this._attrs[((dep.token)).value];
             return { isValue: true, value: attrValue == null ? null : attrValue };
         }
         if (dep.token != null) {
@@ -53767,7 +54280,7 @@ var ProviderElementContext = (function () {
      * @return {?}
      */
     ProviderElementContext.prototype._getDependency = function (requestingProviderType, dep, eager) {
-        if (eager === void 0) { eager = null; }
+        if (eager === void 0) { eager = false; }
         var /** @type {?} */ currElement = this;
         var /** @type {?} */ currEager = eager;
         var /** @type {?} */ result = null;
@@ -53792,8 +54305,8 @@ var ProviderElementContext = (function () {
             // check @Host restriction
             if (!result) {
                 if (!dep.isHost || this.viewContext.component.isHost ||
-                    this.viewContext.component.type.reference === tokenReference(dep.token) ||
-                    this.viewContext.viewProviders.get(tokenReference(dep.token)) != null) {
+                    this.viewContext.component.type.reference === tokenReference(/** @type {?} */ ((dep.token))) ||
+                    this.viewContext.viewProviders.get(tokenReference(/** @type {?} */ ((dep.token)))) != null) {
                     result = dep;
                 }
                 else {
@@ -53802,7 +54315,7 @@ var ProviderElementContext = (function () {
             }
         }
         if (!result) {
-            this.viewContext.errors.push(new ProviderError("No provider for " + tokenName(dep.token), this._sourceSpan));
+            this.viewContext.errors.push(new ProviderError("No provider for " + tokenName(/** @type {?} */ ((dep.token))), this._sourceSpan));
         }
         return result;
     };
@@ -53862,15 +54375,15 @@ var NgModuleProviderAnalyzer = (function () {
         this._seenProviders.set(tokenReference(token), true);
         var /** @type {?} */ transformedProviders = resolvedProvider.providers.map(function (provider) {
             var /** @type {?} */ transformedUseValue = provider.useValue;
-            var /** @type {?} */ transformedUseExisting = provider.useExisting;
-            var /** @type {?} */ transformedDeps;
+            var /** @type {?} */ transformedUseExisting = ((provider.useExisting));
+            var /** @type {?} */ transformedDeps = ((undefined));
             if (provider.useExisting != null) {
                 var /** @type {?} */ existingDiDep = _this._getDependency({ token: provider.useExisting }, eager, resolvedProvider.sourceSpan);
                 if (existingDiDep.token != null) {
                     transformedUseExisting = existingDiDep.token;
                 }
                 else {
-                    transformedUseExisting = null;
+                    transformedUseExisting = ((null));
                     transformedUseValue = existingDiDep.value;
                 }
             }
@@ -53902,7 +54415,7 @@ var NgModuleProviderAnalyzer = (function () {
      * @return {?}
      */
     NgModuleProviderAnalyzer.prototype._getDependency = function (dep, eager, requestorSourceSpan) {
-        if (eager === void 0) { eager = null; }
+        if (eager === void 0) { eager = false; }
         var /** @type {?} */ foundLocal = false;
         if (!dep.isSkipSelf && dep.token != null) {
             // access the injector
@@ -53920,7 +54433,7 @@ var NgModuleProviderAnalyzer = (function () {
                 result = { isValue: true, value: null };
             }
             else {
-                this._errors.push(new ProviderError("No provider for " + tokenName(dep.token), requestorSourceSpan));
+                this._errors.push(new ProviderError("No provider for " + tokenName(/** @type {?} */ ((dep.token))), requestorSourceSpan));
             }
         }
         return result;
@@ -53994,7 +54507,7 @@ function _resolveProviders(providers, providerType, eager, sourceSpan, targetErr
                 ((provider.token.identifier)).lifecycleHooks :
                 [];
             var /** @type {?} */ isUseValue = !(provider.useClass || provider.useExisting || provider.useFactory);
-            resolvedProvider = new ProviderAst(provider.token, provider.multi, eager || isUseValue, [provider], providerType, lifecycleHooks, sourceSpan);
+            resolvedProvider = new ProviderAst(provider.token, !!provider.multi, eager || isUseValue, [provider], providerType, lifecycleHooks, sourceSpan);
             targetProvidersByToken.set(tokenReference(provider.token), resolvedProvider);
         }
         else {
@@ -54283,6 +54796,7 @@ var BindingParser = (function () {
             });
             return boundProps_1.map(function (prop) { return _this.createElementPropertyAst(elementSelector, prop); });
         }
+        return null;
     };
     /**
      * @param {?} dirMeta
@@ -54304,6 +54818,7 @@ var BindingParser = (function () {
             });
             return targetEventAsts_1;
         }
+        return null;
     };
     /**
      * @param {?} value
@@ -54313,7 +54828,7 @@ var BindingParser = (function () {
     BindingParser.prototype.parseInterpolation = function (value, sourceSpan) {
         var /** @type {?} */ sourceInfo = sourceSpan.start.toString();
         try {
-            var /** @type {?} */ ast = this._exprParser.parseInterpolation(value, sourceInfo, this._interpolationConfig);
+            var /** @type {?} */ ast = ((this._exprParser.parseInterpolation(value, sourceInfo, this._interpolationConfig)));
             if (ast)
                 this._reportExpressionParserErrors(ast.errors, sourceSpan);
             this._checkPipes(ast, sourceSpan);
@@ -54446,7 +54961,7 @@ var BindingParser = (function () {
      * @return {?}
      */
     BindingParser.prototype._parsePropertyAst = function (name, ast, sourceSpan, targetMatchableAttrs, targetProps) {
-        targetMatchableAttrs.push([name, ast.source]);
+        targetMatchableAttrs.push([name, /** @type {?} */ ((ast.source))]);
         targetProps.push(new BoundProperty(name, ast, BoundPropertyType.DEFAULT, sourceSpan));
     };
     /**
@@ -54462,7 +54977,7 @@ var BindingParser = (function () {
         // For animations it is valid to not have an expression since */void
         // states will be applied by angular when the element is attached/detached
         var /** @type {?} */ ast = this._parseBinding(expression || 'null', false, sourceSpan);
-        targetMatchableAttrs.push([name, ast.source]);
+        targetMatchableAttrs.push([name, /** @type {?} */ ((ast.source))]);
         targetProps.push(new BoundProperty(name, ast, BoundPropertyType.ANIMATION, sourceSpan));
     };
     /**
@@ -54494,13 +55009,13 @@ var BindingParser = (function () {
      */
     BindingParser.prototype.createElementPropertyAst = function (elementSelector, boundProp) {
         if (boundProp.isAnimation) {
-            return new BoundElementPropertyAst(boundProp.name, PropertyBindingType.Animation, __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].NONE, boundProp.expression, null, boundProp.sourceSpan);
+            return new BoundElementPropertyAst(boundProp.name, PropertyBindingType.Animation, __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].NONE, boundProp.expression, null, boundProp.sourceSpan);
         }
         var /** @type {?} */ unit = null;
-        var /** @type {?} */ bindingType;
+        var /** @type {?} */ bindingType = ((undefined));
         var /** @type {?} */ boundPropertyName = null;
         var /** @type {?} */ parts = boundProp.name.split(PROPERTY_PARTS_SEPARATOR);
-        var /** @type {?} */ securityContexts;
+        var /** @type {?} */ securityContexts = ((undefined));
         // Check check for special cases (prefix style, attr, class)
         if (parts.length > 1) {
             if (parts[0] == ATTRIBUTE_PREFIX) {
@@ -54518,13 +55033,13 @@ var BindingParser = (function () {
             else if (parts[0] == CLASS_PREFIX) {
                 boundPropertyName = parts[1];
                 bindingType = PropertyBindingType.Class;
-                securityContexts = [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].NONE];
+                securityContexts = [__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].NONE];
             }
             else if (parts[0] == STYLE_PREFIX) {
                 unit = parts.length > 2 ? parts[2] : null;
                 boundPropertyName = parts[1];
                 bindingType = PropertyBindingType.Style;
-                securityContexts = [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].STYLE];
+                securityContexts = [__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].STYLE];
             }
         }
         // If not a special case, use the full property name
@@ -54590,9 +55105,9 @@ var BindingParser = (function () {
      */
     BindingParser.prototype._parseEvent = function (name, expression, sourceSpan, targetMatchableAttrs, targetEvents) {
         // long format: 'target: eventName'
-        var _a = splitAtColon(name, [null, name]), target = _a[0], eventName = _a[1];
+        var _a = splitAtColon(name, [/** @type {?} */ ((null)), name]), target = _a[0], eventName = _a[1];
         var /** @type {?} */ ast = this._parseAction(expression, sourceSpan);
-        targetMatchableAttrs.push([name, ast.source]);
+        targetMatchableAttrs.push([/** @type {?} */ ((name)), /** @type {?} */ ((ast.source))]);
         targetEvents.push(new BoundEventAst(eventName, target, null, ast, sourceSpan));
         // Don't detect directives for event names for now,
         // so don't add the event name to the matchableAttrs
@@ -54673,7 +55188,7 @@ var BindingParser = (function () {
         var /** @type {?} */ report = isAttr ? this._schemaRegistry.validateAttribute(propName) :
             this._schemaRegistry.validateProperty(propName);
         if (report.error) {
-            this._reportError(report.msg, sourceSpan, ParseErrorLevel.ERROR);
+            this._reportError(/** @type {?} */ ((report.msg)), sourceSpan, ParseErrorLevel.ERROR);
         }
     };
     return BindingParser;
@@ -54721,7 +55236,7 @@ function calcPossibleSecurityContexts(registry, selector, propName, isAttribute)
         var /** @type {?} */ possibleElementNames = elementNames.filter(function (elementName) { return !notElementNames.has(elementName); });
         ctxs.push.apply(ctxs, possibleElementNames.map(function (elementName) { return registry.securityContext(elementName, propName, isAttribute); }));
     });
-    return ctxs.length === 0 ? [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].NONE] : Array.from(new Set(ctxs)).sort();
+    return ctxs.length === 0 ? [__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].NONE] : Array.from(new Set(ctxs)).sort();
 }
 /**
  * @license
@@ -54731,7 +55246,6 @@ function calcPossibleSecurityContexts(registry, selector, propName, isAttribute)
  * found in the LICENSE file at https://angular.io/license
  */
 var NG_CONTENT_SELECT_ATTR = 'select';
-var NG_CONTENT_ELEMENT = 'ng-content';
 var LINK_ELEMENT = 'link';
 var LINK_STYLE_REL_ATTR = 'rel';
 var LINK_STYLE_HREF_ATTR = 'href';
@@ -54745,11 +55259,11 @@ var NG_PROJECT_AS = 'ngProjectAs';
  * @return {?}
  */
 function preparseElement(ast) {
-    var /** @type {?} */ selectAttr = null;
-    var /** @type {?} */ hrefAttr = null;
-    var /** @type {?} */ relAttr = null;
+    var /** @type {?} */ selectAttr = ((null));
+    var /** @type {?} */ hrefAttr = ((null));
+    var /** @type {?} */ relAttr = ((null));
     var /** @type {?} */ nonBindable = false;
-    var /** @type {?} */ projectAs = null;
+    var /** @type {?} */ projectAs = ((null));
     ast.attrs.forEach(function (attr) {
         var /** @type {?} */ lcAttrName = attr.name.toLowerCase();
         if (lcAttrName == NG_CONTENT_SELECT_ATTR) {
@@ -54773,7 +55287,7 @@ function preparseElement(ast) {
     selectAttr = normalizeNgContentSelect(selectAttr);
     var /** @type {?} */ nodeName = ast.name.toLowerCase();
     var /** @type {?} */ type = PreparsedElementType.OTHER;
-    if (splitNsName(nodeName)[1] == NG_CONTENT_ELEMENT) {
+    if (isNgContent(nodeName)) {
         type = PreparsedElementType.NG_CONTENT;
     }
     else if (nodeName == STYLE_ELEMENT) {
@@ -54853,7 +55367,6 @@ var IDENT_BANANA_BOX_IDX = 8;
 var IDENT_PROPERTY_IDX = 9;
 // Group 10 = identifier inside ()
 var IDENT_EVENT_IDX = 10;
-var NG_TEMPLATE_ELEMENT = 'ng-template';
 // deprecated in 4.x
 var TEMPLATE_ELEMENT = 'template';
 // deprecated in 4.x
@@ -54884,7 +55397,7 @@ function warnOnlyOnce(warnings) {
  *
  * This is currently an internal-only feature and not meant for general use.
  */
-var TEMPLATE_TRANSFORMS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('TemplateTransforms');
+var TEMPLATE_TRANSFORMS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('TemplateTransforms');
 var TemplateParseError = (function (_super) {
     __extends(TemplateParseError, _super);
     /**
@@ -54938,10 +55451,9 @@ var TemplateParser = (function () {
      */
     TemplateParser.prototype.parse = function (component, template, directives, pipes, schemas, templateUrl) {
         var /** @type {?} */ result = this.tryParse(component, template, directives, pipes, schemas, templateUrl);
-        var /** @type {?} */ warnings = result.errors.filter(function (error) { return error.level === ParseErrorLevel.WARNING; }).filter(warnOnlyOnce([
-            TEMPLATE_ATTR_DEPRECATION_WARNING, TEMPLATE_ELEMENT_DEPRECATION_WARNING
-        ]));
-        var /** @type {?} */ errors = result.errors.filter(function (error) { return error.level === ParseErrorLevel.ERROR; });
+        var /** @type {?} */ warnings = ((result.errors)).filter(function (error) { return error.level === ParseErrorLevel.WARNING; })
+            .filter(warnOnlyOnce([TEMPLATE_ATTR_DEPRECATION_WARNING, TEMPLATE_ELEMENT_DEPRECATION_WARNING]));
+        var /** @type {?} */ errors = ((result.errors)).filter(function (error) { return error.level === ParseErrorLevel.ERROR; });
         if (warnings.length > 0) {
             this._console.warn("Template parse warnings:\n" + warnings.join('\n'));
         }
@@ -54949,7 +55461,7 @@ var TemplateParser = (function () {
             var /** @type {?} */ errorString = errors.join('\n');
             throw syntaxError("Template parse errors:\n" + errorString);
         }
-        return { template: result.templateAst, pipes: result.usedPipes };
+        return { template: /** @type {?} */ ((result.templateAst)), pipes: /** @type {?} */ ((result.usedPipes)) };
     };
     /**
      * @param {?} component
@@ -54961,19 +55473,17 @@ var TemplateParser = (function () {
      * @return {?}
      */
     TemplateParser.prototype.tryParse = function (component, template, directives, pipes, schemas, templateUrl) {
-        return this.tryParseHtml(this.expandHtml(this._htmlParser.parse(template, templateUrl, true, this.getInterpolationConfig(component))), component, template, directives, pipes, schemas, templateUrl);
+        return this.tryParseHtml(this.expandHtml(/** @type {?} */ ((this._htmlParser)).parse(template, templateUrl, true, this.getInterpolationConfig(component))), component, directives, pipes, schemas);
     };
     /**
      * @param {?} htmlAstWithErrors
      * @param {?} component
-     * @param {?} template
      * @param {?} directives
      * @param {?} pipes
      * @param {?} schemas
-     * @param {?} templateUrl
      * @return {?}
      */
-    TemplateParser.prototype.tryParseHtml = function (htmlAstWithErrors, component, template, directives, pipes, schemas, templateUrl) {
+    TemplateParser.prototype.tryParseHtml = function (htmlAstWithErrors, component, directives, pipes, schemas) {
         var /** @type {?} */ result;
         var /** @type {?} */ errors = htmlAstWithErrors.errors;
         var /** @type {?} */ usedPipes = [];
@@ -54981,14 +55491,14 @@ var TemplateParser = (function () {
             var /** @type {?} */ uniqDirectives = removeSummaryDuplicates(directives);
             var /** @type {?} */ uniqPipes = removeSummaryDuplicates(pipes);
             var /** @type {?} */ providerViewContext = new ProviderViewContext(component);
-            var /** @type {?} */ interpolationConfig = void 0;
+            var /** @type {?} */ interpolationConfig = ((undefined));
             if (component.template && component.template.interpolation) {
                 interpolationConfig = {
                     start: component.template.interpolation[0],
                     end: component.template.interpolation[1]
                 };
             }
-            var /** @type {?} */ bindingParser = new BindingParser(this._exprParser, interpolationConfig, this._schemaRegistry, uniqPipes, errors);
+            var /** @type {?} */ bindingParser = new BindingParser(this._exprParser, /** @type {?} */ ((interpolationConfig)), this._schemaRegistry, uniqPipes, errors);
             var /** @type {?} */ parseVisitor = new TemplateParseVisitor(this._config, providerViewContext, uniqDirectives, bindingParser, this._schemaRegistry, schemas, errors);
             result = visitAll(parseVisitor, htmlAstWithErrors.rootNodes, EMPTY_ELEMENT_CONTEXT);
             errors.push.apply(errors, providerViewContext.errors);
@@ -55030,6 +55540,7 @@ var TemplateParser = (function () {
         if (component.template) {
             return InterpolationConfig.fromArray(component.template.interpolation);
         }
+        return undefined;
     };
     /**
      * \@internal
@@ -55065,7 +55576,7 @@ TemplateParser.ctorParameters = function () { return [
     { type: ElementSchemaRegistry, },
     { type: I18NHtmlParser, },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_52" /* ɵConsole */], },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [TEMPLATE_TRANSFORMS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [TEMPLATE_TRANSFORMS,] },] },
 ]; };
 var TemplateParseVisitor = (function () {
     /**
@@ -55114,10 +55625,10 @@ var TemplateParseVisitor = (function () {
      * @return {?}
      */
     TemplateParseVisitor.prototype.visitText = function (text, parent) {
-        var /** @type {?} */ ngContentIndex = parent.findNgContentIndex(TEXT_CSS_SELECTOR);
-        var /** @type {?} */ expr = this._bindingParser.parseInterpolation(text.value, text.sourceSpan);
-        return expr ? new BoundTextAst(expr, ngContentIndex, text.sourceSpan) :
-            new TextAst(text.value, ngContentIndex, text.sourceSpan);
+        var /** @type {?} */ ngContentIndex = ((parent.findNgContentIndex(TEXT_CSS_SELECTOR)));
+        var /** @type {?} */ expr = this._bindingParser.parseInterpolation(text.value, /** @type {?} */ ((text.sourceSpan)));
+        return expr ? new BoundTextAst(expr, ngContentIndex, /** @type {?} */ ((text.sourceSpan))) :
+            new TextAst(text.value, ngContentIndex, /** @type {?} */ ((text.sourceSpan)));
     };
     /**
      * @param {?} attribute
@@ -55186,7 +55697,7 @@ var TemplateParseVisitor = (function () {
                     _this._reportError("Can't have multiple template bindings on one element. Use only one attribute named 'template' or prefixed with *", attr.sourceSpan);
                 }
                 hasInlineTemplates = true;
-                _this._bindingParser.parseInlineTemplateBinding(prefixToken, templateBindingsSource, attr.sourceSpan, templateMatchableAttrs, templateElementOrDirectiveProps, templateElementVars);
+                _this._bindingParser.parseInlineTemplateBinding(/** @type {?} */ ((prefixToken)), /** @type {?} */ ((templateBindingsSource)), attr.sourceSpan, templateMatchableAttrs, templateElementOrDirectiveProps, templateElementVars);
             }
             if (!hasBinding && !hasTemplateBinding) {
                 // don't include the bindings as attributes as well in the AST
@@ -55198,46 +55709,46 @@ var TemplateParseVisitor = (function () {
         var _a = this._parseDirectives(this.selectorMatcher, elementCssSelector), directiveMetas = _a.directives, matchElement = _a.matchElement;
         var /** @type {?} */ references = [];
         var /** @type {?} */ boundDirectivePropNames = new Set();
-        var /** @type {?} */ directiveAsts = this._createDirectiveAsts(isTemplateElement, element.name, directiveMetas, elementOrDirectiveProps, elementOrDirectiveRefs, element.sourceSpan, references, boundDirectivePropNames);
+        var /** @type {?} */ directiveAsts = this._createDirectiveAsts(isTemplateElement, element.name, directiveMetas, elementOrDirectiveProps, elementOrDirectiveRefs, /** @type {?} */ ((element.sourceSpan)), references, boundDirectivePropNames);
         var /** @type {?} */ elementProps = this._createElementPropertyAsts(element.name, elementOrDirectiveProps, boundDirectivePropNames);
         var /** @type {?} */ isViewRoot = parent.isTemplateElement || hasInlineTemplates;
-        var /** @type {?} */ providerContext = new ProviderElementContext(this.providerViewContext, parent.providerContext, isViewRoot, directiveAsts, attrs, references, isTemplateElement, queryStartIndex, element.sourceSpan);
-        var /** @type {?} */ children = visitAll(preparsedElement.nonBindable ? NON_BINDABLE_VISITOR : this, element.children, ElementContext.create(isTemplateElement, directiveAsts, isTemplateElement ? parent.providerContext : providerContext));
+        var /** @type {?} */ providerContext = new ProviderElementContext(this.providerViewContext, /** @type {?} */ ((parent.providerContext)), isViewRoot, directiveAsts, attrs, references, isTemplateElement, queryStartIndex, /** @type {?} */ ((element.sourceSpan)));
+        var /** @type {?} */ children = visitAll(preparsedElement.nonBindable ? NON_BINDABLE_VISITOR : this, element.children, ElementContext.create(isTemplateElement, directiveAsts, isTemplateElement ? ((parent.providerContext)) : providerContext));
         providerContext.afterElement();
         // Override the actual selector when the `ngProjectAs` attribute is provided
         var /** @type {?} */ projectionSelector = preparsedElement.projectAs != null ?
             CssSelector.parse(preparsedElement.projectAs)[0] :
             elementCssSelector;
-        var /** @type {?} */ ngContentIndex = parent.findNgContentIndex(projectionSelector);
+        var /** @type {?} */ ngContentIndex = ((parent.findNgContentIndex(projectionSelector)));
         var /** @type {?} */ parsedElement;
         if (preparsedElement.type === PreparsedElementType.NG_CONTENT) {
             if (element.children && !element.children.every(_isEmptyTextNode)) {
-                this._reportError("<ng-content> element cannot have content.", element.sourceSpan);
+                this._reportError("<ng-content> element cannot have content.", /** @type {?} */ ((element.sourceSpan)));
             }
-            parsedElement = new NgContentAst(this.ngContentCount++, hasInlineTemplates ? null : ngContentIndex, element.sourceSpan);
+            parsedElement = new NgContentAst(this.ngContentCount++, hasInlineTemplates ? ((null)) : ngContentIndex, /** @type {?} */ ((element.sourceSpan)));
         }
         else if (isTemplateElement) {
             this._assertAllEventsPublishedByDirectives(directiveAsts, events);
-            this._assertNoComponentsNorElementBindingsOnTemplate(directiveAsts, elementProps, element.sourceSpan);
-            parsedElement = new EmbeddedTemplateAst(attrs, events, references, elementVars, providerContext.transformedDirectiveAsts, providerContext.transformProviders, providerContext.transformedHasViewContainer, providerContext.queryMatches, children, hasInlineTemplates ? null : ngContentIndex, element.sourceSpan);
+            this._assertNoComponentsNorElementBindingsOnTemplate(directiveAsts, elementProps, /** @type {?} */ ((element.sourceSpan)));
+            parsedElement = new EmbeddedTemplateAst(attrs, events, references, elementVars, providerContext.transformedDirectiveAsts, providerContext.transformProviders, providerContext.transformedHasViewContainer, providerContext.queryMatches, children, hasInlineTemplates ? ((null)) : ngContentIndex, /** @type {?} */ ((element.sourceSpan)));
         }
         else {
             this._assertElementExists(matchElement, element);
-            this._assertOnlyOneComponent(directiveAsts, element.sourceSpan);
+            this._assertOnlyOneComponent(directiveAsts, /** @type {?} */ ((element.sourceSpan)));
             var /** @type {?} */ ngContentIndex_1 = hasInlineTemplates ? null : parent.findNgContentIndex(projectionSelector);
-            parsedElement = new ElementAst(nodeName, attrs, elementProps, events, references, providerContext.transformedDirectiveAsts, providerContext.transformProviders, providerContext.transformedHasViewContainer, providerContext.queryMatches, children, hasInlineTemplates ? null : ngContentIndex_1, element.sourceSpan, element.endSourceSpan);
+            parsedElement = new ElementAst(nodeName, attrs, elementProps, events, references, providerContext.transformedDirectiveAsts, providerContext.transformProviders, providerContext.transformedHasViewContainer, providerContext.queryMatches, children, hasInlineTemplates ? null : ngContentIndex_1, element.sourceSpan, element.endSourceSpan || null);
         }
         if (hasInlineTemplates) {
             var /** @type {?} */ templateQueryStartIndex = this.contentQueryStartId;
             var /** @type {?} */ templateSelector = createElementCssSelector(TEMPLATE_ELEMENT, templateMatchableAttrs);
             var templateDirectiveMetas = this._parseDirectives(this.selectorMatcher, templateSelector).directives;
             var /** @type {?} */ templateBoundDirectivePropNames = new Set();
-            var /** @type {?} */ templateDirectiveAsts = this._createDirectiveAsts(true, element.name, templateDirectiveMetas, templateElementOrDirectiveProps, [], element.sourceSpan, [], templateBoundDirectivePropNames);
+            var /** @type {?} */ templateDirectiveAsts = this._createDirectiveAsts(true, element.name, templateDirectiveMetas, templateElementOrDirectiveProps, [], /** @type {?} */ ((element.sourceSpan)), [], templateBoundDirectivePropNames);
             var /** @type {?} */ templateElementProps = this._createElementPropertyAsts(element.name, templateElementOrDirectiveProps, templateBoundDirectivePropNames);
-            this._assertNoComponentsNorElementBindingsOnTemplate(templateDirectiveAsts, templateElementProps, element.sourceSpan);
-            var /** @type {?} */ templateProviderContext = new ProviderElementContext(this.providerViewContext, parent.providerContext, parent.isTemplateElement, templateDirectiveAsts, [], [], true, templateQueryStartIndex, element.sourceSpan);
+            this._assertNoComponentsNorElementBindingsOnTemplate(templateDirectiveAsts, templateElementProps, /** @type {?} */ ((element.sourceSpan)));
+            var /** @type {?} */ templateProviderContext = new ProviderElementContext(this.providerViewContext, /** @type {?} */ ((parent.providerContext)), parent.isTemplateElement, templateDirectiveAsts, [], [], true, templateQueryStartIndex, /** @type {?} */ ((element.sourceSpan)));
             templateProviderContext.afterElement();
-            parsedElement = new EmbeddedTemplateAst([], [], [], templateElementVars, templateProviderContext.transformedDirectiveAsts, templateProviderContext.transformProviders, templateProviderContext.transformedHasViewContainer, templateProviderContext.queryMatches, [parsedElement], ngContentIndex, element.sourceSpan);
+            parsedElement = new EmbeddedTemplateAst([], [], [], templateElementVars, templateProviderContext.transformedDirectiveAsts, templateProviderContext.transformProviders, templateProviderContext.transformedHasViewContainer, templateProviderContext.queryMatches, [parsedElement], ngContentIndex, /** @type {?} */ ((element.sourceSpan)));
         }
         return parsedElement;
     };
@@ -55362,7 +55873,7 @@ var TemplateParseVisitor = (function () {
         // Whether any directive selector matches on the element name
         var /** @type {?} */ matchElement = false;
         selectorMatcher.match(elementCssSelector, function (selector, directive) {
-            directives[_this.directivesIndex.get(directive)] = directive;
+            directives[((_this.directivesIndex.get(directive)))] = directive;
             matchElement = matchElement || selector.hasElementSelector();
         });
         return {
@@ -55384,18 +55895,18 @@ var TemplateParseVisitor = (function () {
     TemplateParseVisitor.prototype._createDirectiveAsts = function (isTemplateElement, elementName, directives, props, elementOrDirectiveRefs, elementSourceSpan, targetReferences, targetBoundDirectivePropNames) {
         var _this = this;
         var /** @type {?} */ matchedReferences = new Set();
-        var /** @type {?} */ component = null;
+        var /** @type {?} */ component = ((null));
         var /** @type {?} */ directiveAsts = directives.map(function (directive) {
             var /** @type {?} */ sourceSpan = new ParseSourceSpan(elementSourceSpan.start, elementSourceSpan.end, "Directive " + identifierName(directive.type));
             if (directive.isComponent) {
                 component = directive;
             }
             var /** @type {?} */ directiveProperties = [];
-            var /** @type {?} */ hostProperties = _this._bindingParser.createDirectiveHostPropertyAsts(directive, elementName, sourceSpan);
+            var /** @type {?} */ hostProperties = ((_this._bindingParser.createDirectiveHostPropertyAsts(directive, elementName, sourceSpan)));
             // Note: We need to check the host properties here as well,
             // as we don't know the element name in the DirectiveWrapperCompiler yet.
             hostProperties = _this._checkPropertiesInSchema(elementName, hostProperties);
-            var /** @type {?} */ hostEvents = _this._bindingParser.createDirectiveHostEventAsts(directive, sourceSpan);
+            var /** @type {?} */ hostEvents = ((_this._bindingParser.createDirectiveHostEventAsts(directive, sourceSpan)));
             _this._createDirectivePropertyAsts(directive.inputs, props, directiveProperties, targetBoundDirectivePropNames);
             elementOrDirectiveRefs.forEach(function (elOrDirRef) {
                 if ((elOrDirRef.value.length === 0 && directive.isComponent) ||
@@ -55415,7 +55926,7 @@ var TemplateParseVisitor = (function () {
                 }
             }
             else if (!component) {
-                var /** @type {?} */ refToken = null;
+                var /** @type {?} */ refToken = ((null));
                 if (isTemplateElement) {
                     refToken = createIdentifierToken(Identifiers.TemplateRef);
                 }
@@ -55483,7 +55994,7 @@ var TemplateParseVisitor = (function () {
      */
     TemplateParseVisitor.prototype._findComponentDirectiveNames = function (directives) {
         return this._findComponentDirectives(directives)
-            .map(function (directive) { return identifierName(directive.directive.type); });
+            .map(function (directive) { return ((identifierName(directive.directive.type))); });
     };
     /**
      * @param {?} directives
@@ -55522,7 +56033,7 @@ var TemplateParseVisitor = (function () {
                 errorMsg +=
                     "2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.";
             }
-            this._reportError(errorMsg, element.sourceSpan);
+            this._reportError(errorMsg, /** @type {?} */ ((element.sourceSpan)));
         }
     };
     /**
@@ -55646,8 +56157,8 @@ var NonBindableVisitor = (function () {
      * @return {?}
      */
     NonBindableVisitor.prototype.visitText = function (text, parent) {
-        var /** @type {?} */ ngContentIndex = parent.findNgContentIndex(TEXT_CSS_SELECTOR);
-        return new TextAst(text.value, ngContentIndex, text.sourceSpan);
+        var /** @type {?} */ ngContentIndex = ((parent.findNgContentIndex(TEXT_CSS_SELECTOR)));
+        return new TextAst(text.value, ngContentIndex, /** @type {?} */ ((text.sourceSpan)));
     };
     /**
      * @param {?} expansion
@@ -55704,10 +56215,10 @@ var ElementContext = (function () {
      */
     ElementContext.create = function (isTemplateElement, directives, providerContext) {
         var /** @type {?} */ matcher = new SelectorMatcher();
-        var /** @type {?} */ wildcardNgContentIndex = null;
+        var /** @type {?} */ wildcardNgContentIndex = ((null));
         var /** @type {?} */ component = directives.find(function (directive) { return directive.directive.isComponent; });
         if (component) {
-            var /** @type {?} */ ngContentSelectors = component.directive.template.ngContentSelectors;
+            var /** @type {?} */ ngContentSelectors = ((component.directive.template)).ngContentSelectors;
             for (var /** @type {?} */ i = 0; i < ngContentSelectors.length; i++) {
                 var /** @type {?} */ selector = ngContentSelectors[i];
                 if (selector === '*') {
@@ -55796,18 +56307,17 @@ function isEmptyExpression(ast) {
  * @return {?}
  */
 function isTemplate(el, enableLegacyTemplate, reportDeprecation) {
-    var /** @type {?} */ tagNoNs = splitNsName(el.name)[1];
-    // `<ng-template>` is an angular construct and is lower case
-    if (tagNoNs === NG_TEMPLATE_ELEMENT)
+    if (isNgTemplate(el.name))
         return true;
+    var /** @type {?} */ tagNoNs = splitNsName(el.name)[1];
     // `<template>` is HTML and case insensitive
     if (tagNoNs.toLowerCase() === TEMPLATE_ELEMENT) {
         if (enableLegacyTemplate && tagNoNs.toLowerCase() === TEMPLATE_ELEMENT) {
-            reportDeprecation(TEMPLATE_ELEMENT_DEPRECATION_WARNING, el.sourceSpan);
+            reportDeprecation(TEMPLATE_ELEMENT_DEPRECATION_WARNING, /** @type {?} */ ((el.sourceSpan)));
             return true;
         }
-        return false;
     }
+    return false;
 }
 /**
  * An interface for retrieving documents by URL that the compiler uses
@@ -55910,7 +56420,7 @@ UrlResolver.decorators = [
  * @nocollapse
  */
 UrlResolver.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_53" /* PACKAGE_ROOT_URL */],] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_53" /* PACKAGE_ROOT_URL */],] },] },
 ]; };
 /**
  * Extract the scheme of a URL.
@@ -56073,7 +56583,7 @@ _ComponentIndex[_ComponentIndex.Fragment] = "Fragment";
  *     arbitrary strings may still look like path names.
  */
 function _split(uri) {
-    return uri.match(_splitRe);
+    return ((uri.match(_splitRe)));
 }
 /**
  * Removes dot segments in given path component, as described in
@@ -56194,8 +56704,9 @@ var DirectiveNormalizer = (function () {
         if (!normalizedDirective.isComponent) {
             return;
         }
-        this._resourceLoaderCache.delete(normalizedDirective.template.templateUrl);
-        normalizedDirective.template.externalStylesheets.forEach(function (stylesheet) { _this._resourceLoaderCache.delete(stylesheet.moduleUrl); });
+        var /** @type {?} */ template = ((normalizedDirective.template));
+        this._resourceLoaderCache.delete(/** @type {?} */ ((template.templateUrl)));
+        template.externalStylesheets.forEach(function (stylesheet) { _this._resourceLoaderCache.delete(/** @type {?} */ ((stylesheet.moduleUrl))); });
     };
     /**
      * @param {?} url
@@ -56204,7 +56715,7 @@ var DirectiveNormalizer = (function () {
     DirectiveNormalizer.prototype._fetch = function (url) {
         var /** @type {?} */ result = this._resourceLoaderCache.get(url);
         if (!result) {
-            result = this._resourceLoader.get(url);
+            result = ((this._resourceLoader.get(url)));
             this._resourceLoaderCache.set(url, result);
         }
         return result;
@@ -56215,19 +56726,19 @@ var DirectiveNormalizer = (function () {
      */
     DirectiveNormalizer.prototype.normalizeTemplate = function (prenormData) {
         var _this = this;
-        var /** @type {?} */ normalizedTemplateSync = null;
-        var /** @type {?} */ normalizedTemplateAsync;
-        if (prenormData.template != null) {
-            if (prenormData.templateUrl != null) {
+        var /** @type {?} */ normalizedTemplateSync = ((null));
+        var /** @type {?} */ normalizedTemplateAsync = ((undefined));
+        if (isDefined(prenormData.template)) {
+            if (isDefined(prenormData.templateUrl)) {
                 throw syntaxError("'" + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* ɵstringify */])(prenormData.componentType) + "' component cannot define both template and templateUrl");
             }
             if (typeof prenormData.template !== 'string') {
                 throw syntaxError("The template specified for component " + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* ɵstringify */])(prenormData.componentType) + " is not a string");
             }
             normalizedTemplateSync = this.normalizeTemplateSync(prenormData);
-            normalizedTemplateAsync = Promise.resolve(normalizedTemplateSync);
+            normalizedTemplateAsync = Promise.resolve(/** @type {?} */ ((normalizedTemplateSync)));
         }
-        else if (prenormData.templateUrl) {
+        else if (isDefined(prenormData.templateUrl)) {
             if (typeof prenormData.templateUrl !== 'string') {
                 throw syntaxError("The templateUrl specified for component " + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* ɵstringify */])(prenormData.componentType) + " is not a string");
             }
@@ -56250,7 +56761,7 @@ var DirectiveNormalizer = (function () {
      * @return {?}
      */
     DirectiveNormalizer.prototype.normalizeTemplateSync = function (prenomData) {
-        return this.normalizeLoadedTemplate(prenomData, prenomData.template, prenomData.moduleUrl);
+        return this.normalizeLoadedTemplate(prenomData, /** @type {?} */ ((prenomData.template)), prenomData.moduleUrl);
     };
     /**
      * @param {?} prenomData
@@ -56258,7 +56769,7 @@ var DirectiveNormalizer = (function () {
      */
     DirectiveNormalizer.prototype.normalizeTemplateAsync = function (prenomData) {
         var _this = this;
-        var /** @type {?} */ templateUrl = this._urlResolver.resolve(prenomData.moduleUrl, prenomData.templateUrl);
+        var /** @type {?} */ templateUrl = this._urlResolver.resolve(prenomData.moduleUrl, /** @type {?} */ ((prenomData.templateUrl)));
         return this._fetch(templateUrl)
             .then(function (value) { return _this.normalizeLoadedTemplate(prenomData, value, templateUrl); });
     };
@@ -56270,7 +56781,7 @@ var DirectiveNormalizer = (function () {
      */
     DirectiveNormalizer.prototype.normalizeLoadedTemplate = function (prenormData, template, templateAbsUrl) {
         var /** @type {?} */ isInline = !!prenormData.template;
-        var /** @type {?} */ interpolationConfig = InterpolationConfig.fromArray(prenormData.interpolation);
+        var /** @type {?} */ interpolationConfig = InterpolationConfig.fromArray(/** @type {?} */ ((prenormData.interpolation)));
         var /** @type {?} */ rootNodesAndErrors = this._htmlParser.parse(template, templateSourceUrl({ reference: prenormData.ngModuleType }, { type: { reference: prenormData.componentType } }, { isInline: isInline, templateUrl: templateAbsUrl }), true, interpolationConfig);
         if (rootNodesAndErrors.errors.length > 0) {
             var /** @type {?} */ errorString = rootNodesAndErrors.errors.join('\n');
@@ -56290,9 +56801,9 @@ var DirectiveNormalizer = (function () {
         }
         var /** @type {?} */ styles = templateMetadataStyles.styles.concat(templateStyles.styles);
         var /** @type {?} */ styleUrls = templateMetadataStyles.styleUrls.concat(templateStyles.styleUrls);
-        if (encapsulation === __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].Emulated && styles.length === 0 &&
+        if (encapsulation === __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].Emulated && styles.length === 0 &&
             styleUrls.length === 0) {
-            encapsulation = __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None;
+            encapsulation = __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].None;
         }
         return new CompileTemplateMetadata({
             encapsulation: encapsulation,
@@ -56300,7 +56811,8 @@ var DirectiveNormalizer = (function () {
             templateUrl: templateAbsUrl, styles: styles, styleUrls: styleUrls,
             ngContentSelectors: visitor.ngContentSelectors,
             animations: prenormData.animations,
-            interpolation: prenormData.interpolation, isInline: isInline
+            interpolation: prenormData.interpolation, isInline: isInline,
+            externalStylesheets: []
         });
     };
     /**
@@ -56345,14 +56857,15 @@ var DirectiveNormalizer = (function () {
      */
     DirectiveNormalizer.prototype.normalizeStylesheet = function (stylesheet) {
         var _this = this;
+        var /** @type {?} */ moduleUrl = ((stylesheet.moduleUrl));
         var /** @type {?} */ allStyleUrls = stylesheet.styleUrls.filter(isStyleUrlResolvable)
-            .map(function (url) { return _this._urlResolver.resolve(stylesheet.moduleUrl, url); });
+            .map(function (url) { return _this._urlResolver.resolve(moduleUrl, url); });
         var /** @type {?} */ allStyles = stylesheet.styles.map(function (style$$1) {
-            var /** @type {?} */ styleWithImports = extractStyleUrls(_this._urlResolver, stylesheet.moduleUrl, style$$1);
+            var /** @type {?} */ styleWithImports = extractStyleUrls(_this._urlResolver, moduleUrl, style$$1);
             allStyleUrls.push.apply(allStyleUrls, styleWithImports.styleUrls);
             return styleWithImports.style;
         });
-        return new CompileStylesheetMetadata({ styles: allStyles, styleUrls: allStyleUrls, moduleUrl: stylesheet.moduleUrl });
+        return new CompileStylesheetMetadata({ styles: allStyles, styleUrls: allStyleUrls, moduleUrl: moduleUrl });
     };
     return DirectiveNormalizer;
 }());
@@ -56479,7 +56992,6 @@ var DirectiveResolver = (function () {
         return typeMetadata && typeMetadata.some(isDirectiveMetadata);
     };
     /**
-     * Return {\@link Directive} for a given `Type`.
      * @param {?} type
      * @param {?=} throwIfNotFound
      * @return {?}
@@ -56561,7 +57073,7 @@ var DirectiveResolver = (function () {
      * @param {?} def
      * @return {?}
      */
-    DirectiveResolver.prototype._extractPublicName = function (def) { return splitAtColon(def, [null, def])[1].trim(); };
+    DirectiveResolver.prototype._extractPublicName = function (def) { return splitAtColon(def, [/** @type {?} */ ((null)), def])[1].trim(); };
     /**
      * @param {?} bindings
      * @return {?}
@@ -56932,7 +57444,7 @@ SummaryResolver.ctorParameters = function () { return []; };
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-var ERROR_COLLECTOR_TOKEN = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('ErrorCollector');
+var ERROR_COLLECTOR_TOKEN = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('ErrorCollector');
 var CompileMetadataResolver = (function () {
     /**
      * @param {?} _config
@@ -57112,7 +57624,7 @@ var CompileMetadataResolver = (function () {
         if (!typeSummary) {
             var /** @type {?} */ summary = this._summaryResolver.resolveSummary(type);
             typeSummary = summary ? summary.type : null;
-            this._summaryCache.set(type, typeSummary);
+            this._summaryCache.set(type, typeSummary || null);
         }
         return typeSummary && typeSummary.summaryKind === kind ? typeSummary : null;
     };
@@ -57125,12 +57637,13 @@ var CompileMetadataResolver = (function () {
     CompileMetadataResolver.prototype._loadDirectiveMetadata = function (ngModuleType, directiveType, isSync) {
         var _this = this;
         if (this._directiveCache.has(directiveType)) {
-            return;
+            return null;
         }
         directiveType = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_54" /* resolveForwardRef */])(directiveType);
-        var _a = this.getNonNormalizedDirectiveMetadata(directiveType), annotation = _a.annotation, metadata = _a.metadata;
+        var _a = ((this.getNonNormalizedDirectiveMetadata(directiveType))), annotation = _a.annotation, metadata = _a.metadata;
         var /** @type {?} */ createDirectiveMetadata = function (templateMetadata) {
             var /** @type {?} */ normalizedDirMeta = new CompileDirectiveMetadata({
+                isHost: false,
                 type: metadata.type,
                 isComponent: metadata.isComponent,
                 selector: metadata.selector,
@@ -57152,24 +57665,25 @@ var CompileMetadataResolver = (function () {
                 template: templateMetadata
             });
             if (templateMetadata) {
-                _this.initComponentFactory(metadata.componentFactory, templateMetadata.ngContentSelectors);
+                _this.initComponentFactory(/** @type {?} */ ((metadata.componentFactory)), templateMetadata.ngContentSelectors);
             }
             _this._directiveCache.set(directiveType, normalizedDirMeta);
             _this._summaryCache.set(directiveType, normalizedDirMeta.toSummary());
             return normalizedDirMeta;
         };
         if (metadata.isComponent) {
+            var /** @type {?} */ template = ((metadata.template));
             var /** @type {?} */ templateMeta = this._directiveNormalizer.normalizeTemplate({
                 ngModuleType: ngModuleType,
                 componentType: directiveType,
                 moduleUrl: componentModuleUrl(this._reflector, directiveType, annotation),
-                encapsulation: metadata.template.encapsulation,
-                template: metadata.template.template,
-                templateUrl: metadata.template.templateUrl,
-                styles: metadata.template.styles,
-                styleUrls: metadata.template.styleUrls,
-                animations: metadata.template.animations,
-                interpolation: metadata.template.interpolation
+                encapsulation: template.encapsulation,
+                template: template.template,
+                templateUrl: template.templateUrl,
+                styles: template.styles,
+                styleUrls: template.styleUrls,
+                animations: template.animations,
+                interpolation: template.interpolation
             });
             if (templateMeta.syncResult) {
                 createDirectiveMetadata(templateMeta.syncResult);
@@ -57180,7 +57694,7 @@ var CompileMetadataResolver = (function () {
                     this._reportError(componentStillLoadingError(directiveType), directiveType);
                     return null;
                 }
-                return templateMeta.asyncResult.then(createDirectiveMetadata);
+                return ((templateMeta.asyncResult)).then(createDirectiveMetadata);
             }
         }
         else {
@@ -57207,7 +57721,7 @@ var CompileMetadataResolver = (function () {
         if (!dirMeta) {
             return null;
         }
-        var /** @type {?} */ nonNormalizedTemplateMetadata;
+        var /** @type {?} */ nonNormalizedTemplateMetadata = ((undefined));
         if (dirMeta instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */]) {
             // component
             assertArrayOfStrings('styles', dirMeta.styles);
@@ -57215,29 +57729,31 @@ var CompileMetadataResolver = (function () {
             assertInterpolationSymbols('interpolation', dirMeta.interpolation);
             var /** @type {?} */ animations = dirMeta.animations;
             nonNormalizedTemplateMetadata = new CompileTemplateMetadata({
-                encapsulation: dirMeta.encapsulation,
-                template: dirMeta.template,
-                templateUrl: dirMeta.templateUrl,
-                styles: dirMeta.styles,
-                styleUrls: dirMeta.styleUrls,
-                animations: animations,
-                interpolation: dirMeta.interpolation,
-                isInline: !!dirMeta.template
+                encapsulation: noUndefined(dirMeta.encapsulation),
+                template: noUndefined(dirMeta.template),
+                templateUrl: noUndefined(dirMeta.templateUrl),
+                styles: dirMeta.styles || [],
+                styleUrls: dirMeta.styleUrls || [],
+                animations: animations || [],
+                interpolation: noUndefined(dirMeta.interpolation),
+                isInline: !!dirMeta.template,
+                externalStylesheets: [],
+                ngContentSelectors: []
             });
         }
-        var /** @type {?} */ changeDetectionStrategy = null;
+        var /** @type {?} */ changeDetectionStrategy = ((null));
         var /** @type {?} */ viewProviders = [];
         var /** @type {?} */ entryComponentMetadata = [];
         var /** @type {?} */ selector = dirMeta.selector;
         if (dirMeta instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */]) {
             // Component
-            changeDetectionStrategy = dirMeta.changeDetection;
+            changeDetectionStrategy = ((dirMeta.changeDetection));
             if (dirMeta.viewProviders) {
                 viewProviders = this._getProvidersMetadata(dirMeta.viewProviders, entryComponentMetadata, "viewProviders for \"" + stringifyType(directiveType) + "\"", [], directiveType);
             }
             if (dirMeta.entryComponents) {
                 entryComponentMetadata = flattenAndDedupeArray(dirMeta.entryComponents)
-                    .map(function (type) { return _this._getEntryComponentMetadata(type); })
+                    .map(function (type) { return ((_this._getEntryComponentMetadata(type))); })
                     .concat(entryComponentMetadata);
             }
             if (!selector) {
@@ -57262,24 +57778,25 @@ var CompileMetadataResolver = (function () {
             viewQueries = this._getQueriesMetadata(dirMeta.queries, true, directiveType);
         }
         var /** @type {?} */ metadata = CompileDirectiveMetadata.create({
+            isHost: false,
             selector: selector,
-            exportAs: dirMeta.exportAs,
+            exportAs: noUndefined(dirMeta.exportAs),
             isComponent: !!nonNormalizedTemplateMetadata,
             type: this._getTypeMetadata(directiveType),
             template: nonNormalizedTemplateMetadata,
             changeDetection: changeDetectionStrategy,
-            inputs: dirMeta.inputs,
-            outputs: dirMeta.outputs,
-            host: dirMeta.host,
-            providers: providers,
-            viewProviders: viewProviders,
-            queries: queries,
-            viewQueries: viewQueries,
+            inputs: dirMeta.inputs || [],
+            outputs: dirMeta.outputs || [],
+            host: dirMeta.host || {},
+            providers: providers || [],
+            viewProviders: viewProviders || [],
+            queries: queries || [],
+            viewQueries: viewQueries || [],
             entryComponents: entryComponentMetadata,
             componentViewType: nonNormalizedTemplateMetadata ? this.getComponentViewClass(directiveType) :
-                undefined,
-            rendererType: nonNormalizedTemplateMetadata ? this.getRendererType(directiveType) : undefined,
-            componentFactory: undefined
+                null,
+            rendererType: nonNormalizedTemplateMetadata ? this.getRendererType(directiveType) : null,
+            componentFactory: null
         });
         if (nonNormalizedTemplateMetadata) {
             metadata.componentFactory =
@@ -57296,7 +57813,7 @@ var CompileMetadataResolver = (function () {
      * @return {?}
      */
     CompileMetadataResolver.prototype.getDirectiveMetadata = function (directiveType) {
-        var /** @type {?} */ dirMeta = this._directiveCache.get(directiveType);
+        var /** @type {?} */ dirMeta = ((this._directiveCache.get(directiveType)));
         if (!dirMeta) {
             this._reportError(syntaxError("Illegal state: getDirectiveMetadata can only be called after loadNgModuleDirectiveAndPipeMetadata for a module that declares it. Directive " + stringifyType(directiveType) + "."), directiveType);
         }
@@ -57389,7 +57906,7 @@ var CompileMetadataResolver = (function () {
         var /** @type {?} */ schemas = [];
         if (meta.imports) {
             flattenAndDedupeArray(meta.imports).forEach(function (importedType) {
-                var /** @type {?} */ importedModuleType;
+                var /** @type {?} */ importedModuleType = ((undefined));
                 if (isValidType(importedType)) {
                     importedModuleType = importedType;
                 }
@@ -57481,7 +57998,7 @@ var CompileMetadataResolver = (function () {
         }
         if (meta.entryComponents) {
             entryComponents.push.apply(entryComponents, flattenAndDedupeArray(meta.entryComponents)
-                .map(function (type) { return _this._getEntryComponentMetadata(type); }));
+                .map(function (type) { return ((_this._getEntryComponentMetadata(type))); }));
         }
         if (meta.bootstrap) {
             flattenAndDedupeArray(meta.bootstrap).forEach(function (type) {
@@ -57492,7 +58009,7 @@ var CompileMetadataResolver = (function () {
                 bootstrapComponents.push(_this._getIdentifierMetadata(type));
             });
         }
-        entryComponents.push.apply(entryComponents, bootstrapComponents.map(function (type) { return _this._getEntryComponentMetadata(type.reference); }));
+        entryComponents.push.apply(entryComponents, bootstrapComponents.map(function (type) { return ((_this._getEntryComponentMetadata(type.reference))); }));
         if (meta.schemas) {
             schemas.push.apply(schemas, flattenAndDedupeArray(meta.schemas));
         }
@@ -57509,10 +58026,10 @@ var CompileMetadataResolver = (function () {
             importedModules: importedModules,
             exportedModules: exportedModules,
             transitiveModule: transitiveModule,
-            id: meta.id,
+            id: meta.id || null,
         });
         entryComponents.forEach(function (id) { return transitiveModule.addEntryComponent(id); });
-        providers.forEach(function (provider) { return transitiveModule.addProvider(provider, compileMeta.type); });
+        providers.forEach(function (provider) { return transitiveModule.addProvider(provider, /** @type {?} */ ((compileMeta)).type); });
         transitiveModule.addModule(compileMeta.type);
         this._ngModuleCache.set(moduleType, compileMeta);
         return compileMeta;
@@ -57619,7 +58136,7 @@ var CompileMetadataResolver = (function () {
         var /** @type {?} */ annotations = this._reflector.annotations(type);
         // Note: We need an exact check here as @Component / @Directive / ... inherit
         // from @CompilerInjectable!
-        return annotations.some(function (ann) { return ann.constructor === __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */]; });
+        return annotations.some(function (ann) { return ann.constructor === __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */]; });
     };
     /**
      * @param {?} type
@@ -57681,7 +58198,7 @@ var CompileMetadataResolver = (function () {
         if (!pipeMeta) {
             this._reportError(syntaxError("Illegal state: getPipeMetadata can only be called after loadNgModuleDirectiveAndPipeMetadata for a module that declares it. Pipe " + stringifyType(pipeType) + "."), pipeType);
         }
-        return pipeMeta;
+        return pipeMeta || null;
     };
     /**
      * @param {?} pipeType
@@ -57711,11 +58228,11 @@ var CompileMetadataResolver = (function () {
      */
     CompileMetadataResolver.prototype._loadPipeMetadata = function (pipeType) {
         pipeType = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_54" /* resolveForwardRef */])(pipeType);
-        var /** @type {?} */ pipeAnnotation = this._pipeResolver.resolve(pipeType);
+        var /** @type {?} */ pipeAnnotation = ((this._pipeResolver.resolve(pipeType)));
         var /** @type {?} */ pipeMeta = new CompilePipeMetadata({
             type: this._getTypeMetadata(pipeType),
             name: pipeAnnotation.name,
-            pure: pipeAnnotation.pure
+            pure: !!pipeAnnotation.pure
         });
         this._pipeCache.set(pipeType, pipeMeta);
         this._summaryCache.set(pipeType, pipeMeta.toSummary());
@@ -57747,20 +58264,20 @@ var CompileMetadataResolver = (function () {
                     else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */]) {
                         isSelf = true;
                     }
-                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */]) {
+                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */]) {
                         isSkipSelf = true;
                     }
-                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */]) {
+                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */]) {
                         isOptional = true;
                     }
                     else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Attribute */]) {
                         isAttribute = true;
                         token = paramEntry.attributeName;
                     }
-                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */]) {
+                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */]) {
                         token = paramEntry.token;
                     }
-                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]) {
+                    else if (paramEntry instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]) {
                         token = paramEntry;
                     }
                     else if (isValidType(paramEntry) && token == null) {
@@ -57773,7 +58290,7 @@ var CompileMetadataResolver = (function () {
             }
             if (token == null) {
                 hasUnknownDeps = true;
-                return null;
+                return ((null));
             }
             return {
                 isAttribute: isAttribute,
@@ -57828,7 +58345,7 @@ var CompileMetadataResolver = (function () {
             }
             else {
                 provider = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_54" /* resolveForwardRef */])(provider);
-                var /** @type {?} */ providerMeta = void 0;
+                var /** @type {?} */ providerMeta = ((undefined));
                 if (provider && typeof provider === 'object' && provider.hasOwnProperty('provide')) {
                     _this._validateProvider(provider);
                     providerMeta = new ProviderMeta(provider.provide, provider);
@@ -57911,24 +58428,25 @@ var CompileMetadataResolver = (function () {
         if (throwIfNotFound === void 0) { throwIfNotFound = true; }
         var /** @type {?} */ dirMeta = this.getNonNormalizedDirectiveMetadata(dirType);
         if (dirMeta && dirMeta.metadata.isComponent) {
-            return { componentType: dirType, componentFactory: dirMeta.metadata.componentFactory };
+            return { componentType: dirType, componentFactory: /** @type {?} */ ((dirMeta.metadata.componentFactory)) };
         }
         var /** @type {?} */ dirSummary = (this._loadSummary(dirType, CompileSummaryKind.Directive));
         if (dirSummary && dirSummary.isComponent) {
-            return { componentType: dirType, componentFactory: dirSummary.componentFactory };
+            return { componentType: dirType, componentFactory: /** @type {?} */ ((dirSummary.componentFactory)) };
         }
         if (throwIfNotFound) {
             throw syntaxError(dirType.name + " cannot be used as an entry component.");
         }
+        return null;
     };
     /**
      * @param {?} provider
      * @return {?}
      */
     CompileMetadataResolver.prototype.getProviderMetadata = function (provider) {
-        var /** @type {?} */ compileDeps;
-        var /** @type {?} */ compileTypeMetadata = null;
-        var /** @type {?} */ compileFactoryMetadata = null;
+        var /** @type {?} */ compileDeps = ((undefined));
+        var /** @type {?} */ compileTypeMetadata = ((null));
+        var /** @type {?} */ compileFactoryMetadata = ((null));
         var /** @type {?} */ token = this._getTokenMetadata(provider.token);
         if (provider.useClass) {
             compileTypeMetadata = this._getInjectableMetadata(provider.useClass, provider.dependencies);
@@ -57947,7 +58465,7 @@ var CompileMetadataResolver = (function () {
             useClass: compileTypeMetadata,
             useValue: provider.useValue,
             useFactory: compileFactoryMetadata,
-            useExisting: provider.useExisting ? this._getTokenMetadata(provider.useExisting) : null,
+            useExisting: provider.useExisting ? this._getTokenMetadata(provider.useExisting) : undefined,
             deps: compileDeps,
             multi: provider.multi
         };
@@ -58000,7 +58518,7 @@ var CompileMetadataResolver = (function () {
             selectors: selectors,
             first: q.first,
             descendants: q.descendants, propertyName: propertyName,
-            read: q.read ? this._getTokenMetadata(q.read) : null
+            read: q.read ? this._getTokenMetadata(q.read) : ((null))
         };
     };
     /**
@@ -58037,9 +58555,9 @@ CompileMetadataResolver.ctorParameters = function () { return [
     { type: ElementSchemaRegistry, },
     { type: DirectiveNormalizer, },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_52" /* ɵConsole */], },
-    { type: StaticSymbolCache, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] },] },
+    { type: StaticSymbolCache, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] },] },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_56" /* ɵReflectorReader */], },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [ERROR_COLLECTOR_TOKEN,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [ERROR_COLLECTOR_TOKEN,] },] },
 ]; };
 /**
  * @param {?} tree
@@ -58104,7 +58622,7 @@ function componentModuleUrl(reflector, type, cmpMetadata) {
         throw syntaxError("moduleId should be a string in \"" + stringifyType(type) + "\". See https://goo.gl/wIDDiL for more information.\n" +
             "If you're using Webpack you should inline the template and the styles, see https://goo.gl/X2J8zc.");
     }
-    return reflector.importUri(type);
+    return ((reflector.importUri(type)));
 }
 /**
  * @param {?} value
@@ -58186,7 +58704,7 @@ var Type$1 = (function () {
      * @param {?} modifier
      * @return {?}
      */
-    Type$1.prototype.hasModifier = function (modifier) { return this.modifiers.indexOf(modifier) !== -1; };
+    Type$1.prototype.hasModifier = function (modifier) { return ((this.modifiers)).indexOf(modifier) !== -1; };
     return Type$1;
 }());
 var BuiltinTypeName = {};
@@ -58279,7 +58797,7 @@ var MapType = (function (_super) {
     function MapType(valueType, modifiers) {
         if (modifiers === void 0) { modifiers = null; }
         var _this = _super.call(this, modifiers) || this;
-        _this.valueType = valueType;
+        _this.valueType = valueType || null;
         return _this;
     }
     /**
@@ -58337,8 +58855,8 @@ var Expression = (function () {
      * @param {?=} sourceSpan
      */
     function Expression(type, sourceSpan) {
-        this.type = type;
-        this.sourceSpan = sourceSpan;
+        this.type = type || null;
+        this.sourceSpan = sourceSpan || null;
     }
     /**
      * @abstract
@@ -58362,7 +58880,6 @@ var Expression = (function () {
      * @return {?}
      */
     Expression.prototype.key = function (index, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         return new ReadKeyExpr(this, index, type, sourceSpan);
     };
     /**
@@ -58389,7 +58906,6 @@ var Expression = (function () {
      * @return {?}
      */
     Expression.prototype.instantiate = function (params, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         return new InstantiateExpr(this, params, type, sourceSpan);
     };
     /**
@@ -58542,7 +59058,7 @@ var Expression = (function () {
     /**
      * @return {?}
      */
-    Expression.prototype.toStmt = function () { return new ExpressionStatement(this); };
+    Expression.prototype.toStmt = function () { return new ExpressionStatement(this, null); };
     return Expression;
 }());
 var BuiltinVar = {};
@@ -58562,7 +59078,6 @@ var ReadVarExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function ReadVarExpr(name, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         if (typeof name === 'string') {
             _this.name = name;
@@ -58587,6 +59102,9 @@ var ReadVarExpr = (function (_super) {
      * @return {?}
      */
     ReadVarExpr.prototype.set = function (value) {
+        if (!this.name) {
+            throw new Error("Built in variable " + this.builtin + " can not be assigned to.");
+        }
         return new WriteVarExpr(this.name, value, null, this.sourceSpan);
     };
     return ReadVarExpr;
@@ -58600,7 +59118,6 @@ var WriteVarExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function WriteVarExpr(name, value, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type || value.type, sourceSpan) || this;
         _this.name = name;
         _this.value = value;
@@ -58620,8 +59137,6 @@ var WriteVarExpr = (function (_super) {
      * @return {?}
      */
     WriteVarExpr.prototype.toDeclStmt = function (type, modifiers) {
-        if (type === void 0) { type = null; }
-        if (modifiers === void 0) { modifiers = null; }
         return new DeclareVarStmt(this.name, this.value, type, modifiers, this.sourceSpan);
     };
     return WriteVarExpr;
@@ -58636,7 +59151,6 @@ var WriteKeyExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function WriteKeyExpr(receiver, index, value, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type || value.type, sourceSpan) || this;
         _this.receiver = receiver;
         _this.index = index;
@@ -58663,7 +59177,6 @@ var WritePropExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function WritePropExpr(receiver, name, value, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type || value.type, sourceSpan) || this;
         _this.receiver = receiver;
         _this.name = name;
@@ -58697,7 +59210,6 @@ var InvokeMethodExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function InvokeMethodExpr(receiver, method, args, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.receiver = receiver;
         _this.args = args;
@@ -58730,7 +59242,6 @@ var InvokeFunctionExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function InvokeFunctionExpr(fn, args, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.fn = fn;
         _this.args = args;
@@ -58778,7 +59289,6 @@ var LiteralExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function LiteralExpr(value, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.value = value;
         return _this;
@@ -58802,7 +59312,6 @@ var ExternalExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function ExternalExpr(value, type, typeParams, sourceSpan) {
-        if (type === void 0) { type = null; }
         if (typeParams === void 0) { typeParams = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.value = value;
@@ -58830,7 +59339,6 @@ var ConditionalExpr = (function (_super) {
      */
     function ConditionalExpr(condition, trueCase, falseCase, type, sourceSpan) {
         if (falseCase === void 0) { falseCase = null; }
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type || trueCase.type, sourceSpan) || this;
         _this.condition = condition;
         _this.falseCase = falseCase;
@@ -58872,7 +59380,7 @@ var CastExpr = (function (_super) {
     __extends(CastExpr, _super);
     /**
      * @param {?} value
-     * @param {?} type
+     * @param {?=} type
      * @param {?=} sourceSpan
      */
     function CastExpr(value, type, sourceSpan) {
@@ -58911,7 +59419,6 @@ var FunctionExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function FunctionExpr(params, statements, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.params = params;
         _this.statements = statements;
@@ -58946,7 +59453,6 @@ var BinaryOperatorExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function BinaryOperatorExpr(operator, lhs, rhs, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type || lhs.type, sourceSpan) || this;
         _this.operator = operator;
         _this.rhs = rhs;
@@ -58972,7 +59478,6 @@ var ReadPropExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function ReadPropExpr(receiver, name, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.receiver = receiver;
         _this.name = name;
@@ -59004,7 +59509,6 @@ var ReadKeyExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function ReadKeyExpr(receiver, index, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.receiver = receiver;
         _this.index = index;
@@ -59035,7 +59539,6 @@ var LiteralArrayExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function LiteralArrayExpr(entries, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.entries = entries;
         return _this;
@@ -59072,7 +59575,6 @@ var LiteralMapExpr = (function (_super) {
      * @param {?=} sourceSpan
      */
     function LiteralMapExpr(entries, type, sourceSpan) {
-        if (type === void 0) { type = null; }
         var _this = _super.call(this, type, sourceSpan) || this;
         _this.entries = entries;
         _this.valueType = null;
@@ -59112,12 +59614,12 @@ var CommaExpr = (function (_super) {
     };
     return CommaExpr;
 }(Expression));
-var THIS_EXPR = new ReadVarExpr(BuiltinVar.This);
-var SUPER_EXPR = new ReadVarExpr(BuiltinVar.Super);
-var CATCH_ERROR_VAR = new ReadVarExpr(BuiltinVar.CatchError);
-var CATCH_STACK_VAR = new ReadVarExpr(BuiltinVar.CatchStack);
-var NULL_EXPR = new LiteralExpr(null, null);
-var TYPED_NULL_EXPR = new LiteralExpr(null, INFERRED_TYPE);
+var THIS_EXPR = new ReadVarExpr(BuiltinVar.This, null, null);
+var SUPER_EXPR = new ReadVarExpr(BuiltinVar.Super, null, null);
+var CATCH_ERROR_VAR = new ReadVarExpr(BuiltinVar.CatchError, null, null);
+var CATCH_STACK_VAR = new ReadVarExpr(BuiltinVar.CatchStack, null, null);
+var NULL_EXPR = new LiteralExpr(null, null, null);
+var TYPED_NULL_EXPR = new LiteralExpr(null, INFERRED_TYPE, null);
 var StmtModifier = {};
 StmtModifier.Final = 0;
 StmtModifier.Private = 1;
@@ -59132,12 +59634,8 @@ var Statement = (function () {
      * @param {?=} sourceSpan
      */
     function Statement(modifiers, sourceSpan) {
-        if (modifiers === void 0) { modifiers = null; }
-        this.modifiers = modifiers;
-        this.sourceSpan = sourceSpan;
-        if (!modifiers) {
-            this.modifiers = [];
-        }
+        this.modifiers = modifiers || [];
+        this.sourceSpan = sourceSpan || null;
     }
     /**
      * @abstract
@@ -59150,7 +59648,7 @@ var Statement = (function () {
      * @param {?} modifier
      * @return {?}
      */
-    Statement.prototype.hasModifier = function (modifier) { return this.modifiers.indexOf(modifier) !== -1; };
+    Statement.prototype.hasModifier = function (modifier) { return ((this.modifiers)).indexOf(modifier) !== -1; };
     return Statement;
 }());
 var DeclareVarStmt = (function (_super) {
@@ -59163,7 +59661,6 @@ var DeclareVarStmt = (function (_super) {
      * @param {?=} sourceSpan
      */
     function DeclareVarStmt(name, value, type, modifiers, sourceSpan) {
-        if (type === void 0) { type = null; }
         if (modifiers === void 0) { modifiers = null; }
         var _this = _super.call(this, modifiers, sourceSpan) || this;
         _this.name = name;
@@ -59192,13 +59689,12 @@ var DeclareFunctionStmt = (function (_super) {
      * @param {?=} sourceSpan
      */
     function DeclareFunctionStmt(name, params, statements, type, modifiers, sourceSpan) {
-        if (type === void 0) { type = null; }
         if (modifiers === void 0) { modifiers = null; }
         var _this = _super.call(this, modifiers, sourceSpan) || this;
         _this.name = name;
         _this.params = params;
         _this.statements = statements;
-        _this.type = type;
+        _this.type = type || null;
         return _this;
     }
     /**
@@ -59255,22 +59751,21 @@ var ReturnStatement = (function (_super) {
 }(Statement));
 var AbstractClassPart = (function () {
     /**
-     * @param {?=} type
-     * @param {?=} modifiers
+     * @param {?} type
+     * @param {?} modifiers
      */
     function AbstractClassPart(type, modifiers) {
-        if (type === void 0) { type = null; }
-        this.type = type;
         this.modifiers = modifiers;
         if (!modifiers) {
             this.modifiers = [];
         }
+        this.type = type || null;
     }
     /**
      * @param {?} modifier
      * @return {?}
      */
-    AbstractClassPart.prototype.hasModifier = function (modifier) { return this.modifiers.indexOf(modifier) !== -1; };
+    AbstractClassPart.prototype.hasModifier = function (modifier) { return ((this.modifiers)).indexOf(modifier) !== -1; };
     return AbstractClassPart;
 }());
 var ClassField = (function (_super) {
@@ -59281,7 +59776,6 @@ var ClassField = (function (_super) {
      * @param {?=} modifiers
      */
     function ClassField(name, type, modifiers) {
-        if (type === void 0) { type = null; }
         if (modifiers === void 0) { modifiers = null; }
         var _this = _super.call(this, type, modifiers) || this;
         _this.name = name;
@@ -59299,7 +59793,6 @@ var ClassMethod = (function (_super) {
      * @param {?=} modifiers
      */
     function ClassMethod(name, params, body, type, modifiers) {
-        if (type === void 0) { type = null; }
         if (modifiers === void 0) { modifiers = null; }
         var _this = _super.call(this, type, modifiers) || this;
         _this.name = name;
@@ -59318,7 +59811,6 @@ var ClassGetter = (function (_super) {
      * @param {?=} modifiers
      */
     function ClassGetter(name, body, type, modifiers) {
-        if (type === void 0) { type = null; }
         if (modifiers === void 0) { modifiers = null; }
         var _this = _super.call(this, type, modifiers) || this;
         _this.name = name;
@@ -59482,7 +59974,7 @@ var AstTransformer$1 = (function () {
      */
     AstTransformer$1.prototype.visitInvokeMethodExpr = function (ast, context) {
         var /** @type {?} */ method = ast.builtin || ast.name;
-        return this.transformExpr(new InvokeMethodExpr(ast.receiver.visitExpression(this, context), method, this.visitAllExpressions(ast.args, context), ast.type, ast.sourceSpan), context);
+        return this.transformExpr(new InvokeMethodExpr(ast.receiver.visitExpression(this, context), /** @type {?} */ ((method)), this.visitAllExpressions(ast.args, context), ast.type, ast.sourceSpan), context);
     };
     /**
      * @param {?} ast
@@ -59520,7 +60012,7 @@ var AstTransformer$1 = (function () {
      * @return {?}
      */
     AstTransformer$1.prototype.visitConditionalExpr = function (ast, context) {
-        return this.transformExpr(new ConditionalExpr(ast.condition.visitExpression(this, context), ast.trueCase.visitExpression(this, context), ast.falseCase.visitExpression(this, context), ast.type, ast.sourceSpan), context);
+        return this.transformExpr(new ConditionalExpr(ast.condition.visitExpression(this, context), ast.trueCase.visitExpression(this, context), /** @type {?} */ ((ast.falseCase)).visitExpression(this, context), ast.type, ast.sourceSpan), context);
     };
     /**
      * @param {?} ast
@@ -59586,7 +60078,7 @@ var AstTransformer$1 = (function () {
     AstTransformer$1.prototype.visitLiteralMapExpr = function (ast, context) {
         var _this = this;
         var /** @type {?} */ entries = ast.entries.map(function (entry) { return new LiteralMapEntry(entry.key, entry.value.visitExpression(_this, context), entry.quoted); });
-        var /** @type {?} */ mapType = new MapType(ast.valueType);
+        var /** @type {?} */ mapType = new MapType(ast.valueType, null);
         return this.transformExpr(new LiteralMapExpr(entries, mapType, ast.sourceSpan), context);
     };
     /**
@@ -59645,7 +60137,7 @@ var AstTransformer$1 = (function () {
      */
     AstTransformer$1.prototype.visitDeclareClassStmt = function (stmt, context) {
         var _this = this;
-        var /** @type {?} */ parent = stmt.parent.visitExpression(this, context);
+        var /** @type {?} */ parent = ((stmt.parent)).visitExpression(this, context);
         var /** @type {?} */ getters = stmt.getters.map(function (getter) { return new ClassGetter(getter.name, _this.visitAllStatements(getter.body, context), getter.type, getter.modifiers); });
         var /** @type {?} */ ctorMethod = stmt.constructorMethod &&
             new ClassMethod(stmt.constructorMethod.name, stmt.constructorMethod.params, this.visitAllStatements(stmt.constructorMethod.body, context), stmt.constructorMethod.type, stmt.constructorMethod.modifiers);
@@ -59783,8 +60275,8 @@ var RecursiveAstVisitor$1 = (function () {
      */
     RecursiveAstVisitor$1.prototype.visitConditionalExpr = function (ast, context) {
         ast.condition.visitExpression(this, context);
-        ast.trueCase.visitExpression(this, context);
-        ast.falseCase.visitExpression(this, context);
+        ast.trueCase.visitExpression(this, context); /** @type {?} */
+        ((ast.falseCase)).visitExpression(this, context);
         return ast;
     };
     /**
@@ -59922,7 +60414,7 @@ var RecursiveAstVisitor$1 = (function () {
      */
     RecursiveAstVisitor$1.prototype.visitDeclareClassStmt = function (stmt, context) {
         var _this = this;
-        stmt.parent.visitExpression(this, context);
+        ((stmt.parent)).visitExpression(this, context);
         stmt.getters.forEach(function (getter) { return _this.visitAllStatements(getter.body, context); });
         if (stmt.constructorMethod) {
             this.visitAllStatements(stmt.constructorMethod.body, context);
@@ -60017,7 +60509,9 @@ var _ReadVarVisitor = (function (_super) {
      * @return {?}
      */
     _ReadVarVisitor.prototype.visitReadVarExpr = function (ast, context) {
-        this.varNames.add(ast.name);
+        if (ast.name) {
+            this.varNames.add(ast.name);
+        }
         return null;
     };
     return _ReadVarVisitor;
@@ -60100,7 +60594,6 @@ var _ApplySourceSpanTransformer = (function (_super) {
  * @return {?}
  */
 function variable(name, type, sourceSpan) {
-    if (type === void 0) { type = null; }
     return new ReadVarExpr(name, type, sourceSpan);
 }
 /**
@@ -60122,7 +60615,7 @@ function importExpr(id, typeParams, sourceSpan) {
 function importType(id, typeParams, typeModifiers) {
     if (typeParams === void 0) { typeParams = null; }
     if (typeModifiers === void 0) { typeModifiers = null; }
-    return id != null ? expressionType(importExpr(id, typeParams), typeModifiers) : null;
+    return id != null ? expressionType(importExpr(id, typeParams, null), typeModifiers) : null;
 }
 /**
  * @param {?} expr
@@ -60131,7 +60624,7 @@ function importType(id, typeParams, typeModifiers) {
  */
 function expressionType(expr, typeModifiers) {
     if (typeModifiers === void 0) { typeModifiers = null; }
-    return expr != null ? new ExpressionType(expr, typeModifiers) : null;
+    return expr != null ? ((new ExpressionType(expr, typeModifiers))) : null;
 }
 /**
  * @param {?} values
@@ -60140,7 +60633,6 @@ function expressionType(expr, typeModifiers) {
  * @return {?}
  */
 function literalArr(values, type, sourceSpan) {
-    if (type === void 0) { type = null; }
     return new LiteralArrayExpr(values, type, sourceSpan);
 }
 /**
@@ -60152,7 +60644,7 @@ function literalArr(values, type, sourceSpan) {
 function literalMap(values, type, quoted) {
     if (type === void 0) { type = null; }
     if (quoted === void 0) { quoted = false; }
-    return new LiteralMapExpr(values.map(function (entry) { return new LiteralMapEntry(entry[0], entry[1], quoted); }), type);
+    return new LiteralMapExpr(values.map(function (entry) { return new LiteralMapEntry(entry[0], entry[1], quoted); }), type, null);
 }
 /**
  * @param {?} expr
@@ -60170,7 +60662,6 @@ function not(expr, sourceSpan) {
  * @return {?}
  */
 function fn(params, body, type, sourceSpan) {
-    if (type === void 0) { type = null; }
     return new FunctionExpr(params, body, type, sourceSpan);
 }
 /**
@@ -60180,7 +60671,6 @@ function fn(params, body, type, sourceSpan) {
  * @return {?}
  */
 function literal(value, type, sourceSpan) {
-    if (type === void 0) { type = null; }
     return new LiteralExpr(value, type, sourceSpan);
 }
 /**
@@ -60200,7 +60690,7 @@ function createClassStmt(config) {
     var /** @type {?} */ superCtorStmts = config.parent ? [SUPER_EXPR.callFn(parentArgs).toStmt()] : [];
     var /** @type {?} */ builder = concatClassBuilderParts(Array.isArray(config.builders) ? config.builders : [config.builders]);
     var /** @type {?} */ ctor = new ClassMethod(null, config.ctorParams || [], superCtorStmts.concat(builder.ctorStmts));
-    return new ClassStmt(config.name, config.parent, builder.fields, builder.getters, ctor, builder.methods, config.modifiers || [], config.sourceSpan);
+    return new ClassStmt(config.name, config.parent || null, builder.fields, builder.getters, ctor, builder.methods, config.modifiers || [], config.sourceSpan);
 }
 /**
  * @param {?} builders
@@ -60208,10 +60698,10 @@ function createClassStmt(config) {
  */
 function concatClassBuilderParts(builders) {
     return {
-        fields: [].concat.apply([], builders.map(function (builder) { return builder.fields || []; })),
-        methods: [].concat.apply([], builders.map(function (builder) { return builder.methods || []; })),
-        getters: [].concat.apply([], builders.map(function (builder) { return builder.getters || []; })),
-        ctorStmts: [].concat.apply([], builders.map(function (builder) { return builder.ctorStmts || []; })),
+        fields: [].concat.apply([], ((builders.map((function (builder) { return builder.fields || []; }))))),
+        methods: [].concat.apply([], ((builders.map(function (builder) { return builder.methods || []; })))),
+        getters: [].concat.apply([], ((builders.map(function (builder) { return builder.getters || []; })))),
+        ctorStmts: [].concat.apply([], ((builders.map(function (builder) { return builder.ctorStmts || []; })))),
     };
 }
 /**
@@ -60337,7 +60827,7 @@ var NgModuleCompiler = (function () {
         var /** @type {?} */ ngModuleFactoryVar = identifierName(ngModuleMeta.type) + "NgFactory";
         var /** @type {?} */ ngModuleFactoryStmt = variable(ngModuleFactoryVar)
             .set(importExpr(createIdentifier(Identifiers.NgModuleFactory))
-            .instantiate([variable(injectorClass.name), importExpr(ngModuleMeta.type)], importType(createIdentifier(Identifiers.NgModuleFactory), [importType(ngModuleMeta.type)], [TypeModifier.Const])))
+            .instantiate([variable(injectorClass.name), importExpr(ngModuleMeta.type)], importType(createIdentifier(Identifiers.NgModuleFactory), [/** @type {?} */ ((importType(ngModuleMeta.type)))], [TypeModifier.Const])))
             .toDeclStmt(null, [StmtModifier.Final]);
         var /** @type {?} */ stmts = [injectorClass, ngModuleFactoryStmt];
         if (ngModuleMeta.id) {
@@ -60391,7 +60881,7 @@ var _InjectorBuilder = (function () {
         if (resolvedProvider.lifecycleHooks.indexOf(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_57" /* ɵLifecycleHooks */].OnDestroy) !== -1) {
             var /** @type {?} */ callNgOnDestroy = instance.callMethod('ngOnDestroy', []);
             if (!resolvedProvider.eager) {
-                callNgOnDestroy = this._lazyProps.get(instance.name).and(callNgOnDestroy);
+                callNgOnDestroy = ((this._lazyProps.get(instance.name))).and(callNgOnDestroy);
             }
             this._destroyStmts.push(callNgOnDestroy.toStmt());
         }
@@ -60404,14 +60894,14 @@ var _InjectorBuilder = (function () {
     _InjectorBuilder.prototype.build = function () {
         var _this = this;
         var /** @type {?} */ getMethodStmts = this._tokens.map(function (token) {
-            var /** @type {?} */ providerExpr = _this._instances.get(tokenReference(token));
+            var /** @type {?} */ providerExpr = ((_this._instances.get(tokenReference(token))));
             return new IfStmt(InjectMethodVars.token.identical(createDiTokenExpression(token)), [new ReturnStatement(providerExpr)]);
         });
         var /** @type {?} */ methods = [
-            new ClassMethod('createInternal', [], this._createStmts.concat(new ReturnStatement(this._instances.get(this._ngModuleMeta.type.reference))), importType(this._ngModuleMeta.type)),
+            new ClassMethod('createInternal', [], this._createStmts.concat(new ReturnStatement(/** @type {?} */ ((this._instances.get(this._ngModuleMeta.type.reference))))), importType(this._ngModuleMeta.type)),
             new ClassMethod('getInternal', [
-                new FnParam(InjectMethodVars.token.name, DYNAMIC_TYPE),
-                new FnParam(InjectMethodVars.notFoundResult.name, DYNAMIC_TYPE)
+                new FnParam(/** @type {?} */ ((InjectMethodVars.token.name)), DYNAMIC_TYPE),
+                new FnParam(/** @type {?} */ ((InjectMethodVars.notFoundResult.name)), DYNAMIC_TYPE)
             ], getMethodStmts.concat([new ReturnStatement(InjectMethodVars.notFoundResult)]), DYNAMIC_TYPE),
             new ClassMethod('destroyInternal', [], this._destroyStmts),
         ];
@@ -60424,7 +60914,7 @@ var _InjectorBuilder = (function () {
         return createClassStmt({
             name: injClassName,
             ctorParams: [new FnParam(InjectorProps.parent.name, importType(createIdentifier(Identifiers.Injector)))],
-            parent: importExpr(createIdentifier(Identifiers.NgModuleInjector), [importType(this._ngModuleMeta.type)]),
+            parent: importExpr(createIdentifier(Identifiers.NgModuleInjector), [/** @type {?} */ ((importType(this._ngModuleMeta.type)))]),
             parentArgs: parentArgs,
             builders: [{ methods: methods }, this]
         });
@@ -60472,7 +60962,7 @@ var _InjectorBuilder = (function () {
         }
         else {
             resolvedProviderValueExpr = providerValueExpressions[0];
-            type = providerValueExpressions[0].type;
+            type = ((providerValueExpressions[0].type));
         }
         if (!type) {
             type = DYNAMIC_TYPE;
@@ -60499,7 +60989,7 @@ var _InjectorBuilder = (function () {
      * @return {?}
      */
     _InjectorBuilder.prototype._getDependency = function (dep) {
-        var /** @type {?} */ result = null;
+        var /** @type {?} */ result = ((null));
         if (dep.isValue) {
             result = literal(dep.value);
         }
@@ -60513,11 +61003,11 @@ var _InjectorBuilder = (function () {
                 }
             }
             if (!result) {
-                result = this._instances.get(tokenReference(dep.token));
+                result = ((this._instances.get(tokenReference(/** @type {?} */ ((dep.token))))));
             }
         }
         if (!result) {
-            var /** @type {?} */ args = [createDiTokenExpression(dep.token)];
+            var /** @type {?} */ args = [createDiTokenExpression(/** @type {?} */ ((dep.token)))];
             if (dep.isOptional) {
                 args.push(NULL_EXPR);
             }
@@ -60536,7 +61026,7 @@ function createDiTokenExpression(token) {
         return literal(token.value);
     }
     else {
-        return importExpr(token.identifier);
+        return importExpr(/** @type {?} */ ((token.identifier)));
     }
 }
 var InjectorProps = (function () {
@@ -60661,14 +61151,14 @@ var SourceMapGenerator = (function () {
                 if (segment.sourceUrl != null) {
                     // zero-based index into the “sources” list
                     segAsStr +=
-                        toBase64VLQ(sourcesIndex.get(segment.sourceUrl) - lastSourceIndex);
-                    lastSourceIndex = sourcesIndex.get(segment.sourceUrl);
+                        toBase64VLQ(/** @type {?} */ ((sourcesIndex.get(segment.sourceUrl))) - lastSourceIndex);
+                    lastSourceIndex = ((sourcesIndex.get(segment.sourceUrl)));
                     // the zero-based starting line in the original source
-                    segAsStr += toBase64VLQ(segment.sourceLine0 - lastSourceLine0);
-                    lastSourceLine0 = segment.sourceLine0;
+                    segAsStr += toBase64VLQ(/** @type {?} */ ((segment.sourceLine0)) - lastSourceLine0);
+                    lastSourceLine0 = ((segment.sourceLine0));
                     // the zero-based starting column in the original source
-                    segAsStr += toBase64VLQ(segment.sourceCol0 - lastSourceCol0);
-                    lastSourceCol0 = segment.sourceCol0;
+                    segAsStr += toBase64VLQ(/** @type {?} */ ((segment.sourceCol0)) - lastSourceCol0);
+                    lastSourceCol0 = ((segment.sourceCol0));
                 }
                 return segAsStr;
             })
@@ -60750,8 +61240,8 @@ function toBase64Digit(value) {
 var _SINGLE_QUOTE_ESCAPE_STRING_RE = /'|\\|\n|\r|\$/g;
 var _LEGAL_IDENTIFIER_RE = /^[$A-Z_][0-9A-Z_$]*$/i;
 var _INDENT_WITH = '  ';
-var CATCH_ERROR_VAR$1 = variable('error');
-var CATCH_STACK_VAR$1 = variable('stack');
+var CATCH_ERROR_VAR$1 = variable('error', null, null);
+var CATCH_STACK_VAR$1 = variable('stack', null, null);
 /**
  * @abstract
  */
@@ -60804,7 +61294,7 @@ var EmitterVisitorContext = (function () {
      */
     EmitterVisitorContext.prototype.println = function (from, lastPart) {
         if (lastPart === void 0) { lastPart = ''; }
-        this.print(from, lastPart, true);
+        this.print(from || null, lastPart, true);
     };
     /**
      * @return {?}
@@ -60856,7 +61346,7 @@ var EmitterVisitorContext = (function () {
     /**
      * @return {?}
      */
-    EmitterVisitorContext.prototype.popClass = function () { return this._classes.pop(); };
+    EmitterVisitorContext.prototype.popClass = function () { return ((this._classes.pop())); };
     Object.defineProperty(EmitterVisitorContext.prototype, "currentClass", {
         /**
          * @return {?}
@@ -60916,7 +61406,7 @@ var EmitterVisitorContext = (function () {
                 mapFirstOffsetIfNeeded();
             }
             while (spanIdx < spans.length) {
-                var /** @type {?} */ span = spans[spanIdx];
+                var /** @type {?} */ span = ((spans[spanIdx]));
                 var /** @type {?} */ source = span.start.file;
                 var /** @type {?} */ sourceLine = span.start.line;
                 var /** @type {?} */ sourceCol = span.start.col;
@@ -61158,7 +61648,7 @@ var AbstractEmitterVisitor = (function () {
      * @return {?}
      */
     AbstractEmitterVisitor.prototype.visitReadVarExpr = function (ast, ctx) {
-        var /** @type {?} */ varName = ast.name;
+        var /** @type {?} */ varName = ((ast.name));
         if (ast.builtin != null) {
             switch (ast.builtin) {
                 case BuiltinVar.Super:
@@ -61168,10 +61658,10 @@ var AbstractEmitterVisitor = (function () {
                     varName = 'this';
                     break;
                 case BuiltinVar.CatchError:
-                    varName = CATCH_ERROR_VAR$1.name;
+                    varName = ((CATCH_ERROR_VAR$1.name));
                     break;
                 case BuiltinVar.CatchStack:
-                    varName = CATCH_STACK_VAR$1.name;
+                    varName = ((CATCH_STACK_VAR$1.name));
                     break;
                 default:
                     throw new Error("Unknown builtin variable " + ast.builtin);
@@ -61225,8 +61715,8 @@ var AbstractEmitterVisitor = (function () {
         ast.condition.visitExpression(this, ctx);
         ctx.print(ast, '? ');
         ast.trueCase.visitExpression(this, ctx);
-        ctx.print(ast, ': ');
-        ast.falseCase.visitExpression(this, ctx);
+        ctx.print(ast, ': '); /** @type {?} */
+        ((ast.falseCase)).visitExpression(this, ctx);
         ctx.print(ast, ")");
         return null;
     };
@@ -61579,7 +62069,7 @@ var _TsEmitterVisitor = (function (_super) {
      */
     _TsEmitterVisitor.prototype.visitType = function (t, ctx, defaultType) {
         if (defaultType === void 0) { defaultType = 'any'; }
-        if (t != null) {
+        if (t) {
             this.typeExpression++;
             t.visitType(this, ctx);
             this.typeExpression--;
@@ -61634,7 +62124,7 @@ var _TsEmitterVisitor = (function (_super) {
         if (ctx.isExportedVar(stmt.name) && stmt.value instanceof ExternalExpr && !stmt.type) {
             // check for a reexport
             var _a = this._resolveStaticSymbol(stmt.value.value), name = _a.name, filePath = _a.filePath, members = _a.members;
-            if (members.length === 0 && filePath !== this._genFilePath) {
+            if (((members)).length === 0 && filePath !== this._genFilePath) {
                 var /** @type {?} */ reexports = this.reexports.get(filePath);
                 if (!reexports) {
                     reexports = [];
@@ -61666,8 +62156,8 @@ var _TsEmitterVisitor = (function (_super) {
      * @return {?}
      */
     _TsEmitterVisitor.prototype.visitCastExpr = function (ast, ctx) {
-        ctx.print(ast, "(<");
-        ast.type.visitType(this, ctx);
+        ctx.print(ast, "(<"); /** @type {?} */
+        ((ast.type)).visitType(this, ctx);
         ctx.print(ast, ">");
         ast.value.visitExpression(this, ctx);
         ctx.print(ast, ")");
@@ -61832,7 +62322,7 @@ var _TsEmitterVisitor = (function (_super) {
         ctx.decIndent();
         ctx.println(stmt, "} catch (" + CATCH_ERROR_VAR$1.name + ") {");
         ctx.incIndent();
-        var /** @type {?} */ catchStmts = [/** @type {?} */ (CATCH_STACK_VAR$1.set(CATCH_ERROR_VAR$1.prop('stack')).toDeclStmt(null, [
+        var /** @type {?} */ catchStmts = [/** @type {?} */ (CATCH_STACK_VAR$1.set(CATCH_ERROR_VAR$1.prop('stack', null)).toDeclStmt(null, [
                 StmtModifier.Final
             ]))].concat(stmt.catchStmts);
         this.visitAllStatements(catchStmts, ctx);
@@ -61969,10 +62459,10 @@ var _TsEmitterVisitor = (function (_super) {
             }
             ctx.print(null, prefix + ".");
         }
-        if (members.length) {
+        if (((members)).length) {
             ctx.print(null, name);
             ctx.print(null, '.');
-            ctx.print(null, members.join('.'));
+            ctx.print(null, /** @type {?} */ ((members)).join('.'));
         }
         else {
             ctx.print(null, name);
@@ -61988,7 +62478,7 @@ var _TsEmitterVisitor = (function (_super) {
             if (suppliedParameters > 0 || additionalParameters > 0) {
                 ctx.print(null, "<");
                 if (suppliedParameters > 0) {
-                    this.visitAllObjects(function (type) { return type.visitType(_this, ctx); }, typeParams, ctx, ',');
+                    this.visitAllObjects(function (type) { return type.visitType(_this, ctx); }, /** @type {?} */ ((typeParams)), ctx, ',');
                 }
                 if (additionalParameters > 0) {
                     for (var /** @type {?} */ i = 0; i < additionalParameters; i++) {
@@ -62046,20 +62536,20 @@ function registerContext(ctx, specs) {
     }
 }
 // Case is insignificant below, all element and attribute names are lower-cased for lookup.
-registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].HTML, [
+registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].HTML, [
     'iframe|srcdoc',
     '*|innerHTML',
     '*|outerHTML',
 ]);
-registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].STYLE, ['*|style']);
+registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].STYLE, ['*|style']);
 // NB: no SCRIPT contexts here, they are never allowed due to the parser stripping them.
-registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].URL, [
+registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].URL, [
     '*|formAction', 'area|href', 'area|ping', 'audio|src', 'a|href',
     'a|ping', 'blockquote|cite', 'body|background', 'del|cite', 'form|action',
     'img|src', 'img|srcset', 'input|src', 'ins|cite', 'q|cite',
     'source|src', 'source|srcset', 'track|src', 'video|poster', 'video|src',
 ]);
-registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].RESOURCE_URL, [
+registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].RESOURCE_URL, [
     'applet|code',
     'applet|codebase',
     'base|href',
@@ -62352,7 +62842,7 @@ var DomElementSchemaRegistry = (function (_super) {
             return true;
         }
         if (tagName.indexOf('-') > -1) {
-            if (tagName === 'ng-container' || tagName === 'ng-content') {
+            if (isNgContainer(tagName) || isNgContent(tagName)) {
                 return false;
             }
             if (schemaMetas.some(function (schema) { return schema.name === __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */].name; })) {
@@ -62374,7 +62864,7 @@ var DomElementSchemaRegistry = (function (_super) {
             return true;
         }
         if (tagName.indexOf('-') > -1) {
-            if (tagName === 'ng-container' || tagName === 'ng-content') {
+            if (isNgContainer(tagName) || isNgContent(tagName)) {
                 return true;
             }
             if (schemaMetas.some(function (schema) { return schema.name === __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */].name; })) {
@@ -62412,7 +62902,7 @@ var DomElementSchemaRegistry = (function (_super) {
             return ctx;
         }
         ctx = SECURITY_SCHEMA['*|' + propName];
-        return ctx ? ctx : __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* SecurityContext */].NONE;
+        return ctx ? ctx : __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* SecurityContext */].NONE;
     };
     /**
      * @param {?} propName
@@ -62473,7 +62963,7 @@ var DomElementSchemaRegistry = (function (_super) {
     DomElementSchemaRegistry.prototype.normalizeAnimationStyleValue = function (camelCaseProp, userProvidedProp, val) {
         var /** @type {?} */ unit = '';
         var /** @type {?} */ strVal = val.toString().trim();
-        var /** @type {?} */ errorMsg = null;
+        var /** @type {?} */ errorMsg = ((null));
         if (_isPixelDimensionStyle(camelCaseProp) && val !== 0 && val !== '0') {
             if (typeof val === 'number') {
                 unit = 'px';
@@ -63101,13 +63591,14 @@ var StyleCompiler = (function () {
      */
     StyleCompiler.prototype.compileComponent = function (comp) {
         var _this = this;
+        var /** @type {?} */ template = ((comp.template));
         var /** @type {?} */ externalStylesheets = [];
         var /** @type {?} */ componentStylesheet = this._compileStyles(comp, new CompileStylesheetMetadata({
-            styles: comp.template.styles,
-            styleUrls: comp.template.styleUrls,
+            styles: template.styles,
+            styleUrls: template.styleUrls,
             moduleUrl: identifierModuleUrl(comp.type)
         }), true);
-        comp.template.externalStylesheets.forEach(function (stylesheetMeta) {
+        template.externalStylesheets.forEach(function (stylesheetMeta) {
             var /** @type {?} */ compiledStylesheet = _this._compileStyles(comp, stylesheetMeta, false);
             externalStylesheets.push(compiledStylesheet);
         });
@@ -63121,7 +63612,7 @@ var StyleCompiler = (function () {
      */
     StyleCompiler.prototype._compileStyles = function (comp, stylesheet, isComponentStylesheet) {
         var _this = this;
-        var /** @type {?} */ shim = comp.template.encapsulation === __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].Emulated;
+        var /** @type {?} */ shim = ((comp.template)).encapsulation === __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].Emulated;
         var /** @type {?} */ styleExpressions = stylesheet.styles.map(function (plainStyle) { return literal(_this._shimIfNeeded(plainStyle, shim)); });
         var /** @type {?} */ dependencies = [];
         for (var /** @type {?} */ i = 0; i < stylesheet.styleUrls.length; i++) {
@@ -63222,7 +63713,7 @@ function convertActionBinding(localResolver, implicitReceiver, action, bindingId
     flattenStatements(actionWithoutBuiltins.visit(visitor, _Mode.Statement), actionStmts);
     prependTemporaryDecls(visitor.temporaryCount, bindingId, actionStmts);
     var /** @type {?} */ lastIndex = actionStmts.length - 1;
-    var /** @type {?} */ preventDefaultVar = null;
+    var /** @type {?} */ preventDefaultVar = ((null));
     if (lastIndex >= 0) {
         var /** @type {?} */ lastStatement = actionStmts[lastIndex];
         var /** @type {?} */ returnExpr = convertStmtIntoExpression(lastStatement);
@@ -63509,7 +64000,7 @@ var _AstToIrVisitor = (function () {
             fnResult = ast.converter(convertedArgs);
         }
         else {
-            fnResult = this.visit(ast.target, _Mode.Expression).callFn(convertedArgs);
+            fnResult = this.visit(/** @type {?} */ ((ast.target)), _Mode.Expression).callFn(convertedArgs);
         }
         return convertToStatementIfNeeded(mode, fnResult);
     };
@@ -63697,7 +64188,7 @@ var _AstToIrVisitor = (function () {
      * @return {?}
      */
     _AstToIrVisitor.prototype.visitQuote = function (ast, mode) {
-        throw new Error('Quotes are not supported for evaluation!');
+        throw new Error("Quotes are not supported for evaluation!\n        Statement: " + ast.uninterpretedExpression + " located at " + ast.location);
     };
     /**
      * @param {?} ast
@@ -63753,7 +64244,7 @@ var _AstToIrVisitor = (function () {
         // Notice that the first guard condition is the left hand of the left most safe access node
         // which comes in as leftMostSafe to this routine.
         var /** @type {?} */ guardedExpression = this.visit(leftMostSafe.receiver, _Mode.Expression);
-        var /** @type {?} */ temporary;
+        var /** @type {?} */ temporary = ((undefined));
         if (this.needsTemporary(leftMostSafe.receiver)) {
             // If the expression has method calls or pipes then we need to save the result into a
             // temporary variable to avoid calling stateful or impure code more than once.
@@ -64106,7 +64597,6 @@ var BuiltinFunctionCall = (function (_super) {
 var CLASS_ATTR$1 = 'class';
 var STYLE_ATTR = 'style';
 var IMPLICIT_TEMPLATE_VAR = '\$implicit';
-var NG_CONTAINER_TAG = 'ng-container';
 var ViewCompileResult = (function () {
     /**
      * @param {?} statements
@@ -64140,18 +64630,19 @@ var ViewCompiler = (function () {
         var /** @type {?} */ embeddedViewCount = 0;
         var /** @type {?} */ staticQueryIds = findStaticQueryIds(template);
         var /** @type {?} */ statements = [];
-        var /** @type {?} */ renderComponentVarName;
+        var /** @type {?} */ renderComponentVarName = ((undefined));
         if (!component.isHost) {
+            var /** @type {?} */ template_1 = ((component.template));
             var /** @type {?} */ customRenderData = [];
-            if (component.template.animations && component.template.animations.length) {
-                customRenderData.push(new LiteralMapEntry('animation', convertValueToOutputAst(component.template.animations), true));
+            if (template_1.animations && template_1.animations.length) {
+                customRenderData.push(new LiteralMapEntry('animation', convertValueToOutputAst(template_1.animations), true));
             }
             var /** @type {?} */ renderComponentVar = variable(rendererTypeName(component.type.reference));
-            renderComponentVarName = renderComponentVar.name;
+            renderComponentVarName = ((renderComponentVar.name));
             statements.push(renderComponentVar
                 .set(importExpr(createIdentifier(Identifiers.createRendererType2))
                 .callFn([new LiteralMapExpr([
-                    new LiteralMapEntry('encapsulation', literal(component.template.encapsulation)),
+                    new LiteralMapEntry('encapsulation', literal(template_1.encapsulation)),
                     new LiteralMapEntry('styles', styles),
                     new LiteralMapEntry('data', new LiteralMapExpr(customRenderData))
                 ])]))
@@ -64208,7 +64699,8 @@ var ViewBuilder = (function () {
         // TODO(tbosch): The old view compiler used to use an `any` type
         // for the context in any embedded view. We keep this behaivor for now
         // to be able to introduce the new view compiler without too many errors.
-        this.compType = this.embeddedViewIndex > 0 ? DYNAMIC_TYPE : importType(this.component.type);
+        this.compType =
+            this.embeddedViewIndex > 0 ? DYNAMIC_TYPE : importType(this.component.type);
     }
     Object.defineProperty(ViewBuilder.prototype, "viewName", {
         /**
@@ -64279,7 +64771,7 @@ var ViewBuilder = (function () {
         if (!this.parent && this.component.changeDetection === __WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* ChangeDetectionStrategy */].OnPush) {
             viewFlags |= 2 /* OnPush */;
         }
-        var /** @type {?} */ viewFactory = new DeclareFunctionStmt(this.viewName, [new FnParam(LOG_VAR.name)], [new ReturnStatement(importExpr(createIdentifier(Identifiers.viewDef)).callFn([
+        var /** @type {?} */ viewFactory = new DeclareFunctionStmt(this.viewName, [new FnParam(/** @type {?} */ ((LOG_VAR.name)))], [new ReturnStatement(importExpr(createIdentifier(Identifiers.viewDef)).callFn([
                 literal(viewFlags),
                 literalArr(nodeDefExprs),
                 updateDirectivesFn,
@@ -64296,12 +64788,12 @@ var ViewBuilder = (function () {
         var /** @type {?} */ updateFn;
         if (updateStmts.length > 0) {
             var /** @type {?} */ preStmts = [];
-            if (!this.component.isHost && findReadVarNames(updateStmts).has(COMP_VAR.name)) {
+            if (!this.component.isHost && findReadVarNames(updateStmts).has(/** @type {?} */ ((COMP_VAR.name)))) {
                 preStmts.push(COMP_VAR.set(VIEW_VAR.prop('component')).toDeclStmt(this.compType));
             }
             updateFn = fn([
-                new FnParam(CHECK_VAR.name, INFERRED_TYPE),
-                new FnParam(VIEW_VAR.name, INFERRED_TYPE)
+                new FnParam(/** @type {?} */ ((CHECK_VAR.name)), INFERRED_TYPE),
+                new FnParam(/** @type {?} */ ((VIEW_VAR.name)), INFERRED_TYPE)
             ], preStmts.concat(updateStmts), INFERRED_TYPE);
         }
         else {
@@ -64348,7 +64840,7 @@ var ViewBuilder = (function () {
         var _this = this;
         var /** @type {?} */ nodeIndex = this.nodes.length;
         // reserve the space in the nodeDefs array
-        this.nodes.push(null);
+        this.nodes.push(/** @type {?} */ ((null)));
         var /** @type {?} */ astWithSource = (ast.value);
         var /** @type {?} */ inter = (astWithSource.ast);
         var /** @type {?} */ updateRendererExpressions = inter.expressions.map(function (expr, bindingIndex) { return _this._preprocessUpdateExpression({ nodeIndex: nodeIndex, bindingIndex: bindingIndex, sourceSpan: ast.sourceSpan, context: COMP_VAR, value: expr }); });
@@ -64371,7 +64863,7 @@ var ViewBuilder = (function () {
         var _this = this;
         var /** @type {?} */ nodeIndex = this.nodes.length;
         // reserve the space in the nodeDefs array
-        this.nodes.push(null);
+        this.nodes.push(/** @type {?} */ ((null)));
         var _a = this._visitElementOrTemplate(nodeIndex, ast), flags = _a.flags, queryMatchesExpr = _a.queryMatchesExpr, hostEvents = _a.hostEvents;
         var /** @type {?} */ childVisitor = this.viewBuilderFactory(this);
         this.children.push(childVisitor);
@@ -64403,12 +64895,9 @@ var ViewBuilder = (function () {
         var _this = this;
         var /** @type {?} */ nodeIndex = this.nodes.length;
         // reserve the space in the nodeDefs array so we can add children
-        this.nodes.push(null);
-        var /** @type {?} */ elName = ast.name;
-        if (ast.name === NG_CONTAINER_TAG) {
-            // Using a null element name creates an anchor.
-            elName = null;
-        }
+        this.nodes.push(/** @type {?} */ ((null)));
+        // Using a null element name creates an anchor.
+        var /** @type {?} */ elName = isNgContainer(ast.name) ? null : ast.name;
         var _a = this._visitElementOrTemplate(nodeIndex, ast), flags = _a.flags, usedEvents = _a.usedEvents, queryMatchesExpr = _a.queryMatchesExpr, dirHostBindings = _a.hostBindings, hostEvents = _a.hostEvents;
         var /** @type {?} */ inputDefs = [];
         var /** @type {?} */ updateRendererExpressions = [];
@@ -64418,7 +64907,7 @@ var ViewBuilder = (function () {
                 .map(function (inputAst) { return ({
                 context: /** @type {?} */ (COMP_VAR),
                 inputAst: inputAst,
-                dirAst: null,
+                dirAst: /** @type {?} */ (null),
             }); })
                 .concat(dirHostBindings);
             if (hostBindings.length) {
@@ -64502,8 +64991,8 @@ var ViewBuilder = (function () {
             this._visitProvider(componentFactoryResolverProvider, ast.queryMatches);
         }
         ast.providers.forEach(function (providerAst, providerIndex) {
-            var /** @type {?} */ dirAst;
-            var /** @type {?} */ dirIndex;
+            var /** @type {?} */ dirAst = ((undefined));
+            var /** @type {?} */ dirIndex = ((undefined));
             ast.directives.forEach(function (localDirAst, i) {
                 if (localDirAst.directive.type.reference === tokenReference(providerAst.token)) {
                     dirAst = localDirAst;
@@ -64511,7 +65000,7 @@ var ViewBuilder = (function () {
                 }
             });
             if (dirAst) {
-                var _a = _this._visitDirective(providerAst, dirAst, dirIndex, nodeIndex, ast.references, ast.queryMatches, usedEvents, _this.staticQueryIds.get(/** @type {?} */ (ast))), dirHostBindings = _a.hostBindings, dirHostEvents = _a.hostEvents;
+                var _a = _this._visitDirective(providerAst, dirAst, dirIndex, nodeIndex, ast.references, ast.queryMatches, usedEvents, /** @type {?} */ ((_this.staticQueryIds.get(/** @type {?} */ (ast))))), dirHostBindings = _a.hostBindings, dirHostEvents = _a.hostEvents;
                 hostBindings.push.apply(hostBindings, dirHostBindings);
                 hostEvents.push.apply(hostEvents, dirHostEvents);
             }
@@ -64521,7 +65010,7 @@ var ViewBuilder = (function () {
         });
         var /** @type {?} */ queryMatchExprs = [];
         ast.queryMatches.forEach(function (match) {
-            var /** @type {?} */ valueType;
+            var /** @type {?} */ valueType = ((undefined));
             if (tokenReference(match.value) === resolveIdentifier(Identifiers.ElementRef)) {
                 valueType = 0 /* ElementRef */;
             }
@@ -64536,7 +65025,7 @@ var ViewBuilder = (function () {
             }
         });
         ast.references.forEach(function (ref) {
-            var /** @type {?} */ valueType;
+            var /** @type {?} */ valueType = ((undefined));
             if (!ref.value) {
                 valueType = 1 /* RenderElement */;
             }
@@ -64549,7 +65038,7 @@ var ViewBuilder = (function () {
             }
         });
         ast.outputs.forEach(function (outputAst) {
-            hostEvents.push({ context: COMP_VAR, eventAst: outputAst, dirAst: null });
+            hostEvents.push({ context: COMP_VAR, eventAst: outputAst, dirAst: /** @type {?} */ ((null)) });
         });
         return {
             flags: flags,
@@ -64574,7 +65063,7 @@ var ViewBuilder = (function () {
         var _this = this;
         var /** @type {?} */ nodeIndex = this.nodes.length;
         // reserve the space in the nodeDefs array so we can add children
-        this.nodes.push(null);
+        this.nodes.push(/** @type {?} */ ((null)));
         dirAst.directive.queries.forEach(function (query, queryIndex) {
             var /** @type {?} */ queryId = dirAst.contentQueryStartId + queryIndex;
             var /** @type {?} */ flags = 33554432 /* TypeContentQuery */ | calcStaticDynamicQueryFlags(queryIds, queryId, query.first);
@@ -64667,7 +65156,7 @@ var ViewBuilder = (function () {
     ViewBuilder.prototype._visitProvider = function (providerAst, queryMatches) {
         var /** @type {?} */ nodeIndex = this.nodes.length;
         // reserve the space in the nodeDefs array so we can add children
-        this.nodes.push(null);
+        this.nodes.push(/** @type {?} */ ((null)));
         var _a = this._visitProviderOrDirective(providerAst, queryMatches), flags = _a.flags, queryMatchExprs = _a.queryMatchExprs, providerExpr = _a.providerExpr, depsExpr = _a.depsExpr;
         // providerDef(
         //   flags: NodeFlags, matchedQueries: [string, QueryValueType][], token:any,
@@ -64784,7 +65273,7 @@ var ViewBuilder = (function () {
      * @return {?}
      */
     ViewBuilder.prototype.createPipeConverter = function (expression, name, argCount) {
-        var /** @type {?} */ pipe = this.usedPipes.find(function (pipeSummary) { return pipeSummary.name === name; });
+        var /** @type {?} */ pipe = ((this.usedPipes.find(function (pipeSummary) { return pipeSummary.name === name; })));
         if (pipe.pure) {
             var /** @type {?} */ nodeIndex_1 = this.nodes.length;
             // function purePipeDef(argCount: number): NodeDef;
@@ -64934,13 +65423,13 @@ var ViewBuilder = (function () {
         var /** @type {?} */ handleEventFn;
         if (handleEventStmts.length > 0) {
             var /** @type {?} */ preStmts = [ALLOW_DEFAULT_VAR.set(literal(true)).toDeclStmt(BOOL_TYPE)];
-            if (!this.component.isHost && findReadVarNames(handleEventStmts).has(COMP_VAR.name)) {
+            if (!this.component.isHost && findReadVarNames(handleEventStmts).has(/** @type {?} */ ((COMP_VAR.name)))) {
                 preStmts.push(COMP_VAR.set(VIEW_VAR.prop('component')).toDeclStmt(this.compType));
             }
             handleEventFn = fn([
-                new FnParam(VIEW_VAR.name, INFERRED_TYPE),
-                new FnParam(EVENT_NAME_VAR.name, INFERRED_TYPE),
-                new FnParam(EventHandlerVars.event.name, INFERRED_TYPE)
+                new FnParam(/** @type {?} */ ((VIEW_VAR.name)), INFERRED_TYPE),
+                new FnParam(/** @type {?} */ ((EVENT_NAME_VAR.name)), INFERRED_TYPE),
+                new FnParam(/** @type {?} */ ((EventHandlerVars.event.name)), INFERRED_TYPE)
             ], preStmts.concat(handleEventStmts, [new ReturnStatement(ALLOW_DEFAULT_VAR)]), INFERRED_TYPE);
         }
         else {
@@ -65053,9 +65542,9 @@ function singleProviderDef(providerType, providerMeta) {
     var /** @type {?} */ flags;
     var /** @type {?} */ deps;
     if (providerType === ProviderAstType.Directive || providerType === ProviderAstType.Component) {
-        providerExpr = importExpr(providerMeta.useClass);
+        providerExpr = importExpr(/** @type {?} */ ((providerMeta.useClass)));
         flags = 8192 /* TypeDirective */;
-        deps = providerMeta.deps || providerMeta.useClass.diDeps;
+        deps = providerMeta.deps || ((providerMeta.useClass)).diDeps;
     }
     else {
         if (providerMeta.useClass) {
@@ -65096,7 +65585,7 @@ function tokenExpr(tokenMeta) {
 function depDef(dep) {
     // Note: the following fields have already been normalized out by provider_analyzer:
     // - isAttribute, isSelf, isHost
-    var /** @type {?} */ expr = dep.isValue ? convertValueToOutputAst(dep.value) : tokenExpr(dep.token);
+    var /** @type {?} */ expr = dep.isValue ? convertValueToOutputAst(dep.value) : tokenExpr(/** @type {?} */ ((dep.token)));
     var /** @type {?} */ flags = 0;
     if (dep.isSkipSelf) {
         flags |= 1 /* SkipSelf */;
@@ -65119,7 +65608,7 @@ function needsAdditionalRootNode(astNodes) {
         return lastAstNode.hasViewContainer;
     }
     if (lastAstNode instanceof ElementAst) {
-        if (lastAstNode.name === NG_CONTAINER_TAG && lastAstNode.children.length) {
+        if (isNgContainer(lastAstNode.name) && lastAstNode.children.length) {
             return needsAdditionalRootNode(lastAstNode.children);
         }
         return lastAstNode.hasViewContainer;
@@ -65206,7 +65695,6 @@ function fixedAttrsDef(elementAst) {
             mapResult[name] = prevValue != null ? mergeAttributeValue(name, prevValue, value) : value;
         });
     });
-    var /** @type {?} */ mapEntries = [];
     // Note: We need to sort to get a defined output order
     // for tests and for caching generated artifacts...
     return literalArr(Object.keys(mapResult).sort().map(function (attrName) { return literalArr([literal(attrName), literal(mapResult[attrName])]); }));
@@ -65259,11 +65747,11 @@ function findStaticQueryIds(nodes, result) {
     nodes.forEach(function (node) {
         var /** @type {?} */ staticQueryIds = new Set();
         var /** @type {?} */ dynamicQueryIds = new Set();
-        var /** @type {?} */ queryMatches;
+        var /** @type {?} */ queryMatches = ((undefined));
         if (node instanceof ElementAst) {
             findStaticQueryIds(node.children, result);
             node.children.forEach(function (child) {
-                var /** @type {?} */ childData = result.get(child);
+                var /** @type {?} */ childData = ((result.get(child)));
                 childData.staticQueryIds.forEach(function (queryId) { return staticQueryIds.add(queryId); });
                 childData.dynamicQueryIds.forEach(function (queryId) { return dynamicQueryIds.add(queryId); });
             });
@@ -65272,7 +65760,7 @@ function findStaticQueryIds(nodes, result) {
         else if (node instanceof EmbeddedTemplateAst) {
             findStaticQueryIds(node.children, result);
             node.children.forEach(function (child) {
-                var /** @type {?} */ childData = result.get(child);
+                var /** @type {?} */ childData = ((result.get(child)));
                 childData.staticQueryIds.forEach(function (queryId) { return dynamicQueryIds.add(queryId); });
                 childData.dynamicQueryIds.forEach(function (queryId) { return dynamicQueryIds.add(queryId); });
             });
@@ -65512,7 +66000,7 @@ var Serializer$1 = (function (_super) {
             summaries: this.processedSummaries,
             symbols: this.symbols.map(function (symbol, index) {
                 symbol.assertNoMembers();
-                var /** @type {?} */ importAs;
+                var /** @type {?} */ importAs = ((undefined));
                 if (_this.summaryResolver.isLibraryFile(symbol.filePath)) {
                     importAs = symbol.name + "_" + index;
                     exportAs.push({ symbol: symbol, exportAs: importAs });
@@ -65717,7 +66205,7 @@ var AotCompiler = (function () {
         var _this = this;
         var /** @type {?} */ symbolSummaries = this._symbolResolver.getSymbolsOf(srcFileUrl)
             .map(function (symbol) { return _this._symbolResolver.resolveSymbol(symbol); });
-        var /** @type {?} */ typeSummaries = ngModules.map(function (ref) { return _this._metadataResolver.getNgModuleSummary(ref); }).concat(directives.map(function (ref) { return _this._metadataResolver.getDirectiveSummary(ref); }), pipes.map(function (ref) { return _this._metadataResolver.getPipeSummary(ref); }), injectables.map(function (ref) { return _this._metadataResolver.getInjectableSummary(ref); }));
+        var /** @type {?} */ typeSummaries = ngModules.map(function (ref) { return ((_this._metadataResolver.getNgModuleSummary(ref))); }).concat(directives.map(function (ref) { return ((_this._metadataResolver.getDirectiveSummary(ref))); }), pipes.map(function (ref) { return ((_this._metadataResolver.getPipeSummary(ref))); }), injectables.map(function (ref) { return ((_this._metadataResolver.getInjectableSummary(ref))); }));
         var _a = serializeSummaries(this._summaryResolver, this._symbolResolver, symbolSummaries, typeSummaries), json = _a.json, exportAs = _a.exportAs;
         exportAs.forEach(function (entry) {
             targetStatements.push(variable(entry.exportAs).set(importExpr({ reference: entry.symbol })).toDeclStmt());
@@ -65731,7 +66219,7 @@ var AotCompiler = (function () {
      * @return {?}
      */
     AotCompiler.prototype._compileModule = function (ngModuleType, targetStatements) {
-        var /** @type {?} */ ngModule = this._metadataResolver.getNgModuleMetadata(ngModuleType);
+        var /** @type {?} */ ngModule = ((this._metadataResolver.getNgModuleMetadata(ngModuleType)));
         var /** @type {?} */ providers = [];
         if (this._localeId) {
             providers.push({
@@ -65779,9 +66267,9 @@ var AotCompiler = (function () {
             literal(compMeta.selector), importExpr(compMeta.type),
             variable(hostViewFactoryVar), new LiteralMapExpr(inputsExprs),
             new LiteralMapExpr(outputsExprs),
-            literalArr(compMeta.template.ngContentSelectors.map(function (selector) { return literal(selector); }))
+            literalArr(/** @type {?} */ ((compMeta.template)).ngContentSelectors.map(function (selector) { return literal(selector); }))
         ]))
-            .toDeclStmt(importType(createIdentifier(Identifiers.ComponentFactory), [importType(compMeta.type)], [TypeModifier.Const]), [StmtModifier.Final]));
+            .toDeclStmt(importType(createIdentifier(Identifiers.ComponentFactory), [/** @type {?} */ ((importType(compMeta.type)))], [TypeModifier.Const]), [StmtModifier.Final]));
         return compFactoryVar;
     };
     /**
@@ -65797,7 +66285,7 @@ var AotCompiler = (function () {
         var _this = this;
         var /** @type {?} */ directives = directiveIdentifiers.map(function (dir) { return _this._metadataResolver.getDirectiveSummary(dir.reference); });
         var /** @type {?} */ pipes = ngModule.transitiveModule.pipes.map(function (pipe) { return _this._metadataResolver.getPipeSummary(pipe.reference); });
-        var _a = this._templateParser.parse(compMeta, compMeta.template.template, directives, pipes, ngModule.schemas, templateSourceUrl(ngModule.type, compMeta, compMeta.template)), parsedTemplate = _a.template, usedPipes = _a.pipes;
+        var _a = this._templateParser.parse(compMeta, /** @type {?} */ ((((compMeta.template)).template)), directives, pipes, ngModule.schemas, templateSourceUrl(ngModule.type, compMeta, /** @type {?} */ ((compMeta.template)))), parsedTemplate = _a.template, usedPipes = _a.pipes;
         var /** @type {?} */ stylesExpr = componentStyles ? variable(componentStyles.stylesVar) : literalArr([]);
         var /** @type {?} */ viewResult = this._viewCompiler.compileComponent(compMeta, parsedTemplate, stylesExpr, usedPipes);
         if (componentStyles) {
@@ -65814,7 +66302,7 @@ var AotCompiler = (function () {
      */
     AotCompiler.prototype._codgenStyles = function (fileUrl, stylesCompileResult, fileSuffix) {
         _resolveStyleStatements(this._symbolResolver, stylesCompileResult, fileSuffix);
-        return this._codegenSourceModule(fileUrl, _stylesModuleUrl(stylesCompileResult.meta.moduleUrl, stylesCompileResult.isShimmed, fileSuffix), stylesCompileResult.statements, [stylesCompileResult.stylesVar]);
+        return this._codegenSourceModule(fileUrl, _stylesModuleUrl(/** @type {?} */ ((stylesCompileResult.meta.moduleUrl)), stylesCompileResult.isShimmed, fileSuffix), stylesCompileResult.statements, [stylesCompileResult.stylesVar]);
     };
     /**
      * @param {?} srcFileUrl
@@ -66083,7 +66571,7 @@ var StaticAndDynamicReflectionCapabilities = (function () {
      * @param {?} type
      * @return {?}
      */
-    StaticAndDynamicReflectionCapabilities.prototype.importUri = function (type) { return this.staticDelegate.importUri(type); };
+    StaticAndDynamicReflectionCapabilities.prototype.importUri = function (type) { return ((this.staticDelegate.importUri(type))); };
     /**
      * @param {?} type
      * @return {?}
@@ -66172,12 +66660,12 @@ var StaticReflector = (function () {
         this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Directive, [__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */]]);
         this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Pipe, [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Pipe */]]);
         this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.NgModule, [__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */]]);
-        this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Injectable, [__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Pipe */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */]]);
+        this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Injectable, [__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Pipe */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */]]);
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], 'Directive');
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */], 'Component');
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Pipe */], 'Pipe');
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */], 'NgModule');
-        this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */], 'Injectable');
+        this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */], 'Injectable');
     }
     /**
      * @param {?} typeOrFunc
@@ -66268,10 +66756,10 @@ var StaticReflector = (function () {
                 this.summaryResolver.isLibraryFile(parentType.filePath)) {
                 var /** @type {?} */ summary = this.summaryResolver.resolveSummary(parentType);
                 if (summary && summary.type) {
-                    var /** @type {?} */ requiredAnnotationTypes = this.annotationForParentClassWithSummaryKind.get(summary.type.summaryKind);
+                    var /** @type {?} */ requiredAnnotationTypes = ((this.annotationForParentClassWithSummaryKind.get(/** @type {?} */ ((summary.type.summaryKind)))));
                     var /** @type {?} */ typeHasRequiredAnnotation = requiredAnnotationTypes.some(function (requiredType) { return ownAnnotations_1.some(function (ann) { return ann instanceof requiredType; }); });
                     if (!typeHasRequiredAnnotation) {
-                        this.reportError(syntaxError("Class " + type.name + " in " + type.filePath + " extends from a " + CompileSummaryKind[summary.type.summaryKind] + " in another compilation unit without duplicating the decorator. " +
+                        this.reportError(syntaxError("Class " + type.name + " in " + type.filePath + " extends from a " + CompileSummaryKind[((summary.type.summaryKind))] + " in another compilation unit without duplicating the decorator. " +
                             ("Please add a " + requiredAnnotationTypes.map(function (type) { return _this.annotationNames.get(type); }).join(' or ') + " decorator to the class.")), type);
                     }
                 }
@@ -66294,7 +66782,7 @@ var StaticReflector = (function () {
             if (parentType) {
                 var /** @type {?} */ parentPropMetadata_1 = this.propMetadata(parentType);
                 Object.keys(parentPropMetadata_1).forEach(function (parentProp) {
-                    propMetadata[parentProp] = parentPropMetadata_1[parentProp];
+                    ((propMetadata))[parentProp] = parentPropMetadata_1[parentProp];
                 });
             }
             var /** @type {?} */ members_1 = classMetadata['members'] || {};
@@ -66303,10 +66791,10 @@ var StaticReflector = (function () {
                 var /** @type {?} */ prop = ((propData))
                     .find(function (a) { return a['__symbolic'] == 'property' || a['__symbolic'] == 'method'; });
                 var /** @type {?} */ decorators = [];
-                if (propMetadata[propName]) {
-                    decorators.push.apply(decorators, propMetadata[propName]);
-                }
-                propMetadata[propName] = decorators;
+                if (((propMetadata))[propName]) {
+                    decorators.push.apply(decorators, ((propMetadata))[propName]);
+                } /** @type {?} */
+                ((propMetadata))[propName] = decorators;
                 if (prop && prop['decorators']) {
                     decorators.push.apply(decorators, _this.simplify(type, prop['decorators']));
                 }
@@ -66344,8 +66832,8 @@ var StaticReflector = (function () {
                         var /** @type {?} */ decorators = parameterDecorators_1 ? parameterDecorators_1[index] : null;
                         if (decorators) {
                             nestedResult.push.apply(nestedResult, decorators);
-                        }
-                        parameters_1.push(nestedResult);
+                        } /** @type {?} */
+                        ((parameters_1)).push(nestedResult);
                     });
                 }
                 else if (parentType) {
@@ -66376,14 +66864,14 @@ var StaticReflector = (function () {
             if (parentType) {
                 var /** @type {?} */ parentMethodNames_1 = this._methodNames(parentType);
                 Object.keys(parentMethodNames_1).forEach(function (parentProp) {
-                    methodNames[parentProp] = parentMethodNames_1[parentProp];
+                    ((methodNames))[parentProp] = parentMethodNames_1[parentProp];
                 });
             }
             var /** @type {?} */ members_2 = classMetadata['members'] || {};
             Object.keys(members_2).forEach(function (propName) {
                 var /** @type {?} */ propData = members_2[propName];
-                var /** @type {?} */ isMethod = ((propData)).some(function (a) { return a['__symbolic'] == 'method'; });
-                methodNames[propName] = methodNames[propName] || isMethod;
+                var /** @type {?} */ isMethod = ((propData)).some(function (a) { return a['__symbolic'] == 'method'; }); /** @type {?} */
+                ((methodNames))[propName] = ((methodNames))[propName] || isMethod;
             });
             this.methodCache.set(type, methodNames);
         }
@@ -66440,11 +66928,11 @@ var StaticReflector = (function () {
         this.injectionToken = this.findDeclaration(ANGULAR_CORE, 'InjectionToken');
         this.opaqueToken = this.findDeclaration(ANGULAR_CORE, 'OpaqueToken');
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Host'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Injectable'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Injectable'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Self'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'SkipSelf'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Inject'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Optional'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'SkipSelf'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Inject'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Optional'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Attribute'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Attribute */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ContentChild'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_64" /* ContentChild */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ContentChildren'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* ContentChildren */]);
@@ -66461,8 +66949,8 @@ var StaticReflector = (function () {
         // Note: Some metadata classes can be used directly with Provider.deps.
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Host'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Self'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'SkipSelf'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Optional'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'SkipSelf'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Optional'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */]);
         this._registerFunction(this.findDeclaration(ANGULAR_CORE, 'trigger'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* trigger */]);
         this._registerFunction(this.findDeclaration(ANGULAR_CORE, 'state'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* state */]);
         this._registerFunction(this.findDeclaration(ANGULAR_CORE, 'transition'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_19" /* transition */]);
@@ -66770,7 +67258,7 @@ var StaticReflector = (function () {
                                         return simplifyCall(staticSymbol, targetFunction, argExpressions);
                                     }
                                 }
-                                break;
+                                return IGNORE;
                             case 'error':
                                 var /** @type {?} */ message = produceErrorMessage(expression);
                                 if (expression['line']) {
@@ -67013,13 +67501,13 @@ var StaticSymbolResolver = (function () {
      */
     StaticSymbolResolver.prototype.resolveSymbol = function (staticSymbol) {
         if (staticSymbol.members.length > 0) {
-            return this._resolveSymbolMembers(staticSymbol);
+            return ((this._resolveSymbolMembers(staticSymbol)));
         }
         var /** @type {?} */ result = this.resolvedSymbols.get(staticSymbol);
         if (result) {
             return result;
         }
-        result = this._resolveSymbolFromSummary(staticSymbol);
+        result = ((this._resolveSymbolFromSummary(staticSymbol)));
         if (result) {
             return result;
         }
@@ -67027,7 +67515,7 @@ var StaticSymbolResolver = (function () {
         // have summaries, only .d.ts files. So we always need to check both, the summary
         // and metadata.
         this._createSymbolsOf(staticSymbol.filePath);
-        result = this.resolvedSymbols.get(staticSymbol);
+        result = ((this.resolvedSymbols.get(staticSymbol)));
         return result;
     };
     /**
@@ -67050,7 +67538,7 @@ var StaticSymbolResolver = (function () {
         }
         var /** @type {?} */ result = this.summaryResolver.getImportAs(staticSymbol);
         if (!result) {
-            result = this.importAs.get(staticSymbol);
+            result = ((this.importAs.get(staticSymbol)));
         }
         return result;
     };
@@ -67213,7 +67701,7 @@ var StaticSymbolResolver = (function () {
                     // correctly.
                     var /** @type {?} */ originFilePath = _this.resolveModule(origin, filePath);
                     if (!originFilePath) {
-                        _this.reportError(new Error("Couldn't resolve original symbol for " + origin + " from " + filePath), null);
+                        _this.reportError(new Error("Couldn't resolve original symbol for " + origin + " from " + filePath));
                     }
                     else {
                         _this.symbolResourcePaths.set(symbol, originFilePath);
@@ -67315,7 +67803,7 @@ var StaticSymbolResolver = (function () {
                     }
                     var /** @type {?} */ filePath = void 0;
                     if (module_1) {
-                        filePath = self.resolveModule(module_1, sourceSymbol.filePath);
+                        filePath = ((self.resolveModule(module_1, sourceSymbol.filePath)));
                         if (!filePath) {
                             return {
                                 __symbolic: 'error',
@@ -67367,7 +67855,7 @@ var StaticSymbolResolver = (function () {
     };
     /**
      * @param {?} error
-     * @param {?} context
+     * @param {?=} context
      * @param {?=} path
      * @return {?}
      */
@@ -67404,7 +67892,7 @@ var StaticSymbolResolver = (function () {
                 var /** @type {?} */ errorMessage = moduleMetadata['version'] == 2 ?
                     "Unsupported metadata version " + moduleMetadata['version'] + " for module " + module + ". This module should be compiled with a newer version of ngc" :
                     "Metadata version mismatch for module " + module + ", found version " + moduleMetadata['version'] + ", expected " + SUPPORTED_SCHEMA_VERSION;
-                this.reportError(new Error(errorMessage), null);
+                this.reportError(new Error(errorMessage));
             }
             this.metadataCache.set(module, moduleMetadata);
         }
@@ -67419,14 +67907,14 @@ var StaticSymbolResolver = (function () {
     StaticSymbolResolver.prototype.getSymbolByModule = function (module, symbolName, containingFile) {
         var /** @type {?} */ filePath = this.resolveModule(module, containingFile);
         if (!filePath) {
-            this.reportError(new Error("Could not resolve module " + module + (containingFile ? " relative to $ {\n            containingFile\n          } " : '')), null);
+            this.reportError(new Error("Could not resolve module " + module + (containingFile ? " relative to $ {\n            containingFile\n          } " : '')));
             return this.getStaticSymbol("ERROR:" + module, symbolName);
         }
         return this.getStaticSymbol(filePath, symbolName);
     };
     /**
      * @param {?} module
-     * @param {?} containingFile
+     * @param {?=} containingFile
      * @return {?}
      */
     StaticSymbolResolver.prototype.resolveModule = function (module, containingFile) {
@@ -67435,8 +67923,9 @@ var StaticSymbolResolver = (function () {
         }
         catch (e) {
             console.error("Could not resolve module '" + module + "' relative to file " + containingFile);
-            this.reportError(e, null, containingFile);
+            this.reportError(e, undefined, containingFile);
         }
+        return null;
     };
     return StaticSymbolResolver;
 }());
@@ -67490,7 +67979,7 @@ var AotSummaryResolver = (function () {
         var /** @type {?} */ summary = this.summaryCache.get(staticSymbol);
         if (!summary) {
             this._loadSummaryFile(staticSymbol.filePath);
-            summary = this.summaryCache.get(staticSymbol);
+            summary = ((this.summaryCache.get(staticSymbol)));
         }
         return summary;
     };
@@ -67508,7 +67997,7 @@ var AotSummaryResolver = (function () {
      */
     AotSummaryResolver.prototype.getImportAs = function (staticSymbol) {
         staticSymbol.assertNoMembers();
-        return this.importAs.get(staticSymbol);
+        return ((this.importAs.get(staticSymbol)));
     };
     /**
      * @param {?} filePath
@@ -67565,7 +68054,7 @@ function createAotCompiler(compilerHost, options) {
     var /** @type {?} */ console = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_52" /* ɵConsole */]();
     var /** @type {?} */ htmlParser = new I18NHtmlParser(new HtmlParser(), translations, options.i18nFormat, __WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* MissingTranslationStrategy */].Warning, console);
     var /** @type {?} */ config = new CompilerConfig({
-        defaultEncapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].Emulated,
+        defaultEncapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].Emulated,
         useJit: false,
         enableLegacyTemplate: options.enableLegacyTemplate !== false,
     });
@@ -67576,12 +68065,12 @@ function createAotCompiler(compilerHost, options) {
     var /** @type {?} */ resolver = new CompileMetadataResolver(config, new NgModuleResolver(staticReflector), new DirectiveResolver(staticReflector), new PipeResolver(staticReflector), summaryResolver, elementSchemaRegistry, normalizer, console, symbolCache, staticReflector);
     // TODO(vicb): do not pass options.i18nFormat here
     var /** @type {?} */ importResolver = {
-        getImportAs: function (symbol) { return symbolResolver.getImportAs(symbol); },
+        getImportAs: function (symbol) { return ((symbolResolver.getImportAs(symbol))); },
         fileNameToModuleName: function (fileName, containingFilePath) { return compilerHost.fileNameToModuleName(fileName, containingFilePath); },
-        getTypeArity: function (symbol) { return symbolResolver.getTypeArity(symbol); }
+        getTypeArity: function (symbol) { return ((symbolResolver.getTypeArity(symbol))); }
     };
     var /** @type {?} */ viewCompiler = new ViewCompiler(config, elementSchemaRegistry);
-    var /** @type {?} */ compiler = new AotCompiler(config, compilerHost, resolver, tmplParser, new StyleCompiler(urlResolver), viewCompiler, new NgModuleCompiler(), new TypeScriptEmitter(importResolver), summaryResolver, options.locale, options.i18nFormat, options.genFilePreamble, symbolResolver);
+    var /** @type {?} */ compiler = new AotCompiler(config, compilerHost, resolver, tmplParser, new StyleCompiler(urlResolver), viewCompiler, new NgModuleCompiler(), new TypeScriptEmitter(importResolver), summaryResolver, options.locale || null, options.i18nFormat || null, options.genFilePreamble || null, symbolResolver);
     return { compiler: compiler, reflector: staticReflector };
 }
 /**
@@ -67670,7 +68159,7 @@ function createDynamicClass(_classStmt, _ctx, _visitor) {
     _classStmt.methods.forEach(function (method) {
         var /** @type {?} */ paramNames = method.params.map(function (param) { return param.name; });
         // Note: use `function` instead of arrow function to capture `this`
-        propertyDescriptors[method.name] = {
+        propertyDescriptors[((method.name))] = {
             writable: false,
             configurable: false,
             value: function () {
@@ -67729,7 +68218,7 @@ var StatementInterpreter = (function () {
                 currCtx.vars.set(expr.name, value);
                 return value;
             }
-            currCtx = currCtx.parent;
+            currCtx = ((currCtx.parent));
         }
         throw new Error("Not declared variable " + expr.name);
     };
@@ -67739,7 +68228,7 @@ var StatementInterpreter = (function () {
      * @return {?}
      */
     StatementInterpreter.prototype.visitReadVarExpr = function (ast, ctx) {
-        var /** @type {?} */ varName = ast.name;
+        var /** @type {?} */ varName = ((ast.name));
         if (ast.builtin != null) {
             switch (ast.builtin) {
                 case BuiltinVar.Super:
@@ -67761,7 +68250,7 @@ var StatementInterpreter = (function () {
             if (currCtx.vars.has(varName)) {
                 return currCtx.vars.get(varName);
             }
-            currCtx = currCtx.parent;
+            currCtx = ((currCtx.parent));
         }
         throw new Error("Not declared variable " + varName);
     };
@@ -67813,7 +68302,7 @@ var StatementInterpreter = (function () {
             }
         }
         else {
-            result = receiver[expr.name].apply(receiver, args);
+            result = receiver[((expr.name))].apply(receiver, args);
         }
         return result;
     };
@@ -68249,7 +68738,7 @@ var AbstractJsEmitterVisitor = (function (_super) {
     AbstractJsEmitterVisitor.prototype.visitInvokeFunctionExpr = function (expr, ctx) {
         var /** @type {?} */ fnExpr = expr.fn;
         if (fnExpr instanceof ReadVarExpr && fnExpr.builtin === BuiltinVar.Super) {
-            ctx.currentClass.parent.visitExpression(this, ctx);
+            ((((ctx.currentClass)).parent)).visitExpression(this, ctx);
             ctx.print(expr, ".call(this");
             if (expr.args.length > 0) {
                 ctx.print(expr, ", ");
@@ -68364,7 +68853,7 @@ function evalExpression(sourceUrl$$1, ctx, vars) {
         fnArgNames.push(argName);
         fnArgValues.push(vars[argName]);
     }
-    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* isDevMode */])()) {
+    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* isDevMode */])()) {
         // using `new Function(...)` generates a header, 1 line of no arguments, 2 lines otherwise
         // E.g. ```
         // function anonymous(a,b,c
@@ -68482,7 +68971,7 @@ var JitCompiler = (function () {
      * @return {?}
      */
     JitCompiler.prototype.compileModuleSync = function (moduleType) {
-        return this._compileModuleAndComponents(moduleType, true).syncResult;
+        return ((this._compileModuleAndComponents(moduleType, true).syncResult));
     };
     /**
      * @template T
@@ -68490,7 +68979,7 @@ var JitCompiler = (function () {
      * @return {?}
      */
     JitCompiler.prototype.compileModuleAsync = function (moduleType) {
-        return this._compileModuleAndComponents(moduleType, false).asyncResult;
+        return ((this._compileModuleAndComponents(moduleType, false).asyncResult));
     };
     /**
      * @template T
@@ -68498,7 +68987,7 @@ var JitCompiler = (function () {
      * @return {?}
      */
     JitCompiler.prototype.compileModuleAndAllComponentsSync = function (moduleType) {
-        return this._compileModuleAndAllComponents(moduleType, true).syncResult;
+        return ((this._compileModuleAndAllComponents(moduleType, true).syncResult));
     };
     /**
      * @template T
@@ -68506,7 +68995,7 @@ var JitCompiler = (function () {
      * @return {?}
      */
     JitCompiler.prototype.compileModuleAndAllComponentsAsync = function (moduleType) {
-        return this._compileModuleAndAllComponents(moduleType, false).asyncResult;
+        return ((this._compileModuleAndAllComponents(moduleType, false).asyncResult));
     };
     /**
      * @param {?} component
@@ -68518,7 +69007,7 @@ var JitCompiler = (function () {
         if (!template) {
             throw new Error("The component " + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* ɵstringify */])(component) + " is not yet compiled!");
         }
-        return template.compMeta.template.ngContentSelectors;
+        return ((template.compMeta.template)).ngContentSelectors;
     };
     /**
      * @template T
@@ -68569,7 +69058,7 @@ var JitCompiler = (function () {
     JitCompiler.prototype._loadModules = function (mainModule, isSync) {
         var _this = this;
         var /** @type {?} */ loadingPromises = [];
-        var /** @type {?} */ ngModule = this._metadataResolver.getNgModuleMetadata(mainModule);
+        var /** @type {?} */ ngModule = ((this._metadataResolver.getNgModuleMetadata(mainModule)));
         // Note: the loadingPromise for a module only includes the loading of the exported directives
         // of imported modules.
         // However, for runtime compilation, we want to transitively compile all modules,
@@ -68586,9 +69075,9 @@ var JitCompiler = (function () {
      */
     JitCompiler.prototype._compileModule = function (moduleType) {
         var _this = this;
-        var /** @type {?} */ ngModuleFactory = this._compiledNgModuleCache.get(moduleType);
+        var /** @type {?} */ ngModuleFactory = ((this._compiledNgModuleCache.get(moduleType)));
         if (!ngModuleFactory) {
-            var /** @type {?} */ moduleMeta_1 = this._metadataResolver.getNgModuleMetadata(moduleType);
+            var /** @type {?} */ moduleMeta_1 = ((this._metadataResolver.getNgModuleMetadata(moduleType)));
             // Always provide a bound Compiler
             var /** @type {?} */ extraProviders = [this._metadataResolver.getProviderMetadata(new ProviderMeta(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* Compiler */], { useFactory: function () { return new ModuleBoundCompiler(_this, moduleMeta_1.type.reference); } }))];
             var /** @type {?} */ compileResult = this._ngModuleCompiler.compile(moduleMeta_1, extraProviders);
@@ -68611,11 +69100,11 @@ var JitCompiler = (function () {
      */
     JitCompiler.prototype._compileComponents = function (mainModule, allComponentFactories) {
         var _this = this;
-        var /** @type {?} */ ngModule = this._metadataResolver.getNgModuleMetadata(mainModule);
+        var /** @type {?} */ ngModule = ((this._metadataResolver.getNgModuleMetadata(mainModule)));
         var /** @type {?} */ moduleByDirective = new Map();
         var /** @type {?} */ templates = new Set();
         ngModule.transitiveModule.modules.forEach(function (localModuleSummary) {
-            var /** @type {?} */ localModuleMeta = _this._metadataResolver.getNgModuleMetadata(localModuleSummary.reference);
+            var /** @type {?} */ localModuleMeta = ((_this._metadataResolver.getNgModuleMetadata(localModuleSummary.reference)));
             localModuleMeta.declaredDirectives.forEach(function (dirIdentifier) {
                 moduleByDirective.set(dirIdentifier.reference, localModuleMeta);
                 var /** @type {?} */ dirMeta = _this._metadataResolver.getDirectiveMetadata(dirIdentifier.reference);
@@ -68630,18 +69119,18 @@ var JitCompiler = (function () {
             });
         });
         ngModule.transitiveModule.modules.forEach(function (localModuleSummary) {
-            var /** @type {?} */ localModuleMeta = _this._metadataResolver.getNgModuleMetadata(localModuleSummary.reference);
+            var /** @type {?} */ localModuleMeta = ((_this._metadataResolver.getNgModuleMetadata(localModuleSummary.reference)));
             localModuleMeta.declaredDirectives.forEach(function (dirIdentifier) {
                 var /** @type {?} */ dirMeta = _this._metadataResolver.getDirectiveMetadata(dirIdentifier.reference);
                 if (dirMeta.isComponent) {
                     dirMeta.entryComponents.forEach(function (entryComponentType) {
-                        var /** @type {?} */ moduleMeta = moduleByDirective.get(entryComponentType.componentType);
+                        var /** @type {?} */ moduleMeta = ((moduleByDirective.get(entryComponentType.componentType)));
                         templates.add(_this._createCompiledHostTemplate(entryComponentType.componentType, moduleMeta));
                     });
                 }
             });
             localModuleMeta.entryComponents.forEach(function (entryComponentType) {
-                var /** @type {?} */ moduleMeta = moduleByDirective.get(entryComponentType.componentType);
+                var /** @type {?} */ moduleMeta = ((moduleByDirective.get(entryComponentType.componentType)));
                 templates.add(_this._createCompiledHostTemplate(entryComponentType.componentType, moduleMeta));
             });
         });
@@ -68717,11 +69206,11 @@ var JitCompiler = (function () {
         var /** @type {?} */ compMeta = template.compMeta;
         var /** @type {?} */ externalStylesheetsByModuleUrl = new Map();
         var /** @type {?} */ stylesCompileResult = this._styleCompiler.compileComponent(compMeta);
-        stylesCompileResult.externalStylesheets.forEach(function (r) { externalStylesheetsByModuleUrl.set(r.meta.moduleUrl, r); });
+        stylesCompileResult.externalStylesheets.forEach(function (r) { externalStylesheetsByModuleUrl.set(/** @type {?} */ ((r.meta.moduleUrl)), r); });
         this._resolveStylesCompileResult(stylesCompileResult.componentStylesheet, externalStylesheetsByModuleUrl);
         var /** @type {?} */ directives = template.directives.map(function (dir) { return _this._metadataResolver.getDirectiveSummary(dir.reference); });
         var /** @type {?} */ pipes = template.ngModule.transitiveModule.pipes.map(function (pipe) { return _this._metadataResolver.getPipeSummary(pipe.reference); });
-        var _a = this._templateParser.parse(compMeta, compMeta.template.template, directives, pipes, template.ngModule.schemas, templateSourceUrl(template.ngModule.type, template.compMeta, template.compMeta.template)), parsedTemplate = _a.template, usedPipes = _a.pipes;
+        var _a = this._templateParser.parse(compMeta, /** @type {?} */ ((((compMeta.template)).template)), directives, pipes, template.ngModule.schemas, templateSourceUrl(template.ngModule.type, template.compMeta, /** @type {?} */ ((template.compMeta.template)))), parsedTemplate = _a.template, usedPipes = _a.pipes;
         var /** @type {?} */ compileResult = this._viewCompiler.compileComponent(compMeta, parsedTemplate, variable(stylesCompileResult.componentStylesheet.stylesVar), usedPipes);
         var /** @type {?} */ statements = stylesCompileResult.componentStylesheet.statements.concat(compileResult.statements);
         var /** @type {?} */ viewClassAndRendererTypeVars = compMeta.isHost ?
@@ -68746,7 +69235,7 @@ var JitCompiler = (function () {
     JitCompiler.prototype._resolveStylesCompileResult = function (result, externalStylesheetsByModuleUrl) {
         var _this = this;
         result.dependencies.forEach(function (dep, i) {
-            var /** @type {?} */ nestedCompileResult = externalStylesheetsByModuleUrl.get(dep.moduleUrl);
+            var /** @type {?} */ nestedCompileResult = ((externalStylesheetsByModuleUrl.get(dep.moduleUrl)));
             var /** @type {?} */ nestedStylesArr = _this._resolveAndEvalStylesCompileResult(nestedCompileResult, externalStylesheetsByModuleUrl);
             dep.valuePlaceholder.reference = nestedStylesArr;
         });
@@ -68797,7 +69286,7 @@ var CompiledTemplate = (function () {
         this.compMeta = compMeta;
         this.ngModule = ngModule;
         this.directives = directives;
-        this._viewClass = null;
+        this._viewClass = ((null));
         this.isCompiled = false;
     }
     /**
@@ -68937,6 +69426,7 @@ var MessageBundle = (function () {
             return i18nParserResult.errors;
         }
         (_a = this._messages).push.apply(_a, i18nParserResult.messages);
+        return null;
         var _a;
     };
     /**
@@ -68945,9 +69435,10 @@ var MessageBundle = (function () {
     MessageBundle.prototype.getMessages = function () { return this._messages; };
     /**
      * @param {?} serializer
+     * @param {?=} filterSources
      * @return {?}
      */
-    MessageBundle.prototype.write = function (serializer) {
+    MessageBundle.prototype.write = function (serializer, filterSources) {
         var /** @type {?} */ messages = {};
         var /** @type {?} */ mapperVisitor = new MapPlaceholderNames();
         // Deduplicate messages based on their ID
@@ -68956,13 +69447,22 @@ var MessageBundle = (function () {
             if (!messages.hasOwnProperty(id)) {
                 messages[id] = message;
             }
+            else {
+                (_a = messages[id].sources).push.apply(_a, message.sources);
+            }
+            var _a;
         });
         // Transform placeholder names using the serializer mapping
         var /** @type {?} */ msgList = Object.keys(messages).map(function (id) {
             var /** @type {?} */ mapper = serializer.createNameMapper(messages[id]);
             var /** @type {?} */ src = messages[id];
             var /** @type {?} */ nodes = mapper ? mapperVisitor.convert(src.nodes, mapper) : src.nodes;
-            return new Message(nodes, {}, {}, src.meaning, src.description, id);
+            var /** @type {?} */ transformedMessage = new Message(nodes, {}, {}, src.meaning, src.description, id);
+            transformedMessage.sources = src.sources;
+            if (filterSources) {
+                transformedMessage.sources.forEach(function (source) { return source.filePath = filterSources(source.filePath); });
+            }
+            return transformedMessage;
         });
         return serializer.write(msgList, this._locale);
     };
@@ -68989,8 +69489,8 @@ var MapPlaceholderNames = (function (_super) {
      */
     MapPlaceholderNames.prototype.visitTagPlaceholder = function (ph, mapper) {
         var _this = this;
-        var /** @type {?} */ startName = mapper.toPublicName(ph.startName);
-        var /** @type {?} */ closeName = ph.closeName ? mapper.toPublicName(ph.closeName) : ph.closeName;
+        var /** @type {?} */ startName = ((mapper.toPublicName(ph.startName)));
+        var /** @type {?} */ closeName = ph.closeName ? ((mapper.toPublicName(ph.closeName))) : ph.closeName;
         var /** @type {?} */ children = ph.children.map(function (n) { return n.visit(_this, mapper); });
         return new TagPlaceholder(ph.tag, ph.attrs, startName, closeName, children, ph.isVoid, ph.sourceSpan);
     };
@@ -69000,7 +69500,7 @@ var MapPlaceholderNames = (function (_super) {
      * @return {?}
      */
     MapPlaceholderNames.prototype.visitPlaceholder = function (ph, mapper) {
-        return new Placeholder(ph.value, mapper.toPublicName(ph.name), ph.sourceSpan);
+        return new Placeholder(ph.value, /** @type {?} */ ((mapper.toPublicName(ph.name))), ph.sourceSpan);
     };
     /**
      * @param {?} ph
@@ -69008,7 +69508,7 @@ var MapPlaceholderNames = (function (_super) {
      * @return {?}
      */
     MapPlaceholderNames.prototype.visitIcuPlaceholder = function (ph, mapper) {
-        return new IcuPlaceholder(ph.value, mapper.toPublicName(ph.name), ph.sourceSpan);
+        return new IcuPlaceholder(ph.value, /** @type {?} */ ((mapper.toPublicName(ph.name))), ph.sourceSpan);
     };
     return MapPlaceholderNames;
 }(CloneVisitor));
@@ -69056,9 +69556,9 @@ var Extractor = (function () {
                     }
                 });
                 compMetas.forEach(function (compMeta) {
-                    var /** @type {?} */ html = compMeta.template.template;
-                    var /** @type {?} */ interpolationConfig = InterpolationConfig.fromArray(compMeta.template.interpolation);
-                    errors.push.apply(errors, _this.messageBundle.updateFromTemplate(html, file.srcUrl, interpolationConfig));
+                    var /** @type {?} */ html = ((((compMeta.template)).template));
+                    var /** @type {?} */ interpolationConfig = InterpolationConfig.fromArray(/** @type {?} */ ((compMeta.template)).interpolation);
+                    errors.push.apply(errors, ((_this.messageBundle.updateFromTemplate(html, file.srcUrl, interpolationConfig))));
                 });
             });
             if (errors.length) {
@@ -69080,7 +69580,7 @@ var Extractor = (function () {
         var /** @type {?} */ staticSymbolResolver = new StaticSymbolResolver(host, symbolCache, summaryResolver);
         var /** @type {?} */ staticReflector = new StaticReflector(summaryResolver, staticSymbolResolver);
         StaticAndDynamicReflectionCapabilities.install(staticReflector);
-        var /** @type {?} */ config = new CompilerConfig({ defaultEncapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].Emulated, useJit: false });
+        var /** @type {?} */ config = new CompilerConfig({ defaultEncapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].Emulated, useJit: false });
         var /** @type {?} */ normalizer = new DirectiveNormalizer({ get: function (url) { return host.loadResource(url); } }, urlResolver, htmlParser, config);
         var /** @type {?} */ elementSchemaRegistry = new DomElementSchemaRegistry();
         var /** @type {?} */ resolver = new CompileMetadataResolver(config, new NgModuleResolver(staticReflector), new DirectiveResolver(staticReflector), new PipeResolver(staticReflector), summaryResolver, elementSchemaRegistry, normalizer, new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_52" /* ɵConsole */](), symbolCache, staticReflector);
@@ -69114,7 +69614,18 @@ var _NO_RESOURCE_LOADER = {
         throw new Error("No ResourceLoader implementation has been provided. Can't read the url \"" + url + "\"");
     }
 };
-var baseHtmlParser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('HtmlParser');
+var baseHtmlParser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('HtmlParser');
+/**
+ * @param {?} parser
+ * @param {?} translations
+ * @param {?} format
+ * @param {?} config
+ * @param {?} console
+ * @return {?}
+ */
+function i18nHtmlParserFactory(parser, translations, format, config, console) {
+    return new I18NHtmlParser(parser, translations, format, /** @type {?} */ ((config.missingTranslation)), console);
+}
 /**
  * A set of providers that provide `JitCompiler` and its dependencies to use for
  * template compilation.
@@ -69133,11 +69644,11 @@ var COMPILER_PROVIDERS = [
     },
     {
         provide: I18NHtmlParser,
-        useFactory: function (parser, translations, format, config, console) { return new I18NHtmlParser(parser, translations, format, config.missingTranslation, console); },
+        useFactory: i18nHtmlParserFactory,
         deps: [
             baseHtmlParser,
-            [new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */](__WEBPACK_IMPORTED_MODULE_0__angular_core__["_73" /* TRANSLATIONS */])],
-            [new __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */](__WEBPACK_IMPORTED_MODULE_0__angular_core__["_31" /* TRANSLATIONS_FORMAT */])],
+            [new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */](__WEBPACK_IMPORTED_MODULE_0__angular_core__["_73" /* TRANSLATIONS */])],
+            [new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */](__WEBPACK_IMPORTED_MODULE_0__angular_core__["_31" /* TRANSLATIONS_FORMAT */])],
             [CompilerConfig],
             [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_52" /* ɵConsole */]],
         ]
@@ -69169,9 +69680,9 @@ var JitCompilerFactory = (function () {
      */
     function JitCompilerFactory(defaultOptions) {
         var compilerOptions = {
-            useDebug: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* isDevMode */])(),
+            useDebug: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* isDevMode */])(),
             useJit: true,
-            defaultEncapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].Emulated,
+            defaultEncapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ViewEncapsulation */].Emulated,
             missingTranslation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* MissingTranslationStrategy */].Warning,
             enableLegacyTemplate: true,
         };
@@ -69200,8 +69711,7 @@ var JitCompilerFactory = (function () {
                     });
                 },
                 deps: []
-            },
-            opts.providers
+            }, /** @type {?} */ ((opts.providers))
         ]);
         return injector.get(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* Compiler */]);
     };
@@ -69214,7 +69724,7 @@ JitCompilerFactory.decorators = [
  * @nocollapse
  */
 JitCompilerFactory.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_21" /* COMPILER_OPTIONS */],] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_21" /* COMPILER_OPTIONS */],] },] },
 ]; };
 /**
  * @return {?}
@@ -69227,10 +69737,10 @@ function _initReflector() {
  *
  * \@experimental
  */
-var platformCoreDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* createPlatformFactory */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* platformCore */], 'coreDynamic', [
+var platformCoreDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* createPlatformFactory */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* platformCore */], 'coreDynamic', [
     { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_21" /* COMPILER_OPTIONS */], useValue: {}, multi: true },
     { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_74" /* CompilerFactory */], useClass: JitCompilerFactory },
-    { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* PLATFORM_INITIALIZER */], useValue: _initReflector, multi: true },
+    { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* PLATFORM_INITIALIZER */], useValue: _initReflector, multi: true },
 ]);
 /**
  * @param {?} optionsArr
@@ -69240,7 +69750,7 @@ function _mergeOptions(optionsArr) {
     return {
         useJit: _lastDefined(optionsArr.map(function (options) { return options.useJit; })),
         defaultEncapsulation: _lastDefined(optionsArr.map(function (options) { return options.defaultEncapsulation; })),
-        providers: _mergeArrays(optionsArr.map(function (options) { return options.providers; })),
+        providers: _mergeArrays(optionsArr.map(function (options) { return ((options.providers)); })),
         missingTranslation: _lastDefined(optionsArr.map(function (options) { return options.missingTranslation; })),
     };
 }
@@ -69347,14 +69857,14 @@ var ImportResolver = (function () {
 //# sourceMappingURL=compiler.es5.js.map
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
@@ -69436,7 +69946,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -69463,14 +69973,11 @@ var __extends = (this && this.__extends) || function (d, b) {
 var AbstractControlDirective = (function () {
     function AbstractControlDirective() {
     }
-    Object.defineProperty(AbstractControlDirective.prototype, "control", {
-        /**
-         * @return {?}
-         */
-        get: function () { throw new Error('unimplemented'); },
-        enumerable: true,
-        configurable: true
-    });
+    /**
+     * @abstract
+     * @return {?}
+     */
+    AbstractControlDirective.prototype.control = function () { };
     Object.defineProperty(AbstractControlDirective.prototype, "value", {
         /**
          * @return {?}
@@ -69563,7 +70070,9 @@ var AbstractControlDirective = (function () {
         /**
          * @return {?}
          */
-        get: function () { return this.control ? this.control.statusChanges : null; },
+        get: function () {
+            return this.control ? this.control.statusChanges : null;
+        },
         enumerable: true,
         configurable: true
     });
@@ -69571,7 +70080,9 @@ var AbstractControlDirective = (function () {
         /**
          * @return {?}
          */
-        get: function () { return this.control ? this.control.valueChanges : null; },
+        get: function () {
+            return this.control ? this.control.valueChanges : null;
+        },
         enumerable: true,
         configurable: true
     });
@@ -69598,7 +70109,6 @@ var AbstractControlDirective = (function () {
      * @return {?}
      */
     AbstractControlDirective.prototype.hasError = function (errorCode, path) {
-        if (path === void 0) { path = null; }
         return this.control ? this.control.hasError(errorCode, path) : false;
     };
     /**
@@ -69607,7 +70117,6 @@ var AbstractControlDirective = (function () {
      * @return {?}
      */
     AbstractControlDirective.prototype.getError = function (errorCode, path) {
-        if (path === void 0) { path = null; }
         return this.control ? this.control.getError(errorCode, path) : null;
     };
     return AbstractControlDirective;
@@ -69625,6 +70134,7 @@ var AbstractControlDirective = (function () {
  * Only used by the forms module.
  *
  * \@stable
+ * @abstract
  */
 var ControlContainer = (function (_super) {
     __extends(ControlContainer, _super);
@@ -69685,7 +70195,7 @@ function isEmptyInputValue(value) {
  * {\@example core/forms/ts/ng_validators/ng_validators.ts region='ng_validators'}
  * \@stable
  */
-var NG_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('NgValidators');
+var NG_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('NgValidators');
 /**
  * Providers for asynchronous validators to be used for {\@link FormControl}s
  * in a form.
@@ -69696,7 +70206,7 @@ var NG_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* Injec
  *
  * \@stable
  */
-var NG_ASYNC_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('NgAsyncValidators');
+var NG_ASYNC_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('NgAsyncValidators');
 var EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
 /**
  * Provides a set of validators used by form controls.
@@ -69802,15 +70312,13 @@ var Validators = (function () {
      */
     Validators.nullValidator = function (c) { return null; };
     /**
-     * Compose multiple validators into a single function that returns the union
-     * of the individual error maps.
      * @param {?} validators
      * @return {?}
      */
     Validators.compose = function (validators) {
         if (!validators)
             return null;
-        var /** @type {?} */ presentValidators = validators.filter(isPresent);
+        var /** @type {?} */ presentValidators = (validators.filter(isPresent));
         if (presentValidators.length == 0)
             return null;
         return function (control) {
@@ -69824,7 +70332,7 @@ var Validators = (function () {
     Validators.composeAsync = function (validators) {
         if (!validators)
             return null;
-        var /** @type {?} */ presentValidators = validators.filter(isPresent);
+        var /** @type {?} */ presentValidators = (validators.filter(isPresent));
         if (presentValidators.length == 0)
             return null;
         return function (control) {
@@ -69874,7 +70382,7 @@ function _executeAsyncValidators(control, validators) {
  */
 function _mergeErrors(arrayOfErrors) {
     var /** @type {?} */ res = arrayOfErrors.reduce(function (res, errors) {
-        return errors != null ? __assign({}, res, errors) : res;
+        return errors != null ? __assign({}, /** @type {?} */ ((res)), errors) : ((res));
     }, {});
     return Object.keys(res).length === 0 ? null : res;
 }
@@ -69891,7 +70399,7 @@ function _mergeErrors(arrayOfErrors) {
  * See {\@link DefaultValueAccessor} for how to implement one.
  * \@stable
  */
-var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('NgValueAccessor');
+var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('NgValueAccessor');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -69990,7 +70498,7 @@ function _isAndroid() {
  * Turn this mode on if you want form directives to buffer IME input until compositionend
  * \@experimental
  */
-var COMPOSITION_BUFFER_MODE = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* InjectionToken */]('CompositionEventMode');
+var COMPOSITION_BUFFER_MODE = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* InjectionToken */]('CompositionEventMode');
 /**
  * The default accessor for writing a value and listening to changes that is used by the
  * {\@link NgModel}, {\@link FormControlDirective}, and {\@link FormControlName} directives.
@@ -70088,7 +70596,7 @@ DefaultValueAccessor.decorators = [
 DefaultValueAccessor.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["N" /* Renderer */], },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */], },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [COMPOSITION_BUFFER_MODE,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [COMPOSITION_BUFFER_MODE,] },] },
 ]; };
 /**
  * @license
@@ -70332,7 +70840,7 @@ var RadioControlRegistry = (function () {
     return RadioControlRegistry;
 }());
 RadioControlRegistry.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -70836,7 +71344,7 @@ NgSelectOption.decorators = [
 NgSelectOption.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */], },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["N" /* Renderer */], },
-    { type: SelectControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] },] },
+    { type: SelectControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] },] },
 ]; };
 NgSelectOption.propDecorators = {
     'ngValue': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['ngValue',] },],
@@ -71017,7 +71525,7 @@ var SelectMultipleControlValueAccessor = (function () {
     SelectMultipleControlValueAccessor.prototype._getOptionId = function (value) {
         for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
             var id = _a[_i];
-            if (this._compareWith(this._optionMap.get(id)._value, value))
+            if (this._compareWith(/** @type {?} */ ((this._optionMap.get(id)))._value, value))
                 return id;
         }
         return null;
@@ -71029,7 +71537,7 @@ var SelectMultipleControlValueAccessor = (function () {
      */
     SelectMultipleControlValueAccessor.prototype._getOptionValue = function (valueString) {
         var /** @type {?} */ id = _extractId$1(valueString);
-        return this._optionMap.has(id) ? this._optionMap.get(id)._value : valueString;
+        return this._optionMap.has(id) ? ((this._optionMap.get(id)))._value : valueString;
     };
     return SelectMultipleControlValueAccessor;
 }());
@@ -71144,7 +71652,7 @@ NgSelectMultipleOption.decorators = [
 NgSelectMultipleOption.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */], },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["N" /* Renderer */], },
-    { type: SelectMultipleControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] },] },
+    { type: SelectMultipleControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] },] },
 ]; };
 NgSelectMultipleOption.propDecorators = {
     'ngValue': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['ngValue',] },],
@@ -71163,7 +71671,7 @@ NgSelectMultipleOption.propDecorators = {
  * @return {?}
  */
 function controlPath(name, parent) {
-    return parent.path.concat([name]);
+    return ((parent.path)).concat([name]);
 }
 /**
  * @param {?} control
@@ -71175,35 +71683,38 @@ function setUpControl(control, dir) {
         _throwError(dir, 'Cannot find control with');
     if (!dir.valueAccessor)
         _throwError(dir, 'No value accessor for form control with');
-    control.validator = Validators.compose([control.validator, dir.validator]);
-    control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
-    dir.valueAccessor.writeValue(control.value);
+    control.validator = Validators.compose([/** @type {?} */ ((control.validator)), dir.validator]);
+    control.asyncValidator = Validators.composeAsync([/** @type {?} */ ((control.asyncValidator)), dir.asyncValidator]); /** @type {?} */
+    ((dir.valueAccessor)).writeValue(control.value); /** @type {?} */
+    ((
     // view -> model
-    dir.valueAccessor.registerOnChange(function (newValue) {
+    dir.valueAccessor)).registerOnChange(function (newValue) {
         dir.viewToModelUpdate(newValue);
         control.markAsDirty();
         control.setValue(newValue, { emitModelToViewChange: false });
-    });
+    }); /** @type {?} */
+    ((
     // touched
-    dir.valueAccessor.registerOnTouched(function () { return control.markAsTouched(); });
+    dir.valueAccessor)).registerOnTouched(function () { return control.markAsTouched(); });
     control.registerOnChange(function (newValue, emitModelEvent) {
+        ((
         // control -> view
-        dir.valueAccessor.writeValue(newValue);
+        dir.valueAccessor)).writeValue(newValue);
         // control -> ngModel
         if (emitModelEvent)
             dir.viewToModelUpdate(newValue);
     });
-    if (dir.valueAccessor.setDisabledState) {
-        control.registerOnDisabledChange(function (isDisabled) { dir.valueAccessor.setDisabledState(isDisabled); });
+    if (((dir.valueAccessor)).setDisabledState) {
+        control.registerOnDisabledChange(function (isDisabled) { /** @type {?} */ ((((dir.valueAccessor)).setDisabledState))(isDisabled); });
     }
     // re-run validation when validator binding changes, e.g. minlength=3 -> minlength=4
     dir._rawValidators.forEach(function (validator) {
         if (((validator)).registerOnValidatorChange)
-            ((validator)).registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+            ((((validator)).registerOnValidatorChange))(function () { return control.updateValueAndValidity(); });
     });
     dir._rawAsyncValidators.forEach(function (validator) {
         if (((validator)).registerOnValidatorChange)
-            ((validator)).registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+            ((((validator)).registerOnValidatorChange))(function () { return control.updateValueAndValidity(); });
     });
 }
 /**
@@ -71212,8 +71723,8 @@ function setUpControl(control, dir) {
  * @return {?}
  */
 function cleanUpControl(control, dir) {
-    dir.valueAccessor.registerOnChange(function () { return _noControlError(dir); });
-    dir.valueAccessor.registerOnTouched(function () { return _noControlError(dir); });
+    ((dir.valueAccessor)).registerOnChange(function () { return _noControlError(dir); }); /** @type {?} */
+    ((dir.valueAccessor)).registerOnTouched(function () { return _noControlError(dir); });
     dir._rawValidators.forEach(function (validator) {
         if (validator.registerOnValidatorChange) {
             validator.registerOnValidatorChange(null);
@@ -71252,10 +71763,10 @@ function _noControlError(dir) {
  */
 function _throwError(dir, message) {
     var /** @type {?} */ messageEnd;
-    if (dir.path.length > 1) {
-        messageEnd = "path: '" + dir.path.join(' -> ') + "'";
+    if (((dir.path)).length > 1) {
+        messageEnd = "path: '" + ((dir.path)).join(' -> ') + "'";
     }
-    else if (dir.path[0]) {
+    else if (((dir.path))[0]) {
         messageEnd = "name: '" + dir.path + "'";
     }
     else {
@@ -71314,9 +71825,9 @@ function isBuiltInAccessor(valueAccessor) {
 function selectValueAccessor(dir, valueAccessors) {
     if (!valueAccessors)
         return null;
-    var /** @type {?} */ defaultAccessor;
-    var /** @type {?} */ builtinAccessor;
-    var /** @type {?} */ customAccessor;
+    var /** @type {?} */ defaultAccessor = undefined;
+    var /** @type {?} */ builtinAccessor = undefined;
+    var /** @type {?} */ customAccessor = undefined;
     valueAccessors.forEach(function (v) {
         if (v.constructor === DefaultValueAccessor) {
             defaultAccessor = v;
@@ -71362,8 +71873,8 @@ var AbstractFormGroupDirective = (function (_super) {
      * @return {?}
      */
     AbstractFormGroupDirective.prototype.ngOnInit = function () {
-        this._checkParentType();
-        this.formDirective.addFormGroup(this);
+        this._checkParentType(); /** @type {?} */
+        ((this.formDirective)).addFormGroup(this);
     };
     /**
      * @return {?}
@@ -71378,7 +71889,7 @@ var AbstractFormGroupDirective = (function (_super) {
          * Get the {\@link FormGroup} backing this binding.
          * @return {?}
          */
-        get: function () { return this.formDirective.getFormGroup(this); },
+        get: function () { return ((this.formDirective)).getFormGroup(this); },
         enumerable: true,
         configurable: true
     });
@@ -71412,7 +71923,9 @@ var AbstractFormGroupDirective = (function (_super) {
         /**
          * @return {?}
          */
-        get: function () { return composeAsyncValidators(this._asyncValidators); },
+        get: function () {
+            return composeAsyncValidators(this._asyncValidators);
+        },
         enumerable: true,
         configurable: true
     });
@@ -71607,18 +72120,19 @@ function _find(control, path, delimiter) {
     }, control);
 }
 /**
- * @param {?} validator
+ * @param {?=} validator
  * @return {?}
  */
 function coerceToValidator(validator) {
-    return Array.isArray(validator) ? composeValidators(validator) : validator;
+    return Array.isArray(validator) ? composeValidators(validator) : validator || null;
 }
 /**
- * @param {?} asyncValidator
+ * @param {?=} asyncValidator
  * @return {?}
  */
 function coerceToAsyncValidator(asyncValidator) {
-    return Array.isArray(asyncValidator) ? composeAsyncValidators(asyncValidator) : asyncValidator;
+    return Array.isArray(asyncValidator) ? composeAsyncValidators(asyncValidator) :
+        asyncValidator || null;
 }
 /**
  * \@whatItDoes This is the base class for {\@link FormControl}, {\@link FormGroup}, and
@@ -71946,7 +72460,7 @@ var AbstractControl = (function () {
             this._valueChanges.emit(this._value);
             this._statusChanges.emit(this._status);
         }
-        this._updateAncestors(onlySelf);
+        this._updateAncestors(!!onlySelf);
         this._onDisabledChange.forEach(function (changeFn) { return changeFn(true); });
     };
     /**
@@ -71963,7 +72477,7 @@ var AbstractControl = (function () {
         this._status = VALID;
         this._forEachChild(function (control) { control.enable({ onlySelf: true }); });
         this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
-        this._updateAncestors(onlySelf);
+        this._updateAncestors(!!onlySelf);
         this._onDisabledChange.forEach(function (changeFn) { return changeFn(false); });
     };
     /**
@@ -72054,7 +72568,7 @@ var AbstractControl = (function () {
         return this.validator ? this.validator(this) : null;
     };
     /**
-     * @param {?} emitEvent
+     * @param {?=} emitEvent
      * @return {?}
      */
     AbstractControl.prototype._runAsyncValidator = function (emitEvent) {
@@ -72131,7 +72645,6 @@ var AbstractControl = (function () {
      * @return {?}
      */
     AbstractControl.prototype.getError = function (errorCode, path) {
-        if (path === void 0) { path = null; }
         var /** @type {?} */ control = path ? this.get(path) : this;
         return control && control._errors ? control._errors[errorCode] : null;
     };
@@ -72144,10 +72657,7 @@ var AbstractControl = (function () {
      * @param {?=} path
      * @return {?}
      */
-    AbstractControl.prototype.hasError = function (errorCode, path) {
-        if (path === void 0) { path = null; }
-        return !!this.getError(errorCode, path);
-    };
+    AbstractControl.prototype.hasError = function (errorCode, path) { return !!this.getError(errorCode, path); };
     Object.defineProperty(AbstractControl.prototype, "root", {
         /**
          * Retrieves the top-level ancestor of this control.
@@ -72182,8 +72692,8 @@ var AbstractControl = (function () {
      * @return {?}
      */
     AbstractControl.prototype._initObservables = function () {
-        this._valueChanges = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
-        this._statusChanges = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this._valueChanges = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
+        this._statusChanges = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
     };
     /**
      * @return {?}
@@ -72340,8 +72850,6 @@ var FormControl = (function (_super) {
      */
     function FormControl(formState, validator, asyncValidator) {
         if (formState === void 0) { formState = null; }
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
         var _this = _super.call(this, coerceToValidator(validator), coerceToAsyncValidator(asyncValidator)) || this;
         /**
          * \@internal
@@ -72555,9 +73063,7 @@ var FormGroup = (function (_super) {
      * @param {?=} asyncValidator
      */
     function FormGroup(controls, validator, asyncValidator) {
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
-        var _this = _super.call(this, validator, asyncValidator) || this;
+        var _this = _super.call(this, validator || null, asyncValidator || null) || this;
         _this.controls = controls;
         _this._initObservables();
         _this._setUpControls();
@@ -72911,9 +73417,7 @@ var FormArray = (function (_super) {
      * @param {?=} asyncValidator
      */
     function FormArray(controls, validator, asyncValidator) {
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
-        var _this = _super.call(this, validator, asyncValidator) || this;
+        var _this = _super.call(this, validator || null, asyncValidator || null) || this;
         _this.controls = controls;
         _this._initObservables();
         _this._setUpControls();
@@ -73242,7 +73746,7 @@ var NgForm = (function (_super) {
     function NgForm(validators, asyncValidators) {
         var _this = _super.call(this) || this;
         _this._submitted = false;
-        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
         _this.form =
             new FormGroup({}, composeValidators(validators), composeAsyncValidators(asyncValidators));
         return _this;
@@ -73358,7 +73862,7 @@ var NgForm = (function (_super) {
     NgForm.prototype.updateModel = function (dir, value) {
         var _this = this;
         resolvedPromise.then(function () {
-            var /** @type {?} */ ctrl = (_this.form.get(dir.path));
+            var /** @type {?} */ ctrl = (_this.form.get(/** @type {?} */ ((dir.path))));
             ctrl.setValue(value);
         });
     };
@@ -73413,8 +73917,8 @@ NgForm.decorators = [
  * @nocollapse
  */
 NgForm.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 /**
  * @license
@@ -73534,9 +74038,9 @@ NgModelGroup.decorators = [
  * @nocollapse
  */
 NgModelGroup.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 NgModelGroup.propDecorators = {
     'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['ngModelGroup',] },],
@@ -73646,7 +74150,7 @@ var NgModel = (function (_super) {
          * \@internal
          */
         _this._registered = false;
-        _this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        _this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
         _this._parent = parent;
         _this._rawValidators = validators || [];
         _this._rawAsyncValidators = asyncValidators || [];
@@ -73737,7 +74241,7 @@ var NgModel = (function (_super) {
      * @return {?}
      */
     NgModel.prototype._isStandalone = function () {
-        return !this._parent || (this.options && this.options.standalone);
+        return !this._parent || !!(this.options && this.options.standalone);
     };
     /**
      * @return {?}
@@ -73815,10 +74319,10 @@ NgModel.decorators = [
  * @nocollapse
  */
 NgModel.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
 ]; };
 NgModel.propDecorators = {
     'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
@@ -73937,7 +74441,7 @@ var FormControlDirective = (function (_super) {
      */
     function FormControlDirective(validators, asyncValidators, valueAccessors) {
         var _this = _super.call(this) || this;
-        _this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        _this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
         _this._rawValidators = validators || [];
         _this._rawAsyncValidators = asyncValidators || [];
         _this.valueAccessor = selectValueAccessor(_this, valueAccessors);
@@ -73959,8 +74463,8 @@ var FormControlDirective = (function (_super) {
     FormControlDirective.prototype.ngOnChanges = function (changes) {
         if (this._isControlChanged(changes)) {
             setUpControl(this.form, this);
-            if (this.control.disabled && this.valueAccessor.setDisabledState) {
-                this.valueAccessor.setDisabledState(true);
+            if (this.control.disabled && ((this.valueAccessor)).setDisabledState) {
+                ((((this.valueAccessor)).setDisabledState))(true);
             }
             this.form.updateValueAndValidity({ emitEvent: false });
         }
@@ -74027,9 +74531,9 @@ FormControlDirective.decorators = [
  * @nocollapse
  */
 FormControlDirective.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
 ]; };
 FormControlDirective.propDecorators = {
     'form': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['formControl',] },],
@@ -74095,8 +74599,8 @@ var FormGroupDirective = (function (_super) {
         _this._asyncValidators = _asyncValidators;
         _this._submitted = false;
         _this.directives = [];
-        _this.form = null;
-        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        _this.form = ((null));
+        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
         return _this;
     }
     /**
@@ -74265,9 +74769,9 @@ var FormGroupDirective = (function (_super) {
      */
     FormGroupDirective.prototype._updateValidators = function () {
         var /** @type {?} */ sync = composeValidators(this._validators);
-        this.form.validator = Validators.compose([this.form.validator, sync]);
+        this.form.validator = Validators.compose([/** @type {?} */ ((this.form.validator)), /** @type {?} */ ((sync))]);
         var /** @type {?} */ async = composeAsyncValidators(this._asyncValidators);
-        this.form.asyncValidator = Validators.composeAsync([this.form.asyncValidator, async]);
+        this.form.asyncValidator = Validators.composeAsync([/** @type {?} */ ((this.form.asyncValidator)), /** @type {?} */ ((async))]);
     };
     /**
      * @return {?}
@@ -74291,8 +74795,8 @@ FormGroupDirective.decorators = [
  * @nocollapse
  */
 FormGroupDirective.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 FormGroupDirective.propDecorators = {
     'form': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['formGroup',] },],
@@ -74397,9 +74901,9 @@ FormGroupName.decorators = [
  * @nocollapse
  */
 FormGroupName.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 FormGroupName.propDecorators = {
     'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['formGroupName',] },],
@@ -74473,8 +74977,8 @@ var FormArrayName = (function (_super) {
      * @return {?}
      */
     FormArrayName.prototype.ngOnInit = function () {
-        this._checkParentType();
-        this.formDirective.addFormArray(this);
+        this._checkParentType(); /** @type {?} */
+        ((this.formDirective)).addFormArray(this);
     };
     /**
      * @return {?}
@@ -74488,7 +74992,7 @@ var FormArrayName = (function (_super) {
         /**
          * @return {?}
          */
-        get: function () { return this.formDirective.getFormArray(this); },
+        get: function () { return ((this.formDirective)).getFormArray(this); },
         enumerable: true,
         configurable: true
     });
@@ -74522,7 +75026,9 @@ var FormArrayName = (function (_super) {
         /**
          * @return {?}
          */
-        get: function () { return composeAsyncValidators(this._asyncValidators); },
+        get: function () {
+            return composeAsyncValidators(this._asyncValidators);
+        },
         enumerable: true,
         configurable: true
     });
@@ -74543,9 +75049,9 @@ FormArrayName.decorators = [
  * @nocollapse
  */
 FormArrayName.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 FormArrayName.propDecorators = {
     'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['formArrayName',] },],
@@ -74631,7 +75137,7 @@ var FormControlName = (function (_super) {
     function FormControlName(parent, validators, asyncValidators, valueAccessors) {
         var _this = _super.call(this) || this;
         _this._added = false;
-        _this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        _this.update = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
         _this._parent = parent;
         _this._rawValidators = validators || [];
         _this._rawAsyncValidators = asyncValidators || [];
@@ -74679,7 +75185,7 @@ var FormControlName = (function (_super) {
         /**
          * @return {?}
          */
-        get: function () { return controlPath(this.name, this._parent); },
+        get: function () { return controlPath(this.name, /** @type {?} */ ((this._parent))); },
         enumerable: true,
         configurable: true
     });
@@ -74704,7 +75210,7 @@ var FormControlName = (function (_super) {
          * @return {?}
          */
         get: function () {
-            return composeAsyncValidators(this._rawAsyncValidators);
+            return ((composeAsyncValidators(this._rawAsyncValidators)));
         },
         enumerable: true,
         configurable: true
@@ -74736,8 +75242,8 @@ var FormControlName = (function (_super) {
     FormControlName.prototype._setUpControl = function () {
         this._checkParentType();
         this._control = this.formDirective.addControl(this);
-        if (this.control.disabled && this.valueAccessor.setDisabledState) {
-            this.valueAccessor.setDisabledState(true);
+        if (this.control.disabled && ((this.valueAccessor)).setDisabledState) {
+            ((((this.valueAccessor)).setDisabledState))(true);
         }
         this._added = true;
     };
@@ -74750,10 +75256,10 @@ FormControlName.decorators = [
  * @nocollapse
  */
 FormControlName.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* SkipSelf */] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
 ]; };
 FormControlName.propDecorators = {
     'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['formControlName',] },],
@@ -75194,8 +75700,6 @@ var FormBuilder = (function () {
      * @return {?}
      */
     FormBuilder.prototype.control = function (formState, validator, asyncValidator) {
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
         return new FormControl(formState, validator, asyncValidator);
     };
     /**
@@ -75208,8 +75712,6 @@ var FormBuilder = (function () {
      */
     FormBuilder.prototype.array = function (controlsConfig, validator, asyncValidator) {
         var _this = this;
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
         var /** @type {?} */ controls = controlsConfig.map(function (c) { return _this._createControl(c); });
         return new FormArray(controls, validator, asyncValidator);
     };
@@ -75249,7 +75751,7 @@ var FormBuilder = (function () {
     return FormBuilder;
 }());
 FormBuilder.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -75270,7 +75772,7 @@ FormBuilder.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -75438,11 +75940,11 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(32);
@@ -75457,7 +75959,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -75514,7 +76016,7 @@ var ResourceLoaderImpl = (function (_super) {
     return ResourceLoaderImpl;
 }(__WEBPACK_IMPORTED_MODULE_0__angular_compiler__["a" /* ResourceLoader */]));
 ResourceLoaderImpl.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */] },
 ];
 /** @nocollapse */
 ResourceLoaderImpl.ctorParameters = function () { return []; };
@@ -75532,7 +76034,7 @@ var INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS = [
         useValue: { providers: [{ provide: __WEBPACK_IMPORTED_MODULE_0__angular_compiler__["a" /* ResourceLoader */], useClass: ResourceLoaderImpl }] },
         multi: true
     },
-    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* PLATFORM_ID */], useValue: __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* ɵPLATFORM_BROWSER_ID */] },
+    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* PLATFORM_ID */], useValue: __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* ɵPLATFORM_BROWSER_ID */] },
 ];
 /**
  * @license
@@ -75552,7 +76054,7 @@ var CachedResourceLoader = (function (_super) {
     __extends(CachedResourceLoader, _super);
     function CachedResourceLoader() {
         var _this = _super.call(this) || this;
-        _this._cache = __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* ɵglobal */].$templateCache;
+        _this._cache = __WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* ɵglobal */].$templateCache;
         if (_this._cache == null) {
             throw new Error('CachedResourceLoader: Template cache was not found in $templateCache.');
         }
@@ -75590,7 +76092,7 @@ var CachedResourceLoader = (function (_super) {
 /**
  * @stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["h" /* Version */]('4.0.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* Version */]('4.1.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -75605,7 +76107,7 @@ var RESOURCE_CACHE_PROVIDER = [{ provide: __WEBPACK_IMPORTED_MODULE_0__angular_c
 /**
  * @stable
  */
-var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* createPlatformFactory */])(__WEBPACK_IMPORTED_MODULE_0__angular_compiler__["b" /* platformCoreDynamic */], 'browserDynamic', INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS);
+var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["y" /* createPlatformFactory */])(__WEBPACK_IMPORTED_MODULE_0__angular_compiler__["b" /* platformCoreDynamic */], 'browserDynamic', INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS);
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -75624,13 +76126,13 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__ = __webpack_require__(157);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrowserAnimationsModule; });
 /* unused harmony export NoopAnimationsModule */
 /* unused harmony export ɵAnimationRenderer */
@@ -75647,7 +76149,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.2
+ * @license Angular v4.1.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -75690,15 +76192,15 @@ var AnimationRendererFactory = (function () {
     return AnimationRendererFactory;
 }());
 AnimationRendererFactory.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
  */
 AnimationRendererFactory.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* RendererFactory2 */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* RendererFactory2 */], },
     { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* NgZone */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* NgZone */], },
 ]; };
 var AnimationRenderer = (function () {
     /**
@@ -75902,7 +76404,7 @@ var AnimationRenderer = (function () {
         if (!this._flushPromise) {
             this._zone.runOutsideAngular(function () {
                 _this._flushPromise = Promise.resolve(null).then(function () {
-                    _this._flushPromise = null;
+                    _this._flushPromise = ((null));
                     _this._engine.flush();
                 });
             });
@@ -75971,7 +76473,7 @@ var InjectableAnimationEngine = (function (_super) {
     return InjectableAnimationEngine;
 }(__WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["b" /* ɵDomAnimationEngine */]));
 InjectableAnimationEngine.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -76012,9 +76514,9 @@ var BROWSER_ANIMATIONS_PROVIDERS = [
     { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["c" /* AnimationDriver */], useFactory: instantiateSupportedAnimationDriver },
     { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["d" /* ɵAnimationStyleNormalizer */], useFactory: instantiateDefaultStyleNormalizer },
     { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], useClass: InjectableAnimationEngine }, {
-        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* RendererFactory2 */],
+        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* RendererFactory2 */],
         useFactory: instantiateRendererFactory,
-        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* ɵDomRendererFactory2 */], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* NgZone */]]
+        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* ɵDomRendererFactory2 */], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* NgZone */]]
     }
 ];
 /**
@@ -76023,9 +76525,9 @@ var BROWSER_ANIMATIONS_PROVIDERS = [
  */
 var BROWSER_NOOP_ANIMATIONS_PROVIDERS = [
     { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], useClass: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["i" /* ɵNoopAnimationEngine */] }, {
-        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* RendererFactory2 */],
+        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* RendererFactory2 */],
         useFactory: instantiateRendererFactory,
-        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* ɵDomRendererFactory2 */], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* NgZone */]]
+        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* ɵDomRendererFactory2 */], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* NgZone */]]
     }
 ];
 /**
@@ -76110,7 +76612,6 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 161 */,
 /* 162 */,
 /* 163 */,
 /* 164 */,
@@ -76119,19 +76620,20 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 /* 167 */,
 /* 168 */,
 /* 169 */,
-/* 170 */
+/* 170 */,
+/* 171 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tokens__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_backend__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_backend__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_mergeMap__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_map__);
@@ -76295,9 +76797,9 @@ var AngularFireAuth = (function (_super) {
     return AngularFireAuth;
 }(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"]));
 AngularFireAuth = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
-    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__tokens__["d" /* WindowLocation */])),
-    __param(2, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Optional */])()), __param(2, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__tokens__["f" /* FirebaseAuthConfig */])),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
+    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__tokens__["d" /* WindowLocation */])),
+    __param(2, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Optional */])()), __param(2, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__tokens__["f" /* FirebaseAuthConfig */])),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__auth_backend__["a" /* AuthBackend */], Object, Object])
 ], AngularFireAuth);
 
@@ -76310,21 +76812,21 @@ function attachCredentialToAuthState(authState, credential, providerId) {
 //# sourceMappingURL=auth.js.map
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tokens__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_backend__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_backend__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_observable_fromPromise__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_observable_fromPromise__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_observeOn__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_observeOn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_observeOn__);
@@ -76431,8 +76933,8 @@ var FirebaseSdkAuthBackend = (function (_super) {
     return FirebaseSdkAuthBackend;
 }(__WEBPACK_IMPORTED_MODULE_5__auth_backend__["a" /* AuthBackend */]));
 FirebaseSdkAuthBackend = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Injectable */])(),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_3__tokens__["b" /* FirebaseApp */])),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */])(),
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_3__tokens__["b" /* FirebaseApp */])),
     __metadata("design:paramtypes", [Object])
 ], FirebaseSdkAuthBackend);
 
@@ -76442,17 +76944,17 @@ function castPromise(promiseLike) {
 //# sourceMappingURL=firebase_sdk_auth_backend.js.map
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth__ = __webpack_require__(171);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__auth__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_backend__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_backend__ = __webpack_require__(75);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__auth_backend__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__auth_backend__["d"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__auth_backend__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_sdk_auth_backend__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_sdk_auth_backend__ = __webpack_require__(172);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__firebase_sdk_auth_backend__["a"]; });
 
 
@@ -76460,13 +76962,13 @@ function castPromise(promiseLike) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tokens__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AngularFireDatabase; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -76508,9 +77010,9 @@ var AngularFireDatabase = (function () {
     return AngularFireDatabase;
 }());
 AngularFireDatabase = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__tokens__["a" /* FirebaseConfig */])),
-    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__tokens__["b" /* FirebaseApp */])),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__tokens__["a" /* FirebaseConfig */])),
+    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__tokens__["b" /* FirebaseApp */])),
     __metadata("design:paramtypes", [Object, Object])
 ], AngularFireDatabase);
 
@@ -76523,16 +77025,16 @@ function getAbsUrl(root, url) {
 //# sourceMappingURL=database.js.map
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase_list_observable__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase_list_observable__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_observeOn__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_observeOn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_observeOn__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__query_observable__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__query_observable__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_mergeMap__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_mergeMap__);
@@ -76752,14 +77254,14 @@ function onChildUpdated(arr, child, toKey, prevKey) {
 //# sourceMappingURL=firebase_list_factory.js.map
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_observeOn__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_observeOn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operator_observeOn__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(22);
 /* harmony export (immutable) */ __webpack_exports__["a"] = FirebaseObjectFactory;
@@ -76790,7 +77292,7 @@ function FirebaseObjectFactory(absoluteUrlOrDbRef, _a) {
 //# sourceMappingURL=firebase_object_factory.js.map
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76841,7 +77343,7 @@ var FirebaseObjectObservable = (function (_super) {
 //# sourceMappingURL=firebase_object_observable.js.map
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76869,20 +77371,20 @@ var QueryOptions;
 //# sourceMappingURL=interfaces.js.map
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(103);
+module.exports = __webpack_require__(104);
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function() {
   "use strict";
 
-  var utils = __webpack_require__(104);
+  var utils = __webpack_require__(105);
 
   /**
    * Poly Bezier
@@ -76938,7 +77440,6 @@ module.exports = __webpack_require__(103);
 
 
 /***/ }),
-/* 180 */,
 /* 181 */,
 /* 182 */,
 /* 183 */,
@@ -76997,7 +77498,8 @@ module.exports = __webpack_require__(103);
 /* 236 */,
 /* 237 */,
 /* 238 */,
-/* 239 */
+/* 239 */,
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.9.0
@@ -77259,7 +77761,7 @@ module.exports = firebase.auth;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.9.0
@@ -77529,7 +78031,7 @@ module.exports = firebase.database;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.9.0
@@ -77577,7 +78079,7 @@ module.exports = firebase.messaging;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.9.0
@@ -77641,14 +78143,14 @@ module.exports = firebase.storage;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
-/* 243 */,
 /* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */,
 /* 248 */,
 /* 249 */,
-/* 250 */
+/* 250 */,
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77690,7 +78192,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77707,12 +78209,11 @@ var Observable_1 = __webpack_require__(0);
 exports.Observable = Observable_1.Observable;
 // statics
 /* tslint:disable:no-use-before-declare */
-__webpack_require__(253);
 __webpack_require__(254);
 __webpack_require__(255);
 __webpack_require__(256);
 __webpack_require__(257);
-__webpack_require__(260);
+__webpack_require__(258);
 __webpack_require__(261);
 __webpack_require__(262);
 __webpack_require__(263);
@@ -77722,21 +78223,21 @@ __webpack_require__(266);
 __webpack_require__(267);
 __webpack_require__(268);
 __webpack_require__(269);
-__webpack_require__(274);
 __webpack_require__(270);
+__webpack_require__(275);
 __webpack_require__(271);
 __webpack_require__(272);
 __webpack_require__(273);
-__webpack_require__(275);
-__webpack_require__(278);
+__webpack_require__(274);
 __webpack_require__(276);
-__webpack_require__(277);
 __webpack_require__(279);
+__webpack_require__(277);
+__webpack_require__(278);
+__webpack_require__(280);
 //dom
-__webpack_require__(258);
 __webpack_require__(259);
+__webpack_require__(260);
 //operators
-__webpack_require__(282);
 __webpack_require__(283);
 __webpack_require__(284);
 __webpack_require__(285);
@@ -77749,21 +78250,21 @@ __webpack_require__(291);
 __webpack_require__(292);
 __webpack_require__(293);
 __webpack_require__(294);
-__webpack_require__(300);
 __webpack_require__(295);
+__webpack_require__(301);
 __webpack_require__(296);
 __webpack_require__(297);
 __webpack_require__(298);
 __webpack_require__(299);
-__webpack_require__(301);
+__webpack_require__(300);
 __webpack_require__(302);
 __webpack_require__(303);
 __webpack_require__(304);
-__webpack_require__(307);
+__webpack_require__(305);
 __webpack_require__(308);
 __webpack_require__(309);
-__webpack_require__(305);
 __webpack_require__(310);
+__webpack_require__(306);
 __webpack_require__(311);
 __webpack_require__(312);
 __webpack_require__(313);
@@ -77771,12 +78272,12 @@ __webpack_require__(314);
 __webpack_require__(315);
 __webpack_require__(316);
 __webpack_require__(317);
-__webpack_require__(280);
-__webpack_require__(281);
 __webpack_require__(318);
+__webpack_require__(281);
+__webpack_require__(282);
 __webpack_require__(319);
-__webpack_require__(306);
 __webpack_require__(320);
+__webpack_require__(307);
 __webpack_require__(321);
 __webpack_require__(322);
 __webpack_require__(323);
@@ -77794,9 +78295,9 @@ __webpack_require__(334);
 __webpack_require__(335);
 __webpack_require__(336);
 __webpack_require__(337);
-__webpack_require__(339);
 __webpack_require__(338);
 __webpack_require__(340);
+__webpack_require__(339);
 __webpack_require__(341);
 __webpack_require__(342);
 __webpack_require__(343);
@@ -77836,50 +78337,51 @@ __webpack_require__(376);
 __webpack_require__(377);
 __webpack_require__(378);
 __webpack_require__(379);
+__webpack_require__(380);
 /* tslint:disable:no-unused-variable */
 var Subscription_1 = __webpack_require__(7);
 exports.Subscription = Subscription_1.Subscription;
 var Subscriber_1 = __webpack_require__(1);
 exports.Subscriber = Subscriber_1.Subscriber;
-var AsyncSubject_1 = __webpack_require__(58);
+var AsyncSubject_1 = __webpack_require__(59);
 exports.AsyncSubject = AsyncSubject_1.AsyncSubject;
-var ReplaySubject_1 = __webpack_require__(59);
+var ReplaySubject_1 = __webpack_require__(60);
 exports.ReplaySubject = ReplaySubject_1.ReplaySubject;
-var BehaviorSubject_1 = __webpack_require__(91);
+var BehaviorSubject_1 = __webpack_require__(92);
 exports.BehaviorSubject = BehaviorSubject_1.BehaviorSubject;
-var ConnectableObservable_1 = __webpack_require__(118);
+var ConnectableObservable_1 = __webpack_require__(119);
 exports.ConnectableObservable = ConnectableObservable_1.ConnectableObservable;
 var Notification_1 = __webpack_require__(42);
 exports.Notification = Notification_1.Notification;
 var EmptyError_1 = __webpack_require__(48);
 exports.EmptyError = EmptyError_1.EmptyError;
-var ArgumentOutOfRangeError_1 = __webpack_require__(66);
+var ArgumentOutOfRangeError_1 = __webpack_require__(67);
 exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError_1.ArgumentOutOfRangeError;
-var ObjectUnsubscribedError_1 = __webpack_require__(67);
+var ObjectUnsubscribedError_1 = __webpack_require__(68);
 exports.ObjectUnsubscribedError = ObjectUnsubscribedError_1.ObjectUnsubscribedError;
-var TimeoutError_1 = __webpack_require__(144);
+var TimeoutError_1 = __webpack_require__(145);
 exports.TimeoutError = TimeoutError_1.TimeoutError;
-var UnsubscriptionError_1 = __webpack_require__(145);
+var UnsubscriptionError_1 = __webpack_require__(146);
 exports.UnsubscriptionError = UnsubscriptionError_1.UnsubscriptionError;
-var timeInterval_1 = __webpack_require__(138);
+var timeInterval_1 = __webpack_require__(139);
 exports.TimeInterval = timeInterval_1.TimeInterval;
-var timestamp_1 = __webpack_require__(139);
+var timestamp_1 = __webpack_require__(140);
 exports.Timestamp = timestamp_1.Timestamp;
-var TestScheduler_1 = __webpack_require__(502);
+var TestScheduler_1 = __webpack_require__(503);
 exports.TestScheduler = TestScheduler_1.TestScheduler;
-var VirtualTimeScheduler_1 = __webpack_require__(140);
+var VirtualTimeScheduler_1 = __webpack_require__(141);
 exports.VirtualTimeScheduler = VirtualTimeScheduler_1.VirtualTimeScheduler;
-var AjaxObservable_1 = __webpack_require__(121);
+var AjaxObservable_1 = __webpack_require__(122);
 exports.AjaxResponse = AjaxObservable_1.AjaxResponse;
 exports.AjaxError = AjaxObservable_1.AjaxError;
 exports.AjaxTimeoutError = AjaxObservable_1.AjaxTimeoutError;
-var asap_1 = __webpack_require__(141);
+var asap_1 = __webpack_require__(142);
 var async_1 = __webpack_require__(13);
-var queue_1 = __webpack_require__(97);
-var animationFrame_1 = __webpack_require__(499);
-var rxSubscriber_1 = __webpack_require__(65);
+var queue_1 = __webpack_require__(98);
+var animationFrame_1 = __webpack_require__(500);
+var rxSubscriber_1 = __webpack_require__(66);
 var iterator_1 = __webpack_require__(47);
-var observable_1 = __webpack_require__(64);
+var observable_1 = __webpack_require__(65);
 /* tslint:enable:no-unused-variable */
 /**
  * @typedef {Object} Rx.Scheduler
@@ -77923,7 +78425,7 @@ exports.Symbol = Symbol;
 //# sourceMappingURL=Rx.js.map
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77978,26 +78480,15 @@ exports.Scheduler = Scheduler;
 //# sourceMappingURL=Scheduler.js.map
 
 /***/ }),
-/* 253 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(0);
-var bindCallback_1 = __webpack_require__(398);
-Observable_1.Observable.bindCallback = bindCallback_1.bindCallback;
-//# sourceMappingURL=bindCallback.js.map
-
-/***/ }),
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var bindNodeCallback_1 = __webpack_require__(399);
-Observable_1.Observable.bindNodeCallback = bindNodeCallback_1.bindNodeCallback;
-//# sourceMappingURL=bindNodeCallback.js.map
+var bindCallback_1 = __webpack_require__(399);
+Observable_1.Observable.bindCallback = bindCallback_1.bindCallback;
+//# sourceMappingURL=bindCallback.js.map
 
 /***/ }),
 /* 255 */
@@ -78006,9 +78497,9 @@ Observable_1.Observable.bindNodeCallback = bindNodeCallback_1.bindNodeCallback;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var combineLatest_1 = __webpack_require__(400);
-Observable_1.Observable.combineLatest = combineLatest_1.combineLatest;
-//# sourceMappingURL=combineLatest.js.map
+var bindNodeCallback_1 = __webpack_require__(400);
+Observable_1.Observable.bindNodeCallback = bindNodeCallback_1.bindNodeCallback;
+//# sourceMappingURL=bindNodeCallback.js.map
 
 /***/ }),
 /* 256 */
@@ -78017,9 +78508,9 @@ Observable_1.Observable.combineLatest = combineLatest_1.combineLatest;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var concat_1 = __webpack_require__(401);
-Observable_1.Observable.concat = concat_1.concat;
-//# sourceMappingURL=concat.js.map
+var combineLatest_1 = __webpack_require__(401);
+Observable_1.Observable.combineLatest = combineLatest_1.combineLatest;
+//# sourceMappingURL=combineLatest.js.map
 
 /***/ }),
 /* 257 */
@@ -78028,9 +78519,9 @@ Observable_1.Observable.concat = concat_1.concat;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var defer_1 = __webpack_require__(402);
-Observable_1.Observable.defer = defer_1.defer;
-//# sourceMappingURL=defer.js.map
+var concat_1 = __webpack_require__(402);
+Observable_1.Observable.concat = concat_1.concat;
+//# sourceMappingURL=concat.js.map
 
 /***/ }),
 /* 258 */
@@ -78039,9 +78530,9 @@ Observable_1.Observable.defer = defer_1.defer;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var ajax_1 = __webpack_require__(404);
-Observable_1.Observable.ajax = ajax_1.ajax;
-//# sourceMappingURL=ajax.js.map
+var defer_1 = __webpack_require__(403);
+Observable_1.Observable.defer = defer_1.defer;
+//# sourceMappingURL=defer.js.map
 
 /***/ }),
 /* 259 */
@@ -78050,9 +78541,9 @@ Observable_1.Observable.ajax = ajax_1.ajax;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var webSocket_1 = __webpack_require__(405);
-Observable_1.Observable.webSocket = webSocket_1.webSocket;
-//# sourceMappingURL=webSocket.js.map
+var ajax_1 = __webpack_require__(405);
+Observable_1.Observable.ajax = ajax_1.ajax;
+//# sourceMappingURL=ajax.js.map
 
 /***/ }),
 /* 260 */
@@ -78061,9 +78552,9 @@ Observable_1.Observable.webSocket = webSocket_1.webSocket;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var empty_1 = __webpack_require__(406);
-Observable_1.Observable.empty = empty_1.empty;
-//# sourceMappingURL=empty.js.map
+var webSocket_1 = __webpack_require__(406);
+Observable_1.Observable.webSocket = webSocket_1.webSocket;
+//# sourceMappingURL=webSocket.js.map
 
 /***/ }),
 /* 261 */
@@ -78072,9 +78563,9 @@ Observable_1.Observable.empty = empty_1.empty;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var forkJoin_1 = __webpack_require__(122);
-Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
-//# sourceMappingURL=forkJoin.js.map
+var empty_1 = __webpack_require__(407);
+Observable_1.Observable.empty = empty_1.empty;
+//# sourceMappingURL=empty.js.map
 
 /***/ }),
 /* 262 */
@@ -78083,9 +78574,9 @@ Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var from_1 = __webpack_require__(123);
-Observable_1.Observable.from = from_1.from;
-//# sourceMappingURL=from.js.map
+var forkJoin_1 = __webpack_require__(123);
+Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
+//# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
 /* 263 */
@@ -78094,9 +78585,9 @@ Observable_1.Observable.from = from_1.from;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var fromEvent_1 = __webpack_require__(407);
-Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
-//# sourceMappingURL=fromEvent.js.map
+var from_1 = __webpack_require__(124);
+Observable_1.Observable.from = from_1.from;
+//# sourceMappingURL=from.js.map
 
 /***/ }),
 /* 264 */
@@ -78105,9 +78596,9 @@ Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var fromEventPattern_1 = __webpack_require__(408);
-Observable_1.Observable.fromEventPattern = fromEventPattern_1.fromEventPattern;
-//# sourceMappingURL=fromEventPattern.js.map
+var fromEvent_1 = __webpack_require__(408);
+Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
+//# sourceMappingURL=fromEvent.js.map
 
 /***/ }),
 /* 265 */
@@ -78116,9 +78607,9 @@ Observable_1.Observable.fromEventPattern = fromEventPattern_1.fromEventPattern;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var fromPromise_1 = __webpack_require__(60);
-Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
-//# sourceMappingURL=fromPromise.js.map
+var fromEventPattern_1 = __webpack_require__(409);
+Observable_1.Observable.fromEventPattern = fromEventPattern_1.fromEventPattern;
+//# sourceMappingURL=fromEventPattern.js.map
 
 /***/ }),
 /* 266 */
@@ -78127,9 +78618,9 @@ Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var GenerateObservable_1 = __webpack_require__(388);
-Observable_1.Observable.generate = GenerateObservable_1.GenerateObservable.create;
-//# sourceMappingURL=generate.js.map
+var fromPromise_1 = __webpack_require__(61);
+Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
+//# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
 /* 267 */
@@ -78138,9 +78629,9 @@ Observable_1.Observable.generate = GenerateObservable_1.GenerateObservable.creat
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var if_1 = __webpack_require__(409);
-Observable_1.Observable.if = if_1._if;
-//# sourceMappingURL=if.js.map
+var GenerateObservable_1 = __webpack_require__(389);
+Observable_1.Observable.generate = GenerateObservable_1.GenerateObservable.create;
+//# sourceMappingURL=generate.js.map
 
 /***/ }),
 /* 268 */
@@ -78149,9 +78640,9 @@ Observable_1.Observable.if = if_1._if;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var interval_1 = __webpack_require__(410);
-Observable_1.Observable.interval = interval_1.interval;
-//# sourceMappingURL=interval.js.map
+var if_1 = __webpack_require__(410);
+Observable_1.Observable.if = if_1._if;
+//# sourceMappingURL=if.js.map
 
 /***/ }),
 /* 269 */
@@ -78160,9 +78651,9 @@ Observable_1.Observable.interval = interval_1.interval;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var merge_1 = __webpack_require__(124);
-Observable_1.Observable.merge = merge_1.merge;
-//# sourceMappingURL=merge.js.map
+var interval_1 = __webpack_require__(411);
+Observable_1.Observable.interval = interval_1.interval;
+//# sourceMappingURL=interval.js.map
 
 /***/ }),
 /* 270 */
@@ -78171,9 +78662,9 @@ Observable_1.Observable.merge = merge_1.merge;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var never_1 = __webpack_require__(411);
-Observable_1.Observable.never = never_1.never;
-//# sourceMappingURL=never.js.map
+var merge_1 = __webpack_require__(125);
+Observable_1.Observable.merge = merge_1.merge;
+//# sourceMappingURL=merge.js.map
 
 /***/ }),
 /* 271 */
@@ -78182,9 +78673,9 @@ Observable_1.Observable.never = never_1.never;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var of_1 = __webpack_require__(61);
-Observable_1.Observable.of = of_1.of;
-//# sourceMappingURL=of.js.map
+var never_1 = __webpack_require__(412);
+Observable_1.Observable.never = never_1.never;
+//# sourceMappingURL=never.js.map
 
 /***/ }),
 /* 272 */
@@ -78193,9 +78684,9 @@ Observable_1.Observable.of = of_1.of;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var onErrorResumeNext_1 = __webpack_require__(135);
-Observable_1.Observable.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNextStatic;
-//# sourceMappingURL=onErrorResumeNext.js.map
+var of_1 = __webpack_require__(62);
+Observable_1.Observable.of = of_1.of;
+//# sourceMappingURL=of.js.map
 
 /***/ }),
 /* 273 */
@@ -78204,9 +78695,9 @@ Observable_1.Observable.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNex
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var pairs_1 = __webpack_require__(412);
-Observable_1.Observable.pairs = pairs_1.pairs;
-//# sourceMappingURL=pairs.js.map
+var onErrorResumeNext_1 = __webpack_require__(136);
+Observable_1.Observable.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNextStatic;
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ }),
 /* 274 */
@@ -78215,9 +78706,9 @@ Observable_1.Observable.pairs = pairs_1.pairs;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var race_1 = __webpack_require__(136);
-Observable_1.Observable.race = race_1.raceStatic;
-//# sourceMappingURL=race.js.map
+var pairs_1 = __webpack_require__(413);
+Observable_1.Observable.pairs = pairs_1.pairs;
+//# sourceMappingURL=pairs.js.map
 
 /***/ }),
 /* 275 */
@@ -78226,9 +78717,9 @@ Observable_1.Observable.race = race_1.raceStatic;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var range_1 = __webpack_require__(413);
-Observable_1.Observable.range = range_1.range;
-//# sourceMappingURL=range.js.map
+var race_1 = __webpack_require__(137);
+Observable_1.Observable.race = race_1.raceStatic;
+//# sourceMappingURL=race.js.map
 
 /***/ }),
 /* 276 */
@@ -78237,9 +78728,9 @@ Observable_1.Observable.range = range_1.range;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var throw_1 = __webpack_require__(414);
-Observable_1.Observable.throw = throw_1._throw;
-//# sourceMappingURL=throw.js.map
+var range_1 = __webpack_require__(414);
+Observable_1.Observable.range = range_1.range;
+//# sourceMappingURL=range.js.map
 
 /***/ }),
 /* 277 */
@@ -78248,9 +78739,9 @@ Observable_1.Observable.throw = throw_1._throw;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var timer_1 = __webpack_require__(415);
-Observable_1.Observable.timer = timer_1.timer;
-//# sourceMappingURL=timer.js.map
+var throw_1 = __webpack_require__(415);
+Observable_1.Observable.throw = throw_1._throw;
+//# sourceMappingURL=throw.js.map
 
 /***/ }),
 /* 278 */
@@ -78259,9 +78750,9 @@ Observable_1.Observable.timer = timer_1.timer;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var using_1 = __webpack_require__(416);
-Observable_1.Observable.using = using_1.using;
-//# sourceMappingURL=using.js.map
+var timer_1 = __webpack_require__(416);
+Observable_1.Observable.timer = timer_1.timer;
+//# sourceMappingURL=timer.js.map
 
 /***/ }),
 /* 279 */
@@ -78270,9 +78761,9 @@ Observable_1.Observable.using = using_1.using;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var zip_1 = __webpack_require__(417);
-Observable_1.Observable.zip = zip_1.zip;
-//# sourceMappingURL=zip.js.map
+var using_1 = __webpack_require__(417);
+Observable_1.Observable.using = using_1.using;
+//# sourceMappingURL=using.js.map
 
 /***/ }),
 /* 280 */
@@ -78281,9 +78772,9 @@ Observable_1.Observable.zip = zip_1.zip;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var audit_1 = __webpack_require__(418);
-Observable_1.Observable.prototype.audit = audit_1.audit;
-//# sourceMappingURL=audit.js.map
+var zip_1 = __webpack_require__(418);
+Observable_1.Observable.zip = zip_1.zip;
+//# sourceMappingURL=zip.js.map
 
 /***/ }),
 /* 281 */
@@ -78292,9 +78783,9 @@ Observable_1.Observable.prototype.audit = audit_1.audit;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var auditTime_1 = __webpack_require__(125);
-Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
-//# sourceMappingURL=auditTime.js.map
+var audit_1 = __webpack_require__(419);
+Observable_1.Observable.prototype.audit = audit_1.audit;
+//# sourceMappingURL=audit.js.map
 
 /***/ }),
 /* 282 */
@@ -78303,9 +78794,9 @@ Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var buffer_1 = __webpack_require__(419);
-Observable_1.Observable.prototype.buffer = buffer_1.buffer;
-//# sourceMappingURL=buffer.js.map
+var auditTime_1 = __webpack_require__(126);
+Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
+//# sourceMappingURL=auditTime.js.map
 
 /***/ }),
 /* 283 */
@@ -78314,9 +78805,9 @@ Observable_1.Observable.prototype.buffer = buffer_1.buffer;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var bufferCount_1 = __webpack_require__(420);
-Observable_1.Observable.prototype.bufferCount = bufferCount_1.bufferCount;
-//# sourceMappingURL=bufferCount.js.map
+var buffer_1 = __webpack_require__(420);
+Observable_1.Observable.prototype.buffer = buffer_1.buffer;
+//# sourceMappingURL=buffer.js.map
 
 /***/ }),
 /* 284 */
@@ -78325,9 +78816,9 @@ Observable_1.Observable.prototype.bufferCount = bufferCount_1.bufferCount;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var bufferTime_1 = __webpack_require__(421);
-Observable_1.Observable.prototype.bufferTime = bufferTime_1.bufferTime;
-//# sourceMappingURL=bufferTime.js.map
+var bufferCount_1 = __webpack_require__(421);
+Observable_1.Observable.prototype.bufferCount = bufferCount_1.bufferCount;
+//# sourceMappingURL=bufferCount.js.map
 
 /***/ }),
 /* 285 */
@@ -78336,9 +78827,9 @@ Observable_1.Observable.prototype.bufferTime = bufferTime_1.bufferTime;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var bufferToggle_1 = __webpack_require__(422);
-Observable_1.Observable.prototype.bufferToggle = bufferToggle_1.bufferToggle;
-//# sourceMappingURL=bufferToggle.js.map
+var bufferTime_1 = __webpack_require__(422);
+Observable_1.Observable.prototype.bufferTime = bufferTime_1.bufferTime;
+//# sourceMappingURL=bufferTime.js.map
 
 /***/ }),
 /* 286 */
@@ -78347,9 +78838,9 @@ Observable_1.Observable.prototype.bufferToggle = bufferToggle_1.bufferToggle;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var bufferWhen_1 = __webpack_require__(423);
-Observable_1.Observable.prototype.bufferWhen = bufferWhen_1.bufferWhen;
-//# sourceMappingURL=bufferWhen.js.map
+var bufferToggle_1 = __webpack_require__(423);
+Observable_1.Observable.prototype.bufferToggle = bufferToggle_1.bufferToggle;
+//# sourceMappingURL=bufferToggle.js.map
 
 /***/ }),
 /* 287 */
@@ -78358,10 +78849,9 @@ Observable_1.Observable.prototype.bufferWhen = bufferWhen_1.bufferWhen;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var catch_1 = __webpack_require__(126);
-Observable_1.Observable.prototype.catch = catch_1._catch;
-Observable_1.Observable.prototype._catch = catch_1._catch;
-//# sourceMappingURL=catch.js.map
+var bufferWhen_1 = __webpack_require__(424);
+Observable_1.Observable.prototype.bufferWhen = bufferWhen_1.bufferWhen;
+//# sourceMappingURL=bufferWhen.js.map
 
 /***/ }),
 /* 288 */
@@ -78370,9 +78860,10 @@ Observable_1.Observable.prototype._catch = catch_1._catch;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var combineAll_1 = __webpack_require__(424);
-Observable_1.Observable.prototype.combineAll = combineAll_1.combineAll;
-//# sourceMappingURL=combineAll.js.map
+var catch_1 = __webpack_require__(127);
+Observable_1.Observable.prototype.catch = catch_1._catch;
+Observable_1.Observable.prototype._catch = catch_1._catch;
+//# sourceMappingURL=catch.js.map
 
 /***/ }),
 /* 289 */
@@ -78381,9 +78872,9 @@ Observable_1.Observable.prototype.combineAll = combineAll_1.combineAll;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var combineLatest_1 = __webpack_require__(62);
-Observable_1.Observable.prototype.combineLatest = combineLatest_1.combineLatest;
-//# sourceMappingURL=combineLatest.js.map
+var combineAll_1 = __webpack_require__(425);
+Observable_1.Observable.prototype.combineAll = combineAll_1.combineAll;
+//# sourceMappingURL=combineAll.js.map
 
 /***/ }),
 /* 290 */
@@ -78392,9 +78883,9 @@ Observable_1.Observable.prototype.combineLatest = combineLatest_1.combineLatest;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var concat_1 = __webpack_require__(93);
-Observable_1.Observable.prototype.concat = concat_1.concat;
-//# sourceMappingURL=concat.js.map
+var combineLatest_1 = __webpack_require__(63);
+Observable_1.Observable.prototype.combineLatest = combineLatest_1.combineLatest;
+//# sourceMappingURL=combineLatest.js.map
 
 /***/ }),
 /* 291 */
@@ -78403,9 +78894,9 @@ Observable_1.Observable.prototype.concat = concat_1.concat;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var concatAll_1 = __webpack_require__(127);
-Observable_1.Observable.prototype.concatAll = concatAll_1.concatAll;
-//# sourceMappingURL=concatAll.js.map
+var concat_1 = __webpack_require__(94);
+Observable_1.Observable.prototype.concat = concat_1.concat;
+//# sourceMappingURL=concat.js.map
 
 /***/ }),
 /* 292 */
@@ -78414,9 +78905,9 @@ Observable_1.Observable.prototype.concatAll = concatAll_1.concatAll;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var concatMap_1 = __webpack_require__(128);
-Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
-//# sourceMappingURL=concatMap.js.map
+var concatAll_1 = __webpack_require__(128);
+Observable_1.Observable.prototype.concatAll = concatAll_1.concatAll;
+//# sourceMappingURL=concatAll.js.map
 
 /***/ }),
 /* 293 */
@@ -78425,9 +78916,9 @@ Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var concatMapTo_1 = __webpack_require__(425);
-Observable_1.Observable.prototype.concatMapTo = concatMapTo_1.concatMapTo;
-//# sourceMappingURL=concatMapTo.js.map
+var concatMap_1 = __webpack_require__(129);
+Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
+//# sourceMappingURL=concatMap.js.map
 
 /***/ }),
 /* 294 */
@@ -78436,9 +78927,9 @@ Observable_1.Observable.prototype.concatMapTo = concatMapTo_1.concatMapTo;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var count_1 = __webpack_require__(426);
-Observable_1.Observable.prototype.count = count_1.count;
-//# sourceMappingURL=count.js.map
+var concatMapTo_1 = __webpack_require__(426);
+Observable_1.Observable.prototype.concatMapTo = concatMapTo_1.concatMapTo;
+//# sourceMappingURL=concatMapTo.js.map
 
 /***/ }),
 /* 295 */
@@ -78447,9 +78938,9 @@ Observable_1.Observable.prototype.count = count_1.count;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var debounce_1 = __webpack_require__(427);
-Observable_1.Observable.prototype.debounce = debounce_1.debounce;
-//# sourceMappingURL=debounce.js.map
+var count_1 = __webpack_require__(427);
+Observable_1.Observable.prototype.count = count_1.count;
+//# sourceMappingURL=count.js.map
 
 /***/ }),
 /* 296 */
@@ -78458,9 +78949,9 @@ Observable_1.Observable.prototype.debounce = debounce_1.debounce;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var debounceTime_1 = __webpack_require__(428);
-Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
-//# sourceMappingURL=debounceTime.js.map
+var debounce_1 = __webpack_require__(428);
+Observable_1.Observable.prototype.debounce = debounce_1.debounce;
+//# sourceMappingURL=debounce.js.map
 
 /***/ }),
 /* 297 */
@@ -78469,9 +78960,9 @@ Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var defaultIfEmpty_1 = __webpack_require__(429);
-Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_1.defaultIfEmpty;
-//# sourceMappingURL=defaultIfEmpty.js.map
+var debounceTime_1 = __webpack_require__(429);
+Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
+//# sourceMappingURL=debounceTime.js.map
 
 /***/ }),
 /* 298 */
@@ -78480,9 +78971,9 @@ Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_1.defaultIfEmp
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var delay_1 = __webpack_require__(430);
-Observable_1.Observable.prototype.delay = delay_1.delay;
-//# sourceMappingURL=delay.js.map
+var defaultIfEmpty_1 = __webpack_require__(430);
+Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_1.defaultIfEmpty;
+//# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ }),
 /* 299 */
@@ -78491,9 +78982,9 @@ Observable_1.Observable.prototype.delay = delay_1.delay;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var delayWhen_1 = __webpack_require__(431);
-Observable_1.Observable.prototype.delayWhen = delayWhen_1.delayWhen;
-//# sourceMappingURL=delayWhen.js.map
+var delay_1 = __webpack_require__(431);
+Observable_1.Observable.prototype.delay = delay_1.delay;
+//# sourceMappingURL=delay.js.map
 
 /***/ }),
 /* 300 */
@@ -78502,9 +78993,9 @@ Observable_1.Observable.prototype.delayWhen = delayWhen_1.delayWhen;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var dematerialize_1 = __webpack_require__(432);
-Observable_1.Observable.prototype.dematerialize = dematerialize_1.dematerialize;
-//# sourceMappingURL=dematerialize.js.map
+var delayWhen_1 = __webpack_require__(432);
+Observable_1.Observable.prototype.delayWhen = delayWhen_1.delayWhen;
+//# sourceMappingURL=delayWhen.js.map
 
 /***/ }),
 /* 301 */
@@ -78513,9 +79004,9 @@ Observable_1.Observable.prototype.dematerialize = dematerialize_1.dematerialize;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var distinct_1 = __webpack_require__(433);
-Observable_1.Observable.prototype.distinct = distinct_1.distinct;
-//# sourceMappingURL=distinct.js.map
+var dematerialize_1 = __webpack_require__(433);
+Observable_1.Observable.prototype.dematerialize = dematerialize_1.dematerialize;
+//# sourceMappingURL=dematerialize.js.map
 
 /***/ }),
 /* 302 */
@@ -78524,9 +79015,9 @@ Observable_1.Observable.prototype.distinct = distinct_1.distinct;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var distinctUntilChanged_1 = __webpack_require__(129);
-Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.distinctUntilChanged;
-//# sourceMappingURL=distinctUntilChanged.js.map
+var distinct_1 = __webpack_require__(434);
+Observable_1.Observable.prototype.distinct = distinct_1.distinct;
+//# sourceMappingURL=distinct.js.map
 
 /***/ }),
 /* 303 */
@@ -78535,9 +79026,9 @@ Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var distinctUntilKeyChanged_1 = __webpack_require__(434);
-Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChanged_1.distinctUntilKeyChanged;
-//# sourceMappingURL=distinctUntilKeyChanged.js.map
+var distinctUntilChanged_1 = __webpack_require__(130);
+Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.distinctUntilChanged;
+//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ }),
 /* 304 */
@@ -78546,10 +79037,9 @@ Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChan
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var do_1 = __webpack_require__(435);
-Observable_1.Observable.prototype.do = do_1._do;
-Observable_1.Observable.prototype._do = do_1._do;
-//# sourceMappingURL=do.js.map
+var distinctUntilKeyChanged_1 = __webpack_require__(435);
+Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChanged_1.distinctUntilKeyChanged;
+//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 /***/ }),
 /* 305 */
@@ -78558,9 +79048,10 @@ Observable_1.Observable.prototype._do = do_1._do;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var elementAt_1 = __webpack_require__(436);
-Observable_1.Observable.prototype.elementAt = elementAt_1.elementAt;
-//# sourceMappingURL=elementAt.js.map
+var do_1 = __webpack_require__(436);
+Observable_1.Observable.prototype.do = do_1._do;
+Observable_1.Observable.prototype._do = do_1._do;
+//# sourceMappingURL=do.js.map
 
 /***/ }),
 /* 306 */
@@ -78569,9 +79060,9 @@ Observable_1.Observable.prototype.elementAt = elementAt_1.elementAt;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var every_1 = __webpack_require__(130);
-Observable_1.Observable.prototype.every = every_1.every;
-//# sourceMappingURL=every.js.map
+var elementAt_1 = __webpack_require__(437);
+Observable_1.Observable.prototype.elementAt = elementAt_1.elementAt;
+//# sourceMappingURL=elementAt.js.map
 
 /***/ }),
 /* 307 */
@@ -78580,9 +79071,9 @@ Observable_1.Observable.prototype.every = every_1.every;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var exhaust_1 = __webpack_require__(437);
-Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
-//# sourceMappingURL=exhaust.js.map
+var every_1 = __webpack_require__(131);
+Observable_1.Observable.prototype.every = every_1.every;
+//# sourceMappingURL=every.js.map
 
 /***/ }),
 /* 308 */
@@ -78591,9 +79082,9 @@ Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var exhaustMap_1 = __webpack_require__(438);
-Observable_1.Observable.prototype.exhaustMap = exhaustMap_1.exhaustMap;
-//# sourceMappingURL=exhaustMap.js.map
+var exhaust_1 = __webpack_require__(438);
+Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
+//# sourceMappingURL=exhaust.js.map
 
 /***/ }),
 /* 309 */
@@ -78602,9 +79093,9 @@ Observable_1.Observable.prototype.exhaustMap = exhaustMap_1.exhaustMap;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var expand_1 = __webpack_require__(439);
-Observable_1.Observable.prototype.expand = expand_1.expand;
-//# sourceMappingURL=expand.js.map
+var exhaustMap_1 = __webpack_require__(439);
+Observable_1.Observable.prototype.exhaustMap = exhaustMap_1.exhaustMap;
+//# sourceMappingURL=exhaustMap.js.map
 
 /***/ }),
 /* 310 */
@@ -78613,9 +79104,9 @@ Observable_1.Observable.prototype.expand = expand_1.expand;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var filter_1 = __webpack_require__(94);
-Observable_1.Observable.prototype.filter = filter_1.filter;
-//# sourceMappingURL=filter.js.map
+var expand_1 = __webpack_require__(440);
+Observable_1.Observable.prototype.expand = expand_1.expand;
+//# sourceMappingURL=expand.js.map
 
 /***/ }),
 /* 311 */
@@ -78624,10 +79115,9 @@ Observable_1.Observable.prototype.filter = filter_1.filter;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var finally_1 = __webpack_require__(440);
-Observable_1.Observable.prototype.finally = finally_1._finally;
-Observable_1.Observable.prototype._finally = finally_1._finally;
-//# sourceMappingURL=finally.js.map
+var filter_1 = __webpack_require__(95);
+Observable_1.Observable.prototype.filter = filter_1.filter;
+//# sourceMappingURL=filter.js.map
 
 /***/ }),
 /* 312 */
@@ -78636,9 +79126,10 @@ Observable_1.Observable.prototype._finally = finally_1._finally;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var find_1 = __webpack_require__(131);
-Observable_1.Observable.prototype.find = find_1.find;
-//# sourceMappingURL=find.js.map
+var finally_1 = __webpack_require__(441);
+Observable_1.Observable.prototype.finally = finally_1._finally;
+Observable_1.Observable.prototype._finally = finally_1._finally;
+//# sourceMappingURL=finally.js.map
 
 /***/ }),
 /* 313 */
@@ -78647,9 +79138,9 @@ Observable_1.Observable.prototype.find = find_1.find;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var findIndex_1 = __webpack_require__(441);
-Observable_1.Observable.prototype.findIndex = findIndex_1.findIndex;
-//# sourceMappingURL=findIndex.js.map
+var find_1 = __webpack_require__(132);
+Observable_1.Observable.prototype.find = find_1.find;
+//# sourceMappingURL=find.js.map
 
 /***/ }),
 /* 314 */
@@ -78658,9 +79149,9 @@ Observable_1.Observable.prototype.findIndex = findIndex_1.findIndex;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var first_1 = __webpack_require__(132);
-Observable_1.Observable.prototype.first = first_1.first;
-//# sourceMappingURL=first.js.map
+var findIndex_1 = __webpack_require__(442);
+Observable_1.Observable.prototype.findIndex = findIndex_1.findIndex;
+//# sourceMappingURL=findIndex.js.map
 
 /***/ }),
 /* 315 */
@@ -78669,9 +79160,9 @@ Observable_1.Observable.prototype.first = first_1.first;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var groupBy_1 = __webpack_require__(442);
-Observable_1.Observable.prototype.groupBy = groupBy_1.groupBy;
-//# sourceMappingURL=groupBy.js.map
+var first_1 = __webpack_require__(133);
+Observable_1.Observable.prototype.first = first_1.first;
+//# sourceMappingURL=first.js.map
 
 /***/ }),
 /* 316 */
@@ -78680,9 +79171,9 @@ Observable_1.Observable.prototype.groupBy = groupBy_1.groupBy;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var ignoreElements_1 = __webpack_require__(443);
-Observable_1.Observable.prototype.ignoreElements = ignoreElements_1.ignoreElements;
-//# sourceMappingURL=ignoreElements.js.map
+var groupBy_1 = __webpack_require__(443);
+Observable_1.Observable.prototype.groupBy = groupBy_1.groupBy;
+//# sourceMappingURL=groupBy.js.map
 
 /***/ }),
 /* 317 */
@@ -78691,9 +79182,9 @@ Observable_1.Observable.prototype.ignoreElements = ignoreElements_1.ignoreElemen
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var isEmpty_1 = __webpack_require__(444);
-Observable_1.Observable.prototype.isEmpty = isEmpty_1.isEmpty;
-//# sourceMappingURL=isEmpty.js.map
+var ignoreElements_1 = __webpack_require__(444);
+Observable_1.Observable.prototype.ignoreElements = ignoreElements_1.ignoreElements;
+//# sourceMappingURL=ignoreElements.js.map
 
 /***/ }),
 /* 318 */
@@ -78702,9 +79193,9 @@ Observable_1.Observable.prototype.isEmpty = isEmpty_1.isEmpty;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var last_1 = __webpack_require__(133);
-Observable_1.Observable.prototype.last = last_1.last;
-//# sourceMappingURL=last.js.map
+var isEmpty_1 = __webpack_require__(445);
+Observable_1.Observable.prototype.isEmpty = isEmpty_1.isEmpty;
+//# sourceMappingURL=isEmpty.js.map
 
 /***/ }),
 /* 319 */
@@ -78713,13 +79204,24 @@ Observable_1.Observable.prototype.last = last_1.last;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var let_1 = __webpack_require__(445);
+var last_1 = __webpack_require__(134);
+Observable_1.Observable.prototype.last = last_1.last;
+//# sourceMappingURL=last.js.map
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(0);
+var let_1 = __webpack_require__(446);
 Observable_1.Observable.prototype.let = let_1.letProto;
 Observable_1.Observable.prototype.letBind = let_1.letProto;
 //# sourceMappingURL=let.js.map
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78730,26 +79232,15 @@ Observable_1.Observable.prototype.map = map_1.map;
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 321 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(0);
-var mapTo_1 = __webpack_require__(446);
-Observable_1.Observable.prototype.mapTo = mapTo_1.mapTo;
-//# sourceMappingURL=mapTo.js.map
-
-/***/ }),
 /* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var materialize_1 = __webpack_require__(447);
-Observable_1.Observable.prototype.materialize = materialize_1.materialize;
-//# sourceMappingURL=materialize.js.map
+var mapTo_1 = __webpack_require__(447);
+Observable_1.Observable.prototype.mapTo = mapTo_1.mapTo;
+//# sourceMappingURL=mapTo.js.map
 
 /***/ }),
 /* 323 */
@@ -78758,9 +79249,9 @@ Observable_1.Observable.prototype.materialize = materialize_1.materialize;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var max_1 = __webpack_require__(448);
-Observable_1.Observable.prototype.max = max_1.max;
-//# sourceMappingURL=max.js.map
+var materialize_1 = __webpack_require__(448);
+Observable_1.Observable.prototype.materialize = materialize_1.materialize;
+//# sourceMappingURL=materialize.js.map
 
 /***/ }),
 /* 324 */
@@ -78769,12 +79260,23 @@ Observable_1.Observable.prototype.max = max_1.max;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var merge_1 = __webpack_require__(95);
+var max_1 = __webpack_require__(449);
+Observable_1.Observable.prototype.max = max_1.max;
+//# sourceMappingURL=max.js.map
+
+/***/ }),
+/* 325 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(0);
+var merge_1 = __webpack_require__(96);
 Observable_1.Observable.prototype.merge = merge_1.merge;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78785,7 +79287,7 @@ Observable_1.Observable.prototype.mergeAll = mergeAll_1.mergeAll;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78797,27 +79299,16 @@ Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 327 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(0);
-var mergeMapTo_1 = __webpack_require__(134);
-Observable_1.Observable.prototype.flatMapTo = mergeMapTo_1.mergeMapTo;
-Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_1.mergeMapTo;
-//# sourceMappingURL=mergeMapTo.js.map
-
-/***/ }),
 /* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var mergeScan_1 = __webpack_require__(449);
-Observable_1.Observable.prototype.mergeScan = mergeScan_1.mergeScan;
-//# sourceMappingURL=mergeScan.js.map
+var mergeMapTo_1 = __webpack_require__(135);
+Observable_1.Observable.prototype.flatMapTo = mergeMapTo_1.mergeMapTo;
+Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_1.mergeMapTo;
+//# sourceMappingURL=mergeMapTo.js.map
 
 /***/ }),
 /* 329 */
@@ -78826,12 +79317,23 @@ Observable_1.Observable.prototype.mergeScan = mergeScan_1.mergeScan;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var min_1 = __webpack_require__(450);
+var mergeScan_1 = __webpack_require__(450);
+Observable_1.Observable.prototype.mergeScan = mergeScan_1.mergeScan;
+//# sourceMappingURL=mergeScan.js.map
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(0);
+var min_1 = __webpack_require__(451);
 Observable_1.Observable.prototype.min = min_1.min;
 //# sourceMappingURL=min.js.map
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78842,7 +79344,7 @@ Observable_1.Observable.prototype.multicast = multicast_1.multicast;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78853,26 +79355,15 @@ Observable_1.Observable.prototype.observeOn = observeOn_1.observeOn;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ }),
-/* 332 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(0);
-var onErrorResumeNext_1 = __webpack_require__(135);
-Observable_1.Observable.prototype.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNext;
-//# sourceMappingURL=onErrorResumeNext.js.map
-
-/***/ }),
 /* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var pairwise_1 = __webpack_require__(451);
-Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
-//# sourceMappingURL=pairwise.js.map
+var onErrorResumeNext_1 = __webpack_require__(136);
+Observable_1.Observable.prototype.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNext;
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ }),
 /* 334 */
@@ -78881,9 +79372,9 @@ Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var partition_1 = __webpack_require__(452);
-Observable_1.Observable.prototype.partition = partition_1.partition;
-//# sourceMappingURL=partition.js.map
+var pairwise_1 = __webpack_require__(452);
+Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
+//# sourceMappingURL=pairwise.js.map
 
 /***/ }),
 /* 335 */
@@ -78892,9 +79383,9 @@ Observable_1.Observable.prototype.partition = partition_1.partition;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var pluck_1 = __webpack_require__(453);
-Observable_1.Observable.prototype.pluck = pluck_1.pluck;
-//# sourceMappingURL=pluck.js.map
+var partition_1 = __webpack_require__(453);
+Observable_1.Observable.prototype.partition = partition_1.partition;
+//# sourceMappingURL=partition.js.map
 
 /***/ }),
 /* 336 */
@@ -78903,9 +79394,9 @@ Observable_1.Observable.prototype.pluck = pluck_1.pluck;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var publish_1 = __webpack_require__(454);
-Observable_1.Observable.prototype.publish = publish_1.publish;
-//# sourceMappingURL=publish.js.map
+var pluck_1 = __webpack_require__(454);
+Observable_1.Observable.prototype.pluck = pluck_1.pluck;
+//# sourceMappingURL=pluck.js.map
 
 /***/ }),
 /* 337 */
@@ -78914,9 +79405,9 @@ Observable_1.Observable.prototype.publish = publish_1.publish;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var publishBehavior_1 = __webpack_require__(455);
-Observable_1.Observable.prototype.publishBehavior = publishBehavior_1.publishBehavior;
-//# sourceMappingURL=publishBehavior.js.map
+var publish_1 = __webpack_require__(455);
+Observable_1.Observable.prototype.publish = publish_1.publish;
+//# sourceMappingURL=publish.js.map
 
 /***/ }),
 /* 338 */
@@ -78925,9 +79416,9 @@ Observable_1.Observable.prototype.publishBehavior = publishBehavior_1.publishBeh
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var publishLast_1 = __webpack_require__(456);
-Observable_1.Observable.prototype.publishLast = publishLast_1.publishLast;
-//# sourceMappingURL=publishLast.js.map
+var publishBehavior_1 = __webpack_require__(456);
+Observable_1.Observable.prototype.publishBehavior = publishBehavior_1.publishBehavior;
+//# sourceMappingURL=publishBehavior.js.map
 
 /***/ }),
 /* 339 */
@@ -78936,9 +79427,9 @@ Observable_1.Observable.prototype.publishLast = publishLast_1.publishLast;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var publishReplay_1 = __webpack_require__(457);
-Observable_1.Observable.prototype.publishReplay = publishReplay_1.publishReplay;
-//# sourceMappingURL=publishReplay.js.map
+var publishLast_1 = __webpack_require__(457);
+Observable_1.Observable.prototype.publishLast = publishLast_1.publishLast;
+//# sourceMappingURL=publishLast.js.map
 
 /***/ }),
 /* 340 */
@@ -78947,9 +79438,9 @@ Observable_1.Observable.prototype.publishReplay = publishReplay_1.publishReplay;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var race_1 = __webpack_require__(136);
-Observable_1.Observable.prototype.race = race_1.race;
-//# sourceMappingURL=race.js.map
+var publishReplay_1 = __webpack_require__(458);
+Observable_1.Observable.prototype.publishReplay = publishReplay_1.publishReplay;
+//# sourceMappingURL=publishReplay.js.map
 
 /***/ }),
 /* 341 */
@@ -78958,9 +79449,9 @@ Observable_1.Observable.prototype.race = race_1.race;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var reduce_1 = __webpack_require__(63);
-Observable_1.Observable.prototype.reduce = reduce_1.reduce;
-//# sourceMappingURL=reduce.js.map
+var race_1 = __webpack_require__(137);
+Observable_1.Observable.prototype.race = race_1.race;
+//# sourceMappingURL=race.js.map
 
 /***/ }),
 /* 342 */
@@ -78969,9 +79460,9 @@ Observable_1.Observable.prototype.reduce = reduce_1.reduce;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var repeat_1 = __webpack_require__(458);
-Observable_1.Observable.prototype.repeat = repeat_1.repeat;
-//# sourceMappingURL=repeat.js.map
+var reduce_1 = __webpack_require__(64);
+Observable_1.Observable.prototype.reduce = reduce_1.reduce;
+//# sourceMappingURL=reduce.js.map
 
 /***/ }),
 /* 343 */
@@ -78980,9 +79471,9 @@ Observable_1.Observable.prototype.repeat = repeat_1.repeat;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var repeatWhen_1 = __webpack_require__(459);
-Observable_1.Observable.prototype.repeatWhen = repeatWhen_1.repeatWhen;
-//# sourceMappingURL=repeatWhen.js.map
+var repeat_1 = __webpack_require__(459);
+Observable_1.Observable.prototype.repeat = repeat_1.repeat;
+//# sourceMappingURL=repeat.js.map
 
 /***/ }),
 /* 344 */
@@ -78991,9 +79482,9 @@ Observable_1.Observable.prototype.repeatWhen = repeatWhen_1.repeatWhen;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var retry_1 = __webpack_require__(460);
-Observable_1.Observable.prototype.retry = retry_1.retry;
-//# sourceMappingURL=retry.js.map
+var repeatWhen_1 = __webpack_require__(460);
+Observable_1.Observable.prototype.repeatWhen = repeatWhen_1.repeatWhen;
+//# sourceMappingURL=repeatWhen.js.map
 
 /***/ }),
 /* 345 */
@@ -79002,9 +79493,9 @@ Observable_1.Observable.prototype.retry = retry_1.retry;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var retryWhen_1 = __webpack_require__(461);
-Observable_1.Observable.prototype.retryWhen = retryWhen_1.retryWhen;
-//# sourceMappingURL=retryWhen.js.map
+var retry_1 = __webpack_require__(461);
+Observable_1.Observable.prototype.retry = retry_1.retry;
+//# sourceMappingURL=retry.js.map
 
 /***/ }),
 /* 346 */
@@ -79013,9 +79504,9 @@ Observable_1.Observable.prototype.retryWhen = retryWhen_1.retryWhen;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var sample_1 = __webpack_require__(462);
-Observable_1.Observable.prototype.sample = sample_1.sample;
-//# sourceMappingURL=sample.js.map
+var retryWhen_1 = __webpack_require__(462);
+Observable_1.Observable.prototype.retryWhen = retryWhen_1.retryWhen;
+//# sourceMappingURL=retryWhen.js.map
 
 /***/ }),
 /* 347 */
@@ -79024,9 +79515,9 @@ Observable_1.Observable.prototype.sample = sample_1.sample;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var sampleTime_1 = __webpack_require__(463);
-Observable_1.Observable.prototype.sampleTime = sampleTime_1.sampleTime;
-//# sourceMappingURL=sampleTime.js.map
+var sample_1 = __webpack_require__(463);
+Observable_1.Observable.prototype.sample = sample_1.sample;
+//# sourceMappingURL=sample.js.map
 
 /***/ }),
 /* 348 */
@@ -79035,9 +79526,9 @@ Observable_1.Observable.prototype.sampleTime = sampleTime_1.sampleTime;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var scan_1 = __webpack_require__(464);
-Observable_1.Observable.prototype.scan = scan_1.scan;
-//# sourceMappingURL=scan.js.map
+var sampleTime_1 = __webpack_require__(464);
+Observable_1.Observable.prototype.sampleTime = sampleTime_1.sampleTime;
+//# sourceMappingURL=sampleTime.js.map
 
 /***/ }),
 /* 349 */
@@ -79046,9 +79537,9 @@ Observable_1.Observable.prototype.scan = scan_1.scan;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var sequenceEqual_1 = __webpack_require__(465);
-Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_1.sequenceEqual;
-//# sourceMappingURL=sequenceEqual.js.map
+var scan_1 = __webpack_require__(465);
+Observable_1.Observable.prototype.scan = scan_1.scan;
+//# sourceMappingURL=scan.js.map
 
 /***/ }),
 /* 350 */
@@ -79057,9 +79548,9 @@ Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_1.sequenceEqual;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var share_1 = __webpack_require__(137);
-Observable_1.Observable.prototype.share = share_1.share;
-//# sourceMappingURL=share.js.map
+var sequenceEqual_1 = __webpack_require__(466);
+Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_1.sequenceEqual;
+//# sourceMappingURL=sequenceEqual.js.map
 
 /***/ }),
 /* 351 */
@@ -79068,9 +79559,9 @@ Observable_1.Observable.prototype.share = share_1.share;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var single_1 = __webpack_require__(466);
-Observable_1.Observable.prototype.single = single_1.single;
-//# sourceMappingURL=single.js.map
+var share_1 = __webpack_require__(138);
+Observable_1.Observable.prototype.share = share_1.share;
+//# sourceMappingURL=share.js.map
 
 /***/ }),
 /* 352 */
@@ -79079,9 +79570,9 @@ Observable_1.Observable.prototype.single = single_1.single;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var skip_1 = __webpack_require__(467);
-Observable_1.Observable.prototype.skip = skip_1.skip;
-//# sourceMappingURL=skip.js.map
+var single_1 = __webpack_require__(467);
+Observable_1.Observable.prototype.single = single_1.single;
+//# sourceMappingURL=single.js.map
 
 /***/ }),
 /* 353 */
@@ -79090,9 +79581,9 @@ Observable_1.Observable.prototype.skip = skip_1.skip;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var skipUntil_1 = __webpack_require__(468);
-Observable_1.Observable.prototype.skipUntil = skipUntil_1.skipUntil;
-//# sourceMappingURL=skipUntil.js.map
+var skip_1 = __webpack_require__(468);
+Observable_1.Observable.prototype.skip = skip_1.skip;
+//# sourceMappingURL=skip.js.map
 
 /***/ }),
 /* 354 */
@@ -79101,9 +79592,9 @@ Observable_1.Observable.prototype.skipUntil = skipUntil_1.skipUntil;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var skipWhile_1 = __webpack_require__(469);
-Observable_1.Observable.prototype.skipWhile = skipWhile_1.skipWhile;
-//# sourceMappingURL=skipWhile.js.map
+var skipUntil_1 = __webpack_require__(469);
+Observable_1.Observable.prototype.skipUntil = skipUntil_1.skipUntil;
+//# sourceMappingURL=skipUntil.js.map
 
 /***/ }),
 /* 355 */
@@ -79112,9 +79603,9 @@ Observable_1.Observable.prototype.skipWhile = skipWhile_1.skipWhile;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var startWith_1 = __webpack_require__(470);
-Observable_1.Observable.prototype.startWith = startWith_1.startWith;
-//# sourceMappingURL=startWith.js.map
+var skipWhile_1 = __webpack_require__(470);
+Observable_1.Observable.prototype.skipWhile = skipWhile_1.skipWhile;
+//# sourceMappingURL=skipWhile.js.map
 
 /***/ }),
 /* 356 */
@@ -79123,9 +79614,9 @@ Observable_1.Observable.prototype.startWith = startWith_1.startWith;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var subscribeOn_1 = __webpack_require__(471);
-Observable_1.Observable.prototype.subscribeOn = subscribeOn_1.subscribeOn;
-//# sourceMappingURL=subscribeOn.js.map
+var startWith_1 = __webpack_require__(471);
+Observable_1.Observable.prototype.startWith = startWith_1.startWith;
+//# sourceMappingURL=startWith.js.map
 
 /***/ }),
 /* 357 */
@@ -79134,10 +79625,9 @@ Observable_1.Observable.prototype.subscribeOn = subscribeOn_1.subscribeOn;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var switch_1 = __webpack_require__(472);
-Observable_1.Observable.prototype.switch = switch_1._switch;
-Observable_1.Observable.prototype._switch = switch_1._switch;
-//# sourceMappingURL=switch.js.map
+var subscribeOn_1 = __webpack_require__(472);
+Observable_1.Observable.prototype.subscribeOn = subscribeOn_1.subscribeOn;
+//# sourceMappingURL=subscribeOn.js.map
 
 /***/ }),
 /* 358 */
@@ -79146,9 +79636,10 @@ Observable_1.Observable.prototype._switch = switch_1._switch;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var switchMap_1 = __webpack_require__(473);
-Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
-//# sourceMappingURL=switchMap.js.map
+var switch_1 = __webpack_require__(473);
+Observable_1.Observable.prototype.switch = switch_1._switch;
+Observable_1.Observable.prototype._switch = switch_1._switch;
+//# sourceMappingURL=switch.js.map
 
 /***/ }),
 /* 359 */
@@ -79157,9 +79648,9 @@ Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var switchMapTo_1 = __webpack_require__(474);
-Observable_1.Observable.prototype.switchMapTo = switchMapTo_1.switchMapTo;
-//# sourceMappingURL=switchMapTo.js.map
+var switchMap_1 = __webpack_require__(474);
+Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
+//# sourceMappingURL=switchMap.js.map
 
 /***/ }),
 /* 360 */
@@ -79168,9 +79659,9 @@ Observable_1.Observable.prototype.switchMapTo = switchMapTo_1.switchMapTo;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var take_1 = __webpack_require__(475);
-Observable_1.Observable.prototype.take = take_1.take;
-//# sourceMappingURL=take.js.map
+var switchMapTo_1 = __webpack_require__(475);
+Observable_1.Observable.prototype.switchMapTo = switchMapTo_1.switchMapTo;
+//# sourceMappingURL=switchMapTo.js.map
 
 /***/ }),
 /* 361 */
@@ -79179,9 +79670,9 @@ Observable_1.Observable.prototype.take = take_1.take;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var takeLast_1 = __webpack_require__(476);
-Observable_1.Observable.prototype.takeLast = takeLast_1.takeLast;
-//# sourceMappingURL=takeLast.js.map
+var take_1 = __webpack_require__(476);
+Observable_1.Observable.prototype.take = take_1.take;
+//# sourceMappingURL=take.js.map
 
 /***/ }),
 /* 362 */
@@ -79190,9 +79681,9 @@ Observable_1.Observable.prototype.takeLast = takeLast_1.takeLast;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var takeUntil_1 = __webpack_require__(477);
-Observable_1.Observable.prototype.takeUntil = takeUntil_1.takeUntil;
-//# sourceMappingURL=takeUntil.js.map
+var takeLast_1 = __webpack_require__(477);
+Observable_1.Observable.prototype.takeLast = takeLast_1.takeLast;
+//# sourceMappingURL=takeLast.js.map
 
 /***/ }),
 /* 363 */
@@ -79201,9 +79692,9 @@ Observable_1.Observable.prototype.takeUntil = takeUntil_1.takeUntil;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var takeWhile_1 = __webpack_require__(478);
-Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
-//# sourceMappingURL=takeWhile.js.map
+var takeUntil_1 = __webpack_require__(478);
+Observable_1.Observable.prototype.takeUntil = takeUntil_1.takeUntil;
+//# sourceMappingURL=takeUntil.js.map
 
 /***/ }),
 /* 364 */
@@ -79212,9 +79703,9 @@ Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var throttle_1 = __webpack_require__(479);
-Observable_1.Observable.prototype.throttle = throttle_1.throttle;
-//# sourceMappingURL=throttle.js.map
+var takeWhile_1 = __webpack_require__(479);
+Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
+//# sourceMappingURL=takeWhile.js.map
 
 /***/ }),
 /* 365 */
@@ -79223,9 +79714,9 @@ Observable_1.Observable.prototype.throttle = throttle_1.throttle;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var throttleTime_1 = __webpack_require__(480);
-Observable_1.Observable.prototype.throttleTime = throttleTime_1.throttleTime;
-//# sourceMappingURL=throttleTime.js.map
+var throttle_1 = __webpack_require__(480);
+Observable_1.Observable.prototype.throttle = throttle_1.throttle;
+//# sourceMappingURL=throttle.js.map
 
 /***/ }),
 /* 366 */
@@ -79234,9 +79725,9 @@ Observable_1.Observable.prototype.throttleTime = throttleTime_1.throttleTime;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var timeInterval_1 = __webpack_require__(138);
-Observable_1.Observable.prototype.timeInterval = timeInterval_1.timeInterval;
-//# sourceMappingURL=timeInterval.js.map
+var throttleTime_1 = __webpack_require__(481);
+Observable_1.Observable.prototype.throttleTime = throttleTime_1.throttleTime;
+//# sourceMappingURL=throttleTime.js.map
 
 /***/ }),
 /* 367 */
@@ -79245,9 +79736,9 @@ Observable_1.Observable.prototype.timeInterval = timeInterval_1.timeInterval;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var timeout_1 = __webpack_require__(481);
-Observable_1.Observable.prototype.timeout = timeout_1.timeout;
-//# sourceMappingURL=timeout.js.map
+var timeInterval_1 = __webpack_require__(139);
+Observable_1.Observable.prototype.timeInterval = timeInterval_1.timeInterval;
+//# sourceMappingURL=timeInterval.js.map
 
 /***/ }),
 /* 368 */
@@ -79256,9 +79747,9 @@ Observable_1.Observable.prototype.timeout = timeout_1.timeout;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var timeoutWith_1 = __webpack_require__(482);
-Observable_1.Observable.prototype.timeoutWith = timeoutWith_1.timeoutWith;
-//# sourceMappingURL=timeoutWith.js.map
+var timeout_1 = __webpack_require__(482);
+Observable_1.Observable.prototype.timeout = timeout_1.timeout;
+//# sourceMappingURL=timeout.js.map
 
 /***/ }),
 /* 369 */
@@ -79267,9 +79758,9 @@ Observable_1.Observable.prototype.timeoutWith = timeoutWith_1.timeoutWith;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var timestamp_1 = __webpack_require__(139);
-Observable_1.Observable.prototype.timestamp = timestamp_1.timestamp;
-//# sourceMappingURL=timestamp.js.map
+var timeoutWith_1 = __webpack_require__(483);
+Observable_1.Observable.prototype.timeoutWith = timeoutWith_1.timeoutWith;
+//# sourceMappingURL=timeoutWith.js.map
 
 /***/ }),
 /* 370 */
@@ -79278,9 +79769,9 @@ Observable_1.Observable.prototype.timestamp = timestamp_1.timestamp;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var toArray_1 = __webpack_require__(483);
-Observable_1.Observable.prototype.toArray = toArray_1.toArray;
-//# sourceMappingURL=toArray.js.map
+var timestamp_1 = __webpack_require__(140);
+Observable_1.Observable.prototype.timestamp = timestamp_1.timestamp;
+//# sourceMappingURL=timestamp.js.map
 
 /***/ }),
 /* 371 */
@@ -79289,9 +79780,9 @@ Observable_1.Observable.prototype.toArray = toArray_1.toArray;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var toPromise_1 = __webpack_require__(484);
-Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
-//# sourceMappingURL=toPromise.js.map
+var toArray_1 = __webpack_require__(484);
+Observable_1.Observable.prototype.toArray = toArray_1.toArray;
+//# sourceMappingURL=toArray.js.map
 
 /***/ }),
 /* 372 */
@@ -79300,9 +79791,9 @@ Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var window_1 = __webpack_require__(485);
-Observable_1.Observable.prototype.window = window_1.window;
-//# sourceMappingURL=window.js.map
+var toPromise_1 = __webpack_require__(485);
+Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
+//# sourceMappingURL=toPromise.js.map
 
 /***/ }),
 /* 373 */
@@ -79311,9 +79802,9 @@ Observable_1.Observable.prototype.window = window_1.window;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var windowCount_1 = __webpack_require__(486);
-Observable_1.Observable.prototype.windowCount = windowCount_1.windowCount;
-//# sourceMappingURL=windowCount.js.map
+var window_1 = __webpack_require__(486);
+Observable_1.Observable.prototype.window = window_1.window;
+//# sourceMappingURL=window.js.map
 
 /***/ }),
 /* 374 */
@@ -79322,9 +79813,9 @@ Observable_1.Observable.prototype.windowCount = windowCount_1.windowCount;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var windowTime_1 = __webpack_require__(487);
-Observable_1.Observable.prototype.windowTime = windowTime_1.windowTime;
-//# sourceMappingURL=windowTime.js.map
+var windowCount_1 = __webpack_require__(487);
+Observable_1.Observable.prototype.windowCount = windowCount_1.windowCount;
+//# sourceMappingURL=windowCount.js.map
 
 /***/ }),
 /* 375 */
@@ -79333,9 +79824,9 @@ Observable_1.Observable.prototype.windowTime = windowTime_1.windowTime;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var windowToggle_1 = __webpack_require__(488);
-Observable_1.Observable.prototype.windowToggle = windowToggle_1.windowToggle;
-//# sourceMappingURL=windowToggle.js.map
+var windowTime_1 = __webpack_require__(488);
+Observable_1.Observable.prototype.windowTime = windowTime_1.windowTime;
+//# sourceMappingURL=windowTime.js.map
 
 /***/ }),
 /* 376 */
@@ -79344,9 +79835,9 @@ Observable_1.Observable.prototype.windowToggle = windowToggle_1.windowToggle;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var windowWhen_1 = __webpack_require__(489);
-Observable_1.Observable.prototype.windowWhen = windowWhen_1.windowWhen;
-//# sourceMappingURL=windowWhen.js.map
+var windowToggle_1 = __webpack_require__(489);
+Observable_1.Observable.prototype.windowToggle = windowToggle_1.windowToggle;
+//# sourceMappingURL=windowToggle.js.map
 
 /***/ }),
 /* 377 */
@@ -79355,9 +79846,9 @@ Observable_1.Observable.prototype.windowWhen = windowWhen_1.windowWhen;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var withLatestFrom_1 = __webpack_require__(490);
-Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_1.withLatestFrom;
-//# sourceMappingURL=withLatestFrom.js.map
+var windowWhen_1 = __webpack_require__(490);
+Observable_1.Observable.prototype.windowWhen = windowWhen_1.windowWhen;
+//# sourceMappingURL=windowWhen.js.map
 
 /***/ }),
 /* 378 */
@@ -79366,9 +79857,9 @@ Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_1.withLatestFr
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var zip_1 = __webpack_require__(96);
-Observable_1.Observable.prototype.zip = zip_1.zipProto;
-//# sourceMappingURL=zip.js.map
+var withLatestFrom_1 = __webpack_require__(491);
+Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_1.withLatestFrom;
+//# sourceMappingURL=withLatestFrom.js.map
 
 /***/ }),
 /* 379 */
@@ -79377,12 +79868,23 @@ Observable_1.Observable.prototype.zip = zip_1.zipProto;
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
-var zipAll_1 = __webpack_require__(491);
+var zip_1 = __webpack_require__(97);
+Observable_1.Observable.prototype.zip = zip_1.zipProto;
+//# sourceMappingURL=zip.js.map
+
+/***/ }),
+/* 380 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(0);
+var zipAll_1 = __webpack_require__(492);
 Observable_1.Observable.prototype.zipAll = zipAll_1.zipAll;
 //# sourceMappingURL=zipAll.js.map
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79393,7 +79895,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var ScalarObservable_1 = __webpack_require__(92);
+var ScalarObservable_1 = __webpack_require__(93);
 var EmptyObservable_1 = __webpack_require__(26);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -79458,7 +79960,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79471,7 +79973,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(0);
 var tryCatch_1 = __webpack_require__(11);
 var errorObject_1 = __webpack_require__(9);
-var AsyncSubject_1 = __webpack_require__(58);
+var AsyncSubject_1 = __webpack_require__(59);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -79732,7 +80234,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=BoundCallbackObservable.js.map
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79745,7 +80247,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(0);
 var tryCatch_1 = __webpack_require__(11);
 var errorObject_1 = __webpack_require__(9);
-var AsyncSubject_1 = __webpack_require__(58);
+var AsyncSubject_1 = __webpack_require__(59);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -80001,7 +80503,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=BoundNodeCallbackObservable.js.map
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80106,7 +80608,7 @@ var DeferSubscriber = (function (_super) {
 //# sourceMappingURL=DeferObservable.js.map
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80194,7 +80696,7 @@ exports.ErrorObservable = ErrorObservable;
 //# sourceMappingURL=ErrorObservable.js.map
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80312,7 +80814,7 @@ var ForkJoinSubscriber = (function (_super) {
 //# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80324,7 +80826,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Observable_1 = __webpack_require__(0);
 var tryCatch_1 = __webpack_require__(11);
-var isFunction_1 = __webpack_require__(69);
+var isFunction_1 = __webpack_require__(70);
 var errorObject_1 = __webpack_require__(9);
 var Subscription_1 = __webpack_require__(7);
 var toString = Object.prototype.toString;
@@ -80458,7 +80960,7 @@ exports.FromEventObservable = FromEventObservable;
 //# sourceMappingURL=FromEventObservable.js.map
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80468,7 +80970,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(69);
+var isFunction_1 = __webpack_require__(70);
 var Observable_1 = __webpack_require__(0);
 var Subscription_1 = __webpack_require__(7);
 /**
@@ -80577,7 +81079,7 @@ exports.FromEventPatternObservable = FromEventPatternObservable;
 //# sourceMappingURL=FromEventPatternObservable.js.map
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80718,7 +81220,7 @@ exports.GenerateObservable = GenerateObservable;
 //# sourceMappingURL=GenerateObservable.js.map
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80785,7 +81287,7 @@ var IfSubscriber = (function (_super) {
 //# sourceMappingURL=IfObservable.js.map
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80795,7 +81297,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isNumeric_1 = __webpack_require__(70);
+var isNumeric_1 = __webpack_require__(71);
 var Observable_1 = __webpack_require__(0);
 var async_1 = __webpack_require__(13);
 /**
@@ -80879,7 +81381,7 @@ exports.IntervalObservable = IntervalObservable;
 //# sourceMappingURL=IntervalObservable.js.map
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81048,7 +81550,7 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81059,7 +81561,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var noop_1 = __webpack_require__(150);
+var noop_1 = __webpack_require__(151);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -81113,7 +81615,7 @@ exports.NeverObservable = NeverObservable;
 //# sourceMappingURL=NeverObservable.js.map
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81204,7 +81706,7 @@ exports.PairsObservable = PairsObservable;
 //# sourceMappingURL=PairsObservable.js.map
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81306,7 +81808,7 @@ exports.RangeObservable = RangeObservable;
 //# sourceMappingURL=RangeObservable.js.map
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81317,8 +81819,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var asap_1 = __webpack_require__(141);
-var isNumeric_1 = __webpack_require__(70);
+var asap_1 = __webpack_require__(142);
+var isNumeric_1 = __webpack_require__(71);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -81363,7 +81865,7 @@ exports.SubscribeOnObservable = SubscribeOnObservable;
 //# sourceMappingURL=SubscribeOnObservable.js.map
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81373,11 +81875,11 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isNumeric_1 = __webpack_require__(70);
+var isNumeric_1 = __webpack_require__(71);
 var Observable_1 = __webpack_require__(0);
 var async_1 = __webpack_require__(13);
 var isScheduler_1 = __webpack_require__(21);
-var isDate_1 = __webpack_require__(68);
+var isDate_1 = __webpack_require__(69);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -81476,7 +81978,7 @@ exports.TimerObservable = TimerObservable;
 //# sourceMappingURL=TimerObservable.js.map
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81543,24 +82045,14 @@ var UsingSubscriber = (function (_super) {
 //# sourceMappingURL=UsingObservable.js.map
 
 /***/ }),
-/* 398 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var BoundCallbackObservable_1 = __webpack_require__(381);
-exports.bindCallback = BoundCallbackObservable_1.BoundCallbackObservable.create;
-//# sourceMappingURL=bindCallback.js.map
-
-/***/ }),
 /* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var BoundNodeCallbackObservable_1 = __webpack_require__(382);
-exports.bindNodeCallback = BoundNodeCallbackObservable_1.BoundNodeCallbackObservable.create;
-//# sourceMappingURL=bindNodeCallback.js.map
+var BoundCallbackObservable_1 = __webpack_require__(382);
+exports.bindCallback = BoundCallbackObservable_1.BoundCallbackObservable.create;
+//# sourceMappingURL=bindCallback.js.map
 
 /***/ }),
 /* 400 */
@@ -81568,10 +82060,20 @@ exports.bindNodeCallback = BoundNodeCallbackObservable_1.BoundNodeCallbackObserv
 
 "use strict";
 
+var BoundNodeCallbackObservable_1 = __webpack_require__(383);
+exports.bindNodeCallback = BoundNodeCallbackObservable_1.BoundNodeCallbackObservable.create;
+//# sourceMappingURL=bindNodeCallback.js.map
+
+/***/ }),
+/* 401 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var isScheduler_1 = __webpack_require__(21);
 var isArray_1 = __webpack_require__(20);
 var ArrayObservable_1 = __webpack_require__(18);
-var combineLatest_1 = __webpack_require__(62);
+var combineLatest_1 = __webpack_require__(63);
 /* tslint:enable:max-line-length */
 /**
  * Combines multiple Observables to create an Observable whose values are
@@ -81705,27 +82207,27 @@ exports.combineLatest = combineLatest;
 //# sourceMappingURL=combineLatest.js.map
 
 /***/ }),
-/* 401 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var concat_1 = __webpack_require__(93);
-exports.concat = concat_1.concatStatic;
-//# sourceMappingURL=concat.js.map
-
-/***/ }),
 /* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var DeferObservable_1 = __webpack_require__(383);
+var concat_1 = __webpack_require__(94);
+exports.concat = concat_1.concatStatic;
+//# sourceMappingURL=concat.js.map
+
+/***/ }),
+/* 403 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var DeferObservable_1 = __webpack_require__(384);
 exports.defer = DeferObservable_1.DeferObservable.create;
 //# sourceMappingURL=defer.js.map
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81740,10 +82242,10 @@ var Subscriber_1 = __webpack_require__(1);
 var Observable_1 = __webpack_require__(0);
 var Subscription_1 = __webpack_require__(7);
 var root_1 = __webpack_require__(10);
-var ReplaySubject_1 = __webpack_require__(59);
+var ReplaySubject_1 = __webpack_require__(60);
 var tryCatch_1 = __webpack_require__(11);
 var errorObject_1 = __webpack_require__(9);
-var assign_1 = __webpack_require__(509);
+var assign_1 = __webpack_require__(510);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -81981,27 +82483,27 @@ exports.WebSocketSubject = WebSocketSubject;
 //# sourceMappingURL=WebSocketSubject.js.map
 
 /***/ }),
-/* 404 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var AjaxObservable_1 = __webpack_require__(121);
-exports.ajax = AjaxObservable_1.AjaxObservable.create;
-//# sourceMappingURL=ajax.js.map
-
-/***/ }),
 /* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var WebSocketSubject_1 = __webpack_require__(403);
+var AjaxObservable_1 = __webpack_require__(122);
+exports.ajax = AjaxObservable_1.AjaxObservable.create;
+//# sourceMappingURL=ajax.js.map
+
+/***/ }),
+/* 406 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var WebSocketSubject_1 = __webpack_require__(404);
 exports.webSocket = WebSocketSubject_1.WebSocketSubject.create;
 //# sourceMappingURL=webSocket.js.map
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82011,24 +82513,14 @@ exports.empty = EmptyObservable_1.EmptyObservable.create;
 //# sourceMappingURL=empty.js.map
 
 /***/ }),
-/* 407 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var FromEventObservable_1 = __webpack_require__(386);
-exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
-//# sourceMappingURL=fromEvent.js.map
-
-/***/ }),
 /* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromEventPatternObservable_1 = __webpack_require__(387);
-exports.fromEventPattern = FromEventPatternObservable_1.FromEventPatternObservable.create;
-//# sourceMappingURL=fromEventPattern.js.map
+var FromEventObservable_1 = __webpack_require__(387);
+exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
+//# sourceMappingURL=fromEvent.js.map
 
 /***/ }),
 /* 409 */
@@ -82036,9 +82528,9 @@ exports.fromEventPattern = FromEventPatternObservable_1.FromEventPatternObservab
 
 "use strict";
 
-var IfObservable_1 = __webpack_require__(389);
-exports._if = IfObservable_1.IfObservable.create;
-//# sourceMappingURL=if.js.map
+var FromEventPatternObservable_1 = __webpack_require__(388);
+exports.fromEventPattern = FromEventPatternObservable_1.FromEventPatternObservable.create;
+//# sourceMappingURL=fromEventPattern.js.map
 
 /***/ }),
 /* 410 */
@@ -82046,9 +82538,9 @@ exports._if = IfObservable_1.IfObservable.create;
 
 "use strict";
 
-var IntervalObservable_1 = __webpack_require__(390);
-exports.interval = IntervalObservable_1.IntervalObservable.create;
-//# sourceMappingURL=interval.js.map
+var IfObservable_1 = __webpack_require__(390);
+exports._if = IfObservable_1.IfObservable.create;
+//# sourceMappingURL=if.js.map
 
 /***/ }),
 /* 411 */
@@ -82056,9 +82548,9 @@ exports.interval = IntervalObservable_1.IntervalObservable.create;
 
 "use strict";
 
-var NeverObservable_1 = __webpack_require__(392);
-exports.never = NeverObservable_1.NeverObservable.create;
-//# sourceMappingURL=never.js.map
+var IntervalObservable_1 = __webpack_require__(391);
+exports.interval = IntervalObservable_1.IntervalObservable.create;
+//# sourceMappingURL=interval.js.map
 
 /***/ }),
 /* 412 */
@@ -82066,9 +82558,9 @@ exports.never = NeverObservable_1.NeverObservable.create;
 
 "use strict";
 
-var PairsObservable_1 = __webpack_require__(393);
-exports.pairs = PairsObservable_1.PairsObservable.create;
-//# sourceMappingURL=pairs.js.map
+var NeverObservable_1 = __webpack_require__(393);
+exports.never = NeverObservable_1.NeverObservable.create;
+//# sourceMappingURL=never.js.map
 
 /***/ }),
 /* 413 */
@@ -82076,9 +82568,9 @@ exports.pairs = PairsObservable_1.PairsObservable.create;
 
 "use strict";
 
-var RangeObservable_1 = __webpack_require__(394);
-exports.range = RangeObservable_1.RangeObservable.create;
-//# sourceMappingURL=range.js.map
+var PairsObservable_1 = __webpack_require__(394);
+exports.pairs = PairsObservable_1.PairsObservable.create;
+//# sourceMappingURL=pairs.js.map
 
 /***/ }),
 /* 414 */
@@ -82086,9 +82578,9 @@ exports.range = RangeObservable_1.RangeObservable.create;
 
 "use strict";
 
-var ErrorObservable_1 = __webpack_require__(384);
-exports._throw = ErrorObservable_1.ErrorObservable.create;
-//# sourceMappingURL=throw.js.map
+var RangeObservable_1 = __webpack_require__(395);
+exports.range = RangeObservable_1.RangeObservable.create;
+//# sourceMappingURL=range.js.map
 
 /***/ }),
 /* 415 */
@@ -82096,9 +82588,9 @@ exports._throw = ErrorObservable_1.ErrorObservable.create;
 
 "use strict";
 
-var TimerObservable_1 = __webpack_require__(396);
-exports.timer = TimerObservable_1.TimerObservable.create;
-//# sourceMappingURL=timer.js.map
+var ErrorObservable_1 = __webpack_require__(385);
+exports._throw = ErrorObservable_1.ErrorObservable.create;
+//# sourceMappingURL=throw.js.map
 
 /***/ }),
 /* 416 */
@@ -82106,9 +82598,9 @@ exports.timer = TimerObservable_1.TimerObservable.create;
 
 "use strict";
 
-var UsingObservable_1 = __webpack_require__(397);
-exports.using = UsingObservable_1.UsingObservable.create;
-//# sourceMappingURL=using.js.map
+var TimerObservable_1 = __webpack_require__(397);
+exports.timer = TimerObservable_1.TimerObservable.create;
+//# sourceMappingURL=timer.js.map
 
 /***/ }),
 /* 417 */
@@ -82116,12 +82608,22 @@ exports.using = UsingObservable_1.UsingObservable.create;
 
 "use strict";
 
-var zip_1 = __webpack_require__(96);
+var UsingObservable_1 = __webpack_require__(398);
+exports.using = UsingObservable_1.UsingObservable.create;
+//# sourceMappingURL=using.js.map
+
+/***/ }),
+/* 418 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var zip_1 = __webpack_require__(97);
 exports.zip = zip_1.zipStatic;
 //# sourceMappingURL=zip.js.map
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82237,7 +82739,7 @@ var AuditSubscriber = (function (_super) {
 //# sourceMappingURL=audit.js.map
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82319,7 +82821,7 @@ var BufferSubscriber = (function (_super) {
 //# sourceMappingURL=buffer.js.map
 
 /***/ }),
-/* 420 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82465,7 +82967,7 @@ var BufferSkipCountSubscriber = (function (_super) {
 //# sourceMappingURL=bufferCount.js.map
 
 /***/ }),
-/* 421 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82670,7 +83172,7 @@ function dispatchBufferClose(arg) {
 //# sourceMappingURL=bufferTime.js.map
 
 /***/ }),
-/* 422 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82828,7 +83330,7 @@ var BufferToggleSubscriber = (function (_super) {
 //# sourceMappingURL=bufferToggle.js.map
 
 /***/ }),
-/* 423 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82956,12 +83458,12 @@ var BufferWhenSubscriber = (function (_super) {
 //# sourceMappingURL=bufferWhen.js.map
 
 /***/ }),
-/* 424 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var combineLatest_1 = __webpack_require__(62);
+var combineLatest_1 = __webpack_require__(63);
 /**
  * Converts a higher-order Observable into a first-order Observable by waiting
  * for the outer Observable to complete, then applying {@link combineLatest}.
@@ -83009,12 +83511,12 @@ exports.combineAll = combineAll;
 //# sourceMappingURL=combineAll.js.map
 
 /***/ }),
-/* 425 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeMapTo_1 = __webpack_require__(134);
+var mergeMapTo_1 = __webpack_require__(135);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to the same Observable which is merged multiple
@@ -83079,7 +83581,7 @@ exports.concatMapTo = concatMapTo;
 //# sourceMappingURL=concatMapTo.js.map
 
 /***/ }),
-/* 426 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83196,7 +83698,7 @@ var CountSubscriber = (function (_super) {
 //# sourceMappingURL=count.js.map
 
 /***/ }),
-/* 427 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83329,7 +83831,7 @@ var DebounceSubscriber = (function (_super) {
 //# sourceMappingURL=debounce.js.map
 
 /***/ }),
-/* 428 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83451,7 +83953,7 @@ function dispatchNext(subscriber) {
 //# sourceMappingURL=debounceTime.js.map
 
 /***/ }),
-/* 429 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83534,7 +84036,7 @@ var DefaultIfEmptySubscriber = (function (_super) {
 //# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ }),
-/* 430 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83545,7 +84047,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var async_1 = __webpack_require__(13);
-var isDate_1 = __webpack_require__(68);
+var isDate_1 = __webpack_require__(69);
 var Subscriber_1 = __webpack_require__(1);
 var Notification_1 = __webpack_require__(42);
 /**
@@ -83675,7 +84177,7 @@ var DelayMessage = (function () {
 //# sourceMappingURL=delay.js.map
 
 /***/ }),
-/* 431 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83871,7 +84373,7 @@ var SubscriptionDelaySubscriber = (function (_super) {
 //# sourceMappingURL=delayWhen.js.map
 
 /***/ }),
-/* 432 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83952,7 +84454,7 @@ var DeMaterializeSubscriber = (function (_super) {
 //# sourceMappingURL=dematerialize.js.map
 
 /***/ }),
-/* 433 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83964,7 +84466,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var OuterSubscriber_1 = __webpack_require__(2);
 var subscribeToResult_1 = __webpack_require__(3);
-var Set_1 = __webpack_require__(508);
+var Set_1 = __webpack_require__(509);
 /**
  * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.
  *
@@ -84078,12 +84580,12 @@ exports.DistinctSubscriber = DistinctSubscriber;
 //# sourceMappingURL=distinct.js.map
 
 /***/ }),
-/* 434 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var distinctUntilChanged_1 = __webpack_require__(129);
+var distinctUntilChanged_1 = __webpack_require__(130);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item,
@@ -84154,7 +84656,7 @@ exports.distinctUntilKeyChanged = distinctUntilKeyChanged;
 //# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 /***/ }),
-/* 435 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84171,7 +84673,7 @@ var Subscriber_1 = __webpack_require__(1);
  * an Observable that is identical to the source.
  *
  * <span class="informal">Intercepts each emission on the source and runs a
- * function, but returns an output which is identical to the source.</span>
+ * function, but returns an output which is identical to the source as long as errors don't occur.</span>
  *
  * <img src="./img/do.png" width="100%">
  *
@@ -84273,7 +84775,7 @@ var DoSubscriber = (function (_super) {
 //# sourceMappingURL=do.js.map
 
 /***/ }),
-/* 436 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84284,7 +84786,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(1);
-var ArgumentOutOfRangeError_1 = __webpack_require__(66);
+var ArgumentOutOfRangeError_1 = __webpack_require__(67);
 /**
  * Emits the single value at the specified `index` in a sequence of emissions
  * from the source Observable.
@@ -84379,7 +84881,7 @@ var ElementAtSubscriber = (function (_super) {
 //# sourceMappingURL=elementAt.js.map
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84474,7 +84976,7 @@ var SwitchFirstSubscriber = (function (_super) {
 //# sourceMappingURL=exhaust.js.map
 
 /***/ }),
-/* 438 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84618,7 +85120,7 @@ var SwitchFirstMapSubscriber = (function (_super) {
 //# sourceMappingURL=exhaustMap.js.map
 
 /***/ }),
-/* 439 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84775,7 +85277,7 @@ exports.ExpandSubscriber = ExpandSubscriber;
 //# sourceMappingURL=expand.js.map
 
 /***/ }),
-/* 440 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84824,12 +85326,12 @@ var FinallySubscriber = (function (_super) {
 //# sourceMappingURL=finally.js.map
 
 /***/ }),
-/* 441 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var find_1 = __webpack_require__(131);
+var find_1 = __webpack_require__(132);
 /**
  * Emits only the index of the first value emitted by the source Observable that
  * meets some condition.
@@ -84871,7 +85373,7 @@ exports.findIndex = findIndex;
 //# sourceMappingURL=findIndex.js.map
 
 /***/ }),
-/* 442 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84885,8 +85387,8 @@ var Subscriber_1 = __webpack_require__(1);
 var Subscription_1 = __webpack_require__(7);
 var Observable_1 = __webpack_require__(0);
 var Subject_1 = __webpack_require__(6);
-var Map_1 = __webpack_require__(506);
-var FastMap_1 = __webpack_require__(504);
+var Map_1 = __webpack_require__(507);
+var FastMap_1 = __webpack_require__(505);
 /* tslint:enable:max-line-length */
 /**
  * Groups the items emitted by an Observable according to a specified criterion,
@@ -85158,7 +85660,7 @@ var InnerRefCountSubscription = (function (_super) {
 //# sourceMappingURL=groupBy.js.map
 
 /***/ }),
-/* 443 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85169,7 +85671,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(1);
-var noop_1 = __webpack_require__(150);
+var noop_1 = __webpack_require__(151);
 /**
  * Ignores all items emitted by the source Observable and only passes calls of `complete` or `error`.
  *
@@ -85211,7 +85713,7 @@ var IgnoreElementsSubscriber = (function (_super) {
 //# sourceMappingURL=ignoreElements.js.map
 
 /***/ }),
-/* 444 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85269,7 +85771,7 @@ var IsEmptySubscriber = (function (_super) {
 //# sourceMappingURL=isEmpty.js.map
 
 /***/ }),
-/* 445 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85287,7 +85789,7 @@ exports.letProto = letProto;
 //# sourceMappingURL=let.js.map
 
 /***/ }),
-/* 446 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85356,7 +85858,7 @@ var MapToSubscriber = (function (_super) {
 //# sourceMappingURL=mapTo.js.map
 
 /***/ }),
-/* 447 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85452,12 +85954,12 @@ var MaterializeSubscriber = (function (_super) {
 //# sourceMappingURL=materialize.js.map
 
 /***/ }),
-/* 448 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var reduce_1 = __webpack_require__(63);
+var reduce_1 = __webpack_require__(64);
 /**
  * The Max operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
  * and when source Observable completes it emits a single item: the item with the largest value.
@@ -85499,7 +86001,7 @@ exports.max = max;
 //# sourceMappingURL=max.js.map
 
 /***/ }),
-/* 449 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85634,12 +86136,12 @@ exports.MergeScanSubscriber = MergeScanSubscriber;
 //# sourceMappingURL=mergeScan.js.map
 
 /***/ }),
-/* 450 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var reduce_1 = __webpack_require__(63);
+var reduce_1 = __webpack_require__(64);
 /**
  * The Min operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
  * and when source Observable completes it emits a single item: the item with the smallest value.
@@ -85681,7 +86183,7 @@ exports.min = min;
 //# sourceMappingURL=min.js.map
 
 /***/ }),
-/* 451 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85764,13 +86266,13 @@ var PairwiseSubscriber = (function (_super) {
 //# sourceMappingURL=pairwise.js.map
 
 /***/ }),
-/* 452 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var not_1 = __webpack_require__(510);
-var filter_1 = __webpack_require__(94);
+var not_1 = __webpack_require__(511);
+var filter_1 = __webpack_require__(95);
 /**
  * Splits the source Observable into two, one with values that satisfy a
  * predicate, and another with values that don't satisfy the predicate.
@@ -85822,7 +86324,7 @@ exports.partition = partition;
 //# sourceMappingURL=partition.js.map
 
 /***/ }),
-/* 453 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85885,7 +86387,7 @@ function plucker(props, length) {
 //# sourceMappingURL=pluck.js.map
 
 /***/ }),
-/* 454 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85914,12 +86416,12 @@ exports.publish = publish;
 //# sourceMappingURL=publish.js.map
 
 /***/ }),
-/* 455 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var BehaviorSubject_1 = __webpack_require__(91);
+var BehaviorSubject_1 = __webpack_require__(92);
 var multicast_1 = __webpack_require__(33);
 /**
  * @param value
@@ -85934,12 +86436,12 @@ exports.publishBehavior = publishBehavior;
 //# sourceMappingURL=publishBehavior.js.map
 
 /***/ }),
-/* 456 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var AsyncSubject_1 = __webpack_require__(58);
+var AsyncSubject_1 = __webpack_require__(59);
 var multicast_1 = __webpack_require__(33);
 /**
  * @return {ConnectableObservable<T>}
@@ -85953,12 +86455,12 @@ exports.publishLast = publishLast;
 //# sourceMappingURL=publishLast.js.map
 
 /***/ }),
-/* 457 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ReplaySubject_1 = __webpack_require__(59);
+var ReplaySubject_1 = __webpack_require__(60);
 var multicast_1 = __webpack_require__(33);
 /**
  * @param bufferSize
@@ -85977,7 +86479,7 @@ exports.publishReplay = publishReplay;
 //# sourceMappingURL=publishReplay.js.map
 
 /***/ }),
-/* 458 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86053,7 +86555,7 @@ var RepeatSubscriber = (function (_super) {
 //# sourceMappingURL=repeat.js.map
 
 /***/ }),
-/* 459 */
+/* 460 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86167,7 +86669,7 @@ var RepeatWhenSubscriber = (function (_super) {
 //# sourceMappingURL=repeatWhen.js.map
 
 /***/ }),
-/* 460 */
+/* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86238,7 +86740,7 @@ var RetrySubscriber = (function (_super) {
 //# sourceMappingURL=retry.js.map
 
 /***/ }),
-/* 461 */
+/* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86345,7 +86847,7 @@ var RetryWhenSubscriber = (function (_super) {
 //# sourceMappingURL=retryWhen.js.map
 
 /***/ }),
-/* 462 */
+/* 463 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86439,7 +86941,7 @@ var SampleSubscriber = (function (_super) {
 //# sourceMappingURL=sample.js.map
 
 /***/ }),
-/* 463 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86536,7 +87038,7 @@ function dispatchNotification(state) {
 //# sourceMappingURL=sampleTime.js.map
 
 /***/ }),
-/* 464 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86661,7 +87163,7 @@ var ScanSubscriber = (function (_super) {
 //# sourceMappingURL=scan.js.map
 
 /***/ }),
-/* 465 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86831,7 +87333,7 @@ var SequenceEqualCompareToSubscriber = (function (_super) {
 //# sourceMappingURL=sequenceEqual.js.map
 
 /***/ }),
-/* 466 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86930,7 +87432,7 @@ var SingleSubscriber = (function (_super) {
 //# sourceMappingURL=single.js.map
 
 /***/ }),
-/* 467 */
+/* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86987,7 +87489,7 @@ var SkipSubscriber = (function (_super) {
 //# sourceMappingURL=skip.js.map
 
 /***/ }),
-/* 468 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87064,7 +87566,7 @@ var SkipUntilSubscriber = (function (_super) {
 //# sourceMappingURL=skipUntil.js.map
 
 /***/ }),
-/* 469 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87136,15 +87638,15 @@ var SkipWhileSubscriber = (function (_super) {
 //# sourceMappingURL=skipWhile.js.map
 
 /***/ }),
-/* 470 */
+/* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var ArrayObservable_1 = __webpack_require__(18);
-var ScalarObservable_1 = __webpack_require__(92);
+var ScalarObservable_1 = __webpack_require__(93);
 var EmptyObservable_1 = __webpack_require__(26);
-var concat_1 = __webpack_require__(93);
+var concat_1 = __webpack_require__(94);
 var isScheduler_1 = __webpack_require__(21);
 /* tslint:enable:max-line-length */
 /**
@@ -87188,12 +87690,12 @@ exports.startWith = startWith;
 //# sourceMappingURL=startWith.js.map
 
 /***/ }),
-/* 471 */
+/* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var SubscribeOnObservable_1 = __webpack_require__(395);
+var SubscribeOnObservable_1 = __webpack_require__(396);
 /**
  * Asynchronously subscribes Observers to this Observable on the specified IScheduler.
  *
@@ -87223,7 +87725,7 @@ var SubscribeOnOperator = (function () {
 //# sourceMappingURL=subscribeOn.js.map
 
 /***/ }),
-/* 472 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87337,7 +87839,7 @@ var SwitchSubscriber = (function (_super) {
 //# sourceMappingURL=switch.js.map
 
 /***/ }),
-/* 473 */
+/* 474 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87483,7 +87985,7 @@ var SwitchMapSubscriber = (function (_super) {
 //# sourceMappingURL=switchMap.js.map
 
 /***/ }),
-/* 474 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87614,7 +88116,7 @@ var SwitchMapToSubscriber = (function (_super) {
 //# sourceMappingURL=switchMapTo.js.map
 
 /***/ }),
-/* 475 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87625,7 +88127,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(1);
-var ArgumentOutOfRangeError_1 = __webpack_require__(66);
+var ArgumentOutOfRangeError_1 = __webpack_require__(67);
 var EmptyObservable_1 = __webpack_require__(26);
 /**
  * Emits only the first `count` values emitted by the source Observable.
@@ -87709,7 +88211,7 @@ var TakeSubscriber = (function (_super) {
 //# sourceMappingURL=take.js.map
 
 /***/ }),
-/* 476 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87720,7 +88222,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(1);
-var ArgumentOutOfRangeError_1 = __webpack_require__(66);
+var ArgumentOutOfRangeError_1 = __webpack_require__(67);
 var EmptyObservable_1 = __webpack_require__(26);
 /**
  * Emits only the last `count` values emitted by the source Observable.
@@ -87822,7 +88324,7 @@ var TakeLastSubscriber = (function (_super) {
 //# sourceMappingURL=takeLast.js.map
 
 /***/ }),
-/* 477 */
+/* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87903,7 +88405,7 @@ var TakeUntilSubscriber = (function (_super) {
 //# sourceMappingURL=takeUntil.js.map
 
 /***/ }),
-/* 478 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88001,7 +88503,7 @@ var TakeWhileSubscriber = (function (_super) {
 //# sourceMappingURL=takeWhile.js.map
 
 /***/ }),
-/* 479 */
+/* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88115,7 +88617,7 @@ var ThrottleSubscriber = (function (_super) {
 //# sourceMappingURL=throttle.js.map
 
 /***/ }),
-/* 480 */
+/* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88216,7 +88718,7 @@ function dispatchNext(arg) {
 //# sourceMappingURL=throttleTime.js.map
 
 /***/ }),
-/* 481 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88227,9 +88729,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var async_1 = __webpack_require__(13);
-var isDate_1 = __webpack_require__(68);
+var isDate_1 = __webpack_require__(69);
 var Subscriber_1 = __webpack_require__(1);
-var TimeoutError_1 = __webpack_require__(144);
+var TimeoutError_1 = __webpack_require__(145);
 /**
  * @param {number} due
  * @param {Scheduler} [scheduler]
@@ -88305,7 +88807,7 @@ var TimeoutSubscriber = (function (_super) {
 //# sourceMappingURL=timeout.js.map
 
 /***/ }),
-/* 482 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88316,7 +88818,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var async_1 = __webpack_require__(13);
-var isDate_1 = __webpack_require__(68);
+var isDate_1 = __webpack_require__(69);
 var OuterSubscriber_1 = __webpack_require__(2);
 var subscribeToResult_1 = __webpack_require__(3);
 /* tslint:enable:max-line-length */
@@ -88398,7 +88900,7 @@ var TimeoutWithSubscriber = (function (_super) {
 //# sourceMappingURL=timeoutWith.js.map
 
 /***/ }),
-/* 483 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88449,7 +88951,7 @@ var ToArraySubscriber = (function (_super) {
 //# sourceMappingURL=toArray.js.map
 
 /***/ }),
-/* 484 */
+/* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88462,7 +88964,7 @@ var root_1 = __webpack_require__(10);
  * @example
  * // Using normal ES2015
  * let source = Rx.Observable
- *   .just(42)
+ *   .of(42)
  *   .toPromise();
  *
  * source.then((value) => console.log('Value: %s', value));
@@ -88491,7 +88993,7 @@ var root_1 = __webpack_require__(10);
  *
  * // Setting via the method
  * let source = Rx.Observable
- *   .just(42)
+ *   .of(42)
  *   .toPromise(RSVP.Promise);
  *
  * source.then((value) => console.log('Value: %s', value));
@@ -88527,7 +89029,7 @@ exports.toPromise = toPromise;
 //# sourceMappingURL=toPromise.js.map
 
 /***/ }),
-/* 485 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88643,7 +89145,7 @@ var WindowSubscriber = (function (_super) {
 //# sourceMappingURL=window.js.map
 
 /***/ }),
-/* 486 */
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88780,7 +89282,7 @@ var WindowCountSubscriber = (function (_super) {
 //# sourceMappingURL=windowCount.js.map
 
 /***/ }),
-/* 487 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88793,7 +89295,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Subject_1 = __webpack_require__(6);
 var async_1 = __webpack_require__(13);
 var Subscriber_1 = __webpack_require__(1);
-var isNumeric_1 = __webpack_require__(70);
+var isNumeric_1 = __webpack_require__(71);
 var isScheduler_1 = __webpack_require__(21);
 function windowTime(windowTimeSpan) {
     var scheduler = async_1.async;
@@ -88947,7 +89449,7 @@ function dispatchWindowClose(state) {
 //# sourceMappingURL=windowTime.js.map
 
 /***/ }),
-/* 488 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89133,7 +89635,7 @@ var WindowToggleSubscriber = (function (_super) {
 //# sourceMappingURL=windowToggle.js.map
 
 /***/ }),
-/* 489 */
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89266,7 +89768,7 @@ var WindowSubscriber = (function (_super) {
 //# sourceMappingURL=windowWhen.js.map
 
 /***/ }),
-/* 490 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89402,12 +89904,12 @@ var WithLatestFromSubscriber = (function (_super) {
 //# sourceMappingURL=withLatestFrom.js.map
 
 /***/ }),
-/* 491 */
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var zip_1 = __webpack_require__(96);
+var zip_1 = __webpack_require__(97);
 /**
  * @param project
  * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
@@ -89421,7 +89923,7 @@ exports.zipAll = zipAll;
 //# sourceMappingURL=zipAll.js.map
 
 /***/ }),
-/* 492 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89471,7 +89973,7 @@ exports.Action = Action;
 //# sourceMappingURL=Action.js.map
 
 /***/ }),
-/* 493 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89482,7 +89984,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AsyncAction_1 = __webpack_require__(45);
-var AnimationFrame_1 = __webpack_require__(503);
+var AnimationFrame_1 = __webpack_require__(504);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -89532,7 +90034,7 @@ exports.AnimationFrameAction = AnimationFrameAction;
 //# sourceMappingURL=AnimationFrameAction.js.map
 
 /***/ }),
-/* 494 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89575,7 +90077,7 @@ exports.AnimationFrameScheduler = AnimationFrameScheduler;
 //# sourceMappingURL=AnimationFrameScheduler.js.map
 
 /***/ }),
-/* 495 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89585,7 +90087,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Immediate_1 = __webpack_require__(505);
+var Immediate_1 = __webpack_require__(506);
 var AsyncAction_1 = __webpack_require__(45);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -89636,7 +90138,7 @@ exports.AsapAction = AsapAction;
 //# sourceMappingURL=AsapAction.js.map
 
 /***/ }),
-/* 496 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89679,7 +90181,7 @@ exports.AsapScheduler = AsapScheduler;
 //# sourceMappingURL=AsapScheduler.js.map
 
 /***/ }),
-/* 497 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89734,7 +90236,7 @@ exports.QueueAction = QueueAction;
 //# sourceMappingURL=QueueAction.js.map
 
 /***/ }),
-/* 498 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89756,13 +90258,13 @@ exports.QueueScheduler = QueueScheduler;
 //# sourceMappingURL=QueueScheduler.js.map
 
 /***/ }),
-/* 499 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var AnimationFrameAction_1 = __webpack_require__(493);
-var AnimationFrameScheduler_1 = __webpack_require__(494);
+var AnimationFrameAction_1 = __webpack_require__(494);
+var AnimationFrameScheduler_1 = __webpack_require__(495);
 /**
  *
  * Animation Frame Scheduler
@@ -89797,7 +90299,7 @@ exports.animationFrame = new AnimationFrameScheduler_1.AnimationFrameScheduler(A
 //# sourceMappingURL=animationFrame.js.map
 
 /***/ }),
-/* 500 */
+/* 501 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89809,8 +90311,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Observable_1 = __webpack_require__(0);
 var Subscription_1 = __webpack_require__(7);
-var SubscriptionLoggable_1 = __webpack_require__(143);
-var applyMixins_1 = __webpack_require__(146);
+var SubscriptionLoggable_1 = __webpack_require__(144);
+var applyMixins_1 = __webpack_require__(147);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -89849,7 +90351,7 @@ applyMixins_1.applyMixins(ColdObservable, [SubscriptionLoggable_1.SubscriptionLo
 //# sourceMappingURL=ColdObservable.js.map
 
 /***/ }),
-/* 501 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89861,8 +90363,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Subject_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(7);
-var SubscriptionLoggable_1 = __webpack_require__(143);
-var applyMixins_1 = __webpack_require__(146);
+var SubscriptionLoggable_1 = __webpack_require__(144);
+var applyMixins_1 = __webpack_require__(147);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -89903,7 +90405,7 @@ applyMixins_1.applyMixins(HotObservable, [SubscriptionLoggable_1.SubscriptionLog
 //# sourceMappingURL=HotObservable.js.map
 
 /***/ }),
-/* 502 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89915,10 +90417,10 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Observable_1 = __webpack_require__(0);
 var Notification_1 = __webpack_require__(42);
-var ColdObservable_1 = __webpack_require__(500);
-var HotObservable_1 = __webpack_require__(501);
-var SubscriptionLog_1 = __webpack_require__(142);
-var VirtualTimeScheduler_1 = __webpack_require__(140);
+var ColdObservable_1 = __webpack_require__(501);
+var HotObservable_1 = __webpack_require__(502);
+var SubscriptionLog_1 = __webpack_require__(143);
+var VirtualTimeScheduler_1 = __webpack_require__(141);
 var defaultMaxFrame = 750;
 var TestScheduler = (function (_super) {
     __extends(TestScheduler, _super);
@@ -90132,7 +90634,7 @@ exports.TestScheduler = TestScheduler;
 //# sourceMappingURL=TestScheduler.js.map
 
 /***/ }),
-/* 503 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90172,7 +90674,7 @@ exports.AnimationFrame = new RequestAnimationFrameDefinition(root_1.root);
 //# sourceMappingURL=AnimationFrame.js.map
 
 /***/ }),
-/* 504 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90209,7 +90711,7 @@ exports.FastMap = FastMap;
 //# sourceMappingURL=FastMap.js.map
 
 /***/ }),
-/* 505 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90424,18 +90926,18 @@ exports.Immediate = new ImmediateDefinition(root_1.root);
 //# sourceMappingURL=Immediate.js.map
 
 /***/ }),
-/* 506 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var root_1 = __webpack_require__(10);
-var MapPolyfill_1 = __webpack_require__(507);
+var MapPolyfill_1 = __webpack_require__(508);
 exports.Map = root_1.root.Map || (function () { return MapPolyfill_1.MapPolyfill; })();
 //# sourceMappingURL=Map.js.map
 
 /***/ }),
-/* 507 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90488,7 +90990,7 @@ exports.MapPolyfill = MapPolyfill;
 //# sourceMappingURL=MapPolyfill.js.map
 
 /***/ }),
-/* 508 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90527,7 +91029,7 @@ exports.Set = root_1.root.Set || minimalSetImpl();
 //# sourceMappingURL=Set.js.map
 
 /***/ }),
-/* 509 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90559,7 +91061,7 @@ exports.assign = getAssign(root_1.root);
 //# sourceMappingURL=assign.js.map
 
 /***/ }),
-/* 510 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90576,14 +91078,14 @@ exports.not = not;
 //# sourceMappingURL=not.js.map
 
 /***/ }),
-/* 511 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Subscriber_1 = __webpack_require__(1);
-var rxSubscriber_1 = __webpack_require__(65);
-var Observer_1 = __webpack_require__(116);
+var rxSubscriber_1 = __webpack_require__(66);
+var Observer_1 = __webpack_require__(117);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {

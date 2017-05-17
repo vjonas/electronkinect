@@ -1,0 +1,39 @@
+
+body{
+    background-image: url('/assets/images/background.jpg');
+}
+
+#logoutButton{
+    padding:0;
+    background-color:transparent;
+    border: none;
+}
+
+#logoutImg{
+    width:40px;
+    height:40px;
+}
+
+.navigatieheader{
+    padding-right:5px;
+}
+
+.uidModal-class{
+    color:black;
+
+    .uid-paragraph{
+    font-weight: bold;
+    }
+}
+
+.nav.navbar-nav {
+    .navbar-item:hover{ 
+    color:#5e5e5e;
+    cursor:pointer;
+}
+.navbar-item{
+    color:white;
+    vertical-align:center;
+}
+
+}

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFire } from 'angularfire2';
 import { routerTransition } from '../../../animations/router.animations';
 import { DatabaseService } from '../../../services/database.service';
+import { SharedService } from "app/services/shared.service";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class RegisterComponent {
     error: Error = new Error("");
 
 
-    constructor(public af: AngularFire, private router: Router, private dbService: DatabaseService) {
+    constructor(public af: AngularFire, private router: Router, private dbService: DatabaseService, private sharedService: SharedService) {
 
     }
 
@@ -30,6 +31,7 @@ export class RegisterComponent {
             }).then((success) => {
                 console.log("in registercomponent");
                 localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
+                this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
                 //create a new userobject in the database
                 this.dbService.createUser(formData, success.uid);
                 this.router.navigate(['/home'])

@@ -113,12 +113,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.currentExercise = ex;
         })
     }
-
-    private copyUserId(uidParagraph: HTMLParagraphElement) {
-        var selection = window.getSelection();
-        var range = document.createRange();
-        range.selectNodeContents(uidParagraph);
-        selection.addRange(range);
-        document.execCommand('copy');
-    }
 }

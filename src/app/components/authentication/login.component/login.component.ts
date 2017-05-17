@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { routerTransition } from '../../../animations/router.animations';
+import { SharedService } from "app/services/shared.service";
 
 @Component(
   {
@@ -18,9 +19,11 @@ export class LoginComponent implements OnInit {
   errCond: boolean = false;
   error: Error = new Error("");
 
-  constructor(public af: AngularFire, private router: Router) {
+  constructor(public af: AngularFire, private router: Router, private sharedService: SharedService) {
     this.af.auth.subscribe(auth => {
       if (auth) {
+        localStorage.setItem('currentUser', JSON.stringify({ uid: auth.uid })); //save user's uid locally
+        this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
         this.router.navigateByUrl('/home');
       }
     });
@@ -32,7 +35,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(formData) {
     if (formData.valid) {
-      console.log(formData.value);
       this.af.auth.login({
         email: formData.value.email,
         password: formData.value.password
@@ -40,9 +42,8 @@ export class LoginComponent implements OnInit {
           provider: AuthProviders.Password,
           method: AuthMethods.Password,
         }).then((success) => {
-          console.log(success);
-          console.log(success.uid);
           localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
+          this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
           this.router.navigate(['/home']);
           this.errCond = false;
         }).catch((err) => {
@@ -58,6 +59,8 @@ export class LoginComponent implements OnInit {
       provider: this._getProvider(from),
       method: AuthMethods.Popup,
     }).then((success) => {
+      localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
+      this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
       this.router.navigate(['/home']);
     }).catch((err) => {
       console.log(err);
