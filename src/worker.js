@@ -5,12 +5,10 @@ var Kinect2 = require('kinect2'),
 	server = require('http').createServer(app);
 zlib = require('zlib');
 
-console.log("child working- na initialisatie");
 process.send("worker.js geopend");
 
 //messaging with parent
 var kinect = new Kinect2();
-console.log("na new Kinect2: " + kinect);
 /*process.on('message', (m) => {
   console.log('CHILD got message:', m);
 });
@@ -18,7 +16,6 @@ process.send({ foo: 'bar' });*/
 
 //check if parent dies
 process.on('disconnect', function () {
-	console.log('parent exited')
 	process.exit();
 });
 

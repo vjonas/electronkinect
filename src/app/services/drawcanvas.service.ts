@@ -110,6 +110,7 @@ export class DrawCanvasService {
     }
 
     public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise) {
+        this.progressBarReset();
         const self = this;
         this.ctx = excerciseCanvas.getContext('2d');
         this.stepColors = new Array();
@@ -188,8 +189,6 @@ export class DrawCanvasService {
         //calculate the distance between the circle and the mousepointer            
         var distanceToFirstTrackingPoint = Math.sqrt((firstJointX - step.x0) * (firstJointX - step.x0) + (firstJointY - step.y0) * (firstJointY - step.y0));
         var distanceToSecondTrackingPoint = Math.sqrt((secondJointX - step.x1) * (secondJointX - step.x1) + (secondJointY - step.y1) * (secondJointY - step.y1));
-        console.log(step);
-        console.log(distanceToFirstTrackingPoint);
         if (hasSecondTouchPoint) {
             if (distanceToFirstTrackingPoint < step.radius) //you may drag the circle now
             {
@@ -203,6 +202,7 @@ export class DrawCanvasService {
                 this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
             if (distanceToSecondTrackingPoint < step.radius && distanceToFirstTrackingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
+                this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
             }
         }
@@ -210,6 +210,7 @@ export class DrawCanvasService {
             if (distanceToFirstTrackingPoint < step.radius) //you may drag the circle now
             {
                 this.drawTwoNextSteps(steps, index, canvas);
+                this.progressBarIncrease(steps.length,this.currentStepNr);
                 this.currentStepNr++;
             }
         }
@@ -243,6 +244,7 @@ export class DrawCanvasService {
             if (distanceFromEndingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
+                this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
             }
         }
@@ -319,5 +321,16 @@ export class DrawCanvasService {
                 }
             }
         });
+    }
+
+    private progressBarIncrease(totalSteps: number, currentStep: number){
+        var elem = <HTMLDivElement> document.getElementById("myBar");
+        var part = (100 / totalSteps)*(currentStep+1);
+        elem.style.width = part + '%';                
+    }
+
+    private progressBarReset(){
+        var elem = <HTMLDivElement> document.getElementById("myBar");
+        elem.style.width = 0 + '%';
     }
 }

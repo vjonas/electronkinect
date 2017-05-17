@@ -45,9 +45,6 @@ export class DatabaseService {
     }
 
     public createUser(userData: any, uid: string) {
-        console.log("in service"); console.log(userData);
-        console.log(userData.value.email);
-        console.log(userData.value.lastname);
         this.af.database.list('/users').push({
             uid: uid,
             name: userData.value.surname,

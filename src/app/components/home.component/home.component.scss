@@ -48,17 +48,18 @@ select{
     width:960px;
     margin-top:1%;
     padding:0;
+    margin-left:15px;
 }
 
 .progressBarParent {
     width: 100%;
-    background-color: grey;
+    background-color: rgba(255,255,255,0.5);
 }
 
 .progressBar {
-    width: 1%;
+    width: 0;
     height: 30px;
-    background-color: green;
+    background-color: limegreen;
 }
 
 .descriptionArea{
