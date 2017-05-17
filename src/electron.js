@@ -91,7 +91,6 @@ function startKinect(mock) {
 
     }
     else {
-      console.log("algemeen childprocess log: " + frame);
       win.webContents.send('log', frame);
     }
   });

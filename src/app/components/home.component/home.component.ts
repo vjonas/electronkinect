@@ -61,7 +61,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     onChangeExcercise(newExerciseId) {
-        console.log(newExerciseId);
         this.loadExcercise(newExerciseId);
     }
 

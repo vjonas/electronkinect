@@ -69,7 +69,6 @@ var AppComponent = (function () {
     AppComponent.prototype.logout = function () {
         this.af.auth.logout();
         this.name = null;
-        console.log("logged out");
         localStorage.clear();
         this.router.navigateByUrl('/login');
     };
@@ -519,7 +518,6 @@ var HomeComponent = (function () {
         });
     };
     HomeComponent.prototype.onChangeExcercise = function (newExerciseId) {
-        console.log(newExerciseId);
         this.loadExcercise(newExerciseId);
     };
     HomeComponent.prototype.drawExcercise = function () {
@@ -737,7 +735,7 @@ exports = module.exports = __webpack_require__(25)();
 
 
 // module
-exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n\n.header-current-program {\n  color: \"yellow\"; }\n\n#colorframecanvas {\n  width: 960px;\n  height: 540px; }\n\n.canvasArea {\n  height: 540px; }\n\n.placeholderCanvas {\n  position: absolute;\n  background-image: url(" + __webpack_require__(513) + "); }\n\n.progressBarArea {\n  width: 960px;\n  margin-top: 1%; }\n\n.progressBarParent {\n  width: 100%;\n  background-color: grey; }\n\n.progressBar {\n  width: 1%;\n  height: 30px;\n  background-color: green; }\n\n.descriptionArea h4 {\n  width: 960px;\n  height: 15vh;\n  padding-right: 20px;\n  overflow-y: scroll;\n  word-wrap: break-word;\n  text-align: justify; }\n\n::-webkit-scrollbar {\n  width: 6px; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 0; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 0;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\n  background-color: rgba(77, 0, 192, 0.8); }\n", ""]);
+exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  margin-top: 25px; }\n\n.header-current-program {\n  color: \"yellow\"; }\n\n#colorframecanvas {\n  width: 960px;\n  height: 540px; }\n\n.canvasArea {\n  height: 540px; }\n\n.placeholderCanvas {\n  position: absolute;\n  background-image: url(" + __webpack_require__(513) + "); }\n\n.progressBarArea {\n  width: 960px;\n  margin-top: 1%;\n  padding: 0;\n  margin-left: 15px; }\n\n.progressBarParent {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.5); }\n\n.progressBar {\n  width: 0;\n  height: 30px;\n  background-color: limegreen; }\n\n.descriptionArea h4 {\n  width: 960px;\n  height: 15vh;\n  padding-right: 20px;\n  overflow-y: scroll;\n  word-wrap: break-word;\n  text-align: justify; }\n\n::-webkit-scrollbar {\n  width: 6px; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 0; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 0;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\n  background-color: rgba(77, 0, 192, 0.8); }\n", ""]);
 
 // exports
 
@@ -945,10 +943,6 @@ var DatabaseService = (function () {
         this.oefening.next(excerciseNr);
     };
     DatabaseService.prototype.createUser = function (userData, uid) {
-        console.log("in service");
-        console.log(userData);
-        console.log(userData.value.email);
-        console.log(userData.value.lastname);
         this.af.database.list('/users').push({
             uid: uid,
             name: userData.value.surname,
@@ -1185,6 +1179,7 @@ var DrawCanvasService = (function () {
         bodyFrameCtx.globalAlpha = 1;
     };
     DrawCanvasService.prototype.drawExcercise = function (excerciseCanvas, newExcercise) {
+        this.progressBarReset();
         var self = this;
         this.ctx = excerciseCanvas.getContext('2d');
         this.stepColors = new Array();
@@ -1259,8 +1254,6 @@ var DrawCanvasService = (function () {
         //calculate the distance between the circle and the mousepointer            
         var distanceToFirstTrackingPoint = Math.sqrt((firstJointX - step.x0) * (firstJointX - step.x0) + (firstJointY - step.y0) * (firstJointY - step.y0));
         var distanceToSecondTrackingPoint = Math.sqrt((secondJointX - step.x1) * (secondJointX - step.x1) + (secondJointY - step.y1) * (secondJointY - step.y1));
-        console.log(step);
-        console.log(distanceToFirstTrackingPoint);
         if (hasSecondTouchPoint) {
             if (distanceToFirstTrackingPoint < step.radius) {
                 this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_COMPLETED);
@@ -1274,12 +1267,14 @@ var DrawCanvasService = (function () {
                 this.drawTouchPoint(step.x1, step.y1, step.radius, this.COLOR_ACTION_CURRENT);
             if (distanceToSecondTrackingPoint < step.radius && distanceToFirstTrackingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
+                this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
             }
         }
         else {
             if (distanceToFirstTrackingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
+                this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
             }
         }
@@ -1313,6 +1308,7 @@ var DrawCanvasService = (function () {
             if (distanceFromEndingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
+                this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
             }
         }
@@ -1385,6 +1381,15 @@ var DrawCanvasService = (function () {
                 }
             }
         });
+    };
+    DrawCanvasService.prototype.progressBarIncrease = function (totalSteps, currentStep) {
+        var elem = document.getElementById("myBar");
+        var part = (100 / totalSteps) * (currentStep + 1);
+        elem.style.width = part + '%';
+    };
+    DrawCanvasService.prototype.progressBarReset = function () {
+        var elem = document.getElementById("myBar");
+        elem.style.width = 0 + '%';
     };
     return DrawCanvasService;
 }());
