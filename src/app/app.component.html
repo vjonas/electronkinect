@@ -35,7 +35,7 @@
             <div class="modal-body">
                 <p>Give this Uid to your mentor to start the Joint Effort</p>
                 <p id="uid" class="uid-paragraph" #uid>{{userId}}</p>
-                <button (click)="copyUserId(uid)"> COPY</button>
+                <button (click)="copyUserId(uid)" data-dismiss="modal"> COPY</button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Go back</button>
