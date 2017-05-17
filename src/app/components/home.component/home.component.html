@@ -45,6 +45,10 @@
         <option *ngFor="let exercise of exercisesOfCurrentProgram" value="{{exercise?.$key}}">{{exercise?.name}}</option>
     </select>
     </div>
+    <div class="col-xs-12 descriptionArea">
+        <h2 class="col-xs-12">Description</h2>
+        <h3 class="col-xs-12">{{currentExercise?.description}}</h3>
+    </div>
     <div class="col-xs-12 startButtonDiv">
     <button class="col-xs-6" id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Start Excercise</button>
     </div>
@@ -54,8 +58,5 @@
         <div id="myBar" class="progressBar"></div>
     </div>
     </div>
-    <div class="col-xs-12 descriptionArea">
-        <h2>Description</h2>
-        <h4>{{currentExercise?.description}}</h4>
-    </div>
+    
 </div>

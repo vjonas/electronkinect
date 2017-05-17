@@ -17,7 +17,11 @@ select{
 }
 
 .startButtonDiv{
-    margin-top:25px;
+    text-align: center;
+
+    button{
+        margin-top:.5%;
+    }
 }
 
 .header-current-program
@@ -41,7 +45,8 @@ select{
 }
 
 .controls{
-    background-color: rgba(255,255,255,0.3);    
+    background-color: rgba(255,255,255,0.3);  
+    height:540px;  
 }
 
 
@@ -60,14 +65,19 @@ select{
 
 .progressBar {
     width: 0;
-    height: 30px;
+    line-height: 60px;
+    font-size:1.5em;
+    text-align: center;
+    height: 60px;
     background-color: limegreen;
+    overflow-x:hidden;
 }
 
 .descriptionArea{
-    h4{
-        width:960px;
-        height: 15vh;
+    padding:0;
+
+    h3{
+        height: 20vh;
         padding-right:20px;
         overflow-y:scroll;
         word-wrap: break-word;

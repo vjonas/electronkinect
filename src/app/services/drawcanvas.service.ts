@@ -325,12 +325,22 @@ export class DrawCanvasService {
 
     private progressBarIncrease(totalSteps: number, currentStep: number){
         var elem = <HTMLDivElement> document.getElementById("myBar");
-        var part = (100 / totalSteps)*(currentStep+1);
-        elem.style.width = part + '%';                
+        var partTotal = (100 / totalSteps)*(currentStep);
+        var part = 100/totalSteps;
+        var partWidth = 1;
+        var interval = setInterval(function(){
+            if(partWidth >= part){
+            clearInterval(interval);
+        } else{
+            partWidth++;
+            elem.style.width = partTotal+partWidth + "%";
+            elem.innerHTML = (partTotal + partWidth) + "% complete";
+        }},20);       
     }
 
     private progressBarReset(){
         var elem = <HTMLDivElement> document.getElementById("myBar");
         elem.style.width = 0 + '%';
+        elem.innerHTML = "";
     }
 }

@@ -105,6 +105,7 @@ function startKinect(mock) {
 app.on('ready', () => {
   createWindow();
   createMenu();
+  startKinect(false);
 }
 )
 
