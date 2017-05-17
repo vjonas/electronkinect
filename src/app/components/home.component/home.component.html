@@ -1,20 +1,3 @@
-<div id="uidModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Uid</h4>
-            </div>
-            <div class="modal-body">
-                <p>Give this Uid to your mentor to start the Joint Effort</p>
-                <p id="uid" #uid>{{userUid}}</p>
-                <button (click)="copyUserId(uid)"> COPY</button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Go back</button>
-            </div>
-        </div>
-    </div>
-</div>
 <img id="kinectPlaceholder" style="display:none;" src="./assets/images/kinectBeforeStart.jpg">
 <div class="wrapper">
     <h1 class="col-xs-12">{{currentExercise?.name}}</h1>
@@ -32,7 +15,6 @@
 
     <div class="col-xs-5 controls">
 <!--    <button class="btn btn-warning" (click)="playMockData(3)">Play arrow to the knee</button>    -->
-    <button class="btn btn-warning" data-toggle="modal" data-target="#uidModal">Show Uid</button>
     
     <h2 class="col-xs-12">Current Program</h2>
     <div class="col-xs-12">

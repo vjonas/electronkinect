@@ -18,6 +18,7 @@ import { DrawCanvasService } from './services/drawcanvas.service';
 import { DatabaseService } from './services/database.service';
 import { AngularFireModule } from 'angularfire2';
 import { AuthGuard } from './services/auth.service';
+import { SharedService } from "app/services/shared.service";
 
 
 
@@ -55,7 +56,7 @@ export const firebaseConfig = {
 
   ],
   //services
-  providers: [HashLocationStrategy, KinectService, DrawCanvasService, AuthGuard, DatabaseService],
+  providers: [HashLocationStrategy, KinectService, DrawCanvasService, AuthGuard, DatabaseService,SharedService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // to clear the router-outlet test, else it fails
 

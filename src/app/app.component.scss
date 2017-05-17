@@ -17,3 +17,22 @@ body{
 .navigatieheader{
     padding-right:5px;
 }
+
+.uidModal-class{
+    color:black;
+
+    .uid-paragraph{
+    font-weight: bold;
+    }
+}
+
+.nav.navbar-nav {
+    .navbar-item:hover{ 
+    color:white;
+    cursor:pointer;
+}
+.navbar-item{
+    vertical-align:center;
+}
+
+}
