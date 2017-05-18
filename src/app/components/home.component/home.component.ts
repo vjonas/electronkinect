@@ -26,9 +26,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private colorFrameCanvas;
     private excerciseCanvas;
     private userdata: User;
-    private currentExercise = null;
+    private currentFullExercise:FullExercise = null;
     private userUid: string;
-    private exercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
+    private fullExercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
     private currentProgram: Program;
     private currentStepNr: number = 0;
     private jointList: KinectJoint[] = new Array<KinectJoint>();;
@@ -55,12 +55,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     onChangeProgram(newProgramId) {
         //get all the excerciseIds in the currentTraject of the user
-        this.exercisesOfCurrentProgram.length = 0;
+        this.fullExercisesOfCurrentProgram.length = 0;
         //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
         Object.keys(this.userdata.programs[newProgramId].exercises).forEach(ex => {
             this.dbService.getExerciseByUid(ex).subscribe(
                 ex2 => {
-                    this.exercisesOfCurrentProgram.push(ex2);
+                    this.fullExercisesOfCurrentProgram.push(ex2);
                 }
             )
         });
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     public drawExcercise() {
         this.drawcanvasService.getCurrentStep().subscribe(stepNr => this.currentStepNr = stepNr);
-        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExercise);    
+        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentFullExercise,this.userdata.currentProgram);    
     }
 
     public playMockData(mockExcerciseNr: number) {
@@ -101,11 +101,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.userdata = userData;
             this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
-                Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach(ex => {
+                Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {
                     this.dbService.getExerciseByUid(ex).subscribe(
-                        ex2 => {
-                            this.exercisesOfCurrentProgram.push(ex2);
-                            this.currentExercise = this.exercisesOfCurrentProgram[0];
+                        (fullExercise:FullExercise) => {
+                            this.fullExercisesOfCurrentProgram.push(fullExercise);
+                            this.currentFullExercise = this.fullExercisesOfCurrentProgram[0];
                         }
                     )
                 });
@@ -114,9 +114,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     private loadExcercise(excerciseId) {
-        this.exercisesOfCurrentProgram.forEach(ex => {
+        this.fullExercisesOfCurrentProgram.forEach(ex => {
             if (ex["$key"] == excerciseId)
-                this.currentExercise = ex;
+                this.currentFullExercise = ex;
         })
     }
 

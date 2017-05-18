@@ -122,7 +122,7 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 1;
     }
 
-    public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise) {
+    public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise,currentProgramId:number) {
         this.progressBarReset();
         const self = this;
         this.ctx = excerciseCanvas.getContext('2d');
@@ -153,8 +153,10 @@ export class DrawCanvasService {
                         self.detectCollisionWithTouchPoint(step, index, steps, excerciseCanvas, true);
                     }
                 }
-                if (self.currentStepNr >= newExcercise.steps.length)
+                if (self.currentStepNr >= newExcercise.steps.length) {
                     clearInterval(self.intervalOfCurrentExcercise);
+                    
+                }
             })
         }, 1000 / 30);
     }
@@ -286,7 +288,7 @@ export class DrawCanvasService {
                 score = step.maxScore;
             else if (time > step.duration && time <= step.duration * 2)
                 score = Number((step.maxScore - (((time / step.duration) - 1) * 10)).toFixed(2));
-            this.exerciseService.createCompletedExercise(new CompletedExercise(JSON.parse(localStorage.getItem('currentUser'))["uid"], this.currentExercise["$key"], step.stepNr, score, time, new Date().toLocaleDateString()+new Date().toLocaleTimeString))
+            this.exerciseService.createCompletedExercise(new CompletedExercise(JSON.parse(localStorage.getItem('currentUser'))["uid"], this.currentExercise["$key"], step.stepNr, score, time, new Date().toLocaleDateString() + new Date().toLocaleTimeString))
             this.timerService.resetTimer();
             this.hasToStartTimer = true;
         }

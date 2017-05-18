@@ -8,10 +8,10 @@ import { FullExercise } from "app/models/full.excercise.model";
 @Injectable()
 export class ExerciseService {
     path: string = "/exercises";
-    private _mentorUid: string;
+    private userUid: string;
 
     constructor(private af: AngularFire) {
-        this._mentorUid=JSON.parse(localStorage.getItem('currentUser')).uid;
+        this.userUid=JSON.parse(localStorage.getItem('currentUser')).uid;
     }
 
 
@@ -21,14 +21,12 @@ export class ExerciseService {
 
     public createCompletedExercise(completedExercise:CompletedExercise)
     {
-        console.log(completedExercise);
-        /*this.af.database.object("/completed-exercises").set(
-            {
-                completedExercise:completedExercise
-            }
-        );*/
-        this.af.database.list("/completed-exercises").push(completedExercise);
-        
+        this.af.database.list("/completed-exercises").push(completedExercise);        
+    }
+
+    public setExerciseCompleted(exUid:string,currentProgramId:number)
+    {
+        this.af.database.object("users/"+this.userUid+"programs/"+currentProgramId+"/"+exUid).update({completed:true})
     }
 
 }
