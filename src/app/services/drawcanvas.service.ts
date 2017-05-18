@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject'
+import { Observable } from 'rxjs/Observable';
 import { KinectService } from './kinect.service';
 import { FullExercise } from "app/models/full.excercise.model";
 import { Step } from "app/models/step.model";
@@ -19,6 +21,7 @@ export class DrawCanvasService {
     private intervalOfCurrentExcercise = null;
     private stepColors: string[] = new Array();
     private currentStepNr: number = 0;
+    private currentStepSubject: Subject<number> = new Subject();
     private ctx;
     private hasToFollowTrackingLine: boolean;
 
@@ -115,6 +118,7 @@ export class DrawCanvasService {
         this.ctx = excerciseCanvas.getContext('2d');
         this.stepColors = new Array();
         this.currentStepNr = 0;
+        this.currentStepSubject.next(0);
         const steps = newExcercise.steps;
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {
@@ -204,6 +208,7 @@ export class DrawCanvasService {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
+                this.currentStepSubject.next(this.currentStepNr);
             }
         }
         else {
@@ -211,7 +216,8 @@ export class DrawCanvasService {
             {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.progressBarIncrease(steps.length,this.currentStepNr);
-                this.currentStepNr++;
+                this.currentStepNr++;       
+                this.currentStepSubject.next(this.currentStepNr);
             }
         }
     }
@@ -246,6 +252,7 @@ export class DrawCanvasService {
                 this.hasToFollowTrackingLine = false;
                 this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.currentStepNr++;
+                this.currentStepSubject.next(this.currentStepNr);
             }
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
@@ -342,5 +349,9 @@ export class DrawCanvasService {
         var elem = <HTMLDivElement> document.getElementById("myBar");
         elem.style.width = 0 + '%';
         elem.innerHTML = "";
+    }
+
+    getCurrentStep(): Observable<number>{
+        return this.currentStepSubject.asObservable();
     }
 }

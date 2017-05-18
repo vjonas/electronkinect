@@ -31,6 +31,5 @@
         }
         self.postMessage({ "message": "imageReady", "imageData": imageData });
     }
-
     init();
 })();
