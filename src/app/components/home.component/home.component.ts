@@ -123,7 +123,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     private createCompletedExercise()
     {
-        this.exService.createCompletedExercise(new CompletedExercise("","","",4,12,""));
+        this.exService.createCompletedExercise(new CompletedExercise("","",2,4,12,""));
     }
 
     private fillJointList() {

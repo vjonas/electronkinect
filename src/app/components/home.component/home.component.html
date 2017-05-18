@@ -20,48 +20,48 @@
     <!--<button class="btn btn-warning" (click)="playMockData(1)">Play linkerhand</button>    
     <button class="btn btn-warning" (click)="playMockData(2)">Play rechterhand</button>-->
     <!--<button (click)="loadExcercise(1)">getEx1</button>-->
-    <button (click)="createCompletedExercise()">createCompletedEX</button>
-
+    <!--    <button (click)="createCompletedExercise()">createCompletedEX</button>
+-->
     <div class="canvasArea col-xs-7">
-        <canvas class="placeholderCanvas" width="960" height="540" ></canvas>
+        <canvas class="placeholderCanvas" width="960" height="540"></canvas>
         <canvas id="colorframecanvas" width="640" height="360" style="position:absolute"></canvas>
         <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
         <canvas id="exercisecanvas" width="960" height="540" style="position:absolute"></canvas>
     </div>
-    
+
 
     <div class="col-xs-5 controls">
-<!--    <button class="btn btn-warning" (click)="playMockData(3)">Play arrow to the knee</button>    -->    
-    <h2 class="col-xs-12">Current Program</h2>
-    <div class="col-xs-12">
-    <!--<select (change)="onChangeProgram($event.target.value)" [disabled]>
+        <!--    <button class="btn btn-warning" (click)="playMockData(3)">Play arrow to the knee</button>    -->
+        <h2 class="col-xs-12">Current Program</h2>
+        <div class="col-xs-12">
+            <!--<select (change)="onChangeProgram($event.target.value)" [disabled]>
         <option *ngFor="let program of currentProgram" value="{{program.programId}}">{{program.name}}</option>
     </select>-->
-    <h3 class="header-current-program">{{currentProgram?.name}}</h3>
-    </div>
-    <h2 class="col-xs-12">Exercise</h2>
-    <!--combobox to display all the excercises in the selected traject-->
-    <div class="col-xs-12">
-        <select (change)="onChangeExcercise($event.target.value)">
+            <h3 class="header-current-program">{{currentProgram?.name}}</h3>
+        </div>
+        <h2 class="col-xs-12">Exercise</h2>
+        <!--combobox to display all the excercises in the selected traject-->
+        <div class="col-xs-12">
+            <select (change)="onChangeExcercise($event.target.value)">
         <option *ngFor="let exercise of exercisesOfCurrentProgram" value="{{exercise?.$key}}">{{exercise?.name}}</option>
     </select>
-    </div>
-    <div class="col-xs-12 descriptionArea">
-        <h2 class="col-xs-12">Description</h2>
-        <h3 class="col-xs-12">{{currentExercise?.description}}</h3>
-    </div>
-    <div class="col-xs-12 startButtonDiv">
-    <button class="col-xs-6" id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Start Excercise</button>
-    </div>
+        </div>
+        <div class="col-xs-12 descriptionArea">
+            <h2 class="col-xs-12">Description</h2>
+            <h3 class="col-xs-12">{{currentExercise?.description}}</h3>
+        </div>
+        <div class="col-xs-12 startButtonDiv">
+            <button class="col-xs-6" id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Start Excercise</button>
+        </div>
     </div>
     <div class="col-xs-7 jointArea">
         <h3 class="col-xs-6">Joint 1: {{jointList[currentExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>
         <h3 *ngIf="currentExercise?.steps[currentStepNr]?.stepType == 2" class="col-xs-6">Joint 2: {{jointList[currentExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>
     </div>
     <div class="col-xs-12 progressBarArea">
-    <div id="myProgress" class="progressBarParent">
-        <div id="myBar" class="progressBar"></div>
+        <div id="myProgress" class="progressBarParent">
+            <div id="myBar" class="progressBar"></div>
+        </div>
     </div>
-    </div>
-    
+
 </div>

@@ -1,3 +1,6 @@
+import { TimerService } from './timer.service';
+import { CompletedExercise } from './../models/completed.exercise.model';
+import { ExerciseService } from './exercise.service';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject'
 import { Observable } from 'rxjs/Observable';
@@ -8,26 +11,38 @@ import Bezier from 'bezier-js';
 
 @Injectable()
 export class DrawCanvasService {
+    private CALIBRATION_STEP_NR: number = 0;
     private HANDSIZE = 13;
-    private HANDCLOSEDCOLOR = "red";
-    private HANDOPENCOLOR = "green";
-    private HANDLASSOCOLOR = "blue";
-    private COLOR_ACTION_CURRENT = "#E88C00";
-    private COLOR_ACTION_NEXT = "rgba(255,255,255,0.1)";
-    private COLOR_ACTION_COMPLETED = "#7DFF00";
-    private COLOR_OFFSET = "red";
-    private colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
+    private HANDCLOSEDCOLOR: string = "red";
+    private HANDOPENCOLOR: string = "green";
+    private HANDLASSOCOLOR: string = "blue";
+    private COLOR_ACTION_CURRENT: string = "#E88C00";
+    private COLOR_ACTION_NEXT: string = "rgba(255,255,255,0.1)";
+    private COLOR_ACTION_COMPLETED: string = "#7DFF00";
+    private COLOR_OFFSET: string = "red";
     private joints = null; //array with all recognised joints (25)
     private intervalOfCurrentExcercise = null;
-    private stepColors: string[] = new Array();
     private currentStepNr: number = 0;
     private currentStepSubject: Subject<number> = new Subject();
     private ctx;
     private hasToFollowTrackingLine: boolean;
+    private timer;
+    private currentExercise: FullExercise;
+    private hasToStartTimer = true;
 
-    constructor(private kinectService: KinectService) {
+    constructor(private kinectService: KinectService, private exerciseService: ExerciseService, private timerService: TimerService) {
+
     }
 
+
+    private drawBodyJoint(bodyFrameCtx: any, joint: any, hasToDraw: boolean) {
+        if (hasToDraw) {
+            bodyFrameCtx.fillStyle = "rgba(0,0,0,0.5)";
+            bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width - 5, joint.colorY * bodyFrameCtx.canvas.height - 5, 10, 10);
+            bodyFrameCtx.fillStyle = "green";
+            bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width - 2.5, joint.colorY * bodyFrameCtx.canvas.height - 2.5, 5, 5);
+        }
+    }
     /**
          * param2: boolean to set when playing mockdata
          * param3: filename without .json that needs to be played
@@ -45,16 +60,11 @@ export class DrawCanvasService {
                 if (body.tracked) {
                     //draw the joints
                     for (var jointType in body.joints) {
-                        var joint = body.joints[jointType];
-                        /*bodyFrameCtx.fillStyle="rgba(0,0,0,0.5)";
-                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-5, joint.colorY * bodyFrameCtx.canvas.height-5, 10, 10);
-                        bodyFrameCtx.fillStyle = colors[index];
-                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-2.5, joint.colorY * bodyFrameCtx.canvas.height-2.5, 5, 5);*/
+                        self.drawBodyJoint(bodyFrameCtx, body.joints[jointType], false);
                     }
                     index++;
                     self.joints = body.joints; //save all joints to class variable
                     self.joints.push(body.bodyIndex);
-                    //draw the hands
                     //draw hand states
                     self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
                     self.updateHandState(body.rightHandState, body.joints[11], bodyFrameCtx);
@@ -116,10 +126,10 @@ export class DrawCanvasService {
         this.progressBarReset();
         const self = this;
         this.ctx = excerciseCanvas.getContext('2d');
-        this.stepColors = new Array();
         this.currentStepNr = 0;
         this.currentStepSubject.next(0);
         const steps = newExcercise.steps;
+        this.currentExercise = newExcercise;
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {
             clearInterval(this.intervalOfCurrentExcercise);
@@ -129,6 +139,10 @@ export class DrawCanvasService {
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
             newExcercise.steps.forEach((step, index) => {
+                if (self.hasToStartTimer && step.stepNr > self.CALIBRATION_STEP_NR) {
+                    self.timerService.startTimer();
+                    self.hasToStartTimer = false;
+                }
                 //check if the step is a TouchPoint or TrackingLine then do collision detection
                 if (step.stepNr == self.currentStepNr && self.joints != null) {
                     if (step.stepType == 0)
@@ -207,17 +221,15 @@ export class DrawCanvasService {
             if (distanceToSecondTrackingPoint < step.radius && distanceToFirstTrackingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.progressBarIncrease(steps.length, this.currentStepNr);
-                this.currentStepNr++;
-                this.currentStepSubject.next(this.currentStepNr);
+                this.stepCompleted(step);
             }
         }
         else {
             if (distanceToFirstTrackingPoint < step.radius) //you may drag the circle now
             {
                 this.drawTwoNextSteps(steps, index, canvas);
-                this.progressBarIncrease(steps.length,this.currentStepNr);
-                this.currentStepNr++;       
-                this.currentStepSubject.next(this.currentStepNr);
+                this.progressBarIncrease(steps.length, this.currentStepNr);
+                this.stepCompleted(step);
             }
         }
     }
@@ -251,8 +263,8 @@ export class DrawCanvasService {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
                 this.progressBarIncrease(steps.length, this.currentStepNr);
-                this.currentStepNr++;
-                this.currentStepSubject.next(this.currentStepNr);
+                this.stepCompleted(step);
+
             }
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
@@ -263,6 +275,28 @@ export class DrawCanvasService {
             this.hasToFollowTrackingLine = false;
         }
     }
+
+    private stepCompleted(step: Step) {
+        if (step.stepNr > this.CALIBRATION_STEP_NR) {
+            this.currentStepNr++;
+            this.currentStepSubject.next(this.currentStepNr);
+            var time: number = this.timerService.getTimer();
+            var score: number = 0;
+            if (time <= step.duration)
+                score = step.maxScore;
+            else if (time > step.duration && time <= step.duration * 2)
+                score = Number((step.maxScore - (((time / step.duration) - 1) * 10)).toFixed(2));
+            this.exerciseService.createCompletedExercise(new CompletedExercise(JSON.parse(localStorage.getItem('currentUser'))["uid"], this.currentExercise["$key"], step.stepNr, score, time, new Date().toLocaleDateString()+new Date().toLocaleTimeString))
+            this.timerService.resetTimer();
+            this.hasToStartTimer = true;
+        }
+        else {
+            this.currentStepNr++;
+            this.currentStepSubject.next(this.currentStepNr);
+        }
+
+    }
+
 
     private drawTwoNextSteps(steps: Step[], indexCurrentStep: number, canvas: HTMLCanvasElement) {
         this.ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -330,28 +364,29 @@ export class DrawCanvasService {
         });
     }
 
-    private progressBarIncrease(totalSteps: number, currentStep: number){
-        var elem = <HTMLDivElement> document.getElementById("myBar");
-        var partTotal = (100 / totalSteps)*(currentStep);
-        var part = 100/totalSteps;
+    private progressBarIncrease(totalSteps: number, currentStep: number) {
+        var elem = <HTMLDivElement>document.getElementById("myBar");
+        var partTotal = (100 / totalSteps) * (currentStep);
+        var part = 100 / totalSteps;
         var partWidth = 1;
-        var interval = setInterval(function(){
-            if(partWidth >= part){
-            clearInterval(interval);
-        } else{
-            partWidth++;
-            elem.style.width = partTotal+partWidth + "%";
-            elem.innerHTML = (partTotal + partWidth) + "% complete";
-        }},20);       
+        var interval = setInterval(function () {
+            if (partWidth >= part) {
+                clearInterval(interval);
+            } else {
+                partWidth++;
+                elem.style.width = partTotal + partWidth + "%";
+                elem.innerHTML = (partTotal + partWidth) + "% complete";
+            }
+        }, 20);
     }
 
-    private progressBarReset(){
-        var elem = <HTMLDivElement> document.getElementById("myBar");
+    private progressBarReset() {
+        var elem = <HTMLDivElement>document.getElementById("myBar");
         elem.style.width = 0 + '%';
         elem.innerHTML = "";
     }
 
-    getCurrentStep(): Observable<number>{
+    public getCurrentStep(): Observable<number> {
         return this.currentStepSubject.asObservable();
     }
 }

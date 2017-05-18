@@ -1,15 +1,39 @@
 webpackJsonp([1,4],{
 
-/***/ 100:
+/***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kinect_service__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bezier_js__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bezier_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_bezier_js__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompletedExercise; });
+var CompletedExercise = (function () {
+    function CompletedExercise(userId, exerciseId, stepNr, score, duration, date) {
+        this.userId = userId;
+        this.exerciseId = exerciseId;
+        this.stepNr = stepNr;
+        this.score = score;
+        this.duration = duration;
+        this.date = date;
+    }
+    return CompletedExercise;
+}());
+
+//# sourceMappingURL=completed.exercise.model.js.map
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer_service__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_completed_exercise_model__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__exercise_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__kinect_service__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_bezier_js__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_bezier_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_bezier_js__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DrawCanvasService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -24,9 +48,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var DrawCanvasService = (function () {
-    function DrawCanvasService(kinectService) {
+    function DrawCanvasService(kinectService, exerciseService, timerService) {
         this.kinectService = kinectService;
+        this.exerciseService = exerciseService;
+        this.timerService = timerService;
+        this.CALIBRATION_STEP_NR = 0;
         this.HANDSIZE = 13;
         this.HANDCLOSEDCOLOR = "red";
         this.HANDOPENCOLOR = "green";
@@ -35,13 +65,20 @@ var DrawCanvasService = (function () {
         this.COLOR_ACTION_NEXT = "rgba(255,255,255,0.1)";
         this.COLOR_ACTION_COMPLETED = "#7DFF00";
         this.COLOR_OFFSET = "red";
-        this.colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
         this.joints = null; //array with all recognised joints (25)
         this.intervalOfCurrentExcercise = null;
-        this.stepColors = new Array();
         this.currentStepNr = 0;
-        this.currentStepSubject = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        this.currentStepSubject = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["Subject"]();
+        this.hasToStartTimer = true;
     }
+    DrawCanvasService.prototype.drawBodyJoint = function (bodyFrameCtx, joint, hasToDraw) {
+        if (hasToDraw) {
+            bodyFrameCtx.fillStyle = "rgba(0,0,0,0.5)";
+            bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width - 5, joint.colorY * bodyFrameCtx.canvas.height - 5, 10, 10);
+            bodyFrameCtx.fillStyle = "green";
+            bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width - 2.5, joint.colorY * bodyFrameCtx.canvas.height - 2.5, 5, 5);
+        }
+    };
     /**
          * param2: boolean to set when playing mockdata
          * param3: filename without .json that needs to be played
@@ -59,16 +96,11 @@ var DrawCanvasService = (function () {
                 if (body.tracked) {
                     //draw the joints
                     for (var jointType in body.joints) {
-                        var joint = body.joints[jointType];
-                        /*bodyFrameCtx.fillStyle="rgba(0,0,0,0.5)";
-                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-5, joint.colorY * bodyFrameCtx.canvas.height-5, 10, 10);
-                        bodyFrameCtx.fillStyle = colors[index];
-                        bodyFrameCtx.fillRect(joint.colorX * bodyFrameCtx.canvas.width-2.5, joint.colorY * bodyFrameCtx.canvas.height-2.5, 5, 5);*/
+                        self.drawBodyJoint(bodyFrameCtx, body.joints[jointType], false);
                     }
                     index++;
                     self.joints = body.joints; //save all joints to class variable
                     self.joints.push(body.bodyIndex);
-                    //draw the hands
                     //draw hand states
                     self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
                     self.updateHandState(body.rightHandState, body.joints[11], bodyFrameCtx);
@@ -127,10 +159,10 @@ var DrawCanvasService = (function () {
         this.progressBarReset();
         var self = this;
         this.ctx = excerciseCanvas.getContext('2d');
-        this.stepColors = new Array();
         this.currentStepNr = 0;
         this.currentStepSubject.next(0);
         var steps = newExcercise.steps;
+        this.currentExercise = newExcercise;
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {
             clearInterval(this.intervalOfCurrentExcercise);
@@ -140,6 +172,10 @@ var DrawCanvasService = (function () {
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
             newExcercise.steps.forEach(function (step, index) {
+                if (self.hasToStartTimer && step.stepNr > self.CALIBRATION_STEP_NR) {
+                    self.timerService.startTimer();
+                    self.hasToStartTimer = false;
+                }
                 //check if the step is a TouchPoint or TrackingLine then do collision detection
                 if (step.stepNr == self.currentStepNr && self.joints != null) {
                     if (step.stepType == 0)
@@ -175,8 +211,8 @@ var DrawCanvasService = (function () {
         }
     };
     DrawCanvasService.prototype.drawOffsetOfTrackingLine = function (step) {
-        var offsetLeft = new __WEBPACK_IMPORTED_MODULE_3_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(step.trackingLineOffset);
-        var offsetRight = new __WEBPACK_IMPORTED_MODULE_3_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(-step.trackingLineOffset);
+        var offsetLeft = new __WEBPACK_IMPORTED_MODULE_6_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(step.trackingLineOffset);
+        var offsetRight = new __WEBPACK_IMPORTED_MODULE_6_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3).offset(-step.trackingLineOffset);
         this.ctx.beginPath();
         this.ctx.moveTo(offsetLeft[0].points[0].x, offsetLeft[0].points[0].y);
         for (var i = 0; i < Object.keys(offsetLeft).length; i++) {
@@ -214,16 +250,14 @@ var DrawCanvasService = (function () {
             if (distanceToSecondTrackingPoint < step.radius && distanceToFirstTrackingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.progressBarIncrease(steps.length, this.currentStepNr);
-                this.currentStepNr++;
-                this.currentStepSubject.next(this.currentStepNr);
+                this.stepCompleted(step);
             }
         }
         else {
             if (distanceToFirstTrackingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.progressBarIncrease(steps.length, this.currentStepNr);
-                this.currentStepNr++;
-                this.currentStepSubject.next(this.currentStepNr);
+                this.stepCompleted(step);
             }
         }
     };
@@ -232,7 +266,7 @@ var DrawCanvasService = (function () {
         var mouseY = this.joints[step.jointType].colorY * canvas.height;
         //calculate the distance between the circle and the mousepointer
         //calculate the bezier-distance
-        var curve = new __WEBPACK_IMPORTED_MODULE_3_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3);
+        var curve = new __WEBPACK_IMPORTED_MODULE_6_bezier_js___default.a(step.x0, step.y0, step.x1, step.y1, step.x2, step.y2, step.x3, step.y3);
         var mouseCoordinates = { x: mouseX, y: mouseY };
         var distanceOfJointFromTrackingLine = curve.project(mouseCoordinates);
         var distanceFromStartingPoint = Math.sqrt((mouseX - step.x0) * (mouseX - step.x0) + (mouseY - step.y0) * (mouseY - step.y0));
@@ -257,8 +291,7 @@ var DrawCanvasService = (function () {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
                 this.progressBarIncrease(steps.length, this.currentStepNr);
-                this.currentStepNr++;
-                this.currentStepSubject.next(this.currentStepNr);
+                this.stepCompleted(step);
             }
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
@@ -267,6 +300,25 @@ var DrawCanvasService = (function () {
             this.drawTouchPoint(step.x0, step.y0, step.radius, this.COLOR_ACTION_CURRENT);
             this.drawTouchPoint(step.x3, step.y3, step.radius, this.COLOR_ACTION_NEXT);
             this.hasToFollowTrackingLine = false;
+        }
+    };
+    DrawCanvasService.prototype.stepCompleted = function (step) {
+        if (step.stepNr > this.CALIBRATION_STEP_NR) {
+            this.currentStepNr++;
+            this.currentStepSubject.next(this.currentStepNr);
+            var time = this.timerService.getTimer();
+            var score = 0;
+            if (time <= step.duration)
+                score = step.maxScore;
+            else if (time > step.duration && time <= step.duration * 2)
+                score = Number((step.maxScore - (((time / step.duration) - 1) * 10)).toFixed(2));
+            this.exerciseService.createCompletedExercise(new __WEBPACK_IMPORTED_MODULE_1__models_completed_exercise_model__["a" /* CompletedExercise */](JSON.parse(localStorage.getItem('currentUser'))["uid"], this.currentExercise["$key"], step.stepNr, score, time, new Date().toLocaleDateString()));
+            this.timerService.resetTimer();
+            this.hasToStartTimer = true;
+        }
+        else {
+            this.currentStepNr++;
+            this.currentStepSubject.next(this.currentStepNr);
         }
     };
     DrawCanvasService.prototype.drawTwoNextSteps = function (steps, indexCurrentStep, canvas) {
@@ -358,16 +410,57 @@ var DrawCanvasService = (function () {
     return DrawCanvasService;
 }());
 DrawCanvasService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__kinect_service__["a" /* KinectService */]) === "function" && _a || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["d" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__exercise_service__["a" /* ExerciseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__exercise_service__["a" /* ExerciseService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__timer_service__["a" /* TimerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__timer_service__["a" /* TimerService */]) === "function" && _c || Object])
 ], DrawCanvasService);
 
-var _a;
+var _a, _b, _c;
 //# sourceMappingURL=drawcanvas.service.js.map
 
 /***/ }),
 
-/***/ 152:
+/***/ 103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimerService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TimerService = (function () {
+    function TimerService() {
+        this.time = 0.0;
+        this.SECONDS = 60;
+    }
+    TimerService.prototype.startTimer = function () {
+        var _this = this;
+        this.intervalOfTimer = setInterval(function (timer) {
+            _this.time++;
+        }, 1000 / 60);
+    };
+    TimerService.prototype.resetTimer = function () {
+        clearImmediate(this.intervalOfTimer);
+        this.time = 0;
+    };
+    TimerService.prototype.getTimer = function () {
+        return Number(((this.time / this.SECONDS)).toFixed(2));
+    };
+    return TimerService;
+}());
+TimerService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])()
+], TimerService);
+
+//# sourceMappingURL=timer.service.js.map
+
+/***/ }),
+
+/***/ 155:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -376,20 +469,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 152;
+webpackEmptyContext.id = 155;
 
 
 /***/ }),
 
-/***/ 153:
+/***/ 156:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(174);
 
 
 
@@ -402,13 +495,13 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 162:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_shared_service__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -459,8 +552,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(246),
-        styles: [__webpack_require__(235)]
+        template: __webpack_require__(249),
+        styles: [__webpack_require__(238)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_app_services_shared_service__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_app_services_shared_service__["a" /* SharedService */]) === "function" && _c || Object])
 ], AppComponent);
@@ -470,29 +563,31 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 163:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_authentication_reset_confirmation_component_reset_confirmation_component__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_kinect_service__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_drawcanvas_service__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_database_service__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_app_services_shared_service__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_timer_service__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_exercise_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_home_component_home_component__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_authentication_login_component_login_component__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_authentication_register_component_register_component__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_authentication_reset_password_component_reset_password_component__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_authentication_reset_confirmation_component_reset_confirmation_component__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_kinect_service__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_drawcanvas_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_database_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_auth_service__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_app_services_shared_service__ = __webpack_require__(51);
 /* unused harmony export firebaseConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -520,12 +615,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 // routes variabelen
 var appRoutes = [
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__["a" /* LoginComponent */] },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthGuard */]] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__["a" /* RegisterComponent */] },
-    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__["a" /* ResetPasswordComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_authentication_login_component_login_component__["a" /* LoginComponent */] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_10__components_home_component_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_auth_service__["a" /* AuthGuard */]] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_authentication_register_component_register_component__["a" /* RegisterComponent */] },
+    { path: 'resetpassword', component: __WEBPACK_IMPORTED_MODULE_13__components_authentication_reset_password_component_reset_password_component__["a" /* ResetPasswordComponent */] },
     { path: '', redirectTo: '/login', pathMatch: 'full' }
     // PageNotFound { path: '**', component: PageNotFoundComponent }
 ];
@@ -543,23 +640,23 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["b" /* NgModule */])({
         //component declarations
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_8__components_home_component_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_9__components_authentication_login_component_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_10__components_authentication_register_component_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_11__components_authentication_reset_password_component_reset_password_component__["a" /* ResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_12__components_authentication_reset_confirmation_component_reset_confirmation_component__["a" /* ResetConfirmationComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_10__components_home_component_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_11__components_authentication_login_component_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_12__components_authentication_register_component_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_13__components_authentication_reset_password_component_reset_password_component__["a" /* ResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_14__components_authentication_reset_confirmation_component_reset_confirmation_component__["a" /* ResetConfirmationComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { useHash: true }),
-            __WEBPACK_IMPORTED_MODULE_16_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig)
+            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { useHash: true }),
+            __WEBPACK_IMPORTED_MODULE_18_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig)
         ],
         //services
-        providers: [__WEBPACK_IMPORTED_MODULE_5__angular_common__["a" /* HashLocationStrategy */], __WEBPACK_IMPORTED_MODULE_13__services_kinect_service__["a" /* KinectService */], __WEBPACK_IMPORTED_MODULE_14__services_drawcanvas_service__["a" /* DrawCanvasService */], __WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_15__services_database_service__["a" /* DatabaseService */], __WEBPACK_IMPORTED_MODULE_18_app_services_shared_service__["a" /* SharedService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]],
-        schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */]] // to clear the router-outlet test, else it fails
+        providers: [__WEBPACK_IMPORTED_MODULE_7__angular_common__["a" /* HashLocationStrategy */], __WEBPACK_IMPORTED_MODULE_15__services_kinect_service__["a" /* KinectService */], __WEBPACK_IMPORTED_MODULE_16__services_drawcanvas_service__["a" /* DrawCanvasService */], __WEBPACK_IMPORTED_MODULE_19__services_auth_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_17__services_database_service__["a" /* DatabaseService */], __WEBPACK_IMPORTED_MODULE_20_app_services_shared_service__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_1__services_exercise_service__["a" /* ExerciseService */], __WEBPACK_IMPORTED_MODULE_0__services_timer_service__["a" /* TimerService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]],
+        schemas: [__WEBPACK_IMPORTED_MODULE_3__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */]] // to clear the router-outlet test, else it fails
     })
 ], AppModule);
 
@@ -567,13 +664,13 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 164:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_services_shared_service__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
@@ -656,8 +753,8 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'login',
-        template: __webpack_require__(247),
-        styles: [__webpack_require__(236)],
+        template: __webpack_require__(250),
+        styles: [__webpack_require__(239)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -669,13 +766,13 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 165:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_database_service__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_services_shared_service__ = __webpack_require__(51);
@@ -729,8 +826,8 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'register',
-        template: __webpack_require__(248),
-        styles: [__webpack_require__(237)],
+        template: __webpack_require__(251),
+        styles: [__webpack_require__(240)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -742,12 +839,12 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 166:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animations_router_animations__ = __webpack_require__(50);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetConfirmationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -774,8 +871,8 @@ var ResetConfirmationComponent = (function () {
 ResetConfirmationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetconfirmation',
-        template: __webpack_require__(249),
-        styles: [__webpack_require__(238)],
+        template: __webpack_require__(252),
+        styles: [__webpack_require__(241)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
@@ -787,13 +884,13 @@ var _a;
 
 /***/ }),
 
-/***/ 167:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_router_animations__ = __webpack_require__(50);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -839,12 +936,12 @@ var ResetPasswordComponent = (function () {
 ResetPasswordComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'resetpassword',
-        template: __webpack_require__(250),
-        styles: [__webpack_require__(239)],
+        template: __webpack_require__(253),
+        styles: [__webpack_require__(242)],
         animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__animations_router_animations__["a" /* routerTransition */])()],
         host: { '[@routerTransition]': '' }
     }),
-    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1_angularfire2__["c" /* FirebaseApp */])),
+    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1_angularfire2__["c" /* FirebaseApp */])),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object, Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], ResetPasswordComponent);
 
@@ -853,16 +950,18 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 168:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_database_service__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_models_completed_exercise_model__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_exercise_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_kinect_service__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_drawcanvas_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_database_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__ = __webpack_require__(172);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -879,13 +978,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomeComponent = (function () {
-    function HomeComponent(kinectService, drawcanvasService, af, dbService, auth) {
+    function HomeComponent(kinectService, drawcanvasService, af, dbService, auth, exService) {
         this.kinectService = kinectService;
         this.drawcanvasService = drawcanvasService;
         this.af = af;
         this.dbService = dbService;
         this.auth = auth;
+        this.exService = exService;
         this.currentExercise = null;
         this.exercisesOfCurrentProgram = new Array();
         this.currentStepNr = 0;
@@ -965,50 +1067,53 @@ var HomeComponent = (function () {
                 _this.currentExercise = ex;
         });
     };
+    HomeComponent.prototype.createCompletedExercise = function () {
+        this.exService.createCompletedExercise(new __WEBPACK_IMPORTED_MODULE_0_app_models_completed_exercise_model__["a" /* CompletedExercise */]("", "", 2, 4, 12, ""));
+    };
     HomeComponent.prototype.fillJointList = function () {
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](0, "Base of the spine"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](1, "Middle of the spine"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](2, "Neck"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](3, "Head"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](4, "Left shoulder"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](5, "Left elbow"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](6, "Left wrist"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](7, "Left hand"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](8, "Right shoulder"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](9, "Right elbow"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](10, "Right wrist"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](11, "Right hand"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](12, "Left hip"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](13, "Left knee"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](14, "Left ankle"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](15, "Left foot"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](16, "Right hip"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](17, "Right knee"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](18, "Right ankle"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](19, "Right foot"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](20, "Spine at the shoulder"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](21, "Tip of the left hand"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](22, "Left thumb"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](23, "Tip of the right hand"));
-        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_5__models_kinectJoint_model__["a" /* KinectJoint */](24, "Right thumb"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](0, "Base of the spine"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](1, "Middle of the spine"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](2, "Neck"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](3, "Head"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](4, "Left shoulder"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](5, "Left elbow"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](6, "Left wrist"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](7, "Left hand"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](8, "Right shoulder"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](9, "Right elbow"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](10, "Right wrist"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](11, "Right hand"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](12, "Left hip"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](13, "Left knee"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](14, "Left ankle"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](15, "Left foot"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](16, "Right hip"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](17, "Right knee"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](18, "Right ankle"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](19, "Right foot"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](20, "Spine at the shoulder"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](21, "Tip of the left hand"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](22, "Left thumb"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](23, "Tip of the right hand"));
+        this.jointList.push(new __WEBPACK_IMPORTED_MODULE_7__models_kinectJoint_model__["a" /* KinectJoint */](24, "Right thumb"));
     };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Component */])({
         selector: 'home',
-        template: __webpack_require__(251),
-        styles: [__webpack_require__(240)]
+        template: __webpack_require__(254),
+        styles: [__webpack_require__(243)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_drawcanvas_service__["a" /* DrawCanvasService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AngularFire */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_database_service__["a" /* DatabaseService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2__["d" /* AngularFireAuth */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_kinect_service__["a" /* KinectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_kinect_service__["a" /* KinectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_drawcanvas_service__["a" /* DrawCanvasService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_drawcanvas_service__["a" /* DrawCanvasService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angularfire2__["b" /* AngularFire */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_database_service__["a" /* DatabaseService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angularfire2__["d" /* AngularFireAuth */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_exercise_service__["a" /* ExerciseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_exercise_service__["a" /* ExerciseService */]) === "function" && _f || Object])
 ], HomeComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
 
-/***/ 169:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1025,14 +1130,14 @@ var KinectJoint = (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1066,7 +1171,7 @@ var AuthGuard = (function () {
     return AuthGuard;
 }());
 AuthGuard = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["e" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["d" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__["d" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_angularfire2__["d" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AuthGuard);
 
@@ -1075,7 +1180,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 171:
+/***/ 174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1092,10 +1197,10 @@ var environment = {
 
 /***/ }),
 
-/***/ 235:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(25)();
+exports = module.exports = __webpack_require__(26)();
 // imports
 
 
@@ -1110,15 +1215,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 236:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(25)();
+exports = module.exports = __webpack_require__(26)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(72) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto;\n  text-align: center; }\n  form p {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      -webkit-transition: all 0.1s ease;\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n    form .form-group button {\n      width: 100%; }\n    form .form-group a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form .form-group #resetpasswordbutton {\n      font-size: .8em;\n      text-align: right;\n      width: 98%;\n      margin: auto; }\n  form #buttons {\n    margin: auto;\n    margin-top: 1%;\n    width: 80%;\n    text-align: center; }\n    form #buttons #loginbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(72) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto;\n  text-align: center; }\n  form p {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n    form .form-group button {\n      width: 100%; }\n    form .form-group a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form .form-group #resetpasswordbutton {\n      font-size: .8em;\n      text-align: right;\n      width: 98%;\n      margin: auto; }\n  form #buttons {\n    margin: auto;\n    margin-top: 1%;\n    width: 80%;\n    text-align: center; }\n    form #buttons #loginbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n", ""]);
 
 // exports
 
@@ -1128,15 +1233,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 237:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(25)();
+exports = module.exports = __webpack_require__(26)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(72) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      -webkit-transition: all 0.1s ease;\n      /* Safari and Chrome */\n      /* Firefox */\n      /* Opera */\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        /* Safari and Chrome */\n        /* Firefox */\n        /* IE 9 */\n        /* Opera */\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      background: white;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%; }\n    form #buttons a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form #buttons #registerbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(72) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      /* Safari and Chrome */\n      /* Firefox */\n      /* Opera */\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        /* Safari and Chrome */\n        /* Firefox */\n        /* IE 9 */\n        /* Opera */\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      background: white;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%; }\n    form #buttons a {\n      width: 100%;\n      height: 25px;\n      font-size: 15px;\n      margin-top: 3%; }\n    form #buttons #registerbutton {\n      background: #3ED600;\n      font-size: 1.3em; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -1146,10 +1251,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 238:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(25)();
+exports = module.exports = __webpack_require__(26)();
 // imports
 
 
@@ -1164,15 +1269,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 239:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(25)();
+exports = module.exports = __webpack_require__(26)();
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(72) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      -webkit-transition: all 0.1s ease;\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%;\n      background: #3ED600;\n      font-size: 1.3em; }\n  form a {\n    width: 100%;\n    height: 25px;\n    font-size: 15px;\n    margin-top: 3%; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Ostrich';\n  src: url(" + __webpack_require__(72) + ");\n  font-weight: bold; }\n\nh1 {\n  text-align: center;\n  margin-top: 5%;\n  margin-bottom: 5%;\n  font-family: \"Ostrich\";\n  font-size: 5em; }\n\np {\n  text-align: center; }\n\nform {\n  width: 400px;\n  margin: auto; }\n  form .form-group {\n    width: 90%;\n    margin: auto; }\n    form .form-group .form-control {\n      transition: all 0.1s ease; }\n      form .form-group .form-control:focus {\n        -webkit-transform: scale(1.15);\n        transform: scale(1.15); }\n    form .form-group input {\n      width: 90%;\n      margin: auto;\n      margin-top: 2%;\n      height: 40px;\n      color: black;\n      font-size: 15px;\n      border-radius: 5px;\n      font-family: Helvetica, sans-serif; }\n  form #buttons {\n    margin: auto;\n    margin-top: 5%;\n    width: 80%;\n    text-align: center; }\n    form #buttons button {\n      width: 100%;\n      background: #3ED600;\n      font-size: 1.3em; }\n  form a {\n    width: 100%;\n    height: 25px;\n    font-size: 15px;\n    margin-top: 3%; }\n  form #errMsg {\n    padding: 5px;\n    width: 80%;\n    margin: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    text-align: center;\n    color: orange;\n    background-color: rgba(50, 50, 50, 0.5);\n    border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -1182,63 +1287,63 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 240:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(25)();
+exports = module.exports = __webpack_require__(26)();
 // imports
 
 
 // module
-exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  text-align: center; }\n  .startButtonDiv button {\n    margin-top: .5%; }\n\n.header-current-program {\n  color: \"yellow\"; }\n\n#colorframecanvas {\n  width: 960px;\n  height: 540px; }\n\n.canvasArea {\n  height: 540px; }\n\n.placeholderCanvas {\n  position: absolute;\n  background-image: url(" + __webpack_require__(515) + "); }\n\n.controls {\n  background-color: rgba(255, 255, 255, 0.3);\n  height: 540px; }\n\n.progressBarArea {\n  width: 960px;\n  margin-top: 1%;\n  padding: 0;\n  margin-left: 15px; }\n\n.progressBarParent {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.5); }\n\n.progressBar {\n  width: 0;\n  line-height: 60px;\n  font-size: 1.5em;\n  text-align: center;\n  height: 60px;\n  background-color: limegreen;\n  overflow-x: hidden; }\n\n.descriptionArea {\n  padding: 0; }\n  .descriptionArea h3 {\n    height: 20vh;\n    padding-right: 20px;\n    overflow-y: scroll;\n    word-wrap: break-word;\n    text-align: justify; }\n\n::-webkit-scrollbar {\n  width: 6px; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 0; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 0;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\n  background-color: rgba(77, 0, 192, 0.8); }\n", ""]);
+exports.push([module.i, "select {\n  color: black; }\n\n#uidModal {\n  color: black; }\n  #uidModal #uid {\n    font-weight: bold; }\n\n.wrapper {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.startButtonDiv {\n  text-align: center; }\n  .startButtonDiv button {\n    margin-top: .5%; }\n\n.header-current-program {\n  color: \"yellow\"; }\n\n#colorframecanvas {\n  width: 960px;\n  height: 540px; }\n\n.canvasArea {\n  height: 540px; }\n\n.placeholderCanvas {\n  position: absolute;\n  background-image: url(" + __webpack_require__(518) + "); }\n\n.controls {\n  background-color: rgba(255, 255, 255, 0.3);\n  height: 540px; }\n\n.progressBarArea {\n  width: 960px;\n  margin-top: 1%;\n  padding: 0;\n  margin-left: 15px; }\n\n.progressBarParent {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.5); }\n\n.progressBar {\n  width: 0;\n  line-height: 60px;\n  font-size: 1.5em;\n  text-align: center;\n  height: 60px;\n  background-color: limegreen;\n  overflow-x: hidden; }\n\n.descriptionArea {\n  padding: 0; }\n  .descriptionArea h3 {\n    height: 20vh;\n    padding-right: 20px;\n    overflow-y: scroll;\n    word-wrap: break-word;\n    text-align: justify; }\n\n::-webkit-scrollbar {\n  width: 6px; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 0; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 0;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\n  background-color: rgba(77, 0, 192, 0.8); }\n", ""]);
 
 // exports
 
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 246:
-/***/ (function(module, exports) {
-
-module.exports = "<nav class=\"navbar navigation navbar-default\">\r\n  <div class=\"container-fluid navigatieheader\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\r\n        aria-expanded=\"false\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand brand\" [routerLink]=\"['/home']\">Joint Effort Client App</a>\r\n    </div>\r\n\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n      <li><a *ngIf=\"name!=null\" class=\"navbar-item\" data-toggle=\"modal\" data-target=\"#uidModal\"> Userinfo</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <button id=\"logoutButton\" *ngIf=\"name != null\" class=\"btn navbutton btn-danger\" (click)=\"logout()\"><img id=\"logoutImg\" src=\"./assets/images/logout.svg\"></button>\r\n      </ul>\r\n    </div>\r\n    <!-- /.navbar-collapse -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</nav>\r\n\r\n<div id=\"uidModal\" class=\"modal fade uidModal-class\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">User Info</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\" class=\"uid-paragraph\" #uid>{{userId}}</p>\r\n                <button (click)=\"copyUserId(uid)\" data-dismiss=\"modal\"> COPY</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<router-outlet> </router-outlet>"
-
-/***/ }),
-
-/***/ 247:
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Login</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required />\r\n    <a [routerLink]=\"['/resetpassword']\" id=\"resetpasswordbutton\" class=\"btn btn-link\">Forgot password?</a>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=loginbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Login</button>\r\n  </div>\r\n  <a [routerLink]=\"['/register']\" id=\"registerButton\" class=\"btn btn-link\">No account yet? <strong>You can make one here!</strong></a>\r\n\r\n  <form>"
-
-/***/ }),
-
-/***/ 248:
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Register</h1>\r\n<form name=\"form\" #formData='ngForm' (ngSubmit)=\"onSubmit(formData)\" novalidate>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Name\" class=\"form-control\" name=\"surname\" (ngModel)=\"surname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Last Name\" class=\"form-control\" name=\"lastname\" (ngModel)=\"lastname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Weight\" class=\"form-control\" name=\"weight\" (ngModel)=\"weight\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Length\" class=\"form-control\" name=\"length\" (ngModel)=\"length\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"date\" placeholder=\"Birthdate\" class=\"form-control\" name=\"birthdate\" (ngModel)=\"birthdate\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required validateEqual=\"repeatPassword\"\r\n    />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Repeat your password\" class=\"form-control\" name=\"repeatPassword\" required validateEqual=\"password\"\r\n    />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button type=\"submit\" id=registerbutton [disabled]=\"!formData.valid\" class=\"btn btn-success\">Register</button>\r\n    <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go Back</a>\r\n  </div>\r\n\r\n  <form>"
 
 /***/ }),
 
 /***/ 249:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Reset password</h1>\r\n<div class=\"container\">\r\n    <h2>Email send!</h2>\r\n    <h3>Please check your inbox</h3>\r\n    <button class=\"btn btn-success\" (click)=\"okButtonClicked()\">Go back to login</button>\r\n</div>"
+module.exports = "<nav class=\"navbar navigation navbar-default\">\r\n  <div class=\"container-fluid navigatieheader\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\r\n        aria-expanded=\"false\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand brand\" [routerLink]=\"['/home']\">Joint Effort Client App</a>\r\n    </div>\r\n\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n      <li><a *ngIf=\"name!=null\" class=\"navbar-item\" data-toggle=\"modal\" data-target=\"#uidModal\"> Userinfo</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <button id=\"logoutButton\" *ngIf=\"name != null\" class=\"btn navbutton btn-danger\" (click)=\"logout()\"><img id=\"logoutImg\" src=\"./assets/images/logout.svg\"></button>\r\n      </ul>\r\n    </div>\r\n    <!-- /.navbar-collapse -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</nav>\r\n\r\n<div id=\"uidModal\" class=\"modal fade uidModal-class\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">User Info</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\" class=\"uid-paragraph\" #uid>{{userId}}</p>\r\n                <button (click)=\"copyUserId(uid)\" data-dismiss=\"modal\"> COPY</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<router-outlet> </router-outlet>"
 
 /***/ }),
 
 /***/ 250:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=resetbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Send email</button>\r\n  </div>\r\n  <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go back</a>\r\n\r\n  <form>"
+module.exports = "<h1>Login</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required />\r\n    <a [routerLink]=\"['/resetpassword']\" id=\"resetpasswordbutton\" class=\"btn btn-link\">Forgot password?</a>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=loginbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Login</button>\r\n  </div>\r\n  <a [routerLink]=\"['/register']\" id=\"registerButton\" class=\"btn btn-link\">No account yet? <strong>You can make one here!</strong></a>\r\n\r\n  <form>"
 
 /***/ }),
 
 /***/ 251:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\" #uid>{{userUid}}</p>\r\n                <button (click)=\"copyUserId(uid)\"> COPY</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n\r\n    <div class=\"canvasArea col-xs-7\">\r\n        <canvas class=\"placeholderCanvas\" width=\"960\" height=\"540\" ></canvas>\r\n        <canvas id=\"colorframecanvas\" width=\"640\" height=\"360\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n    \r\n\r\n    <div class=\"col-xs-5 controls\">\r\n<!--    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>    -->    \r\n    <h2 class=\"col-xs-12\">Current Program</h2>\r\n    <div class=\"col-xs-12\">\r\n    <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n    <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n    </div>\r\n    <h2 class=\"col-xs-12\">Exercise</h2>\r\n    <!--combobox to display all the excercises in the selected traject-->\r\n    <div class=\"col-xs-12\">\r\n        <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n    </div>\r\n    <div class=\"col-xs-12 descriptionArea\">\r\n        <h2 class=\"col-xs-12\">Description</h2>\r\n        <h3 class=\"col-xs-12\">{{currentExercise?.description}}</h3>\r\n    </div>\r\n    <div class=\"col-xs-12 startButtonDiv\">\r\n    <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n    </div>\r\n    </div>\r\n    <div class=\"col-xs-7 jointArea\">\r\n        <h3 class=\"col-xs-6\">Joint 1: {{jointList[currentExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>\r\n        <h3 *ngIf=\"currentExercise?.steps[currentStepNr]?.stepType == 2\" class=\"col-xs-6\">Joint 2: {{jointList[currentExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>\r\n    </div>\r\n    <div class=\"col-xs-12 progressBarArea\">\r\n    <div id=\"myProgress\" class=\"progressBarParent\">\r\n        <div id=\"myBar\" class=\"progressBar\"></div>\r\n    </div>\r\n    </div>\r\n    \r\n</div>"
+module.exports = "<h1>Register</h1>\r\n<form name=\"form\" #formData='ngForm' (ngSubmit)=\"onSubmit(formData)\" novalidate>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Name\" class=\"form-control\" name=\"surname\" (ngModel)=\"surname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" placeholder=\"Last Name\" class=\"form-control\" name=\"lastname\" (ngModel)=\"lastname\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Weight\" class=\"form-control\" name=\"weight\" (ngModel)=\"weight\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"number\" placeholder=\"Length\" class=\"form-control\" name=\"length\" (ngModel)=\"length\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"date\" placeholder=\"Birthdate\" class=\"form-control\" name=\"birthdate\" (ngModel)=\"birthdate\" required />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Password\" class=\"form-control\" name=\"password\" (ngModel)=\"password\" required validateEqual=\"repeatPassword\"\r\n    />\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" placeholder=\"Repeat your password\" class=\"form-control\" name=\"repeatPassword\" required validateEqual=\"password\"\r\n    />\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button type=\"submit\" id=registerbutton [disabled]=\"!formData.valid\" class=\"btn btn-success\">Register</button>\r\n    <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go Back</a>\r\n  </div>\r\n\r\n  <form>"
+
+/***/ }),
+
+/***/ 252:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Reset password</h1>\r\n<div class=\"container\">\r\n    <h2>Email send!</h2>\r\n    <h3>Please check your inbox</h3>\r\n    <button class=\"btn btn-success\" (click)=\"okButtonClicked()\">Go back to login</button>\r\n</div>"
+
+/***/ }),
+
+/***/ 253:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Reset password</h1>\r\n<form name=\"form\" (ngSubmit)=\"onSubmit(formData)\" #formData='ngForm'>\r\n  <p *ngIf=\"error.message != ''\" id=\"errMsg\">{{error.message}}</p>\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" placeholder=\"Email\" class=\"form-control\" name=\"email\" (ngModel)=\"email\" required/>\r\n  </div>\r\n\r\n  <div class=\"form-group\" id=\"buttons\">\r\n    <button id=resetbutton type=\"submit\" [disabled]=\"!formData.valid\" class=\"btn btn-primary\">Send email</button>\r\n  </div>\r\n  <a [routerLink]=\"['/login']\" id=\"loginButton\" class=\"btn btn-link\">Go back</a>\r\n\r\n  <form>"
+
+/***/ }),
+
+/***/ 254:
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Uid</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>Give this Uid to your mentor to start the Joint Effort</p>\r\n                <p id=\"uid\" #uid>{{userUid}}</p>\r\n                <button (click)=\"copyUserId(uid)\"> COPY</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Go back</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"wrapper\">\r\n    <h1 class=\"col-xs-12\">{{currentExercise?.name}}</h1>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"playMockData(1)\">Play linkerhand</button>    \r\n    <button class=\"btn btn-warning\" (click)=\"playMockData(2)\">Play rechterhand</button>-->\r\n    <!--<button (click)=\"loadExcercise(1)\">getEx1</button>-->\r\n    <!--    <button (click)=\"createCompletedExercise()\">createCompletedEX</button>\r\n-->\r\n    <div class=\"canvasArea col-xs-7\">\r\n        <canvas class=\"placeholderCanvas\" width=\"960\" height=\"540\"></canvas>\r\n        <canvas id=\"colorframecanvas\" width=\"640\" height=\"360\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"bodyframecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n        <canvas id=\"exercisecanvas\" width=\"960\" height=\"540\" style=\"position:absolute\"></canvas>\r\n    </div>\r\n\r\n\r\n    <div class=\"col-xs-5 controls\">\r\n        <!--    <button class=\"btn btn-warning\" (click)=\"playMockData(3)\">Play arrow to the knee</button>    -->\r\n        <h2 class=\"col-xs-12\">Current Program</h2>\r\n        <div class=\"col-xs-12\">\r\n            <!--<select (change)=\"onChangeProgram($event.target.value)\" [disabled]>\r\n        <option *ngFor=\"let program of currentProgram\" value=\"{{program.programId}}\">{{program.name}}</option>\r\n    </select>-->\r\n            <h3 class=\"header-current-program\">{{currentProgram?.name}}</h3>\r\n        </div>\r\n        <h2 class=\"col-xs-12\">Exercise</h2>\r\n        <!--combobox to display all the excercises in the selected traject-->\r\n        <div class=\"col-xs-12\">\r\n            <select (change)=\"onChangeExcercise($event.target.value)\">\r\n        <option *ngFor=\"let exercise of exercisesOfCurrentProgram\" value=\"{{exercise?.$key}}\">{{exercise?.name}}</option>\r\n    </select>\r\n        </div>\r\n        <div class=\"col-xs-12 descriptionArea\">\r\n            <h2 class=\"col-xs-12\">Description</h2>\r\n            <h3 class=\"col-xs-12\">{{currentExercise?.description}}</h3>\r\n        </div>\r\n        <div class=\"col-xs-12 startButtonDiv\">\r\n            <button class=\"col-xs-6\" id=\"btnStartExercise\" class=\"btn btn-info\" (click)=\"drawExcercise()\"> Start Excercise</button>\r\n        </div>\r\n    </div>\r\n    <div class=\"col-xs-7 jointArea\">\r\n        <h3 class=\"col-xs-6\">Joint 1: {{jointList[currentExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>\r\n        <h3 *ngIf=\"currentExercise?.steps[currentStepNr]?.stepType == 2\" class=\"col-xs-6\">Joint 2: {{jointList[currentExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>\r\n    </div>\r\n    <div class=\"col-xs-12 progressBarArea\">\r\n        <div id=\"myProgress\" class=\"progressBarParent\">\r\n            <div id=\"myBar\" class=\"progressBar\"></div>\r\n        </div>\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1246,7 +1351,7 @@ module.exports = "<div id=\"uidModal\" class=\"modal fade\" role=\"dialog\">\r\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (immutable) */ __webpack_exports__["a"] = routerTransition;
 /* unused harmony export slideRightTransition */
 /* unused harmony export slideLeftTransition */
@@ -1310,7 +1415,7 @@ function slideToLeft() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1321,29 +1426,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var SharedService = (function () {
     function SharedService() {
-        this.getUserId = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* EventEmitter */]();
+        this.getUserId = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* EventEmitter */]();
     }
     return SharedService;
 }());
 SharedService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])()
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])()
 ], SharedService);
 
 //# sourceMappingURL=shared.service.js.map
 
 /***/ }),
 
-/***/ 515:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "placeholderForKinect.7fa81454085dbdccebe8.jpg";
 
 /***/ }),
 
-/***/ 517:
+/***/ 520:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(153);
+module.exports = __webpack_require__(156);
 
 
 /***/ }),
@@ -1359,8 +1464,8 @@ module.exports = "data:font/opentype;base64,T1RUTwAKAIAAAwAgQ0ZGICclHdMAAAe0AAAV
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseService; });
@@ -1380,7 +1485,6 @@ var DatabaseService = (function () {
     function DatabaseService(af) {
         this.af = af;
         this.items2 = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["Subject"]();
-        this.oefening = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["Subject"]();
         this.items = af.database.list('items');
     }
     DatabaseService.prototype.getUserdataById = function (uid) {
@@ -1402,10 +1506,6 @@ var DatabaseService = (function () {
     DatabaseService.prototype.getExerciseByUid = function (exercise) {
         return this.af.database.object('/exercises/' + exercise);
     };
-    //sets the excerciseNr to fetch from getExcerciseDetails
-    DatabaseService.prototype.setOefening = function (excerciseNr) {
-        this.oefening.next(excerciseNr);
-    };
     DatabaseService.prototype.createUser = function (userData, uid) {
         this.af.database.list('/users').push({
             uid: uid,
@@ -1422,7 +1522,7 @@ var DatabaseService = (function () {
     return DatabaseService;
 }());
 DatabaseService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object])
 ], DatabaseService);
 
@@ -1435,10 +1535,58 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__(22);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExerciseService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ExerciseService = (function () {
+    function ExerciseService(af) {
+        this.af = af;
+        this.path = "/exercises";
+        this._mentorUid = JSON.parse(localStorage.getItem('currentUser')).uid;
+    }
+    ExerciseService.prototype.getExcerciseById = function (exerciseId) {
+        return this.af.database.object(this.path + "/" + exerciseId);
+    };
+    ExerciseService.prototype.createCompletedExercise = function (completedExercise) {
+        console.log(completedExercise);
+        /*this.af.database.object("/completed-exercises").set(
+            {
+                completedExercise:completedExercise
+            }
+        );*/
+        this.af.database.list("/completed-exercises").push(completedExercise);
+    };
+    return ExerciseService;
+}());
+ExerciseService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2__["b" /* AngularFire */]) === "function" && _a || Object])
+], ExerciseService);
+
+var _a;
+//# sourceMappingURL=exercise.service.js.map
+
+/***/ }),
+
+/***/ 75:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(100);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KinectService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1514,7 +1662,7 @@ var KinectService = (function () {
     return KinectService;
 }());
 KinectService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], KinectService);
 
@@ -1523,5 +1671,5 @@ var _a;
 
 /***/ })
 
-},[517]);
+},[520]);
 //# sourceMappingURL=main.bundle.js.map
