@@ -10,6 +10,7 @@ import { Subject } from 'rxjs/Subject';
 import { Exercise } from "app/models/excercise.model";
 import { FullExercise } from "app/models/full.excercise.model";
 import { Program } from "app/models/program.model";
+import { KinectJoint } from "../../models/kinectJoint.model";
 
 @Component({
     selector: 'home',
@@ -27,6 +28,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private userUid: string;
     private exercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
     private currentProgram: Program;
+    private currentStepNr: number = 0;
+    private jointList: KinectJoint[] = new Array<KinectJoint>();;
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth) {
         this.ipc = electron.ipcRenderer;
@@ -34,6 +37,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
         this.loadUserData();
+        this.fillJointList();
     }
 
     ngAfterViewInit() {
@@ -65,7 +69,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     public drawExcercise() {
-        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExercise);
+        this.drawcanvasService.getCurrentStep().subscribe(stepNr => this.currentStepNr = stepNr);
+        this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentExercise);    
     }
 
     public playMockData(mockExcerciseNr: number) {
@@ -111,5 +116,33 @@ export class HomeComponent implements OnInit, AfterViewInit {
             if (ex["$key"] == excerciseId)
                 this.currentExercise = ex;
         })
+    }
+
+    private fillJointList() {
+        this.jointList.push(new KinectJoint(0, "Base of the spine"));
+        this.jointList.push(new KinectJoint(1, "Middle of the spine"));
+        this.jointList.push(new KinectJoint(2, "Neck"));
+        this.jointList.push(new KinectJoint(3, "Head"));
+        this.jointList.push(new KinectJoint(4, "Left shoulder"));
+        this.jointList.push(new KinectJoint(5, "Left elbow"));
+        this.jointList.push(new KinectJoint(6, "Left wrist"));
+        this.jointList.push(new KinectJoint(7, "Left hand"));
+        this.jointList.push(new KinectJoint(8, "Right shoulder"));
+        this.jointList.push(new KinectJoint(9, "Right elbow"));
+        this.jointList.push(new KinectJoint(10, "Right wrist"));
+        this.jointList.push(new KinectJoint(11, "Right hand"));
+        this.jointList.push(new KinectJoint(12, "Left hip"));
+        this.jointList.push(new KinectJoint(13, "Left knee"));
+        this.jointList.push(new KinectJoint(14, "Left ankle"));
+        this.jointList.push(new KinectJoint(15, "Left foot"));
+        this.jointList.push(new KinectJoint(16, "Right hip"));
+        this.jointList.push(new KinectJoint(17, "Right knee"));
+        this.jointList.push(new KinectJoint(18, "Right ankle"));
+        this.jointList.push(new KinectJoint(19, "Right foot"));
+        this.jointList.push(new KinectJoint(20, "Spine at the shoulder"));
+        this.jointList.push(new KinectJoint(21, "Tip of the left hand"));
+        this.jointList.push(new KinectJoint(22, "Left thumb"));
+        this.jointList.push(new KinectJoint(23, "Tip of the right hand"));
+        this.jointList.push(new KinectJoint(24, "Right thumb"));
     }
 }
