@@ -11,7 +11,6 @@ import { Program } from "app/models/program.model";
 export class DatabaseService {
     private items2: Subject<any> = new Subject<any>();
     items: FirebaseListObservable<any[]>;
-    private oefening = new Subject();
 
     constructor(private af: AngularFire) {
         this.items = af.database.list('items');
@@ -39,10 +38,6 @@ export class DatabaseService {
         return this.af.database.object('/exercises/'+exercise);
     }
 
-    //sets the excerciseNr to fetch from getExcerciseDetails
-    public setOefening(excerciseNr: number) {
-        this.oefening.next(excerciseNr);
-    }
 
     public createUser(userData: any, uid: string) {
         this.af.database.list('/users').push({

@@ -1,3 +1,4 @@
+import { CompletedExercise } from 'app/models/completed.exercise.model';
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AngularFireDatabase } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
@@ -16,6 +17,18 @@ export class ExerciseService {
 
     public getExcerciseById(exerciseId: string): Observable<FullExercise> {
         return this.af.database.object(this.path+"/"+exerciseId);
+    }
+
+    public createCompletedExercise(completedExercise:CompletedExercise)
+    {
+        console.log(completedExercise);
+        /*this.af.database.object("/completed-exercises").set(
+            {
+                completedExercise:completedExercise
+            }
+        );*/
+        this.af.database.list("/completed-exercises").push(completedExercise);
+        
     }
 
 }

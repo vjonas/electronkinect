@@ -1,3 +1,5 @@
+import { CompletedExercise } from 'app/models/completed.exercise.model';
+import { ExerciseService } from './../../services/exercise.service';
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
 import { Kinect2 } from 'kinect2';
 import { KinectService } from '../../services/kinect.service';
@@ -28,7 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private exercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
     private currentProgram: Program;
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth) {
+    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth,private exService:ExerciseService) {
         this.ipc = electron.ipcRenderer;
     }
 
@@ -111,5 +113,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
             if (ex["$key"] == excerciseId)
                 this.currentExercise = ex;
         })
+    }
+
+    private createCompletedExercise()
+    {
+        this.exService.createCompletedExercise(new CompletedExercise("","","",4,12,""));
     }
 }

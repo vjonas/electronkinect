@@ -74,7 +74,7 @@ function startKinect(mock) {
   //child = spawn('node', [`${__dirname}/worker.js`], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
 
 
-  child = spawn('node', [`${__dirname}/worker.js`], { detached: false, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
+  child = spawn('node', [`${__dirname}/worker.js`], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
   child.on('message', function (frame) {
     if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
       if (child != null) win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen
