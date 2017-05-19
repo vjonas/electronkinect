@@ -45,7 +45,7 @@ function createMenu() {
         submenu:
         [
           {
-            label: 'startkinect', click: () => { startKinect() }
+            label: 'startkinect', click: () => { startKinect(false) }
           },
           {
             type: 'separator'
@@ -106,7 +106,7 @@ function startKinect(mock) {
 app.on('ready', () => {
   createWindow();
   createMenu();
-  startKinect(true);
+  startKinect(false);
 }
 )
 
