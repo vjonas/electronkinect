@@ -80,7 +80,7 @@ function startKinect(mock) {
     if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
       if (child != null) win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen
       if (setBeginningOfJson) {
-        fs.appendFile('./src/assets/mockdata2.json', "[");
+        fs.appendFile('./src/assets/mockdata.json', "[");
         setBeginningOfJson = false;
       }
       if (mock) fs.appendFile('./src/assets/mockdata2.json', frame.substr(1, frame.size) + ",");

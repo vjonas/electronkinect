@@ -8,25 +8,33 @@ import { FullExercise } from "app/models/full.excercise.model";
 @Injectable()
 export class ExerciseService {
     path: string = "/exercises";
-    private userUid: string;
+    private keyOfCompletedExercise: string;
 
     constructor(private af: AngularFire) {
-        this.userUid=JSON.parse(localStorage.getItem('currentUser')).uid;
     }
 
+    private getUserId(): string {
+        return JSON.parse(localStorage.getItem('currentUser')).uid;
+    }
 
     public getExcerciseById(exerciseId: string): Observable<FullExercise> {
-        return this.af.database.object(this.path+"/"+exerciseId);
+        return this.af.database.object(this.path + "/" + exerciseId);
     }
 
-    public createCompletedExercise(completedExercise:CompletedExercise)
-    {
-        this.af.database.list("/completed-exercises").push(completedExercise);        
+    public createCompletedExercise(completedExercise: CompletedExercise) {
+        this.af.database.list("/completed-exercises/" + this.getUserId() + "/" + completedExercise.programId).push(completedExercise).then((keyOfCompletedExercise) => {
+            this.keyOfCompletedExercise = keyOfCompletedExercise.key;
+            console.log(keyOfCompletedExercise.key);
+        });
+
     }
 
-    public setExerciseCompleted(exUid:string,currentProgramId:number)
-    {
-        this.af.database.object("users/"+this.userUid+"programs/"+currentProgramId+"/"+exUid).update({completed:true})
+    public updateCompletedExercise(completedExercise: CompletedExercise) {
+        this.af.database.object("/completed-exercises/" + this.getUserId() + "/" + completedExercise.programId + "/" + this.keyOfCompletedExercise).set(completedExercise);
+    }
+
+    public setExerciseCompleted(exUid: string, currentProgramId: number) {
+        this.af.database.object("users/" + this.getUserId() + "/programs/" + currentProgramId + "/exercises/" + exUid).update({ completed: true })
     }
 
 }

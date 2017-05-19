@@ -1,5 +1,6 @@
-import { TimerService } from './timer.service';
+import { CompletedStep } from 'app/models/completed.step';
 import { CompletedExercise } from './../models/completed.exercise.model';
+import { TimerService } from './timer.service';
 import { ExerciseService } from './exercise.service';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject'
@@ -28,7 +29,9 @@ export class DrawCanvasService {
     private hasToFollowTrackingLine: boolean;
     private timer;
     private currentExercise: FullExercise;
+    private completedExercise: CompletedExercise;
     private hasToStartTimer = true;
+    private currentProgramId: number;
 
     constructor(private kinectService: KinectService, private exerciseService: ExerciseService, private timerService: TimerService) {
 
@@ -122,14 +125,16 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 1;
     }
 
-    public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise,currentProgramId:number) {
+    public drawExcercise(excerciseCanvas: any, newExcercise: FullExercise, currentProgramId: number) {
         this.progressBarReset();
         const self = this;
         this.ctx = excerciseCanvas.getContext('2d');
         this.currentStepNr = 0;
         this.currentStepSubject.next(0);
+        this.currentExercise = newExcercise
         const steps = newExcercise.steps;
-        this.currentExercise = newExcercise;
+        var currentUserId = (JSON.parse(localStorage.getItem('currentUser'))["uid"]);
+        this.completedExercise = CompletedExercise.createNewCompletedExercise(currentUserId, newExcercise["$key"], currentProgramId);
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {
             clearInterval(this.intervalOfCurrentExcercise);
@@ -155,7 +160,7 @@ export class DrawCanvasService {
                 }
                 if (self.currentStepNr >= newExcercise.steps.length) {
                     clearInterval(self.intervalOfCurrentExcercise);
-                    
+                    self.exerciseService.setExerciseCompleted(newExcercise["$key"], currentProgramId);
                 }
             })
         }, 1000 / 30);
@@ -279,16 +284,26 @@ export class DrawCanvasService {
     }
 
     private stepCompleted(step: Step) {
+        var timeToCompleteExercise: number = this.timerService.getTimer();
+        var score: number = 0;
+        var completedStep: CompletedStep;
+        var completeDateTime = new Date().toLocaleDateString() + new Date().toLocaleTimeString();
+
         if (step.stepNr > this.CALIBRATION_STEP_NR) {
             this.currentStepNr++;
             this.currentStepSubject.next(this.currentStepNr);
-            var time: number = this.timerService.getTimer();
-            var score: number = 0;
-            if (time <= step.duration)
+            if (timeToCompleteExercise <= step.duration)
                 score = step.maxScore;
-            else if (time > step.duration && time <= step.duration * 2)
-                score = Number((step.maxScore - (((time / step.duration) - 1) * 10)).toFixed(2));
-            this.exerciseService.createCompletedExercise(new CompletedExercise(JSON.parse(localStorage.getItem('currentUser'))["uid"], this.currentExercise["$key"], step.stepNr, score, time, new Date().toLocaleDateString() + new Date().toLocaleTimeString))
+            else if (timeToCompleteExercise > step.duration && timeToCompleteExercise <= step.duration * 2)
+                score = Number((step.maxScore - (((timeToCompleteExercise / step.duration) - 1) * 10)).toFixed(2));
+            if (step.stepNr === this.currentExercise.steps.length - 1)
+                this.completedExercise.completed = true;
+            completedStep = new CompletedStep(step.stepNr, score, timeToCompleteExercise, completeDateTime);
+            this.completedExercise.completedSteps.push(completedStep);
+            if (step.stepNr === 1)
+                this.exerciseService.createCompletedExercise(this.completedExercise);
+            else
+                this.exerciseService.updateCompletedExercise(this.completedExercise);
             this.timerService.resetTimer();
             this.hasToStartTimer = true;
         }

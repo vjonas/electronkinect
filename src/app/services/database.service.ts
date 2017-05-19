@@ -16,7 +16,7 @@ export class DatabaseService {
         this.items = af.database.list('items');
     }
 
-    getUserdataById(uid: string): Observable<User> {
+    public getUserdataById(uid: string): Observable<User> {
         return this.af.database.list('users', {
             query: {
                 orderByChild: 'uid',
@@ -25,7 +25,7 @@ export class DatabaseService {
         }).map(res=>{return res[0]});
     }
 
-    getExcerciseById(excercise: string): Observable<FullExercise[]> {
+    public getExcerciseById(excercise: string): Observable<FullExercise[]> {
         return this.af.database.list('exercises', {
             query: {
                 orderByChild: 'excerciseid',
@@ -34,13 +34,13 @@ export class DatabaseService {
         });
     }
 
-    getExerciseByUid(exercise: string): Observable<FullExercise> {
+    public getExerciseByUid(exercise: string): Observable<FullExercise> {
         return this.af.database.object('/exercises/'+exercise);
     }
 
 
     public createUser(userData: any, uid: string) {
-        this.af.database.list('/users').push({
+        /*this.af.database.list('/users').push({
             uid: uid,
             name: userData.value.surname,
             lastName: userData.value.lastname,
@@ -50,6 +50,18 @@ export class DatabaseService {
             birthDate: userData.value.birthdate,
             traject: new Array<Program>(),
             mentorId: "0"
-        })
+        })*/
+
+        this.af.database.object('/users/'+uid).set({
+            uid: uid,
+            name: userData.value.surname,
+            lastName: userData.value.lastname,
+            email: userData.value.email,
+            weight: userData.value.weight,
+            length: userData.value.length,
+            birthDate: userData.value.birthdate,
+            traject: new Array<Program>(),
+            mentorId: "0"
+        });
     }
 }

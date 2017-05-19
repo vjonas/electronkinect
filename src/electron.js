@@ -45,7 +45,7 @@ function createMenu() {
         submenu:
         [
           {
-            label: 'startkinect', click: () => { startKinect() }
+            label: 'startkinect', click: () => { startKinect(false) }
           },
           {
             type: 'separator'
