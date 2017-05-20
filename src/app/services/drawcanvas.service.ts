@@ -144,7 +144,7 @@ export class DrawCanvasService {
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
         this.intervalOfCurrentExcercise = setInterval(function () {
             newExcercise.steps.forEach((step, index) => {
-                if (self.hasToStartTimer && step.stepNr > self.CALIBRATION_STEP_NR) {
+                if (self.hasToStartTimer && self.currentStepNr > self.CALIBRATION_STEP_NR) {
                     self.timerService.startTimer();
                     self.hasToStartTimer = false;
                 }
