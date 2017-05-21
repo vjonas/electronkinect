@@ -438,6 +438,7 @@ var TimerService = (function () {
         var _this = this;
         this.intervalOfTimer = setInterval(function (timer) {
             _this.time++;
+            console.log(_this.time);
         }, 1000 / 60);
     };
     TimerService.prototype.resetTimer = function () {

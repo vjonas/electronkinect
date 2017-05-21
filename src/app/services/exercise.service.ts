@@ -31,8 +31,8 @@ export class ExerciseService {
         this.af.database.object("/completed-exercises/" + this.userService.getUserId() + "/" + completedExercise.programId + "/" + this.keyOfCompletedExercise).set(completedExercise);
     }
 
-    public setExerciseCompleted(exUid: string, currentProgramId: number) {
-        this.af.database.object("users/" + this.userService.getUserId() + "/programs/" + currentProgramId + "/exercises/" + exUid).update({ completed: true })
+    public setExerciseCompleted(exerciseId: string, currentProgramId: number) {
+        this.af.database.object("users/" + this.userService.getUserId() + "/programs/" + currentProgramId + "/exercises/" + exerciseId).update({ completed: true })
     }
 
     public getExerciseById(exerciseId: string): Observable<FullExercise> {

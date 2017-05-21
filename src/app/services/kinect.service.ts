@@ -36,8 +36,8 @@ export class KinectService {
         })
     }
 
-    getBodyFrames(mock: boolean, fileName: string): Observable<any> {
-        if (mock) {
+    getBodyFrames(streamMockData: boolean, fileName: string): Observable<any> {
+        if (streamMockData) {
             this.streamMockData(fileName);
             return this.bodyFrameMock.asObservable();
         }
