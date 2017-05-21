@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { TimerService } from './services/timer.service';
 import { ExerciseService } from './services/exercise.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,11 +18,8 @@ import { ResetConfirmationComponent } from './components/authentication/reset-co
 
 import { KinectService } from './services/kinect.service';
 import { DrawCanvasService } from './services/drawcanvas.service';
-import { DatabaseService } from './services/database.service';
 import { AngularFireModule } from 'angularfire2';
 import { AuthGuard } from './services/auth.service';
-import { SharedService } from "app/services/shared.service";
-
 import { SimpleTimer } from 'ng2-simple-timer';
 
 
@@ -61,7 +59,7 @@ export const firebaseConfig = {
 
   ],
   //services
-  providers: [HashLocationStrategy, KinectService, DrawCanvasService, AuthGuard, DatabaseService,SharedService,ExerciseService,TimerService],
+  providers: [HashLocationStrategy, KinectService, DrawCanvasService, AuthGuard,ExerciseService,UserService,TimerService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // to clear the router-outlet test, else it fails
 

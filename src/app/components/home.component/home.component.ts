@@ -1,10 +1,10 @@
+import { UserService } from './../../services/user.service';
 import { CompletedExercise } from 'app/models/completed.exercise.model';
 import { ExerciseService } from './../../services/exercise.service';
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
 import { Kinect2 } from 'kinect2';
 import { KinectService } from '../../services/kinect.service';
 import { DrawCanvasService } from '../../services/drawcanvas.service';
-import { DatabaseService } from '../../services/database.service';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, AngularFireAuth } from 'angularfire2';
 declare var electron: any;
 import { User } from '../../models/user.model';
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private currentStepNr: number = 0;
     private jointList: KinectJoint[] = new Array<KinectJoint>();;
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private dbService: DatabaseService, private auth: AngularFireAuth, private exService: ExerciseService) {
+    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private userService: UserService, private auth: AngularFireAuth, private exService: ExerciseService) {
         this.ipc = electron.ipcRenderer;
     }
 
@@ -49,8 +49,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('exercisecanvas');
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
-
-
     }
 
     onChangeProgram(newProgramId) {
@@ -58,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.fullExercisesOfCurrentProgram.length = 0;
         //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
         Object.keys(this.userdata.programs[newProgramId].exercises).forEach(ex => {
-            this.dbService.getExerciseByUid(ex).subscribe(
+            this.exService.getExerciseById(ex).subscribe(
                 ex2 => {
                     this.fullExercisesOfCurrentProgram.push(ex2);
                 }
@@ -103,13 +101,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
     private loadUserData() {
-        this.userUid = JSON.parse(localStorage.getItem('currentUser')).uid;
-        this.dbService.getUserdataById(this.userUid).subscribe((userData: User) => {
+        this.userUid = this.userService.getUserId();
+        this.userService.getUserdataById(this.userUid).subscribe((userData: User) => {
+            console.log(userData);
             this.userdata = userData;
             this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
                 Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {
-                    this.dbService.getExerciseByUid(ex).subscribe(
+                    this.exService.getExerciseById(ex).subscribe(
                         (fullExercise: FullExercise) => {
                             this.fullExercisesOfCurrentProgram.push(fullExercise);
                             this.currentFullExercise = this.fullExercisesOfCurrentProgram[0];
@@ -154,5 +153,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.jointList.push(new KinectJoint(22, "Left thumb"));
         this.jointList.push(new KinectJoint(23, "Tip of the right hand"));
         this.jointList.push(new KinectJoint(24, "Right thumb"));
+
     }
 }

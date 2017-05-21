@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { CompletedStep } from 'app/models/completed.step';
 import { CompletedExercise } from './../models/completed.exercise.model';
 import { TimerService } from './timer.service';
@@ -33,7 +34,7 @@ export class DrawCanvasService {
     private hasToStartTimer = true;
     private currentProgramId: number;
 
-    constructor(private kinectService: KinectService, private exerciseService: ExerciseService, private timerService: TimerService) {
+    constructor(private kinectService: KinectService, private exerciseService: ExerciseService, private timerService: TimerService, private userService:UserService) {
 
     }
 
@@ -133,7 +134,7 @@ export class DrawCanvasService {
         this.currentStepSubject.next(0);
         this.currentExercise = newExcercise
         const steps = newExcercise.steps;
-        var currentUserId = (JSON.parse(localStorage.getItem('currentUser'))["uid"]);
+        var currentUserId = this.userService.getUserId();
         this.completedExercise = CompletedExercise.createNewCompletedExercise(currentUserId, newExcercise["$key"], currentProgramId);
         //clear the current excercise if a new one is started
         if (this.intervalOfCurrentExcercise != null) {

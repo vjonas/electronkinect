@@ -3,27 +3,27 @@
   <p *ngIf="error.message != ''" id="errMsg">{{error.message}}</p>
 
   <div class="form-group">
-    <input type="text" placeholder="Name" class="form-control" name="surname" (ngModel)="surname" required />
+    <input type="text" placeholder="Name" class="form-control" name="surname" [(ngModel)]="userToAdd.name" required />
   </div>
 
   <div class="form-group">
-    <input type="text" placeholder="Last Name" class="form-control" name="lastname" (ngModel)="lastname" required />
+    <input type="text" placeholder="Last Name" class="form-control" name="lastname" [(ngModel)]="userToAdd.lastName" required />
   </div>
 
   <div class="form-group">
-    <input type="number" placeholder="Weight" class="form-control" name="weight" (ngModel)="weight" required />
+    <input type="number" placeholder="Weight" class="form-control" name="weight" [(ngModel)]="userToAdd.weight" required />
   </div>
 
   <div class="form-group">
-    <input type="number" placeholder="Length" class="form-control" name="length" (ngModel)="length" required />
+    <input type="number" placeholder="Length" class="form-control" name="length" [(ngModel)]="userToAdd.length" required />
   </div>
 
   <div class="form-group">
-    <input type="date" placeholder="Birthdate" class="form-control" name="birthdate" (ngModel)="birthdate" required />
+    <input type="date" placeholder="Birthdate" class="form-control" name="birthdate" [(ngModel)]="userToAdd.birthDate" required />
   </div>
 
   <div class="form-group">
-    <input type="email" placeholder="Email" class="form-control" name="email" (ngModel)="email" required />
+    <input type="email" placeholder="Email" class="form-control" name="email" [(ngModel)]="userToAdd.email" required />
   </div>
 
 
