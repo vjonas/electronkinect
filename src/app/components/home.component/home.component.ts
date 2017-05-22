@@ -108,7 +108,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private loadUserData() {
         this.userUid = this.userService.getUserId();
         this.userService.getUserdataById(this.userUid).subscribe((userData: User) => {
-            console.log(userData);
             this.userdata = userData;
             this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
