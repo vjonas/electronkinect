@@ -34,7 +34,7 @@ export class DrawCanvasService {
     private hasToStartTimer = true;
     private currentProgramId: number;
 
-    constructor(private kinectService: KinectService, private exerciseService: ExerciseService, private timerService: TimerService, private userService:UserService) {
+    constructor(private kinectService: KinectService, private exerciseService: ExerciseService, private timerService: TimerService, private userService: UserService) {
 
     }
 
@@ -120,7 +120,7 @@ export class DrawCanvasService {
         bodyFrameCtx.globalAlpha = 0.75;
         bodyFrameCtx.beginPath();
         bodyFrameCtx.fillStyle = handColor;
-        bodyFrameCtx.arc(jointPoint.colorX * bodyFrameCtx.canvas.width - (this.HANDSIZE / 2), jointPoint.colorY * bodyFrameCtx.canvas.height - (this.HANDSIZE / 2), this.HANDSIZE, 0, Math.PI * 2, true);
+        bodyFrameCtx.arc(jointPoint.colorX * bodyFrameCtx.canvas.width /*- (this.HANDSIZE / 2)*/, jointPoint.colorY * bodyFrameCtx.canvas.height /*- (this.HANDSIZE / 2)*/, this.HANDSIZE, 0, Math.PI * 2, true);
         bodyFrameCtx.fill();
         bodyFrameCtx.closePath();
         bodyFrameCtx.globalAlpha = 1;
@@ -196,12 +196,14 @@ export class DrawCanvasService {
         for (var i = 0; i < Object.keys(offsetLeft).length; i++) {
             this.ctx.strokeStyle = this.COLOR_OFFSET;
             this.ctx.bezierCurveTo(offsetLeft[i].points[1].x, offsetLeft[i].points[1].y, offsetLeft[i].points[2].x, offsetLeft[i].points[2].y, offsetLeft[i].points[3].x, offsetLeft[i].points[3].y);
+            this.ctx.lineWidth = 2;
             this.ctx.stroke();
         }
         this.ctx.moveTo(offsetRight[0].points[0].x, offsetRight[0].points[0].y);
         for (var i = 0; i < Object.keys(offsetRight).length; i++) {
             this.ctx.strokeStyle = this.COLOR_OFFSET;
             this.ctx.bezierCurveTo(offsetRight[i].points[1].x, offsetRight[i].points[1].y, offsetRight[i].points[2].x, offsetRight[i].points[2].y, offsetRight[i].points[3].x, offsetRight[i].points[3].y);
+            this.ctx.lineWidth = 2;
             this.ctx.stroke();
         }
         this.ctx.closePath();
@@ -267,12 +269,12 @@ export class DrawCanvasService {
         //user has to stay between the TrackingLineOffset
         if (distanceOfJointFromTrackingLine.d < step.trackingLineOffset && this.hasToFollowTrackingLine) {
             //check if the user touches the endpoint and completed the TrackingLine => step IS COMPLETE!!
+            //this.drawLineBetweenHandAndTrackingLine(mouseX, mouseY, distanceOfJointFromTrackingLine.x, distanceOfJointFromTrackingLine.y);
             if (distanceFromEndingPoint < step.radius) {
                 this.drawTwoNextSteps(steps, index, canvas);
                 this.hasToFollowTrackingLine = false;
                 this.progressBarIncrease(steps.length, this.currentStepNr);
                 this.stepCompleted(step);
-
             }
         }
         else if (distanceOfJointFromTrackingLine.d > step.trackingLineOffset && this.hasToFollowTrackingLine) {
@@ -284,11 +286,22 @@ export class DrawCanvasService {
         }
     }
 
+    private drawLineBetweenHandAndTrackingLine(x0, y0, x1, y1) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(x0, y0);
+        this.ctx.lineTo(x1, y1);
+        this.ctx.lineWidth = 2;
+        this.ctx.strokeStyle = 'blue';
+        this.ctx.stroke();
+        this.ctx.closePath();
+    }
+
     private stepCompleted(step: Step) {
         var timeToCompleteExercise: number = this.timerService.getTimer();
         var score: number = 0;
         var completedStep: CompletedStep;
-        var completeDateTime = new Date().toLocaleDateString() + new Date().toLocaleTimeString();
+        var completeDateTime = new Date().toLocaleString();
+        this.completedExercise.date=completeDateTime;
 
         if (step.stepNr > this.CALIBRATION_STEP_NR) {
             this.currentStepNr++;
@@ -296,10 +309,10 @@ export class DrawCanvasService {
             if (timeToCompleteExercise <= step.duration)
                 score = step.maxScore;
             else if (timeToCompleteExercise > step.duration && timeToCompleteExercise <= step.duration * 2)
-                score = Number((step.maxScore - (((timeToCompleteExercise / step.duration) - 1) * 10)).toFixed(2));
+                score = Number((step.maxScore - (((timeToCompleteExercise / step.duration) - 1) * step.maxScore)).toFixed(2));
             if (step.stepNr === this.currentExercise.steps.length - 1)
                 this.completedExercise.completed = true;
-            completedStep = new CompletedStep(step.stepNr, score, timeToCompleteExercise, completeDateTime);
+            completedStep = new CompletedStep(step.stepNr, score, timeToCompleteExercise);
             this.completedExercise.completedSteps.push(completedStep);
             if (step.stepNr === 1)
                 this.exerciseService.createCompletedExercise(this.completedExercise);

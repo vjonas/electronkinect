@@ -6,11 +6,13 @@ export class CompletedExercise {
         public exerciseId: string,
         public programId: number,
         public completedSteps: CompletedStep[],
-        public completed: boolean
+        public completed: boolean,
+        public date: string
+
     ) { }
 
     public static createNewCompletedExercise(userId:string,exerciseId:string,programId:number)
     {
-        return new CompletedExercise(userId,exerciseId,programId,new Array<CompletedStep>(),false);
+        return new CompletedExercise(userId,exerciseId,programId,new Array<CompletedStep>(),false,null);
     }
 }

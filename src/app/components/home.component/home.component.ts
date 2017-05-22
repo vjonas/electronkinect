@@ -95,6 +95,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
                     this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "arrow-to-the-knee2");
                     return;
                 }
+            case 5:
+                {
+                    this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "full-exercise");
+                    return;
+                }
 
         }
     }
