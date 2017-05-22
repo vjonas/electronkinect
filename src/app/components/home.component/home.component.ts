@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.fullExercisesOfCurrentProgram.length = 0;
         //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
         Object.keys(this.userdata.programs[newProgramId].exercises).forEach(ex => {
-            this.exService.getExerciseById(ex).subscribe(
+            this.exService.getFullExerciseById(ex).subscribe(
                 ex2 => {
                     this.fullExercisesOfCurrentProgram.push(ex2);
                 }
@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
                 Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {
-                    this.exService.getExerciseById(ex).subscribe(
+                    this.exService.getFullExerciseById(ex).subscribe(
                         (fullExercise: FullExercise) => {
                             this.fullExercisesOfCurrentProgram.push(fullExercise);
                             this.currentFullExercise = this.fullExercisesOfCurrentProgram[0];

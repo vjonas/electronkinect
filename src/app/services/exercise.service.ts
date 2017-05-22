@@ -32,10 +32,11 @@ export class ExerciseService {
     }
 
     public setExerciseCompleted(exerciseId: string, currentProgramId: number) {
+        console.log("set exercise complete on user object");
         this.af.database.object("users/" + this.userService.getUserId() + "/programs/" + currentProgramId + "/exercises/" + exerciseId).update({ completed: true })
     }
 
-    public getExerciseById(exerciseId: string): Observable<FullExercise> {
+    public getFullExerciseById(exerciseId: string): Observable<FullExercise> {
         return this.af.database.object('/exercises/'+exerciseId);
     }
 

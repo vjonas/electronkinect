@@ -161,7 +161,7 @@ export class DrawCanvasService {
                 }
                 if (self.currentStepNr >= newExcercise.steps.length) {
                     clearInterval(self.intervalOfCurrentExcercise);
-                    self.exerciseService.setExerciseCompleted(newExcercise["$key"], currentProgramId);
+                    self.exerciseService.setExerciseCompleted(newExcercise.exerciseId, currentProgramId);
                 }
             })
         }, 1000 / 30);
@@ -301,7 +301,7 @@ export class DrawCanvasService {
         var score: number = 0;
         var completedStep: CompletedStep;
         var completeDateTime = new Date().toLocaleString();
-        this.completedExercise.date=completeDateTime;
+        this.completedExercise.date = completeDateTime;
 
         if (step.stepNr > this.CALIBRATION_STEP_NR) {
             this.currentStepNr++;
@@ -310,14 +310,18 @@ export class DrawCanvasService {
                 score = step.maxScore;
             else if (timeToCompleteExercise > step.duration && timeToCompleteExercise <= step.duration * 2)
                 score = Number((step.maxScore - (((timeToCompleteExercise / step.duration) - 1) * step.maxScore)).toFixed(2));
-            if (step.stepNr === this.currentExercise.steps.length - 1)
+            if (step.stepNr === this.currentExercise.steps.length - 1) {
                 this.completedExercise.completed = true;
+            }
             completedStep = new CompletedStep(step.stepNr, score, timeToCompleteExercise);
             this.completedExercise.completedSteps.push(completedStep);
-            if (step.stepNr === 1)
+            if (step.stepNr === 1) {
                 this.exerciseService.createCompletedExercise(this.completedExercise);
-            else
+
+            }
+            else {
                 this.exerciseService.updateCompletedExercise(this.completedExercise);
+            }
             this.timerService.resetTimer();
             this.hasToStartTimer = true;
         }
