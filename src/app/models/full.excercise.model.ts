@@ -7,6 +7,7 @@ export class FullExercise
         public name:string,
         public description:string,
         public steps:Step[],
-        public completed:boolean
+        public completed:boolean,
+        public exerciseId:string
     ){}
 }

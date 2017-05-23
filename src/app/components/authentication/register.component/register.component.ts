@@ -1,9 +1,9 @@
+import { UserService } from './../../../services/user.service';
+import { User } from './../../../models/user.model';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFire } from 'angularfire2';
 import { routerTransition } from '../../../animations/router.animations';
-import { DatabaseService } from '../../../services/database.service';
-import { SharedService } from "app/services/shared.service";
 
 
 @Component({
@@ -16,24 +16,21 @@ import { SharedService } from "app/services/shared.service";
 
 export class RegisterComponent {
     error: Error = new Error("");
+    private userToAdd: User = User.createEmptyUser();
 
 
-    constructor(public af: AngularFire, private router: Router, private dbService: DatabaseService, private sharedService: SharedService) {
-
+    constructor(public af: AngularFire, private router: Router, private userService: UserService) {
     }
 
     onSubmit(formData) {
         if (formData.valid) {
-            console.log(formData.value.surname);
             this.af.auth.createUser({
                 email: formData.value.email,
                 password: formData.value.password
             }).then((success) => {
-                console.log("in registercomponent");
-                localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
-                this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
                 //create a new userobject in the database
-                this.dbService.createUser(formData, success.uid);
+                this.userToAdd.uid = success.uid;
+                this.userService.createUser(this.userToAdd);
                 this.router.navigate(['/home'])
             }).catch((err) => {
                 this.error = err;

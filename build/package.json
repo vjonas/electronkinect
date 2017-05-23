@@ -1,7 +1,0 @@
-{
-  "name"    : "angular-electron",
-  "version" : "0.1.0",
-  "description": "kinect excercise app",
-  "author": "joint effort crew",
-  "main"    : "electron.js"
-  }

@@ -1,8 +1,8 @@
+import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { routerTransition } from '../../../animations/router.animations';
-import { SharedService } from "app/services/shared.service";
 
 @Component(
   {
@@ -19,11 +19,9 @@ export class LoginComponent implements OnInit {
   errCond: boolean = false;
   error: Error = new Error("");
 
-  constructor(public af: AngularFire, private router: Router, private sharedService: SharedService) {
+  constructor(public af: AngularFire, private router: Router,private userService :UserService) {
     this.af.auth.subscribe(auth => {
       if (auth) {
-        localStorage.setItem('currentUser', JSON.stringify({ uid: auth.uid })); //save user's uid locally
-        this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
         this.router.navigateByUrl('/home');
       }
     });
@@ -42,8 +40,6 @@ export class LoginComponent implements OnInit {
           provider: AuthProviders.Password,
           method: AuthMethods.Password,
         }).then((success) => {
-          localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
-          this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
           this.router.navigate(['/home']);
           this.errCond = false;
         }).catch((err) => {
@@ -59,8 +55,6 @@ export class LoginComponent implements OnInit {
       provider: this._getProvider(from),
       method: AuthMethods.Popup,
     }).then((success) => {
-      localStorage.setItem('currentUser', JSON.stringify({ uid: success.uid })); //save user's uid locally
-      this.sharedService.getUserId.emit(JSON.parse(localStorage.getItem('currentUser')));
       this.router.navigate(['/home']);
     }).catch((err) => {
       console.log(err);
