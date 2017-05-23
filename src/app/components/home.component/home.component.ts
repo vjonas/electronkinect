@@ -31,7 +31,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private fullExercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
     private currentProgram: Program;
     private currentStepNr: number = 0;
-    private jointList: KinectJoint[] = new Array<KinectJoint>();;
+    private jointList: KinectJoint[] = new Array<KinectJoint>();
+    private EXERCISES_TO_SHOW:number = 3;
+    private start:number=0;
+    private end:number=3;
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private userService: UserService, private auth: AngularFireAuth, private exService: ExerciseService) {
         this.ipc = electron.ipcRenderer;
@@ -51,21 +54,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
     }
 
-    onChangeProgram(newProgramId) {
-        //get all the excerciseIds in the currentTraject of the user
-        this.fullExercisesOfCurrentProgram.length = 0;
-        //this.excercisesOfCurrentTraject.splice(0,this.excercisesOfCurrentTraject.length);
-        Object.keys(this.userdata.programs[newProgramId].exercises).forEach(ex => {
-            this.exService.getFullExerciseById(ex).subscribe(
-                ex2 => {
-                    this.fullExercisesOfCurrentProgram.push(ex2);
-                }
-            )
-        });
-    }
-
-    onChangeExcercise(newExerciseId) {
-        this.loadExcercise(newExerciseId);
+    private changeExercise(exerciseId){
+        this.loadExcercise(exerciseId);
     }
 
     public drawExcercise() {
@@ -100,7 +90,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
                     this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, true, "full-exercise");
                     return;
                 }
-
         }
     }
 
@@ -125,7 +114,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     private loadExcercise(excerciseId) {
         this.fullExercisesOfCurrentProgram.forEach(ex => {
-            if (ex["$key"] == excerciseId) {
+            if (ex.exerciseId == excerciseId) {
                 this.currentFullExercise = ex;
             }
         })
@@ -157,6 +146,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.jointList.push(new KinectJoint(22, "Left thumb"));
         this.jointList.push(new KinectJoint(23, "Tip of the right hand"));
         this.jointList.push(new KinectJoint(24, "Right thumb"));
-
     }
+
+    private showNextExercises(){
+    if(this.start >= 0 && (this.start + this.EXERCISES_TO_SHOW) < this.fullExercisesOfCurrentProgram.length){
+      this.start += this.EXERCISES_TO_SHOW;
+      this.end += this.EXERCISES_TO_SHOW;
+    }
+  }
+
+  private showPreviousExercises(){
+    if(this.start > 0){
+      this.start -= this.EXERCISES_TO_SHOW;
+      this.end -= this.EXERCISES_TO_SHOW;
+    }
+  }
 }

@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from "./app.routing.module";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component/home.component';
@@ -21,16 +22,6 @@ import { DrawCanvasService } from './services/drawcanvas.service';
 import { AngularFireModule } from 'angularfire2';
 import { AuthGuard } from './services/auth.service';
 
-
-// routes variabelen
-const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'register', component: RegisterComponent },
-  { path: 'resetpassword', component: ResetPasswordComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
-  // PageNotFound { path: '**', component: PageNotFoundComponent }
-];
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDt80FBi9Tver1DAEljAAhJKE7P8KR3EIA",
@@ -51,7 +42,7 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes, { useHash: true }), //
+    AppRoutingModule, //
     AngularFireModule.initializeApp(firebaseConfig)
 
   ],
