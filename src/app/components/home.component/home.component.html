@@ -16,7 +16,7 @@
     </div>
 </div>
 <div class="wrapper">
-    <h1 class="col-xs-12">{{currentFullExercise?.name}}</h1>
+    <h1 class="col-xs-12 title">{{currentProgram?.name}}</h1>
     <!--<button class="btn btn-warning" (click)="playMockData(1)">Play linkerhand</button>    
     <button class="btn btn-warning" (click)="playMockData(2)">Play rechterhand</button>-->
     <!--<button (click)="loadExcercise(1)">getEx1</button>-->
@@ -28,17 +28,8 @@
         <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
         <canvas id="exercisecanvas" width="960" height="540" style="position:absolute"></canvas>
     </div>
-
-
     <div class="col-xs-5 controls">
-<!--        <button class="btn btn-warning" (click)="playMockData(4)">Play arrow to the knee</button>
--->        <h2 class="col-xs-12">Current Program</h2>
-        <div class="col-xs-12">
-            <!--<select (change)="onChangeProgram($event.target.value)" [disabled]>
-        <option *ngFor="let program of currentProgram" value="{{program.programId}}">{{program.name}}</option>
-    </select>-->
-            <h3 class="header-current-program">{{currentProgram?.name}}</h3>
-        </div>
+<!--        <button class="btn btn-warning" (click)="playMockData(4)">Play arrow to the knee</button>-->
         <h2 class="col-xs-12">Exercise</h2>
         <!--combobox to display all the excercises in the selected traject-->
         <div class="col-xs-12">
@@ -54,14 +45,14 @@
             <button class="col-xs-6" id="btnStartExercise" class="btn btn-info" (click)="drawExcercise()"> Start Excercise</button>
         </div>
     </div>
-    <div class="col-xs-7 jointArea">
-        <h3 class="col-xs-6">Joint 1: {{jointList[currentFullExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>
-        <h3 *ngIf="currentFullExercise?.steps[currentStepNr]?.stepType == 2" class="col-xs-6">Joint 2: {{jointList[currentFullExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>
-    </div>
-    <div class="col-xs-12 progressBarArea">
+    <div class="col-xs-6 progressBarArea">
         <div id="myProgress" class="progressBarParent">
             <div id="myBar" class="progressBar"></div>
         </div>
+    </div>
+    <div class="col-xs-7 jointArea">
+        <h3 class="col-xs-6">Joint 1: {{jointList[currentFullExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>
+        <h3 *ngIf="currentFullExercise?.steps[currentStepNr]?.stepType == 2" class="col-xs-6">Joint 2: {{jointList[currentFullExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>
     </div>
 
 </div>

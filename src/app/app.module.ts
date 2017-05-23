@@ -22,9 +22,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AuthGuard } from './services/auth.service';
 import { SharedService } from "app/services/shared.service";
 
-import { SimpleTimer } from 'ng2-simple-timer';
-
-
 
 
 // routes variabelen

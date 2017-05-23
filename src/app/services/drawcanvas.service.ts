@@ -392,7 +392,6 @@ export class DrawCanvasService {
             } else {
                 partWidth++;
                 elem.style.width = partTotal + partWidth + "%";
-                elem.innerHTML = (partTotal + partWidth) + "% complete";
             }
         }, 20);
     }
@@ -400,7 +399,6 @@ export class DrawCanvasService {
     private progressBarReset() {
         var elem = <HTMLDivElement>document.getElementById("myBar");
         elem.style.width = 0 + '%';
-        elem.innerHTML = "";
     }
 
     public getCurrentStep(): Observable<number> {

@@ -16,6 +16,10 @@ select{
     margin-right: 5%;
 }
 
+.title{
+    margin-top:0;
+}
+
 .startButtonDiv{
     text-align: center;
 
@@ -51,9 +55,7 @@ select{
 
 
 .progressBarArea{
-
     width:960px;
-    margin-top:1%;
     padding:0;
     margin-left:15px;
 }
@@ -65,10 +67,8 @@ select{
 
 .progressBar {
     width: 0;
-    line-height: 60px;
-    font-size:1.5em;
-    text-align: center;
-    height: 60px;
+    line-height: 20px;
+    height: 20px;
     background-color: limegreen;
     overflow-x:hidden;
 }
