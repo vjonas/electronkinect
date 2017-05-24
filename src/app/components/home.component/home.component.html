@@ -53,11 +53,7 @@
             <button class="col-xs-6" id="btnStartExercise" class="btn button-start" (click)="drawExcercise()"> Start Excercise</button>
         </div>
     </div>
-    <div class="col-xs-6 progressbar-area">
-        <div id="myProgress" class="progressbar-parent">
-            <div id="myBar" class="progressbar"></div>
-        </div>
-    </div>
+    <progressbar></progressbar>
     <div class="col-xs-7 joint-area">
         <h3 class="col-xs-6">Joint 1: {{jointList[currentFullExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>
         <h3 *ngIf="currentFullExercise?.steps[currentStepNr]?.stepType == 2" class="col-xs-6">Joint 2: {{jointList[currentFullExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>

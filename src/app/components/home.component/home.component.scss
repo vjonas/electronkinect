@@ -57,27 +57,6 @@ select{
     height:560px;  
 }
 
-
-.progressbar-area{
-    width:960px;
-    padding:0;
-    margin-left:15px;
-    margin-top:-20px;
-}
-
-.progressbar-parent {
-    width: 100%;
-    background-color: $parent-card-background-color;
-}
-
-.progressbar {
-    width: 0;
-    line-height: 20px;
-    height: 20px;
-    background-color: $success-color;
-    overflow-x:hidden;
-}
-
 .description-area{
     padding:0;
 
