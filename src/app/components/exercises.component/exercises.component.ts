@@ -16,14 +16,9 @@ export class ExercisesComponent implements OnChanges {
     private end:number=3;
 
     ngOnChanges(changes){
-        if(changes.exerciseList.firstChange == true){
+        if(changes.exerciseList.currentValue != null){
             this.exerciseList = changes.exerciseList.currentValue;
-            this.initializeCurrentExercise();
         }
-    }
-
-    private initializeCurrentExercise(){
-        console.log(this.exerciseList);
     }
 
     private changeExercise(exerciseId){
@@ -39,7 +34,9 @@ export class ExercisesComponent implements OnChanges {
     }
 
     private drawExcercise(){
+        if(this.currentFullExercise != undefined){
         this.notify.emit(this.currentFullExercise);
+        }
     }
 
     private showNextExercises(){
