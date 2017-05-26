@@ -2,9 +2,9 @@
     <!--        <button class="btn btn-warning" (click)="playMockData(4)">Play arrow to the knee</button>-->
     <h2 class="col-xs-12">Exercise</h2>
     <div class="col-xs-12 exercise-area">
-        <div (click)="changeExercise(exercise.exerciseId)" *ngFor="let exercise of exerciseList | slice:start:end" class="card">
-            <p class="col-xs-12 exercise-name">{{exercise.name}}</p>
-            <p class="col-xs-12">Steps: {{exercise.steps.length}}</p>
+        <div *ngFor="let exercise of fullExerciseList | slice:start:end" [ngClass]="{'card-disabled':!exercise.completed, 'card':exercise.completed}" (click)="exercise.completed && changeExercise(exercise.exerciseId)">
+            <p  class="col-xs-12 exercise-name">{{exercise.name}}</p>
+            <p  class="col-xs-12">Steps: {{exercise.steps.length}}</p>
         </div>
         <div class="col-xs-12">
             <div class="col-xs-6">

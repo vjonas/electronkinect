@@ -2,6 +2,7 @@
 
 $parent-card-background-color: $div-background-color;
 $card-background-color: $card-background-color;
+$card-background-color-disabled: $card-background-color-disabled;
 $card-font-color: $card-text-color;
 $card-background-color-hover: $card-background-color-hover;
 $card-font-color-hover: $card-text-color-hover;
@@ -44,11 +45,25 @@ $card-font-color-hover: $card-text-color-hover;
     padding-top:20px;
     text-overflow: ellipsis;
     transition: ease 0.2s;
+    cursor:pointer;
 
     &:hover{
         background-color: $card-background-color-hover;
         color: $card-font-color-hover;
     }
+}
+
+.card-disabled{
+    background-color: $card-background-color-disabled;
+    color:$card-font-color;
+    width: 10vw;
+    height: 100px;
+    margin:1% 2%;
+    float:left;
+    text-align: center;
+    padding-top:20px;
+    text-overflow: ellipsis;
+    transition: ease 0.2s;
 }
 
 .exercise-control-previous{

@@ -1,15 +1,14 @@
 export class Exercise
 {
     constructor(
-        public exerciseid:string,
-        public score:number,
+        public exerciseId:string,
         public completed:boolean
     )
 {}
 
 public static createEmptyExcercise()
 {
-    return new Exercise('',0,false);
+    return new Exercise('',false);
 }
 
 public static createEmptyExcercises(): Exercise[] {

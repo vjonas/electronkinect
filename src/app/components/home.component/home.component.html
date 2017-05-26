@@ -28,7 +28,7 @@
         <canvas id="bodyframecanvas" width="960" height="540" style="position:absolute"></canvas>
         <canvas id="exercisecanvas" width="960" height="540" style="position:absolute"></canvas>
     </div>
-    <exercises [exerciseList]="fullExercisesOfCurrentProgram" (notify)='onNotify($event)'></exercises>
+    <exercises [fullExerciseList]="fullExercisesOfCurrentProgram" [exerciseList]="exercisesOfCurrentProgram" [changes]="changes" (notify)='onNotify($event)'></exercises>
     <progressbar></progressbar>
     <div class="col-xs-7 joint-area">
         <h3 class="col-xs-6">Joint 1: {{jointList[currentFullExercise?.steps[currentStepNr]?.jointType]?.name}}</h3>

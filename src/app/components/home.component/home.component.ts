@@ -29,9 +29,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private currentFullExercise: FullExercise;
     private userUid: string;
     private fullExercisesOfCurrentProgram: Array<FullExercise> = new Array<FullExercise>();
+    private exercisesOfCurrentProgram: Array<Exercise> = new Array<Exercise>();
     private currentProgram: Program;
     private currentStepNr: number = 0;
     private jointList: KinectJoint[] = new Array<KinectJoint>();
+    private changes:number=0;
 
     constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private userService: UserService, private auth: AngularFireAuth, private exService: ExerciseService) {
         this.ipc = electron.ipcRenderer;
@@ -90,14 +92,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private loadUserData() {
         this.userUid = this.userService.getUserId();
         this.userService.getUserdataById(this.userUid).subscribe((userData: User) => {
+            this.exercisesOfCurrentProgram.length=0;
+            this.fullExercisesOfCurrentProgram.length=0;
             this.userdata = userData;
             this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
                 Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {
+                    this.exercisesOfCurrentProgram.push(this.userdata.programs[this.userdata.currentProgram].exercises[ex]);
                     this.exService.getFullExerciseById(ex).subscribe(
                         (fullExercise: FullExercise) => {
                             this.fullExercisesOfCurrentProgram.push(fullExercise);
                             this.currentFullExercise = this.fullExercisesOfCurrentProgram[0];
+                            this.changes++;
                         }
                     )
                 });
