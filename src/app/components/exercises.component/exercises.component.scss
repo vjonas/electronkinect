@@ -53,6 +53,11 @@ $card-font-color-hover: $card-text-color-hover;
     }
 }
 
+.card-active{
+    background-color: $card-background-color-hover;
+    color: $card-font-color-hover;
+}
+
 .card-disabled{
     background-color: $card-background-color-disabled;
     color:$card-font-color;

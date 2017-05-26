@@ -17,6 +17,7 @@ export class ExercisesComponent implements OnChanges {
     private start: number = 0;
     private end: number = 3;
     @Input() changes: number;
+    private exerciseDivElement:HTMLDivElement=null;
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes.changes) {
@@ -50,7 +51,13 @@ export class ExercisesComponent implements OnChanges {
         }
     }
 
-    private changeExercise(exerciseId) {
+    private changeExercise(exerciseId,exerciseElement:HTMLDivElement) {
+        if(this.exerciseDivElement!=null)
+        {
+            this.exerciseDivElement.classList.remove("card-active");
+        }
+        exerciseElement.classList.add("card-active");
+        this.exerciseDivElement=exerciseElement;
         this.loadExcercise(exerciseId);
     }
 
