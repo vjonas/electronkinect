@@ -2,6 +2,7 @@ import { UserService } from './../../services/user.service';
 import { CompletedExercise } from 'app/models/completed.exercise.model';
 import { ExerciseService } from './../../services/exercise.service';
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Kinect2 } from 'kinect2';
 import { KinectService } from '../../services/kinect.service';
 import { DrawCanvasService } from '../../services/drawcanvas.service';
@@ -35,7 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private jointList: KinectJoint[] = new Array<KinectJoint>();
     private changes:number=0;
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private userService: UserService, private auth: AngularFireAuth, private exService: ExerciseService) {
+    constructor(private kinectService: KinectService, private router: Router, private drawcanvasService: DrawCanvasService, private af: AngularFire, private userService: UserService, private auth: AngularFireAuth, private exService: ExerciseService) {
         this.ipc = electron.ipcRenderer;
     }
 
@@ -95,6 +96,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.exercisesOfCurrentProgram.length=0;
             this.fullExercisesOfCurrentProgram.length=0;
             this.userdata = userData;
+            if(this.userdata.programs == undefined){
+                this.router.navigateByUrl('/no-program');
+            }
             this.currentProgram = userData.programs[userData.currentProgram];
             if (this.userdata.programs != undefined) {
                 Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {

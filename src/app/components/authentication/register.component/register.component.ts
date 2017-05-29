@@ -31,7 +31,7 @@ export class RegisterComponent {
                 //create a new userobject in the database
                 this.userToAdd.uid = success.uid;
                 this.userService.createUser(this.userToAdd);
-                this.router.navigate(['/home'])
+                this.router.navigate(['/no-program'])
             }).catch((err) => {
                 this.error = err;
                 console.log(err);
