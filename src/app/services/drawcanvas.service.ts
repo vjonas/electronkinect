@@ -140,6 +140,8 @@ export class DrawCanvasService {
         if (this.intervalOfCurrentExcercise != null) {
             clearInterval(this.intervalOfCurrentExcercise);
             this.ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
+            this.timerService.resetTimer();
+            self.hasToStartTimer=true;
         }
         this.initializeExercise(newExcercise);
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
@@ -419,7 +421,7 @@ export class DrawCanvasService {
         elem.style.width = 0 + '%';
     }
 
-    public getCurrentStep(): Observable<number> {
+    public getCurrentStepNr(): Observable<number> {
         return this.currentStepSubject.asObservable();
     }
 }

@@ -16,7 +16,8 @@
     </div>
 </div>
 <div class="wrapper">
-    <h1 class="col-xs-12 title">{{currentProgram?.name}}</h1>
+    <h1 class="col-xs-6 title">{{currentProgram?.name}}</h1>
+    <h1 *ngIf="timer!=null" class="col-xs-2 title">Time: {{timer}}</h1>
     <!--<button class="btn btn-warning" (click)="playMockData(1)">Play linkerhand</button>    
     <button class="btn btn-warning" (click)="playMockData(2)">Play rechterhand</button>-->
     <!--<button (click)="loadExcercise(1)">getEx1</button>-->

@@ -1,14 +1,11 @@
+import { DrawCanvasService } from './../../services/drawcanvas.service';
+import { TimerService } from './../../services/timer.service';
 import { UserService } from './../../services/user.service';
-import { CompletedExercise } from 'app/models/completed.exercise.model';
 import { ExerciseService } from './../../services/exercise.service';
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
 import { Kinect2 } from 'kinect2';
-import { KinectService } from '../../services/kinect.service';
-import { DrawCanvasService } from '../../services/drawcanvas.service';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, AngularFireAuth } from 'angularfire2';
 declare var electron: any;
 import { User } from '../../models/user.model';
-import { Subject } from 'rxjs/Subject';
 import { Exercise } from "app/models/excercise.model";
 import { FullExercise } from "app/models/full.excercise.model";
 import { Program } from "app/models/program.model";
@@ -33,10 +30,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private currentProgram: Program;
     private currentStepNr: number = 0;
     private jointList: KinectJoint[] = new Array<KinectJoint>();
-    private changes:number=0;
+    private changes: number = 0;
+    private timer: number=null;
+    private stepDuration: number;
 
-    constructor(private kinectService: KinectService, private drawcanvasService: DrawCanvasService, private af: AngularFire, private userService: UserService, private auth: AngularFireAuth, private exService: ExerciseService) {
+    constructor(private drawcanvasService: DrawCanvasService, private userService: UserService, private exService: ExerciseService, private timerService: TimerService) {
         this.ipc = electron.ipcRenderer;
+        this.drawcanvasService.getCurrentStepNr().subscribe(stepNr => {
+            this.stepDuration = this.currentFullExercise.steps[stepNr].duration;
+        })
     }
 
     ngOnInit() {
@@ -54,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     public drawExcercise() {
-        this.drawcanvasService.getCurrentStep().subscribe(stepNr => this.currentStepNr = stepNr);
+        this.drawcanvasService.getCurrentStepNr().subscribe(stepNr => this.currentStepNr = stepNr);
         this.drawcanvasService.drawExcercise(this.excerciseCanvas, this.currentFullExercise, this.userdata.currentProgram);
     }
 
@@ -92,21 +94,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private loadUserData() {
         this.userUid = this.userService.getUserId();
         this.userService.getUserdataById(this.userUid).subscribe((userData: User) => {
-            this.exercisesOfCurrentProgram.length=0;
-            this.fullExercisesOfCurrentProgram.length=0;
+            this.exercisesOfCurrentProgram.length = 0;
+            this.fullExercisesOfCurrentProgram.length = 0;
             this.userdata = userData;
-            this.currentProgram = userData.programs[userData.currentProgram];
-            if (this.userdata.programs != undefined) {
-                Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {
-                    this.exercisesOfCurrentProgram.push(this.userdata.programs[this.userdata.currentProgram].exercises[ex]);
-                    this.exService.getFullExerciseById(ex).subscribe(
-                        (fullExercise: FullExercise) => {
-                            this.fullExercisesOfCurrentProgram.push(fullExercise);
-                            this.currentFullExercise = this.fullExercisesOfCurrentProgram[0];
-                            this.changes++;
-                        }
-                    )
-                });
+            if (this.userdata.programs != undefined && this.userdata.programs != null) {
+                this.currentProgram = userData.programs[userData.currentProgram];
+                if (this.userdata.programs[this.userdata.currentProgram].exercises != null) {
+                    Object.keys(this.userdata.programs[this.userdata.currentProgram].exercises).forEach((ex) => {
+                        this.exercisesOfCurrentProgram.push(this.userdata.programs[this.userdata.currentProgram].exercises[ex]);
+                        this.exService.getFullExerciseById(ex).subscribe(
+                            (fullExercise: FullExercise) => {
+                                this.fullExercisesOfCurrentProgram.push(fullExercise);
+                                this.currentFullExercise = this.fullExercisesOfCurrentProgram[0];
+                                this.changes++;
+                            }
+                        )
+                    });
+                }
             }
         });
     }
@@ -114,6 +118,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private onNotify(exercise: FullExercise): void {
         this.currentFullExercise = exercise;
         this.drawExcercise();
+        this.timer=0;
+        this.timerService.getTimerAsObservable().subscribe(timer => {
+            //this.timer = timer.toString() + " / " + this.stepDuration;
+            this.timer = Number((this.stepDuration-timer).toFixed(2));
+        })
     };
 
     private fillJointList() {
