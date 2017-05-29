@@ -36,10 +36,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private stepDuration: number;
 
 
-    constructor(private router: Router, private drawcanvasService: DrawCanvasService, private userService: UserService, private exService: ExerciseService,private timerService:TimerService) {
+    constructor(private router: Router, private drawcanvasService: DrawCanvasService, private userService: UserService, private exService: ExerciseService, private timerService: TimerService) {
         this.ipc = electron.ipcRenderer;
         this.drawcanvasService.getCurrentStepNr().subscribe(stepNr => {
-            this.stepDuration = this.currentFullExercise.steps[stepNr].duration;
+            console.log(stepNr);
+            if (this.currentFullExercise.steps[stepNr] != null && this.currentFullExercise.steps[stepNr] != undefined) {
+                this.stepDuration = this.currentFullExercise.steps[stepNr].duration;
+            }
         })
     }
 
