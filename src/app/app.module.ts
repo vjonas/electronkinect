@@ -18,6 +18,7 @@ import { ResetPasswordComponent } from './components/authentication/reset-passwo
 import { ResetConfirmationComponent } from './components/authentication/reset-confirmation.component/reset-confirmation.component';
 import { ProgressbarComponent } from './components/progressbar.component/progressbar.component';
 import { ExercisesComponent } from './components/exercises.component/exercises.component';
+import { NoProgramComponent } from './components/no-program.component/no-program.component';
  
 import { KinectService } from './services/kinect.service';
 import { DrawCanvasService } from './services/drawcanvas.service';
@@ -37,7 +38,7 @@ export const firebaseConfig = {
 @NgModule({
   //component declarations
   declarations: [
-    AppComponent, HomeComponent, LoginComponent, RegisterComponent, ResetPasswordComponent, ResetConfirmationComponent,ProgressbarComponent, ExercisesComponent
+    AppComponent, HomeComponent, LoginComponent, RegisterComponent, ResetPasswordComponent, ResetConfirmationComponent,ProgressbarComponent, ExercisesComponent, NoProgramComponent
   ],
   imports: [
     BrowserModule,

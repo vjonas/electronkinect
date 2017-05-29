@@ -3,6 +3,7 @@ import { TimerService } from './../../services/timer.service';
 import { UserService } from './../../services/user.service';
 import { ExerciseService } from './../../services/exercise.service';
 import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Kinect2 } from 'kinect2';
 declare var electron: any;
 import { User } from '../../models/user.model';
@@ -31,10 +32,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private currentStepNr: number = 0;
     private jointList: KinectJoint[] = new Array<KinectJoint>();
     private changes: number = 0;
-    private timer: number=null;
+    private timer: number = null;
     private stepDuration: number;
 
-    constructor(private drawcanvasService: DrawCanvasService, private userService: UserService, private exService: ExerciseService, private timerService: TimerService) {
+
+    constructor(private router: Router, private drawcanvasService: DrawCanvasService, private userService: UserService, private exService: ExerciseService,private timerService:TimerService) {
         this.ipc = electron.ipcRenderer;
         this.drawcanvasService.getCurrentStepNr().subscribe(stepNr => {
             this.stepDuration = this.currentFullExercise.steps[stepNr].duration;
@@ -111,6 +113,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
                         )
                     });
                 }
+
+            }
+            else {
+                this.router.navigateByUrl('/no-program');
             }
         });
     }
@@ -118,10 +124,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private onNotify(exercise: FullExercise): void {
         this.currentFullExercise = exercise;
         this.drawExcercise();
-        this.timer=0;
+        this.timer = 0;
         this.timerService.getTimerAsObservable().subscribe(timer => {
             //this.timer = timer.toString() + " / " + this.stepDuration;
-            this.timer = Number((this.stepDuration-timer).toFixed(2));
+            this.timer = Number((this.stepDuration - timer).toFixed(2));
         })
     };
 

@@ -17,7 +17,7 @@ export class UserService {
         this.af.database.object('/users/' + userToAdd.uid).set(userToAdd);
     }
 
-    public getUserId() {
+    public getUserId(): string {
         var authData = this.af.auth.getAuth();
         if (authData != null) {
             return authData.uid
