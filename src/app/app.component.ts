@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs/Subject';
 import { Component } from '@angular/core';
 import { ipcRenderer } from 'electron';
 import { AngularFire } from 'angularfire2';
@@ -28,7 +29,9 @@ export class AppComponent {
   }
 
   private logout() {
-    this.af.auth.logout();
+    this.af.auth.logout().then(res => {
+      
+    });
     this.name = null;
     this.router.navigateByUrl('/login');
   }

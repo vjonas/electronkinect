@@ -1,6 +1,7 @@
+import { AngularFireAuth } from 'angularfire2/angularfire2';
 import { UserService } from './../../../services/user.service';
 import { Component } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
 import { Router } from '@angular/router';
 import { routerTransition } from '../../../animations/router.animations';
 
@@ -20,12 +21,25 @@ export class LoginComponent {
   error: Error = new Error("");
   private showLogin: boolean = false;
 
-  constructor(public af: AngularFire, private router: Router, private userService: UserService) {
+  constructor(public af: AngularFire, private router: Router, private userService: UserService, private auth: AngularFireAuth) {
     this.af.auth.subscribe(auth => {
       if (auth) {
-        this.showLoginModal();
+        console.log("auth")
+
+      }
+      else if (!auth) {
+        console.log("not auth")
       }
     });
+
+    /*this.auth.subscribe(isAuthenticated => {
+      if (isAuthenticated!=null) {
+        this.showLoginModal()
+      }
+      else {
+        //show logout modal
+      }
+    })*/
   }
 
   onSubmit(formData) {
@@ -37,9 +51,7 @@ export class LoginComponent {
           provider: AuthProviders.Password,
           method: AuthMethods.Password,
         }).then((success) => {
-          console.log(success + "LoginForm");
-          this.showLoginModal();
-          //this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
           this.errCond = false;
         }).catch((err) => {
           console.log(err);
