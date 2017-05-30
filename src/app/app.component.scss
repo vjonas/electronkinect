@@ -1,39 +1,36 @@
-
-body{
+body {
     background-image: url('/assets/images/background.jpg');
 }
 
-#logoutButton{
-    padding:0;
-    background-color:transparent;
+#logoutButton {
+    padding: 0;
+    background-color: transparent;
     border: none;
 }
 
-#logoutImg{
-    width:40px;
-    height:40px;
+#logoutImg {
+    width: 60px;
+    height: 60px;
 }
 
-.navigatieheader{
-    padding-right:5px;
+.navigatieheader {
+    padding-right: 5px;
 }
 
-.uidModal-class{
-    color:black;
-
-    .uid-paragraph{
-    font-weight: bold;
+.uidModal-class {
+    color: black;
+    .uid-paragraph {
+        font-weight: bold;
     }
 }
 
 .nav.navbar-nav {
-    .navbar-item:hover{ 
-    color:#5e5e5e;
-    cursor:pointer;
-}
-.navbar-item{
-    color:white;
-    vertical-align:center;
-}
-
+    .navbar-item:hover {
+        color: #5e5e5e;
+        cursor: pointer;
+    }
+    .navbar-item {
+        color: white;
+        vertical-align: center;
+    }
 }

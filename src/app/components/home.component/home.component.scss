@@ -1,39 +1,41 @@
 @import "../../../assets/css/global-variables.scss";
-
 $main-font-color: $main-text-color;
-
-select{
-    color:$main-font-color;
+select {
+    color: $main-font-color;
 }
 
-.uidModal{
-    color:$main-font-color;
-
-    .uid{
-    font-weight: bold;
+.uidModal {
+    color: $main-font-color;
+    .uid {
+        font-weight: bold;
     }
 }
 
-.wrapper{
+.wrapper {
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.title{
-    margin-top:0;
+.title {
+    margin-top: 0;
 }
 
-.color-frame-canvas
-{
-    width:960px;
+.color-frame-canvas {
+    width: 960px;
     height: 540px;
 }
 
-.canvas-area{
-    height:540px;
+.canvas-area {
+    height: 540px;
 }
 
-.placeholder-canvas{
-    position:absolute; 
-    background-image:url('../../../assets/images/placeholderForKinect.jpg');
+.placeholder-canvas {
+    position: absolute;
+    background-image: url('../../../assets/images/placeholderForKinect.jpg');
+}
+
+.webcam {
+    width: 960px;
+    height: 540px;
+    position: absolute;
 }

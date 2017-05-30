@@ -1,9 +1,8 @@
 @import "../../../../assets/css/global-variables.scss";
-
 @font-face {
-font-family: 'Ostrich';
-src: url('../../../../assets/fonts/OstrichSans-Black.otf');
-font-weight: bold;
+    font-family: 'Ostrich';
+    src: url('../../../../assets/fonts/OstrichSans-Black.otf');
+    font-weight: bold;
 }
 
 $title-font: "Ostrich";
@@ -11,110 +10,140 @@ $input-font: $input-font;
 $error-color: $error-text-color;
 $input-color: $main-text-color;
 $success-button-color: $success-color;
-
-
-h1{
-  text-align:center;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-family: $title-font;
-  font-size:5em;
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: $title-font;
+    font-size: 5em;
 }
 
 form {
-  width: 400px;
-  margin: auto;
-  text-align:center;
+    width: 400px;
+    margin: auto;
+    text-align: center;
 }
 
-p{
-  padding: 5px;
-  width:80%;
-  margin:auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  color:$error-color;
-  background-color:$error-background-color;
-  border-radius: 5px;
+p {
+    padding: 5px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: $error-color;
+    background-color: $error-background-color;
+    border-radius: 5px;
 }
-  
+
 .form-group {
-  width: 90%;
-  margin: auto;
+    width: 90%;
+    margin: auto;
 }
 
-.form-control{
-  -webkit-transition: all 0.1s ease; 
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-    
-  &:focus{
-    -webkit-transform:scale(1.15); 
-    -moz-transform:scale(1.15); 
-    -ms-transform:scale(1.15);
-    -o-transform:scale(1.15);
-    transform:scale(1.15);
-  }
+.form-control {
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    &:focus {
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        -o-transform: scale(1.15);
+        transform: scale(1.15);
+    }
 }
 
 input {
-  width: 90%;
-  margin: auto;
-  margin-top: 2%;
-  height: 40px;
-  color:$input-color;
-  font-size: 15px;
-  border-radius: 5px;
-  font-family: $input-font;
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
+    height: 40px;
+    color: $input-color;
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: $input-font;
 }
 
 button {
-  width: 100%;
+    width: 100%;
 }
 
 a {
-  width: 100%;
-  height: 25px;
-  font-size: 15px;
-  margin-top: 3%;
+    width: 100%;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 3%;
 }
 
-.reset-password-button{
-  font-size: .8em;
-  text-align: right;
-  width:98%;
-  margin:auto;
-
-  &:hover{
-    color: $alt-font-color;
-  }
+.reset-password-button {
+    font-size: .8em;
+    text-align: right;
+    width: 98%;
+    margin: auto;
+    &:hover {
+        color: $alt-font-color;
+    }
 }
 
-.register-button{
-  &:hover{
-    color:$alt-font-color;
-  }
+.register-button {
+    &:hover {
+        color: $alt-font-color;
+    }
 }
-
 
 .buttons {
-  margin: auto;
-  margin-top: 1%;
-  width: 80%;
-  text-align: center;
-
-  .login-button{
-    border:solid 2px $card-background-color;
-    background-color:transparent;
-    font-size:1.3em; 
-    transition: ease .3s;
-
-    &:hover{
-      background-color: $card-background-color;
-      color:$card-text-color;
+    margin: auto;
+    margin-top: 1%;
+    width: 80%;
+    text-align: center;
+    .login-button {
+        border: solid 2px $card-background-color;
+        background-color: transparent;
+        font-size: 1.3em;
+        transition: ease .3s;
+        &:hover {
+            background-color: $card-background-color;
+            color: $card-text-color;
+        }
     }
-  }
 }
 
 
+/*
+*CSS FOR CUSTOM MODAL
+*/
+
+.shader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.shader-login-not-visible {
+    display: none;
+}
+
+.wrapper {
+    position: fixed;
+    background-color: white;
+    top: 15vh;
+    left: 25vw;
+    width: 50vw;
+    height: 50vh;
+}
+
+.wrapper-login-not-visible {
+    display: none;
+}
+
+.header {
+    background-color: rgba(77, 0, 192, 0.5);
+    color: white;
+    h3 {
+        margin-bottom: 3%;
+    }
+}

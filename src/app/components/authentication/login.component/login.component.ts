@@ -1,5 +1,5 @@
 import { UserService } from './../../../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { routerTransition } from '../../../animations/router.animations';
@@ -14,21 +14,18 @@ import { routerTransition } from '../../../animations/router.animations';
   }
 )
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   invalidLogin: boolean;
   errCond: boolean = false;
   error: Error = new Error("");
+  private showLogin: boolean = false;
 
-  constructor(public af: AngularFire, private router: Router,private userService :UserService) {
+  constructor(public af: AngularFire, private router: Router, private userService: UserService) {
     this.af.auth.subscribe(auth => {
       if (auth) {
-        this.router.navigateByUrl('/home');
+        this.showLoginModal();
       }
     });
-  }
-
-  ngOnInit() {
-
   }
 
   onSubmit(formData) {
@@ -40,7 +37,9 @@ export class LoginComponent implements OnInit {
           provider: AuthProviders.Password,
           method: AuthMethods.Password,
         }).then((success) => {
-          this.router.navigate(['/home']);
+          console.log(success + "LoginForm");
+          this.showLoginModal();
+          //this.router.navigate(['/home']);
           this.errCond = false;
         }).catch((err) => {
           console.log(err);
@@ -48,6 +47,15 @@ export class LoginComponent implements OnInit {
           this.error = err;
         })
     }
+  }
+
+  private showLoginModal(): void {
+    this.showLogin = true;
+    const self = this;
+    setTimeout(function () {
+      self.showLogin = false;
+      self.router.navigateByUrl('/home');
+    }, 2000);
   }
 
   providerLogin(from: string) {
@@ -69,5 +77,4 @@ export class LoginComponent implements OnInit {
       case 'twitter': return AuthProviders.Twitter;
     }
   }
-
 }
