@@ -6,12 +6,15 @@ import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/cor
 import { Router } from '@angular/router';
 import { Kinect2 } from 'kinect2';
 declare var electron: any;
+declare var webcam: any
 import { User } from '../../models/user.model';
 import { Exercise } from "app/models/excercise.model";
 import { FullExercise } from "app/models/full.excercise.model";
 import { Program } from "app/models/program.model";
 import { KinectJoint } from "../../models/kinectJoint.model";
 import { JointService } from "../../services/joint.service";
+import { Webcam } from 'webcamjs';
+
 
 @Component({
     selector: 'home',
@@ -58,7 +61,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.colorFrameCanvas = <HTMLCanvasElement>document.getElementById('colorframecanvas');
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('exercisecanvas');
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
-        this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
+        //this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
+        this.getColorFeed();
+
     }
 
     public drawExcercise() {
@@ -137,5 +142,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     private getJointList() {
         this.jointList = this._jointService.getJointList();
+    }
+
+    private getColorFeed() {
+        webcam.set({
+            width: 960,
+            height: 540
+        });
+        webcam.attach('#webcam');
     }
 }

@@ -1,6 +1,7 @@
+import { AngularFireAuth } from 'angularfire2/angularfire2';
 import { UserService } from './../../../services/user.service';
-import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Component } from '@angular/core';
+import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
 import { Router } from '@angular/router';
 import { routerTransition } from '../../../animations/router.animations';
 
@@ -14,21 +15,31 @@ import { routerTransition } from '../../../animations/router.animations';
   }
 )
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   invalidLogin: boolean;
   errCond: boolean = false;
   error: Error = new Error("");
+  private showLogin: boolean = false;
 
-  constructor(public af: AngularFire, private router: Router,private userService :UserService) {
+  constructor(public af: AngularFire, private router: Router, private userService: UserService, private auth: AngularFireAuth) {
     this.af.auth.subscribe(auth => {
       if (auth) {
-        this.router.navigateByUrl('/home');
+        console.log("auth")
+
+      }
+      else if (!auth) {
+        console.log("not auth")
       }
     });
-  }
 
-  ngOnInit() {
-
+    /*this.auth.subscribe(isAuthenticated => {
+      if (isAuthenticated!=null) {
+        this.showLoginModal()
+      }
+      else {
+        //show logout modal
+      }
+    })*/
   }
 
   onSubmit(formData) {
@@ -50,6 +61,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  private showLoginModal(): void {
+    this.showLogin = true;
+    const self = this;
+    setTimeout(function () {
+      self.showLogin = false;
+      self.router.navigateByUrl('/home');
+    }, 2000);
+  }
+
   providerLogin(from: string) {
     this.af.auth.login({
       provider: this._getProvider(from),
@@ -69,5 +89,4 @@ export class LoginComponent implements OnInit {
       case 'twitter': return AuthProviders.Twitter;
     }
   }
-
 }

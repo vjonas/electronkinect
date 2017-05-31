@@ -1,17 +1,15 @@
 $body-background-color:#4D00C7;
-
-$input-font: Helvetica, sans-serif;
+$input-font: Helvetica,
+sans-serif;
 $main-text-color:black;
 $alt-font-color: white;
-$alt-text-color-shadow: #777777; 
+$alt-text-color-shadow: #777777;
 $error-text-color: orange;
-
-$error-background-color: rgba(50,50,50,0.5);
-$success-color:#3ED600; 
-
-$div-background-color: rgba(255,255,255,.3);
+$error-background-color: rgba(50, 50, 50, 0.5);
+$success-color:#3ED600;
+$div-background-color: rgba(255, 255, 255, .3);
 $card-background-color: #F2F2F2;
-$card-background-color-disabled: rgba(242,242,242,0.5);
+$card-background-color-disabled: rgba(242, 242, 242, 0.5);
 $card-text-color: #672CC6;
 $card-background-color-hover: #9C77D6;
 $card-text-color-hover: $card-background-color;

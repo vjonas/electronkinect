@@ -1,5 +1,5 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { CanActivate, Router } from '@angular/router';
-import { AngularFireAuth } from 'angularfire2/angularfire2';
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs/Rx';
 
