@@ -22,6 +22,7 @@ import { NoProgramComponent } from './components/no-program.component/no-program
  
 import { KinectService } from './services/kinect.service';
 import { DrawCanvasService } from './services/drawcanvas.service';
+import { JointService } from "./services/joint.service";
 import { AngularFireModule } from 'angularfire2';
 import { AuthGuard } from './services/auth.service';
 
@@ -50,7 +51,7 @@ export const firebaseConfig = {
 
   ],
   //services
-  providers: [HashLocationStrategy, KinectService, DrawCanvasService, AuthGuard,ExerciseService,UserService,TimerService],
+  providers: [HashLocationStrategy, KinectService, DrawCanvasService, AuthGuard,ExerciseService,UserService,TimerService, JointService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // to clear the router-outlet test, else it fails
 
