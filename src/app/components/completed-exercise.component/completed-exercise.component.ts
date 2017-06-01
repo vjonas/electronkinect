@@ -48,7 +48,7 @@ export class CompletedExerciseComponent implements OnChanges{
             this.messageWhenExerciseComplete = "Good job, but you can do better! I believe in you!";
         }
         else{
-            this.messageWhenExerciseComplete = "Try again, you can do much better";
+            this.messageWhenExerciseComplete = "Try again, you can do much better.";
         }
         this.dataLoaded = true;
     }
