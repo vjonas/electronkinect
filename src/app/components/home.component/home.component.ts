@@ -1,3 +1,4 @@
+import { CompletedExercise } from 'app/models/completed.exercise.model';
 import { DrawCanvasService } from './../../services/drawcanvas.service';
 import { TimerService } from './../../services/timer.service';
 import { UserService } from './../../services/user.service';
@@ -59,7 +60,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.bodyFrameCanvas = <HTMLCanvasElement>document.getElementById('bodyframecanvas');
         this.colorFrameCanvas = <HTMLCanvasElement>document.getElementById('colorframecanvas');
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('exercisecanvas');
-        this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
+        this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton) 
+        this.exService.getCompletedExercise().subscribe(completedExercise=>
+        {
+            console.log(completedExercise);
+        })       
         this.getColorFeed();
 
     }

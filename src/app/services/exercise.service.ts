@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs/Subject';
 import { UserService } from './user.service';
 import { CompletedExercise } from 'app/models/completed.exercise.model';
 import { Injectable } from '@angular/core';
@@ -10,8 +11,9 @@ import { FullExercise } from "app/models/full.excercise.model";
 export class ExerciseService {
     path: string = "/exercises";
     private keyOfCompletedExercise: string;
+    private completedExerciseSubject: Subject<CompletedExercise> = new Subject();
 
-    constructor(private af: AngularFire,private userService:UserService) {
+    constructor(private af: AngularFire, private userService: UserService) {
     }
 
 
@@ -22,22 +24,26 @@ export class ExerciseService {
     public createCompletedExercise(completedExercise: CompletedExercise) {
         this.af.database.list("/completed-exercises/" + this.userService.getUserId() + "/" + completedExercise.programId).push(completedExercise).then((keyOfCompletedExercise) => {
             this.keyOfCompletedExercise = keyOfCompletedExercise.key;
-            console.log(keyOfCompletedExercise.key);
         });
 
     }
 
     public updateCompletedExercise(completedExercise: CompletedExercise) {
         this.af.database.object("/completed-exercises/" + this.userService.getUserId() + "/" + completedExercise.programId + "/" + this.keyOfCompletedExercise).set(completedExercise);
+        if (completedExercise.completed) {
+            this.completedExerciseSubject.next(completedExercise);
+        }
     }
 
     public setExerciseCompleted(exerciseId: string, currentProgramId: number) {
-        console.log("set exercise complete on user object");
         this.af.database.object("users/" + this.userService.getUserId() + "/programs/" + currentProgramId + "/exercises/" + exerciseId).update({ completed: true })
     }
 
     public getFullExerciseById(exerciseId: string): Observable<FullExercise> {
-        return this.af.database.object('/exercises/'+exerciseId);
+        return this.af.database.object('/exercises/' + exerciseId);
     }
 
+    public getCompletedExercise(): Observable<CompletedExercise> {
+        return this.completedExerciseSubject;
+    }
 }
