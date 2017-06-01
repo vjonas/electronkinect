@@ -45,18 +45,10 @@ export class KinectService {
             return this.bodyFrame.asObservable();
     }
 
-    getColorFrames(): Observable<any> {
-        return this.colorFrame.asObservable();
-    }
-
-    getColorFrames2(): Observable<any> {
-        return this.colorFrame2.asObservable();
-    }
-
-
     private streamMockData(fileName: string) {
-        const self = this;
+       /* const self = this;
         var interval;
+        clearInterval(interval);
         this._http.get('assets/' + fileName + '.json').map(res => {
             this.array = JSON.parse(JSON.stringify(res.json()));
             interval = setInterval(function () {
@@ -69,6 +61,12 @@ export class KinectService {
                 }
                 self.counter++;
             }, 1000 / 30);
-        }).subscribe(res => res);
+        }).subscribe(res => res);*/
+
+        this.ipc.on('bodyFrameMock', (event,frame)=>
+        {
+            console.log(frame);
+
+        })
     }
 }

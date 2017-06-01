@@ -54,12 +54,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        //declare canvas & context here after the view is loaded. else canvas = null
         this.bodyFrameCanvas = <HTMLCanvasElement>document.getElementById('bodyframecanvas');
         this.colorFrameCanvas = <HTMLCanvasElement>document.getElementById('colorframecanvas');
         this.excerciseCanvas = <HTMLCanvasElement>document.getElementById('exercisecanvas');
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton)        
-        //this.drawcanvasService.drawColorFrame(this.colorFrameCanvas); //draw the colorframe
         this.getColorFeed();
 
     }

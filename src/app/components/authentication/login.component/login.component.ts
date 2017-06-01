@@ -25,21 +25,12 @@ export class LoginComponent {
     this.af.auth.subscribe(auth => {
       if (auth) {
         console.log("auth")
-
+        this.router.navigate(['/home']);
       }
       else if (!auth) {
         console.log("not auth")
       }
     });
-
-    /*this.auth.subscribe(isAuthenticated => {
-      if (isAuthenticated!=null) {
-        this.showLoginModal()
-      }
-      else {
-        //show logout modal
-      }
-    })*/
   }
 
   onSubmit(formData) {

@@ -12,6 +12,7 @@ let cmd;
 let child;
 let colorWorkerChild;
 let colorProcessing = false;
+var interval;
 
 function createWindow() {
     win = new BrowserWindow({ width: 1200, height: 720 })
@@ -30,7 +31,6 @@ function createWindow() {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         win = null;
-        console.log("closed method of browserwindow");
         if (child != null) child.kill();
     })
 }
@@ -39,60 +39,88 @@ function createWindow() {
 function createMenu() {
     //creates an electron menu
     const menuTemplate = [{
-        label: "start",
-        submenu: [{
-                label: 'startkinect',
-                click: () => { startKinect(false) }
-            },
-            {
-                type: 'separator'
-            },
-            {
-                label: 'record kinect mockdata',
-                click: () => { startKinect(true) }
-            },
-            {
-                type: 'separator'
-            },
-            {
-                label: 'quit',
-                click: () => {
-                    if (child != null) child.kill();
-                    app.quit();
+            label: "start",
+            submenu: [{
+                    label: 'startkinect',
+                    click: () => { startKinect(false) }
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: 'record kinect mockdata',
+                    click: () => { startKinect(true) }
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: 'quit',
+                    click: () => {
+                        if (child != null) child.kill();
+                        app.quit();
+                    }
                 }
-            }
-        ]
-    }]
+            ],
+
+        },
+        {
+            label: "mock",
+            submenu: [{
+                    label: "arrow to the knee",
+                    click: () => { streamMockFile(0) }
+                },
+                {
+                    label: "Full Exercise",
+                    click: () => { streamMockFile(1) }
+                }
+            ]
+        }
+    ]
     const menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
 }
 
+function streamMockFile(id) {
+    var counter = 0;;
+    clearInterval(interval);
+    if (child != null) {
+        child.kill();
+    }
+    if (id === 0) {
+        var array = require('./assets/arrow-to-the-knee2.json');
+    }
+    if (id === 1) {
+        var array = require('./assets/full-exercise.json');
+    }
+    interval = setInterval(function() {
+        if (counter < array.length && win != null) {
+            win.webContents.send("bodyFrame", JSON.stringify(array[counter]));
+            counter++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 1000 / 30);
+}
+
 function startKinect(mock) {
+    clearInterval(interval);
     var setBeginningOfJson = true;
     //child = spawn('node', [`${__dirname}/worker.js`], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
-    if (child != null)
+    if (child != null) {
         child.kill();
-
+    }
     child = spawn('node', [`${__dirname}/worker.js`], { detached: true, stdio: ['pipe', 'pipe', 'pipe', 'ipc'] });
     child.on('message', function(frame) {
-        if (JSON.stringify(frame).substr(1, 1) == ("0")) { //checken of de frame van het kinectprocess een bodyframe of colorframe is
-            if (child != null) {
-                win.webContents.send('bodyFrame', frame.substr(1, frame.size)); //substring om de header (0 of 1) weg te krijgen      
+        if (child != null && win != null) {
+            win.webContents.send('bodyFrame', frame); //substring om de header (0 of 1) weg te krijgen      
+        }
+        if (mock) {
+            if (setBeginningOfJson) {
+                fs.appendFile('./src/assets/mockdata.json', "[");
+                setBeginningOfJson = false;
             }
-            if (mock) {
-                if (setBeginningOfJson) {
-                    fs.appendFile('./src/assets/mockdata.json', "[");
-                    setBeginningOfJson = false;
-                }
-                fs.appendFile('./src/assets/mockdata.json', frame.substr(1, frame.size) + ",");
-            }
-        } else if (frame.substr(0, 1) == ("1")) {
-            if (child != null) {
-                win.webContents.send('colorFrame', frame.substr(1, frame.size)) //substring om de header (0 of 1) weg te krijgen
-            }
-
-        } else {
-            win.webContents.send('log', frame);
+            fs.appendFile('./src/assets/mockdata.json', frame + ",");
         }
     });
     child.stderr.on('data', err => {
@@ -113,7 +141,6 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    console.log("gesloten via kruisje");
     if (child != null) child.kill();
     if (process.platform !== 'darwin') {
         app.quit()

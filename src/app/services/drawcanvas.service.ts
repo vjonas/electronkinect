@@ -60,41 +60,21 @@ export class DrawCanvasService {
             //main rendering process
             bodyFrameCtx.clearRect(0, 0, bodyFrameCanvas.width, bodyFrameCanvas.height);
             var index = 0;
-            bodyFrame.bodies.forEach(function (body) {
-                if (body.tracked) {
-                    //draw the joints
-                    for (var jointType in body.joints) {
-                        self.drawBodyJoint(bodyFrameCtx, body.joints[jointType], false);
-                    }
-                    index++;
-                    self.joints = body.joints; //save all joints to class variable
-                    self.joints.push(body.bodyIndex);
-                    //draw hand states
-                    self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
-                    self.updateHandState(body.rightHandState, body.joints[11], bodyFrameCtx);
-                };
-            })
-        });
-    }
-
-    public drawColorFrame(colorFrameCanvas: any) {
-        const colorFrameCtx = colorFrameCanvas.getContext('2d');
-        var colorProcessing = false;
-        var colorWorkerThread = new Worker("./assets/colorWorker.js");
-        colorWorkerThread.addEventListener("message", function (event) {
-            if (event.data.message === 'imageReady') {
-                colorFrameCtx.putImageData(event.data.imageData, 0, 0);
-                colorProcessing = false;
-            }
-        });
-        colorWorkerThread.postMessage({
-            "message": "setImageData",
-            "imageData": colorFrameCtx.createImageData(colorFrameCtx.canvas.width, colorFrameCtx.canvas.height)
-        });
-        this.kinectService.getColorFrames().subscribe(imageBuffer => {
-            if (!colorProcessing) {
-                colorProcessing = true;
-                colorWorkerThread.postMessage({ "message": "processImageData", "imageBuffer": imageBuffer });
+            if (bodyFrame.bodies != null) {
+                bodyFrame.bodies.forEach(function (body) {
+                    if (body.tracked) {
+                        //draw the joints
+                        for (var jointType in body.joints) {
+                            self.drawBodyJoint(bodyFrameCtx, body.joints[jointType], false);
+                        }
+                        index++;
+                        self.joints = body.joints; //save all joints to class variable
+                        self.joints.push(body.bodyIndex);
+                        //draw hand states
+                        self.updateHandState(body.leftHandState, body.joints[7], bodyFrameCtx);
+                        self.updateHandState(body.rightHandState, body.joints[11], bodyFrameCtx);
+                    };
+                })
             }
         });
     }
@@ -141,7 +121,7 @@ export class DrawCanvasService {
             clearInterval(this.intervalOfCurrentExcercise);
             this.ctx.clearRect(0, 0, excerciseCanvas.width, excerciseCanvas.height);
             this.timerService.resetTimer();
-            self.hasToStartTimer=true;
+            self.hasToStartTimer = true;
         }
         this.initializeExercise(newExcercise);
         ///check for collision with a kinect-joint and a point in the excercise with 30 FPS        
