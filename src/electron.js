@@ -71,8 +71,12 @@ function createMenu() {
                     click: () => { streamMockFile(0) }
                 },
                 {
-                    label: "Full Exercise",
+                    label: "full test",
                     click: () => { streamMockFile(1) }
+                },
+                {
+                    label: "full test fast",
+                    click: () => { streamMockFile(2) }
                 }
             ]
         }
@@ -91,7 +95,10 @@ function streamMockFile(id) {
         var array = require('./assets/arrow-to-the-knee2.json');
     }
     if (id === 1) {
-        var array = require('./assets/full-exercise.json');
+        var array = require('./assets/full-test.json');
+    }
+    if (id === 2) {
+        var array = require('./assets/full-test-fast.json');
     }
     interval = setInterval(function() {
         if (counter < array.length && win != null) {
