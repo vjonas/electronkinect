@@ -32,7 +32,8 @@
         "electron-kinect2": "0.0.21",
         "firebase": "^3.7.5",
         "rxjs": "^5.1.0",
-        "zone.js": "^0.8.4"
+        "zone.js": "^0.8.4",
+        "webcamjs": "1.0.22"
     },
     "devDependencies": {
         "@angular/cli": "1.0.0",
