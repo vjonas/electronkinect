@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private changes: number = 0;
     private timer: number = null;
     private stepDuration: number;
+    private completedExercise:CompletedExercise;
 
 
     constructor(private router: Router, private drawcanvasService: DrawCanvasService, private userService: UserService, private exService: ExerciseService, private timerService: TimerService, private _jointService: JointService) {
@@ -63,7 +64,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.drawcanvasService.drawBodyFrame(this.bodyFrameCanvas, false, "");//draw the bodyframe without mock data(skeleton) 
         this.exService.getCompletedExercise().subscribe(completedExercise=>
         {
-            console.log(completedExercise);
+            this.completedExercise=completedExercise;
         })       
         this.getColorFeed();
 

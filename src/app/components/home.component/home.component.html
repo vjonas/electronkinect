@@ -31,3 +31,4 @@
         <h3 *ngIf="currentFullExercise?.steps[currentStepNr]?.stepType == 2" class="col-xs-6"> {{jointList[currentFullExercise?.steps[currentStepNr]?.secondJointType]?.name}}</h3>
     </div>
 </div>
+<completedExercise [completedExercise]="completedExercise" [currentExercise]="currentFullExercise"> </completedExercise>
