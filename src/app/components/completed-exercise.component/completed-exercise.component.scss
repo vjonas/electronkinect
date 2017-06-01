@@ -42,6 +42,7 @@
 
 .button-div{
   text-align:center;
+  margin-top:5%;
 }
 
 .back-button{
@@ -57,6 +58,11 @@
 .graph-area{
   padding:0;
   color:$main-text-color;
+}
+
+.message{
+  margin-top:5%;
+  text-align:center;
 }
 
 .progress{
