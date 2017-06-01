@@ -1,3 +1,5 @@
+@import "../../../assets/css/global-variables";
+
 .shader{
   position:fixed;
   width:100vw;
@@ -29,8 +31,17 @@
   color:white;
 
   h3{
-    margin-bottom:3%;
+    line-height: 73px;
+    margin: 0;
   }
+}
+
+.max-score{
+  text-align: center;
+}
+
+.button-div{
+  text-align:center;
 }
 
 .back-button{
@@ -38,12 +49,14 @@
   border: none;
   float:right;   
   font-size: 1.5em;
-  margin-top: 25%;
   padding-right: 0;
+  line-height: 73px;
+  margin: 0;
 }
 
 .graph-area{
   padding:0;
+  color:$main-text-color;
 }
 
 .progress{
