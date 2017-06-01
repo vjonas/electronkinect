@@ -77,6 +77,10 @@ function createMenu() {
                 {
                     label: "full test fast",
                     click: () => { streamMockFile(2) }
+                },
+                {
+                    label: "testje voor de zekerheid",
+                    click: () => { streamMockFile(3) }
                 }
             ]
         }
@@ -99,6 +103,9 @@ function streamMockFile(id) {
     }
     if (id === 2) {
         var array = require('./assets/full-test-fast.json');
+    }
+    if (id === 3) {
+        var array = require('./assets/testje-voor-de-zekerheid.json');
     }
     interval = setInterval(function() {
         if (counter < array.length && win != null) {
