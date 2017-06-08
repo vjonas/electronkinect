@@ -16,7 +16,7 @@ $card-font-color-hover: $card-text-color-hover;
         margin-top: 0;
     }
     h3 {
-        height: 19vh;
+        height: 200px;
         padding-right: 20px;
         overflow-y: scroll;
         word-wrap: break-word;
@@ -33,13 +33,15 @@ $card-font-color-hover: $card-text-color-hover;
 .card {
     background-color: $card-background-color;
     color: $card-font-color;
-    width: 10vw;
-    height: 100px;
-    margin: 1% 2%;
+    /*width: 10vw;*/
+    height: 120px;
+    /*margin: 1% 2%;*/
+    margin-left: 2.5%;
+    width: 30%;
     float: left;
     text-align: center;
     padding-top: 20px;
-    text-overflow: ellipsis;
+    overflow: hidden;
     transition: ease 0.2s;
     cursor: pointer;
     &:hover {
@@ -56,14 +58,16 @@ $card-font-color-hover: $card-text-color-hover;
 .card-disabled {
     background-color: $card-background-color-disabled;
     color: $card-font-color;
-    width: 10vw;
-    height: 100px;
-    margin: 1% 2%;
+    /*    width: 10vw;*/
+    height: 120px;
+    /*    margin: 1% 2%;*/
+    margin-left: 2.5%;
+    width: 30%;
     float: left;
     text-align: center;
     padding-top: 20px;
-    text-overflow: ellipsis;
     transition: ease 0.2s;
+    overflow: hidden;
 }
 
 .exercise-control-previous {
@@ -86,14 +90,18 @@ $card-font-color-hover: $card-text-color-hover;
         border: solid transparent 2px;
         color: $card-font-color;
     }
+    &:active {
+        color: white;
+    }
 }
 
 .exercise-name {
-    overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
     font-weight: bold;
     font-size: 1.1em;
+    /*white-space: nowrap;*/
+    overflow: hidden;
 }
 
 .startButtonDiv {

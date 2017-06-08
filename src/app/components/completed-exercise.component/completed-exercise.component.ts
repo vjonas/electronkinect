@@ -8,7 +8,7 @@ import { FullExercise } from "../../models/full.excercise.model";
     styleUrls: ['completed-exercise.component.scss']
 })
 
-export class CompletedExerciseComponent implements OnChanges{
+export class CompletedExerciseComponent implements OnChanges {
     @Input() completedExercise: CompletedExercise;
     @Input() currentExercise: FullExercise;
     @Output() notify: EventEmitter<String> = new EventEmitter<String>();
@@ -18,11 +18,15 @@ export class CompletedExerciseComponent implements OnChanges{
     private CALIBRATION_STEP_NR = 0;
     private maxScore: number = 0;
     private dataLoaded: boolean = false;
-    private messageWhenExerciseComplete:string ="";
+    private messageWhenExerciseComplete: string = "";
 
     ngOnChanges(changes) {
+        console.log(changes);
+        console.log(this.currentExercise);
         if (changes.completedExercise != undefined && changes.completedExercise.currentValue != null) {
             this.showComponent = true;
+            console.log(this.currentExercise);
+
             this.calculateScores();
         }
     }
@@ -32,22 +36,24 @@ export class CompletedExerciseComponent implements OnChanges{
         this.currentExercise.steps.forEach(step => {
             if (step.stepNr > this.CALIBRATION_STEP_NR)
             { this.maxScore += step.maxScore; }
+            console.log(this.currentExercise);
+            console.log(this.maxScore + "stepnr:" + step.stepNr);
         });
         this.currentScore = 0;
         this.completedExercise.completedSteps.forEach(step => {
-                if (step.stepNr > this.CALIBRATION_STEP_NR)
-                { this.currentScore += step.score; }
-            });
-            
+            if (step.stepNr > this.CALIBRATION_STEP_NR)
+            { this.currentScore += step.score; }
+        });
+
         this.currentScore = Math.round(this.currentScore);
         this.currentScorePercentage = Math.round((this.currentScore / this.maxScore) * 100);
-        if((this.currentScore/this.maxScore) > 0.6){
+        if ((this.currentScore / this.maxScore) > 0.6) {
             this.messageWhenExerciseComplete = "Good job, you did well!";
         }
-        else if((this.currentScore/this.maxScore) < 0.6 && (this.currentScore/this.maxScore)>0.3){
+        else if ((this.currentScore / this.maxScore) < 0.6 && (this.currentScore / this.maxScore) > 0.3) {
             this.messageWhenExerciseComplete = "Good job, but you can do better! I believe in you!";
         }
-        else{
+        else {
             this.messageWhenExerciseComplete = "Try again, you can do much better.";
         }
         this.dataLoaded = true;
@@ -62,7 +68,7 @@ export class CompletedExerciseComponent implements OnChanges{
     }
 
     private goBack() {
-       // this.resetScores();     
+        // this.resetScores();     
         this.showComponent = false;
         this.notify.emit("");
     }
